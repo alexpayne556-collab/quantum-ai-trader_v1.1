@@ -55,4 +55,4 @@ logs/
 # Data files (uncomment if you want to ignore)
 # data/
 # models/
-# SPY_data.csv
+# SPY_data.csv.env
