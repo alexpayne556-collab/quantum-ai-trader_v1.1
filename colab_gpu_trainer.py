@@ -70,24 +70,33 @@ print("✅ All imports successful!")
 # CELL 3: DATA DOWNLOAD
 # =============================================================================
 DATA_CODE = '''
-# Full ticker list
-TICKERS = [
-    # Tech
-    'AAPL', 'MSFT', 'GOOGL', 'NVDA', 'META', 'AMZN', 'TSLA', 'AMD', 'INTC', 'CRM',
-    # Finance
-    'JPM', 'BAC', 'GS', 'V', 'MA', 'WFC', 'C',
-    # Healthcare
-    'JNJ', 'UNH', 'PFE', 'ABBV', 'MRK', 'LLY',
-    # Consumer
-    'WMT', 'HD', 'NKE', 'SBUX', 'MCD', 'KO', 'PG',
-    # Energy
-    'XOM', 'CVX', 'COP',
-    # Industrial
-    'CAT', 'BA', 'UPS', 'HON',
-    # ETFs
-    'SPY', 'QQQ', 'IWM', 'DIA',
-]
+# Load tickers: prefer watchlist.txt from repo, else fallback list
+import os, json
 
+def load_watchlist(path='watchlist.txt'):
+    if os.path.exists(path):
+        tickers = []
+        with open(path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                tickers.append(line.upper())
+        # de-duplicate preserving order
+        seen = set()
+        deduped = []
+        for t in tickers:
+            if t not in seen:
+                seen.add(t)
+                deduped.append(t)
+        if deduped:
+            return deduped
+    # Fallback to provided list
+    return [
+        'APLD','MRVL','HOOD','SERV','KMTS','MU','OKLO','TSLA','WSHP','QQQQ','AAPL','UUUU','NVDA','DLB','XME','QTUM','KRYS','UNH','WMT','PG','RXRX','AMZN','SNOW','WDC','LLY','BSX','VU','TEVA','GEO','CXW'
+    ]
+
+TICKERS = load_watchlist()
 print(f"Downloading {len(TICKERS)} tickers (3 years of data)...")
 
 # Download all data
@@ -95,13 +104,15 @@ all_data = {}
 for ticker in TICKERS:
     try:
         df = yf.download(ticker, period='3y', progress=False)
-        if len(df) > 500:
+        if len(df) > 250:  # allow newer listings
             all_data[ticker] = df
             print(f"  ✓ {ticker}: {len(df)} samples")
+        else:
+            print(f"  ✗ {ticker}: insufficient samples ({len(df)})")
     except Exception as e:
         print(f"  ✗ {ticker}: {e}")
 
-print(f"\\n✅ Downloaded {len(all_data)} tickers")
+print(f"\n✅ Downloaded {len(all_data)} tickers")
 
 # Get market benchmark
 market_df = yf.download('SPY', period='3y', progress=False)

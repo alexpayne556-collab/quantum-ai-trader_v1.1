@@ -6,6 +6,8 @@ Ranks opportunities by confidence and signal strength.
 
 Usage:
     python ticker_scanner.py --limit 10
+    python ticker_scanner.py --watchlist watchlist.txt
+    python ticker_scanner.py --watchlist custom.json --limit 25
 """
 
 import os
@@ -15,6 +17,7 @@ import pandas as pd
 from datetime import datetime
 from tqdm import tqdm
 import sys
+from typing import List
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -34,6 +37,50 @@ WATCHLIST = [
     "WMT", "TGT", "COST",
     "CRM", "ADBE", "ORCL", "CSCO"
 ]
+
+
+def load_watchlist(path: str | None) -> List[str]:
+    """Load tickers from a watchlist file.
+
+    Supports:
+    - .txt: one ticker per line, comments starting with '#'
+    - .json: ["AAPL", "MSFT", ...]
+    If path is None, uses `watchlist.txt` if present, else the default WATCHLIST.
+    """
+    if path is None:
+        default_path = os.path.join(os.getcwd(), "watchlist.txt")
+        if os.path.exists(default_path):
+            path = default_path
+        else:
+            return WATCHLIST
+
+    try:
+        ext = os.path.splitext(path)[1].lower()
+        if ext == ".json":
+            with open(path, "r") as f:
+                data = json.load(f)
+                tickers = [str(t).strip().upper() for t in data if str(t).strip()]
+        else:
+            # Treat as txt by default
+            tickers = []
+            with open(path, "r") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    tickers.append(line.upper())
+
+        # De-duplicate while preserving order
+        seen = set()
+        deduped = []
+        for t in tickers:
+            if t not in seen:
+                seen.add(t)
+                deduped.append(t)
+        return deduped if deduped else WATCHLIST
+    except Exception as e:
+        print(f"⚠️ Failed to load watchlist from '{path}': {e}. Using default list.")
+        return WATCHLIST
 
 class TickerScanner:
     def __init__(self):
@@ -107,10 +154,17 @@ class TickerScanner:
 def main():
     parser = argparse.ArgumentParser(description="Ticker Scanner")
     parser.add_argument("--limit", type=int, help="Limit number of tickers to scan")
+    parser.add_argument(
+        "--watchlist",
+        type=str,
+        default=None,
+        help="Path to watchlist file (.txt one-per-line or .json list). Defaults to watchlist.txt if present."
+    )
     args = parser.parse_args()
-    
+
+    tickers = load_watchlist(args.watchlist)
     scanner = TickerScanner()
-    scanner.scan(limit=args.limit)
+    scanner.scan(tickers=tickers, limit=args.limit)
 
 if __name__ == "__main__":
     main()
