@@ -1,0 +1,8 @@
+{
+  "ticker": "MU",
+  "accuracy": 0.504,
+  "brier_buy": 0.2684964055764435,
+  "n_train": 999,
+  "n_test": 250,
+  "model_path": "E:\\quantum-ai-trader-v1.1\\models\\MU_tuned.pkl"
+}

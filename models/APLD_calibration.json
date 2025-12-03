@@ -1,0 +1,8 @@
+{
+  "ticker": "APLD",
+  "accuracy": 0.4861878453038674,
+  "brier_buy": 0.3090534612681843,
+  "n_train": 723,
+  "n_test": 181,
+  "model_path": "E:\\quantum-ai-trader-v1.1\\models\\APLD_tuned.pkl"
+}

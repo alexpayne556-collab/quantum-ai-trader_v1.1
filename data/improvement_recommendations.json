@@ -1,0 +1,11 @@
+{
+  "weights": {
+    "stop_loss_multiplier": 1.0985,
+    "momentum_threshold": 0.02,
+    "resistance_weight": 1.0,
+    "momentum_weight": 0.3,
+    "volume_threshold": 1.0,
+    "trend_confirmation": 0.5
+  },
+  "patterns": {}
+}

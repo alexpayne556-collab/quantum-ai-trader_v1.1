@@ -1,0 +1,559 @@
+{
+  "project_meta": {
+    "name": "Quantum AI Trader Dashboard",
+    "version": "1.1.0",
+    "goal": "Local-first, pro-grade trading dashboard comparable to a paid AI/ML web app, focused on advanced charting, model outputs, risk overlays, and explainable AI recommendations.",
+    "stack": {
+      "frontend": "React 18 + TypeScript 5",
+      "charting": "Lightweight Charts by TradingView (high-performance WebGL)",
+      "state_management": "Zustand (lightweight, no boilerplate)",
+      "transport": "WebSocket + REST (FastAPI backend)",
+      "build_tool": "Vite 5 (SPA with HMR)",
+      "styling": "Tailwind CSS + custom cyberpunk theme",
+      "testing": "Vitest + React Testing Library",
+      "icons": "Lucide React"
+    }
+  },
+  "data_and_models_context": {
+    "assumptions": [
+      "Backend modules: Elliott Wave, Forecast Engine, Risk Manager, Watchlist Scanner, Trade Executor",
+      "AI Recommender provides direction/confidence/narrative based on XGBoost classifier + regressor",
+      "Event-driven backend design with events like BAR, SIGNAL, ORDER, FILL, PATTERN_UPDATE",
+      "Multi-timeframe support: 5m (base) + 1h/daily context",
+      "Regime classification: BULL | BEAR | CHOP | VOL_CRUSH"
+    ]
+  },
+  "realtime_transport": {
+    "websocket": {
+      "url": "ws://localhost:8000/ws",
+      "single_connection": true,
+      "multiplexing": "One WebSocket per client; logical channels via 'type' field in message envelope",
+      "envelope_fields": {
+        "type": "string (e.g., 'pattern_update', 'forecast_update', 'alert', 'recommender_update', 'regime_update', 'trade_event', 'heartbeat')",
+        "ticker": "string (symbol)",
+        "ts": "string (ISO8601 server timestamp)",
+        "module": "string (e.g., 'elliott_wave', 'forecaster', 'ai_trader', 'recommender', 'risk_manager')",
+        "version": "string (model or module version)",
+        "confidence": "number (0-1, overall confidence if applicable)",
+        "correlation_id": "string (UUID linking related messages/trade lifecycle)",
+        "payload": "object (module-specific data)"
+      },
+      "subscriptions": {
+        "approach": "Server-side subscription state per connection",
+        "subscribe_message": {
+          "type": "subscribe",
+          "tickers": ["SPY", "NVDA"],
+          "streams": ["patterns", "forecasts", "alerts", "recommender", "regime"]
+        },
+        "unsubscribe_message": {
+          "type": "unsubscribe",
+          "tickers": ["IONQ"],
+          "streams": ["patterns"]
+        }
+      },
+      "compression": {
+        "default": "WebSocket permessage-deflate",
+        "optimization": "Delta-style payload for overlays (add/update/remove) to avoid full redraw"
+      }
+    },
+    "rest_endpoints": {
+      "base": "/api",
+      "endpoints": [
+        {
+          "path": "/patterns/history",
+          "method": "GET",
+          "query": ["ticker", "timeframe", "from", "to"],
+          "description": "Fetch historical pattern overlays for backfill"
+        },
+        {
+          "path": "/forecasts/history",
+          "method": "GET",
+          "query": ["ticker", "timeframe", "from", "to"],
+          "description": "Fetch historical forecast cones / directional predictions"
+        },
+        {
+          "path": "/recommender/history",
+          "method": "GET",
+          "query": ["ticker", "timeframe", "from", "to"],
+          "description": "Fetch historical recommender outputs and narratives"
+        },
+        {
+          "path": "/config/user",
+          "method": "GET",
+          "description": "Fetch user personalization config"
+        },
+        {
+          "path": "/feedback",
+          "method": "POST",
+          "body": {
+            "user_id": "string",
+            "event_id": "string",
+            "label": "string ('useful' | 'not_useful')",
+            "ts": "string"
+          },
+          "description": "User feedback for alerts/recommendations"
+        },
+        {
+          "path": "/health",
+          "method": "GET",
+          "description": "Backend health check"
+        },
+        {
+          "path": "/simulate_trade",
+          "method": "POST",
+          "body": {
+            "ticker": "string",
+            "timeframe": "string",
+            "entry_price": "number",
+            "side": "string ('long' | 'short')",
+            "size_hint": "number"
+          },
+          "description": "Interactive trade simulation"
+        },
+        {
+          "path": "/backfill/{ticker}",
+          "method": "GET",
+          "query": ["timeframe", "bars"],
+          "description": "Get recent OHLCV + overlays for initial chart render"
+        }
+      ]
+    }
+  },
+  "frontend_layout": {
+    "panels": [
+      {
+        "id": "main_chart",
+        "type": "candlestick_chart",
+        "grid_area": "chart",
+        "features": [
+          "Price candles (OHLCV)",
+          "EMA ribbon overlay (8/13/21/34/55 with gradient fill)",
+          "Pattern overlays (Elliott impulse, flags, triangles, double tops/bottoms, breakouts, volume climax)",
+          "Forecast cone overlay (quantile bands q10/q25/q50/q75/q90 for next N bars)",
+          "Risk zones overlay (entry price, stop levels, target ladder, position sizing hints)",
+          "Interactive simulation slider (drag hypothetical entry to preview risk-reward)",
+          "Breathing animation on forecast cone (pulse alpha 0.3-0.6 over 2s)",
+          "Tempo lighting (ambient background hue shifts based on regime: green=bull, red=bear, gray=chop)"
+        ],
+        "interactions": [
+          "Click pattern → highlight in timeline + show narrative",
+          "Hover forecast cone → show confidence breakdown tooltip",
+          "Drag simulation slider → trigger simulate_trade WebSocket request",
+          "Scroll/zoom → standard chart navigation"
+        ]
+      },
+      {
+        "id": "confidence_and_edge",
+        "type": "side_panel",
+        "grid_area": "sidebar",
+        "features": [
+          "Confidence bar decomposition (trend | pattern | volatility | trader_agreement) as stacked horizontal bar",
+          "Dynamic Edge Score indicator (0-100 scalar) with gradient color",
+          "Regime indicator badge (BULL/BEAR/CHOP/VOL_CRUSH) with icon",
+          "Model version display",
+          "Last update timestamp"
+        ]
+      },
+      {
+        "id": "timeline_strip",
+        "type": "horizontal_event_strip",
+        "grid_area": "timeline",
+        "features": [
+          "Scrollable event markers aligned with chart x-axis",
+          "Event types: alerts, trade intents, fills, pattern start/completion/invalidation, regime changes",
+          "Color coding: green=positive, red=negative, yellow=warning, blue=info",
+          "Hover → highlight corresponding chart elements",
+          "Click → open detail popup with narrative"
+        ]
+      },
+      {
+        "id": "multi_timeframe_stack",
+        "type": "mini_panels",
+        "grid_area": "mtf",
+        "features": [
+          "Stacked mini bars for higher timeframes (1h/4h/daily)",
+          "Each shows: trend slope (up/down/flat), regime class, EMA alignment",
+          "Color coding: green=bullish trend, red=bearish, gray=choppy",
+          "Click to switch main chart timeframe"
+        ]
+      },
+      {
+        "id": "narrative_panel",
+        "type": "text_panel",
+        "grid_area": "narrative",
+        "features": [
+          "Headline summary (Pattern Stage → Forecast Bias → Risk Context → Recommended Action)",
+          "Alternative scenario / invalidation level",
+          "Confidence drift indicator (sparkline of last 10 bars)",
+          "Conflict detection messages (e.g., 'Trader wants long; volatility regime + pattern reliability disagreement; half-size suggested.')",
+          "Regenerate button to fetch updated narrative"
+        ]
+      }
+    ],
+    "grid_template": {
+      "desktop": "\"sidebar chart chart\" \"sidebar timeline timeline\" \"sidebar mtf narrative\" / 300px 1fr 1fr",
+      "mobile": "\"chart\" \"timeline\" \"sidebar\" \"mtf\" \"narrative\" / 1fr"
+    },
+    "adaptive_clutter_control": {
+      "rule": "Measure overlay density (patterns per pixel). If density > threshold (0.05), fade non-focused layers (alpha 0.1) and show toggles/legend to re-focus.",
+      "user_controls": [
+        "Toggle per pattern type on/off (checkbox list)",
+        "Toggle forecast cone on/off",
+        "Toggle risk zones on/off",
+        "Master overlay opacity slider (0-1)"
+      ]
+    }
+  },
+  "core_overlay_schemas": {
+    "pattern_overlay": {
+      "id": "string (UUID)",
+      "ticker": "string",
+      "timeframe": "string (e.g., '5m', '1h', '1d')",
+      "pattern_type": "string ('elliott_impulse' | 'flag' | 'triangle' | 'double_top' | 'double_bottom' | 'breakout' | 'volume_climax')",
+      "stage": "number (0-5, e.g., Elliott wave count)",
+      "created_at": "string (ISO8601)",
+      "updated_at": "string (ISO8601)",
+      "status": "string ('active' | 'completed' | 'invalidated')",
+      "confidence": "number (0-1)",
+      "geometry": {
+        "points": [
+          {
+            "ts": "string (ISO8601 or epoch ms)",
+            "price": "number"
+          }
+        ]
+      },
+      "meta": {
+        "regime": "string (BULL | BEAR | CHOP | VOL_CRUSH)",
+        "volatility_regime": "string (LOW | NORMAL | HIGH)",
+        "hit_rate_slice": "number (historical hit rate for this pattern class in similar regime)"
+      }
+    },
+    "forecast_cone": {
+      "id": "string (UUID)",
+      "ticker": "string",
+      "timeframe": "string",
+      "as_of": "string (ISO8601, forecast generation time)",
+      "horizon_bars": "number (e.g., 24)",
+      "quantiles": {
+        "q10": ["number (price array for each future bar)"],
+        "q25": ["number"],
+        "q50": ["number (median forecast)"],
+        "q75": ["number"],
+        "q90": ["number"]
+      },
+      "meta": {
+        "model_version": "string (e.g., 'xgb_v1.2')",
+        "calibration_bucket": "string (e.g., 'bull_low_vol')",
+        "confidence": "number (0-1)"
+      }
+    },
+    "risk_zones": {
+      "id": "string (UUID)",
+      "ticker": "string",
+      "timeframe": "string",
+      "entry_price": "number",
+      "stops": ["number (array of stop levels, e.g., [-2%, -5%])"],
+      "targets": ["number (array of target levels, e.g., [+5%, +10%, +15%])"],
+      "size_fraction": "number (suggested fraction of equity, e.g., 0.02 = 2%)",
+      "kelly_fraction": "number (underlying Kelly-based fraction before capping)",
+      "atr_multiple_stop": "number (e.g., 1.5 × ATR)",
+      "meta": {
+        "risk_reward_ratio": "number (e.g., 3.0 for 3:1 RR)",
+        "probability_target_hit": "number (0-1)"
+      }
+    },
+    "trade_event": {
+      "id": "string (UUID)",
+      "ticker": "string",
+      "event_type": "string ('intent' | 'submit' | 'fill' | 'cancel' | 'close')",
+      "side": "string ('long' | 'short')",
+      "size": "number (shares or contracts)",
+      "price": "number (execution price)",
+      "ts": "string (ISO8601)",
+      "reason_codes": ["string (array of reasons, e.g., ['pattern_complete', 'high_confidence'])"],
+      "correlation_id": "string (UUID linking trade lifecycle)",
+      "meta": {
+        "pnl": "number (realized P&L if close event)",
+        "slippage_bps": "number (basis points of slippage)"
+      }
+    },
+    "timeline_event": {
+      "id": "string (UUID)",
+      "ticker": "string",
+      "ts": "string (ISO8601)",
+      "event_type": "string ('alert' | 'pattern_start' | 'pattern_complete' | 'pattern_invalidated' | 'trade_intent' | 'trade_fill' | 'regime_change')",
+      "ref_id": "string | null (pattern_id, trade_event_id, etc.)",
+      "severity": "string ('info' | 'warning' | 'critical')",
+      "message": "string (short event description)",
+      "meta": {
+        "confidence": "number (0-1, if applicable)",
+        "module": "string (originating module)"
+      }
+    },
+    "recommender_update": {
+      "id": "string (UUID)",
+      "ticker": "string",
+      "timeframe": "string",
+      "ts": "string (ISO8601)",
+      "direction": "string ('long' | 'short' | 'neutral')",
+      "confidence": "number (0-1)",
+      "narrative": {
+        "headline": "string (e.g., 'Elliott Wave 3 breakout + bullish forecast → long bias')",
+        "alt_scenario": "string (e.g., 'Invalidation below $150')",
+        "risk_context": "string (e.g., 'Stop at 1.5×ATR, target 3R')"
+      },
+      "edge_score": "number (0-100)",
+      "conflict_detected": "boolean",
+      "conflict_message": "string | null"
+    },
+    "ambient_theme": {
+      "type": "ambient/theme",
+      "ts": "string (ISO8601)",
+      "regime": "string (BULL | BEAR | CHOP | VOL_CRUSH)",
+      "hue": "number (0-360, color hue for background lighting)",
+      "intensity": "number (0-1, lighting intensity)",
+      "tempo_bpm": "number (optional, breathing tempo in BPM)"
+    }
+  },
+  "confidence_and_edge_logic": {
+    "confidence_bar": {
+      "inputs": [
+        "trend_score (derived from EMA slopes and regime classifier)",
+        "pattern_score (from pattern models and historical hit rates)",
+        "volatility_score (penalize extreme volatility or reward stable volatility)",
+        "trader_agreement (agreement between AI Trader and Recommender, 0-1)"
+      ],
+      "output": {
+        "segments": [
+          { "name": "trend", "weight": "number (0-1)" },
+          { "name": "pattern", "weight": "number (0-1)" },
+          { "name": "volatility", "weight": "number (0-1)" },
+          { "name": "trader_agreement", "weight": "number (0-1)" }
+        ],
+        "overall_confidence": "number (0-1, weighted average)"
+      }
+    },
+    "dynamic_edge_score": {
+      "definition": "Scalar 0-100 combining recent model calibration, pattern reliability, and regime edge",
+      "formula_example": "edge = 100 * (0.4 * recent_forecast_calibration + 0.4 * pattern_hit_rate_slice + 0.2 * regime_edge)",
+      "purpose": "Displayed prominently to differentiate from simple probability; expresses 'edge quality' rather than pure direction",
+      "color_scale": {
+        "0-30": "red (poor edge)",
+        "30-60": "yellow (moderate edge)",
+        "60-80": "green (good edge)",
+        "80-100": "cyan (exceptional edge)"
+      }
+    },
+    "conflict_detection": {
+      "logic": "If AI Trader wants long but regime is bearish/choppy AND pattern reliability is below threshold, emit conflict alert and reduce recommended size",
+      "frontend_behavior": [
+        "Show conflict banner in narrative panel (yellow background)",
+        "Highlight risk zones with caution color (amber)",
+        "Optionally adjust UI-suggested position size (halve it)",
+        "Display conflict_message from recommender_update payload"
+      ]
+    }
+  },
+  "interactive_features": {
+    "simulation_slider": {
+      "behavior": "User drags a horizontal slider/line on the chart to select hypothetical entry price",
+      "request_payload": {
+        "type": "simulate_trade",
+        "ticker": "string",
+        "timeframe": "string",
+        "entry_price": "number",
+        "side": "string ('long' | 'short')",
+        "size_hint": "number (shares or fraction)"
+      },
+      "response_payload": {
+        "type": "simulation_result",
+        "ticker": "string",
+        "entry_price": "number",
+        "side": "string",
+        "expected_rr": "number (risk-reward ratio)",
+        "probability_up": "number (0-1)",
+        "probability_down": "number (0-1)",
+        "recommended_stop": "number (price level)",
+        "recommended_targets": ["number (array of target prices)"],
+        "similar_setups_summary": {
+          "count": "number (historical similar setups)",
+          "win_rate": "number (0-1)",
+          "avg_R": "number (average R-multiple)"
+        }
+      },
+      "latency_target_ms": 150
+    },
+    "personalization_feedback": {
+      "ui": "Thumbs up/down or 'Useful' / 'Not Useful' buttons on alerts/narratives",
+      "payload": {
+        "user_id": "string",
+        "event_id": "string",
+        "label": "string ('useful' | 'not_useful')",
+        "ts": "string (ISO8601)"
+      },
+      "effect": "Adjust per-pattern weights for that user, influencing subsequent confidence and edge scores within 1-2 sessions"
+    }
+  },
+  "backfill_and_state_sync": {
+    "backfill_strategy": {
+      "on_connect": [
+        "1) Request last X bars of OHLCV and overlays via REST /api/backfill/{ticker}",
+        "2) Render initial chart state from historical data",
+        "3) Attach live WebSocket stream and apply incremental deltas",
+        "4) Fetch pattern/forecast/recommender history via /api/{module}/history"
+      ]
+    },
+    "state_sync": {
+      "events_idempotency": "Each event carries a unique id; client keeps last-seen ids per stream to avoid double application",
+      "reconnect": "Client re-sends subscription manifest and asks for missing history from last seen timestamp (include 'since' parameter in subscribe message)"
+    }
+  },
+  "performance_targets": {
+    "latency": {
+      "bar_to_overlay_target_ms": 300,
+      "simulation_slider_response_ms": 150,
+      "websocket_round_trip_ms": 50
+    },
+    "scaling": {
+      "initial": "Single-node local engine, 20-50 tickers, 1-3 clients",
+      "future": "Upgradeable to multi-process + Redis pub/sub or Kafka for greater scale if needed"
+    },
+    "rendering": {
+      "target_fps": 60,
+      "max_overlays_before_culling": 100,
+      "chart_update_debounce_ms": 16
+    }
+  },
+  "frontend_tasks": {
+    "priority_1_core": [
+      "1. Scaffold React + TypeScript app with Vite, configure TypeScript strict mode",
+      "2. Set up Tailwind CSS with custom cyberpunk theme (neon colors, dark background)",
+      "3. Implement WebSocket client hook (useWebSocket) with multiplexed message handling",
+      "4. Implement REST client utilities for backfill and feedback",
+      "5. Create main layout with CSS Grid matching desktop/mobile templates",
+      "6. Implement ChartContainer component with Lightweight Charts integration",
+      "7. Add candlestick series + EMA ribbon overlay to chart",
+      "8. Implement pattern overlay rendering (lines, shapes, labels)",
+      "9. Implement forecast cone overlay (area series with quantile bands)",
+      "10. Implement risk zones overlay (horizontal lines for stops/targets)"
+    ],
+    "priority_2_ui_components": [
+      "11. Create ConfidenceBar component (stacked horizontal bar chart)",
+      "12. Create EdgeScoreIndicator component (circular gauge 0-100)",
+      "13. Create RegimeBadge component (pill with icon + text)",
+      "14. Create TimelineStrip component (horizontal scrollable event markers)",
+      "15. Create MultiTimeframeStack component (mini bar charts for 1h/4h/daily)",
+      "16. Create NarrativePanel component (headline, alt scenario, conflict banner)",
+      "17. Create SimulationSlider component (draggable price line on chart)"
+    ],
+    "priority_3_integration": [
+      "18. Wire ChartContainer to WebSocket pattern_update events",
+      "19. Wire ChartContainer to WebSocket forecast_update events",
+      "20. Wire ChartContainer to WebSocket recommender_update events",
+      "21. Wire TimelineStrip to timeline_event payloads",
+      "22. Wire NarrativePanel to recommender_update narrative field",
+      "23. Wire ConfidenceBar to recommender_update confidence breakdown",
+      "24. Implement SimulationSlider interaction and WebSocket simulate_trade flow",
+      "25. Implement backfill on component mount via REST",
+      "26. Implement reconnection logic with state sync"
+    ],
+    "priority_4_polish": [
+      "27. Add adaptive clutter controls (overlay toggles, density-based fading)",
+      "28. Add feedback UI (thumbs up/down buttons) and POST /api/feedback",
+      "29. Add breathing animation to forecast cone (CSS + requestAnimationFrame)",
+      "30. Add tempo lighting effect (ambient background hue from regime)",
+      "31. Add error boundaries and loading states for all components",
+      "32. Add accessibility labels and keyboard navigation",
+      "33. Add responsive design for mobile/tablet",
+      "34. Add colorblind-friendly palette option",
+      "35. Write integration tests for WebSocket event handling",
+      "36. Write unit tests for all UI components",
+      "37. Document all event types and overlay props in ADVANCED_CHARTING_SPEC.md"
+    ]
+  },
+  "tech_stack_details": {
+    "dependencies": {
+      "production": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "lightweight-charts": "^4.1.0",
+        "zustand": "^4.5.0",
+        "lucide-react": "^0.344.0",
+        "date-fns": "^3.0.0",
+        "recharts": "^2.10.0"
+      },
+      "development": {
+        "typescript": "^5.3.0",
+        "vite": "^5.0.0",
+        "@vitejs/plugin-react": "^4.2.0",
+        "tailwindcss": "^3.4.0",
+        "autoprefixer": "^10.4.0",
+        "postcss": "^8.4.0",
+        "vitest": "^1.2.0",
+        "@testing-library/react": "^14.1.0",
+        "@testing-library/jest-dom": "^6.2.0",
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0",
+        "eslint": "^8.56.0",
+        "prettier": "^3.2.0"
+      }
+    },
+    "folder_structure": {
+      "src/": {
+        "components/": "React components (Chart, Sidebar, Timeline, etc.)",
+        "hooks/": "Custom React hooks (useWebSocket, useBackfill, etc.)",
+        "stores/": "Zustand stores for global state",
+        "services/": "API clients (WebSocket, REST)",
+        "types/": "TypeScript type definitions for all schemas",
+        "utils/": "Utility functions (formatters, calculators)",
+        "styles/": "Global CSS and Tailwind config",
+        "assets/": "Images, icons, fonts",
+        "__tests__/": "Test files"
+      }
+    }
+  },
+  "implementation_roadmap": {
+    "phase_1_foundation": {
+      "duration": "Week 1",
+      "deliverables": [
+        "Vite + React + TypeScript project scaffolded",
+        "WebSocket client hook implemented and tested",
+        "REST client utilities implemented",
+        "Main layout with grid structure",
+        "Basic ChartContainer with candlesticks"
+      ]
+    },
+    "phase_2_overlays": {
+      "duration": "Week 2",
+      "deliverables": [
+        "EMA ribbon overlay on chart",
+        "Pattern overlay rendering (lines, shapes)",
+        "Forecast cone overlay (quantile bands)",
+        "Risk zones overlay (stops, targets)",
+        "Timeline strip component"
+      ]
+    },
+    "phase_3_ui_components": {
+      "duration": "Week 3",
+      "deliverables": [
+        "ConfidenceBar, EdgeScoreIndicator, RegimeBadge",
+        "MultiTimeframeStack component",
+        "NarrativePanel with conflict detection",
+        "SimulationSlider interaction",
+        "Feedback UI"
+      ]
+    },
+    "phase_4_integration_polish": {
+      "duration": "Week 4",
+      "deliverables": [
+        "All components wired to WebSocket events",
+        "Backfill on mount implemented",
+        "Adaptive clutter controls",
+        "Breathing animation and tempo lighting",
+        "Tests and documentation",
+        "Production build optimization"
+      ]
+    }
+  }
+}

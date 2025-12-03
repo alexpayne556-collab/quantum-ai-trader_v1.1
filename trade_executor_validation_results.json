@@ -1,0 +1,205 @@
+{
+  "validation_status": "FAIL",
+  "orders_tested": 15,
+  "valid_orders": 0,
+  "validation_results": [
+    {
+      "order": {
+        "ticker": "AAPL",
+        "side": "buy",
+        "quantity": 37,
+        "entry_price": "Ticker\nAAPL    221.523285\nName: 2024-09-03 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "AAPL",
+        "side": "sell",
+        "quantity": 76,
+        "entry_price": "Ticker\nAAPL    221.135452\nName: 2024-09-05 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "AAPL",
+        "side": "buy",
+        "quantity": 46,
+        "entry_price": "Ticker\nAAPL    219.673691\nName: 2024-09-09 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "AAPL",
+        "side": "sell",
+        "quantity": 76,
+        "entry_price": "Ticker\nAAPL    221.413895\nName: 2024-09-11 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "AAPL",
+        "side": "buy",
+        "quantity": 90,
+        "entry_price": "Ticker\nAAPL    221.254807\nName: 2024-09-13 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "MSFT",
+        "side": "buy",
+        "quantity": 20,
+        "entry_price": "Ticker\nMSFT    405.629822\nName: 2024-09-03 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "MSFT",
+        "side": "sell",
+        "quantity": 68,
+        "entry_price": "Ticker\nMSFT    404.5896\nName: 2024-09-05 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "MSFT",
+        "side": "buy",
+        "quantity": 50,
+        "entry_price": "Ticker\nMSFT    401.944427\nName: 2024-09-09 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "MSFT",
+        "side": "sell",
+        "quantity": 69,
+        "entry_price": "Ticker\nMSFT    419.103302\nName: 2024-09-11 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "MSFT",
+        "side": "buy",
+        "quantity": 57,
+        "entry_price": "Ticker\nMSFT    426.583008\nName: 2024-09-13 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "NVDA",
+        "side": "buy",
+        "quantity": 80,
+        "entry_price": "Ticker\nNVDA    107.959801\nName: 2024-09-03 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "NVDA",
+        "side": "sell",
+        "quantity": 66,
+        "entry_price": "Ticker\nNVDA    107.170105\nName: 2024-09-05 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "NVDA",
+        "side": "buy",
+        "quantity": 61,
+        "entry_price": "Ticker\nNVDA    106.430382\nName: 2024-09-09 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "NVDA",
+        "side": "sell",
+        "quantity": 18,
+        "entry_price": "Ticker\nNVDA    116.866493\nName: 2024-09-11 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    },
+    {
+      "order": {
+        "ticker": "NVDA",
+        "side": "buy",
+        "quantity": 64,
+        "entry_price": "Ticker\nNVDA    119.065857\nName: 2024-09-13 00:00:00, dtype: float64",
+        "type": "market"
+      },
+      "is_valid": false,
+      "error": "The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+    }
+  ],
+  "slippage_tests": [
+    {
+      "ticker": "AAPL",
+      "slippage_estimate": {
+        "commission": "Ticker\nAAPL    2.133109\nName: 2025-07-24 00:00:00, dtype: float64",
+        "commission_bps": 1.0,
+        "market_impact": "Ticker\nAAPL    0.087464\ndtype: float64",
+        "market_impact_bps": "Ticker\nAAPL    0.041003\ndtype: float64",
+        "adverse_selection": "Ticker\nAAPL    106.655441\nName: 2025-07-24 00:00:00, dtype: float64",
+        "adverse_selection_bps": "Ticker\nAAPL    50.0\nName: 2025-07-24 00:00:00, dtype: float64",
+        "total_slippage": "Ticker\nAAPL    108.876014\ndtype: float64",
+        "total_slippage_bps": "Ticker\nAAPL    51.041003\ndtype: float64",
+        "estimated_fill_price": "Ticker\nAAPL    214.399643\ndtype: float64"
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "slippage_estimate": {
+        "commission": "Ticker\nMSFT    5.090887\nName: 2025-07-24 00:00:00, dtype: float64",
+        "commission_bps": 1.0,
+        "market_impact": "Ticker\nMSFT    0.329296\ndtype: float64",
+        "market_impact_bps": "Ticker\nMSFT    0.064683\ndtype: float64",
+        "adverse_selection": "Ticker\nMSFT    254.544357\nName: 2025-07-24 00:00:00, dtype: float64",
+        "adverse_selection_bps": "Ticker\nMSFT    50.0\nName: 2025-07-24 00:00:00, dtype: float64",
+        "total_slippage": "Ticker\nMSFT    259.96454\ndtype: float64",
+        "total_slippage_bps": "Ticker\nMSFT    51.064683\ndtype: float64",
+        "estimated_fill_price": "Ticker\nMSFT    511.68836\ndtype: float64"
+      }
+    }
+  ],
+  "position_limits_respected": true,
+  "logging_works": true,
+  "timestamp": "2025-12-01T20:58:10.473560"
+}

@@ -1,0 +1,84 @@
+{
+  "per_ticker": {
+    "AAPL": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "MSFT": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "NVDA": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "SPY": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "QQQ": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "MU": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.7
+    },
+    "APLD": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "IONQ": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "ANNX": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.0
+    },
+    "TSLA": {
+      "best_min_move_pct": 1.0,
+      "pattern_hit_rate": 0.0,
+      "patterns_found": 0,
+      "average_return_after_pattern": 0.0,
+      "confidence": 0.7
+    }
+  },
+  "global_stats": {
+    "average_hit_rate": 0.0,
+    "average_return_after_pattern": 0.0,
+    "total_patterns_detected": 0,
+    "tickers_analyzed": 10
+  },
+  "chosen_parameters": {
+    "min_move_pct": 1.0
+  },
+  "timestamp": "2025-12-01T20:58:09.829668"
+}

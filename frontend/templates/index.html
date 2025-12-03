@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum AI Trader - Control Center</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+        }
+        .btn-success {
+            background: linear-gradient(45deg, #56ab2f, #a8e6cf);
+            border: none;
+            border-radius: 25px;
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .status-active { background-color: #28a745; }
+        .status-inactive { background-color: #dc3545; }
+        .module-card {
+            transition: transform 0.2s;
+        }
+        .module-card:hover {
+            transform: translateY(-5px);
+        }
+        .progress-bar {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <strong>🚀 Quantum AI Trader</strong>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text" id="status-indicator">
+                    <span class="status-indicator status-inactive"></span>
+                    System Offline
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- System Status -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">🖥️ System Status</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h3 id="data-status">-</h3>
+                                    <small class="text-muted">Training Data</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h3 id="tickers-count">-</h3>
+                                    <small class="text-muted">Tickers Loaded</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h3 id="results-count">-</h3>
+                                    <small class="text-muted">Results Available</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h3 id="modules-trained">-</h3>
+                                    <small class="text-muted">Modules Trained</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Loading -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">📊 Load Training Data</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="data-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="tickers" class="form-label">Tickers (comma-separated)</label>
+                                    <input type="text" class="form-control" id="tickers"
+                                           value="{{ tickers|join(', ') }}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="train-days" class="form-label">Training Days</label>
+                                    <input type="number" class="form-control" id="train-days" value="365">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="test-days" class="form-label">Test Days</label>
+                                    <input type="number" class="form-control" id="test-days" value="90">
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-primary" id="load-data-btn">
+                                    📥 Load Data
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module Training -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">🤖 Module Training</h5>
+                        <button class="btn btn-success" id="train-all-btn">
+                            🚀 Train All Modules
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="modules-grid">
+                            <!-- Modules will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Visualization -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">📈 Training Results</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div id="forecast-chart" style="height: 400px;"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="pattern-chart" style="height: 400px;"></div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div id="risk-chart" style="height: 400px;"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="results-summary"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Module definitions
+        const modules = [
+            {
+                id: 'elliott_wave_detector',
+                name: 'Elliott Wave Detector',
+                icon: '🌊',
+                description: 'Pattern recognition & wave analysis'
+            },
+            {
+                id: 'forecast_engine',
+                name: 'Forecast Engine',
+                icon: '🔮',
+                description: '24-day price forecasting'
+            },
+            {
+                id: 'risk_manager',
+                name: 'Risk Manager',
+                icon: '🛡️',
+                description: 'Position sizing & drawdown control'
+            },
+            {
+                id: 'watchlist_scanner',
+                name: 'Watchlist Scanner',
+                icon: '🔍',
+                description: 'Filter tuning & candidate selection'
+            },
+            {
+                id: 'trade_executor',
+                name: 'Trade Executor',
+                icon: '⚡',
+                description: 'Execution validation & safety checks'
+            }
+        ];
+
+        let trainedModules = new Set();
+
+        // Initialize
+        $(document).ready(function() {
+            updateStatus();
+            renderModules();
+            setInterval(updateStatus, 5000); // Update every 5 seconds
+        });
+
+        // Update system status
+        function updateStatus() {
+            $.get('/api/status', function(data) {
+                $('#data-status').text(data.training_data_loaded ? '✅ Loaded' : '❌ Not Loaded');
+                $('#tickers-count').text(data.tickers_count);
+                $('#results-count').text(data.results_available ? '✅ Available' : '❌ None');
+                $('#modules-trained').text(data.modules.length);
+
+                const indicator = $('#status-indicator .status-indicator');
+                if (data.training_data_loaded) {
+                    indicator.removeClass('status-inactive').addClass('status-active');
+                    $('#status-indicator').html('<span class="status-indicator status-active"></span> System Active');
+                } else {
+                    indicator.removeClass('status-active').addClass('status-inactive');
+                    $('#status-indicator').html('<span class="status-indicator status-inactive"></span> System Offline');
+                }
+
+                // Update trained modules
+                trainedModules = new Set(data.modules);
+                updateModuleStatuses();
+                updateCharts();
+            });
+        }
+
+        // Render module cards
+        function renderModules() {
+            const grid = $('#modules-grid');
+            grid.empty();
+
+            modules.forEach(module => {
+                const card = `
+                    <div class="col-md-4 mb-3">
+                        <div class="card module-card">
+                            <div class="card-body text-center">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">${module.icon}</div>
+                                <h6 class="card-title">${module.name}</h6>
+                                <p class="card-text small text-muted">${module.description}</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-secondary" id="status-${module.id}">Not Trained</span>
+                                </div>
+                                <button class="btn btn-sm btn-outline-primary" onclick="trainModule('${module.id}')">
+                                    Train Module
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.append(card);
+            });
+        }
+
+        // Update module statuses
+        function updateModuleStatuses() {
+            modules.forEach(module => {
+                const statusBadge = $(`#status-${module.id}`);
+                if (trainedModules.has(module.id)) {
+                    statusBadge.removeClass('bg-secondary').addClass('bg-success').text('Trained');
+                } else {
+                    statusBadge.removeClass('bg-success').addClass('bg-secondary').text('Not Trained');
+                }
+            });
+        }
+
+        // Load training data
+        $('#data-form').submit(function(e) {
+            e.preventDefault();
+
+            const tickers = $('#tickers').val().split(',').map(t => t.trim());
+            const trainDays = parseInt($('#train-days').val());
+            const testDays = parseInt($('#test-days').val());
+
+            $('#load-data-btn').prop('disabled', true).text('Loading...');
+
+            $.ajax({
+                url: '/api/load_data',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    tickers: tickers,
+                    train_days: trainDays,
+                    test_days: testDays
+                }),
+                success: function(response) {
+                    if (response.success) {
+                        alert('✅ ' + response.message);
+                        updateStatus();
+                    } else {
+                        alert('❌ Error: ' + response.error);
+                    }
+                },
+                error: function() {
+                    alert('❌ Failed to load data');
+                },
+                complete: function() {
+                    $('#load-data-btn').prop('disabled', false).text('📥 Load Data');
+                }
+            });
+        });
+
+        // Train all modules
+        $('#train-all-btn').click(function() {
+            if (!confirm('This will train all modules. It may take several minutes. Continue?')) {
+                return;
+            }
+
+            $(this).prop('disabled', true).text('Training...');
+
+            $.ajax({
+                url: '/api/train_all',
+                method: 'POST',
+                success: function(response) {
+                    if (response.success) {
+                        alert('✅ ' + response.message);
+                        updateStatus();
+                    } else {
+                        alert('❌ Error: ' + response.error);
+                    }
+                },
+                error: function() {
+                    alert('❌ Training failed');
+                },
+                complete: function() {
+                    $('#train-all-btn').prop('disabled', false).text('🚀 Train All Modules');
+                }
+            });
+        });
+
+        // Train single module
+        function trainModule(moduleId) {
+            if (!confirm(`Train ${moduleId.replace('_', ' ')}?`)) {
+                return;
+            }
+
+            $.ajax({
+                url: '/api/train_module',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ module: moduleId }),
+                success: function(response) {
+                    if (response.success) {
+                        alert('✅ ' + response.message);
+                        updateStatus();
+                    } else {
+                        alert('❌ Error: ' + response.error);
+                    }
+                },
+                error: function() {
+                    alert('❌ Training failed');
+                }
+            });
+        }
+
+        // Update charts
+        function updateCharts() {
+            // Forecast accuracy chart
+            $.get('/api/chart/forecast_accuracy', function(data) {
+                if (!data.error) {
+                    Plotly.newPlot('forecast-chart', data.data, data.layout);
+                }
+            });
+
+            // Pattern hit rates chart
+            $.get('/api/chart/pattern_hit_rates', function(data) {
+                if (!data.error) {
+                    Plotly.newPlot('pattern-chart', data.data, data.layout);
+                }
+            });
+
+            // Risk performance chart
+            $.get('/api/chart/risk_performance', function(data) {
+                if (!data.error) {
+                    Plotly.newPlot('risk-chart', data.data, data.layout);
+                }
+            });
+
+            // Results summary
+            updateResultsSummary();
+        }
+
+        // Update results summary
+        function updateResultsSummary() {
+            let summary = '<h6>Training Summary</h6>';
+
+            if (trainedModules.size === 0) {
+                summary += '<p class="text-muted">No modules trained yet.</p>';
+            } else {
+                summary += '<ul class="list-unstyled">';
+                trainedModules.forEach(module => {
+                    summary += `<li>✅ ${module.replace('_', ' ')}</li>`;
+                });
+                summary += '</ul>';
+            }
+
+            $('#results-summary').html(summary);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "per_ticker": {},
+  "global_stats": {
+    "error": "No forecasts generated"
+  },
+  "forecast_settings": {
+    "forecast_window": 24,
+    "method": "EMA+ATR deterministic drift+oscillation"
+  },
+  "timestamp": "2025-12-01T20:58:09.924926"
+}

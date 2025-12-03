@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-12-01T22:15:19.797931",
+  "analysis_period": "1_year",
+  "tickers_analyzed": [
+    "AAPL",
+    "NVDA"
+  ],
+  "optimized_weights": {
+    "stop_loss_multiplier": 1.0,
+    "momentum_threshold": 0.02,
+    "resistance_weight": 1.0,
+    "momentum_weight": 0.396,
+    "volume_threshold": 1.0,
+    "trend_confirmation": 0.692
+  },
+  "patterns": {
+    "AAPL": "{'volatility_analysis': {'current_volatility_pct': 0.0, 'volatility_z_score': 0.0, 'spike_count': 0, 'volatility_regime': 'UNKNOWN'}, 'trend_analysis': {'current_trend': 'UNKNOWN', 'trend_strength_pct': 0.0, 'bullish_crosses': 0, 'bearish_crosses': 0, 'trend_regime': 'UNKNOWN'}, 'support_resistance': {'resistance_level': 283.1000061035156, 'support_level': 283.1000061035156, 'current_price': 283.1000061035156, 'distance_to_resistance_pct': 0, 'distance_to_support_pct': 0, 's_r_range_pct': 0}, 'momentum_analysis': {'current_momentum_pct': 0.0, 'rsi_value': 0.0, 'momentum_strength': 'UNKNOWN', 'rsi_signal': 'UNKNOWN'}, 'volume_analysis': {'current_volume': 45533784, 'average_volume': 46155599, 'volume_z_score': -0.06948398025274137, 'volume_trend': 'NORMAL', 'volume_anomaly': False}, 'price_action': {'price_action_type': 'UNKNOWN', 'recent_range_pct': 0.0, 'price_volatility': 0.0}}",
+    "NVDA": "{'volatility_analysis': {'current_volatility_pct': 0.0, 'volatility_z_score': 0.0, 'spike_count': 0, 'volatility_regime': 'UNKNOWN'}, 'trend_analysis': {'current_trend': 'UNKNOWN', 'trend_strength_pct': 0.0, 'bullish_crosses': 0, 'bearish_crosses': 0, 'trend_regime': 'UNKNOWN'}, 'support_resistance': {'resistance_level': 179.9199981689453, 'support_level': 179.9199981689453, 'current_price': 179.9199981689453, 'distance_to_resistance_pct': 0, 'distance_to_support_pct': 0, 's_r_range_pct': 0}, 'momentum_analysis': {'current_momentum_pct': 0.0, 'rsi_value': 0.0, 'momentum_strength': 'UNKNOWN', 'rsi_signal': 'UNKNOWN'}, 'volume_analysis': {'current_volume': 184609468, 'average_volume': 217237888, 'volume_z_score': -0.5275243971766088, 'volume_trend': 'NORMAL', 'volume_anomaly': False}, 'price_action': {'price_action_type': 'UNKNOWN', 'recent_range_pct': 0.0, 'price_volatility': 0.0}}"
+  },
+  "suggestions_count": 4,
+  "training_summary": {
+    "tickers": [
+      "AAPL",
+      "NVDA"
+    ],
+    "avg_cv_mean": 0.3522270391196566,
+    "median_cv_mean": 0.3522270391196566,
+    "avg_walk_forward_sharpe": 0.0,
+    "low_accuracy_tickers": [],
+    "timestamp": "2025-12-01T22:15:19.775765"
+  },
+  "expected_improvements": {
+    "accuracy": 0.05,
+    "win_rate": 0.03,
+    "sharpe_ratio": 0.15,
+    "max_drawdown": 0.01
+  }
+}

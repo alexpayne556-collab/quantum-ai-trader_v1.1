@@ -1,0 +1,52 @@
+# Sick Awesome Modules - Premium Trading Components
+# Production-grade dependencies for institutional trading systems
+
+# Core Data Processing
+pandas>=2.0.0
+numpy>=1.24.0,<2.0.0
+scipy>=1.11.0
+
+# Machine Learning & AI
+scikit-learn>=1.3.0
+lightgbm>=4.1.0
+xgboost>=2.0.0
+statsmodels>=0.14.0
+
+# Technical Analysis
+ta>=0.11.0
+yfinance>=0.2.28
+
+# Web Framework & APIs
+fastapi>=0.104.0
+uvicorn>=0.24.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.3
+
+# Real-Time & Async
+websockets>=12.0
+aiohttp>=3.9.0
+asyncio-mqtt>=0.16.0
+
+# Data Sources
+python-dotenv>=1.0.0
+robin-stocks>=3.0.0
+
+# Visualization
+plotly>=5.17.0
+streamlit>=1.28.0
+
+# Utilities
+joblib>=1.3.0
+pytz>=2023.3
+tqdm>=4.66.0
+
+# Performance (Optional but recommended)
+uvloop>=0.19.0
+orjson>=3.9.0
+
+# Testing & Development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0

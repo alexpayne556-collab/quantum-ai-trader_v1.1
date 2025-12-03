@@ -1,0 +1,81 @@
+:root {
+  --bg: #0a0e27;
+  --bg-2: #0e1435;
+  --grid: #13203b;
+  --text: #e6f1ff;
+  --neon-cyan: #00d9ff;
+  --neon-pink: #ff006e;
+  --neon-green: #00ff88;
+  --accent: #ffd60a;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 15% 10%, #0f1a4a 0%, transparent 60%),
+              radial-gradient(900px 600px at 85% 0%, #1a0042 0%, transparent 55%),
+              var(--bg);
+}
+
+.page {
+  height: 100%;
+  display: grid;
+}
+
+.cyber-shell {
+  position: relative;
+  width: min(1600px, 96vw);
+  height: min(900px, 88vh);
+  margin: 3vh auto;
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg));
+  border: 1px solid #1a2547;
+  box-shadow: 0 0 0 1px #1a2547 inset, 0 0 40px #00d9ff22, 0 0 80px #ff006e11;
+  overflow: hidden;
+}
+
+.hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.95;
+  z-index: 2;
+}
+
+.badge {
+  color: var(--bg);
+  background: var(--neon-green);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  margin-left: 6px;
+  font-weight: 700;
+  color: var(--text);
+  text-shadow: 0 0 12px #00d9ff55;
+}
+
+.edge {
+  margin-left: auto;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.chart-host {
+  position: absolute;
+  inset: 0;
+}

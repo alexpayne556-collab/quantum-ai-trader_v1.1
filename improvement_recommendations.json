@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-12-01T22:08:19.175146",
+  "optimized_weights": {
+    "stop_loss_multiplier": 1.1088,
+    "momentum_threshold": 0.02,
+    "resistance_weight": 1.0,
+    "momentum_weight": 0.3525,
+    "volume_threshold": 1.0,
+    "trend_confirmation": 0.6088
+  },
+  "patterns": {},
+  "training_summary": {
+    "tickers": [
+      "AAPL",
+      "NVDA"
+    ],
+    "avg_cv_mean": 0.3522270391196566,
+    "median_cv_mean": 0.3522270391196566,
+    "avg_walk_forward_sharpe": null,
+    "low_accuracy_tickers": [],
+    "timestamp": "2025-12-01T22:08:19.153404"
+  }
+}

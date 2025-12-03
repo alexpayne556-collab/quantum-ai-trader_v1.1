@@ -1,0 +1,8 @@
+{
+  "ticker": "IONQ",
+  "accuracy": 0.45528455284552843,
+  "brier_buy": 0.25268923333427473,
+  "n_train": 980,
+  "n_test": 246,
+  "model_path": "E:\\quantum-ai-trader-v1.1\\models\\IONQ_tuned.pkl"
+}
