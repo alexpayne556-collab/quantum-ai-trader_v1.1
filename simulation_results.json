@@ -1,0 +1,5958 @@
+{
+  "total_days": 60,
+  "total_predictions": 600,
+  "total_correct": 182,
+  "final_accuracy": 30.333333333333336,
+  "final_config": {
+    "xgb_weight": 0.55,
+    "lgb_weight": 0.45,
+    "buy_threshold": 0.75,
+    "sell_threshold": 0.75,
+    "position_size": 0.1,
+    "stop_loss": 0.02,
+    "take_profit": 0.04,
+    "learning_rate": 0.05
+  },
+  "daily_results": [
+    {
+      "day": 150,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.6091334469111835,
+          "actual": "UP",
+          "return": 0.020340156705265556,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.6777271921775663,
+          "actual": "FLAT",
+          "return": 0.0029640640578703866,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.8791510824468187,
+          "actual": "DOWN",
+          "return": -0.012882979672595168,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.722626464618781,
+          "actual": "DOWN",
+          "return": -0.017510092291414304,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8957782271377548,
+          "actual": "FLAT",
+          "return": 0.0015214185022017909,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5819161030248754,
+          "actual": "UP",
+          "return": 0.006079412492183654,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.8543564588619402,
+          "actual": "DOWN",
+          "return": -0.018446995428822745,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9567337972943811,
+          "actual": "FLAT",
+          "return": 0.0047812091195721315,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9618905981030501,
+          "actual": "UP",
+          "return": 0.00647694316377853,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.979956320193802,
+          "actual": "DOWN",
+          "return": -0.01328143866584217,
+          "correct": 1
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-06-27",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.6,
+        "sell_threshold": 0.6,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 151,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.7997636509236288,
+          "actual": "UP",
+          "return": 0.012916154255427373,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.55586957569605,
+          "actual": "DOWN",
+          "return": -0.010775901611022596,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.8351270116314724,
+          "actual": "FLAT",
+          "return": -0.0022130863190326375,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.6619504539744596,
+          "actual": "FLAT",
+          "return": 0.00487719279454648,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9124757571181799,
+          "actual": "DOWN",
+          "return": -0.029685373444153732,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8496913620794627,
+          "actual": "DOWN",
+          "return": -0.02556610580095792,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.8909757538793039,
+          "actual": "DOWN",
+          "return": -0.05335897504131728,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.7389073700479976,
+          "actual": "FLAT",
+          "return": -0.0003236298209773343,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.49654368600384635,
+          "actual": "DOWN",
+          "return": -0.00842936841270397,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9706034028804866,
+          "actual": "DOWN",
+          "return": -0.040803337104838744,
+          "correct": 1
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-06-30",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.6,
+        "sell_threshold": 0.6,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 152,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.5283176920812211,
+          "actual": "UP",
+          "return": 0.022230762139012237,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7098565547888698,
+          "actual": "FLAT",
+          "return": -0.0019509602314314593,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.7402345434910651,
+          "actual": "UP",
+          "return": 0.01592358292210779,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.7473866780191528,
+          "actual": "FLAT",
+          "return": -0.002449462616694676,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.7410331364760687,
+          "actual": "UP",
+          "return": 0.025766409124015552,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.7988586178134396,
+          "actual": "DOWN",
+          "return": -0.007855719108214915,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9216101348183616,
+          "actual": "UP",
+          "return": 0.049682427807318394,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8710786769385686,
+          "actual": "FLAT",
+          "return": 0.004533275199175552,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.7375347548949136,
+          "actual": "UP",
+          "return": 0.006965307629207015,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9411991141343421,
+          "actual": "UP",
+          "return": 0.01770629381604813,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-07-01",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.6,
+        "sell_threshold": 0.6,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 153,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.7574454369596841,
+          "actual": "UP",
+          "return": 0.0052250677434895025,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "SELL",
+          "confidence": 0.720581421081022,
+          "actual": "UP",
+          "return": 0.01578124791479765,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.6617376770937513,
+          "actual": "FLAT",
+          "return": 0.004982093956777738,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.6428970708082724,
+          "actual": "UP",
+          "return": 0.015869432167251094,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9476651188875778,
+          "actual": "UP",
+          "return": 0.013290887733134206,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.6960693698542932,
+          "actual": "UP",
+          "return": 0.00762365250407742,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.6123041643988517,
+          "actual": "FLAT",
+          "return": -0.00095038111442869,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "HOLD",
+          "confidence": 0.5160470247456017,
+          "actual": "UP",
+          "return": 0.00788135121730062,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "SELL",
+          "confidence": 0.8420568938662452,
+          "actual": "UP",
+          "return": 0.009840293672287012,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.5334192659377353,
+          "actual": "FLAT",
+          "return": -0.0044037004875608155,
+          "correct": 1
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-07-02",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.6,
+        "sell_threshold": 0.6,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 154,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.7010614683341917,
+          "actual": "DOWN",
+          "return": -0.016857955249283785,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.5798198885955224,
+          "actual": "FLAT",
+          "return": -0.0022452408041021875,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.5212942104042964,
+          "actual": "DOWN",
+          "return": -0.015262058445122502,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.7811549525778162,
+          "actual": "FLAT",
+          "return": 0.0002685535903060623,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9606263979592105,
+          "actual": "DOWN",
+          "return": -0.00690342587476993,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5003254107752542,
+          "actual": "FLAT",
+          "return": -0.0009179163926480384,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.5026184294443067,
+          "actual": "DOWN",
+          "return": -0.06789282780315345,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "SELL",
+          "confidence": 0.8274787665314223,
+          "actual": "DOWN",
+          "return": -0.0074519116896885305,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "SELL",
+          "confidence": 0.7712821412519778,
+          "actual": "DOWN",
+          "return": -0.007532939099742973,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9621147651980972,
+          "actual": "DOWN",
+          "return": -0.022550942845098565,
+          "correct": 1
+        }
+      ],
+      "correct": 7,
+      "total": 10,
+      "cumulative_accuracy": 38.0,
+      "date": "2025-07-03",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.6,
+        "sell_threshold": 0.6,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 155,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.7591245828840473,
+          "actual": "FLAT",
+          "return": 0.00028578971805212893,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7333149158009202,
+          "actual": "FLAT",
+          "return": -0.002210113841260184,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9304884570178469,
+          "actual": "DOWN",
+          "return": -0.013745106583103513,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.9119635126801429,
+          "actual": "DOWN",
+          "return": -0.018391733064396638,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.976368301589359,
+          "actual": "UP",
+          "return": 0.011122359552208753,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.9376252556195426,
+          "actual": "FLAT",
+          "return": 0.0032296028706523005,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.6429798299033167,
+          "actual": "UP",
+          "return": 0.013165935514200526,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "SELL",
+          "confidence": 0.6859651209575536,
+          "actual": "FLAT",
+          "return": -0.0005477706277796524,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "SELL",
+          "confidence": 0.6249620327065195,
+          "actual": "FLAT",
+          "return": 0.0005615460814809674,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.8897222154648816,
+          "actual": "UP",
+          "return": 0.022403592018476266,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 35.0,
+      "date": "2025-07-07",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.62,
+        "sell_threshold": 0.62,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 156,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.5398983537551099,
+          "actual": "UP",
+          "return": 0.005380689615101579,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8825543718220512,
+          "actual": "UP",
+          "return": 0.013873855040504287,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9412650484844348,
+          "actual": "UP",
+          "return": 0.0129616876970697,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.8357885091162558,
+          "actual": "UP",
+          "return": 0.014496684294917834,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9433876613667247,
+          "actual": "UP",
+          "return": 0.017999995994342103,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5414923556854985,
+          "actual": "UP",
+          "return": 0.016803857589474395,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9188835180952963,
+          "actual": "DOWN",
+          "return": -0.006480617479611397,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "SELL",
+          "confidence": 0.7616893537711388,
+          "actual": "UP",
+          "return": 0.005996615280215155,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "SELL",
+          "confidence": 0.7374317688817265,
+          "actual": "UP",
+          "return": 0.007078944049491872,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.5820823604347409,
+          "actual": "FLAT",
+          "return": 0.004280919362474497,
+          "correct": 1
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 32.857142857142854,
+      "date": "2025-07-08",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.62,
+        "sell_threshold": 0.62,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 157,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.9092817246214422,
+          "actual": "UP",
+          "return": 0.006014977043711493,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8097071386582047,
+          "actual": "FLAT",
+          "return": -0.004031709186562559,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8899056156685818,
+          "actual": "UP",
+          "return": 0.005661835122193759,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.7034077870209989,
+          "actual": "FLAT",
+          "return": -0.001258195325533528,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9271332023426108,
+          "actual": "UP",
+          "return": 0.0074902317821542675,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5589779276346897,
+          "actual": "DOWN",
+          "return": -0.00756032162643558,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9715990567569337,
+          "actual": "UP",
+          "return": 0.04728264838279942,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8766200475839856,
+          "actual": "FLAT",
+          "return": 0.0028203284907412766,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.889998947441603,
+          "actual": "FLAT",
+          "return": -0.0014381997588280057,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9328227965181712,
+          "actual": "UP",
+          "return": 0.04154323999612825,
+          "correct": 0
+        }
+      ],
+      "correct": 0,
+      "total": 10,
+      "cumulative_accuracy": 28.749999999999996,
+      "date": "2025-07-09",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.62,
+        "sell_threshold": 0.62,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 158,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.8204040272360504,
+          "actual": "DOWN",
+          "return": -0.005884853456365174,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.725394901225171,
+          "actual": "FLAT",
+          "return": 0.0036690955903188297,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.6174005415573236,
+          "actual": "UP",
+          "return": 0.014469176624590224,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.7905121601858289,
+          "actual": "UP",
+          "return": 0.012417933203629732,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8778762489916427,
+          "actual": "FLAT",
+          "return": 0.004996907154757198,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5581726950876958,
+          "actual": "DOWN",
+          "return": -0.013379285891071542,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9021881068111557,
+          "actual": "UP",
+          "return": 0.011746909045068752,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8417997995584393,
+          "actual": "FLAT",
+          "return": -0.0035154713109042494,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8898356466140207,
+          "actual": "FLAT",
+          "return": -0.0022503961790789942,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9682752214849033,
+          "actual": "UP",
+          "return": 0.015676987024313933,
+          "correct": 0
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 26.666666666666668,
+      "date": "2025-07-10",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.62,
+        "sell_threshold": 0.62,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 159,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.8859749701636734,
+          "actual": "DOWN",
+          "return": -0.012028814641970927,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.9011242904665788,
+          "actual": "FLAT",
+          "return": -0.000596046440268401,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.600532534603545,
+          "actual": "UP",
+          "return": 0.007602992953269856,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.7965586605946695,
+          "actual": "FLAT",
+          "return": 0.0029775049161142966,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8957662997665092,
+          "actual": "DOWN",
+          "return": -0.0051539714504290875,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.80689820624761,
+          "actual": "FLAT",
+          "return": 0.004752482495591711,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.651040248647403,
+          "actual": "UP",
+          "return": 0.010813001260768906,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9485861886440343,
+          "actual": "FLAT",
+          "return": 0.0019082079637527834,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9570048334573169,
+          "actual": "FLAT",
+          "return": 0.003626881705373141,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9360804469490962,
+          "actual": "FLAT",
+          "return": -0.0012292902474535423,
+          "correct": 1
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 28.999999999999996,
+      "date": "2025-07-11",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.62,
+        "sell_threshold": 0.62,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 160,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.8525205559336927,
+          "actual": "FLAT",
+          "return": 0.002348828865542631,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7281385051526188,
+          "actual": "UP",
+          "return": 0.005566397658714539,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.6181782205032407,
+          "actual": "FLAT",
+          "return": 0.002423519418563952,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5754687640765015,
+          "actual": "FLAT",
+          "return": 0.0029243814744551013,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8436169416859542,
+          "actual": "UP",
+          "return": 0.04040946862717852,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9775868472873559,
+          "actual": "DOWN",
+          "return": -0.014606239154778895,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.6518593305391078,
+          "actual": "DOWN",
+          "return": -0.019312070795389793,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9631074600630627,
+          "actual": "FLAT",
+          "return": -0.0042732664980765205,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8226463956353466,
+          "actual": "FLAT",
+          "return": 0.0009167918809921742,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.8872713110665689,
+          "actual": "UP",
+          "return": 0.06407272131582009,
+          "correct": 0
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-07-14",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.64,
+        "sell_threshold": 0.64,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 161,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.5414112642663592,
+          "actual": "UP",
+          "return": 0.005021337154684811,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.6501005621890288,
+          "actual": "FLAT",
+          "return": -0.00039535996344040425,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.6621810546527394,
+          "actual": "UP",
+          "return": 0.005329660564237628,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.8391171646803839,
+          "actual": "DOWN",
+          "return": -0.013960696164789255,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8302222628512466,
+          "actual": "FLAT",
+          "return": 0.0039250466013800375,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9518152918868166,
+          "actual": "DOWN",
+          "return": -0.010529542144477173,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.8355149733337438,
+          "actual": "UP",
+          "return": 0.03504091219258656,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9228733998251272,
+          "actual": "FLAT",
+          "return": 0.0033432497520895312,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.53583290873004,
+          "actual": "FLAT",
+          "return": 0.0010238468058240727,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.8007556777322605,
+          "actual": "UP",
+          "return": 0.028725668036568144,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 29.166666666666668,
+      "date": "2025-07-15",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.64,
+        "sell_threshold": 0.64,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 162,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.4521650958000944,
+          "actual": "FLAT",
+          "return": -0.0006662490332222312,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.781598930318837,
+          "actual": "UP",
+          "return": 0.012024847390052516,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.6432277271467101,
+          "actual": "FLAT",
+          "return": 0.003333860026625139,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.8321288931851453,
+          "actual": "FLAT",
+          "return": 0.0030915472640285283,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9293102916916404,
+          "actual": "UP",
+          "return": 0.009511613744672768,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.892254950313458,
+          "actual": "FLAT",
+          "return": -0.0021339491684080293,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9712526799744142,
+          "actual": "DOWN",
+          "return": -0.00702586399503704,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8096086643816489,
+          "actual": "UP",
+          "return": 0.006119653171936232,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8362772786195714,
+          "actual": "UP",
+          "return": 0.008092814240598697,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.8384638454592206,
+          "actual": "FLAT",
+          "return": 0.0020614806801599428,
+          "correct": 0
+        }
+      ],
+      "correct": 6,
+      "total": 10,
+      "cumulative_accuracy": 31.538461538461537,
+      "date": "2025-07-16",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.64,
+        "sell_threshold": 0.64,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 163,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9134270737528449,
+          "actual": "UP",
+          "return": 0.0055232806402759444,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7778994181972751,
+          "actual": "FLAT",
+          "return": -0.003224627803833895,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.7211001803467554,
+          "actual": "UP",
+          "return": 0.008061829823895281,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5705239425068417,
+          "actual": "UP",
+          "return": 0.010050026580880849,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8123462554914023,
+          "actual": "FLAT",
+          "return": -0.003410399265631592,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.712898627545625,
+          "actual": "FLAT",
+          "return": 0.0040918134994753635,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.975411643085982,
+          "actual": "UP",
+          "return": 0.03205907804067233,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "HOLD",
+          "confidence": 0.5960076333814484,
+          "actual": "FLAT",
+          "return": -0.0007323592062571055,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.6342142119838196,
+          "actual": "FLAT",
+          "return": -0.0009611836056469346,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.8954270642084334,
+          "actual": "DOWN",
+          "return": -0.02132035465911004,
+          "correct": 1
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 32.857142857142854,
+      "date": "2025-07-17",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.64,
+        "sell_threshold": 0.64,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 164,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9357493807446569,
+          "actual": "UP",
+          "return": 0.006155827878369234,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7799142735684107,
+          "actual": "FLAT",
+          "return": 1.96941214728609e-05,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.5223933615110807,
+          "actual": "UP",
+          "return": 0.02723447078026094,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.965945185778966,
+          "actual": "UP",
+          "return": 0.014018476542235528,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.6688429597155017,
+          "actual": "DOWN",
+          "return": -0.0059741070104904,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9047232759863852,
+          "actual": "UP",
+          "return": 0.012338761619513628,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9345766610118865,
+          "actual": "FLAT",
+          "return": -0.003518894838728969,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "HOLD",
+          "confidence": 0.7508292744344311,
+          "actual": "FLAT",
+          "return": 0.001896167124852604,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.7224593871370968,
+          "actual": "UP",
+          "return": 0.005184737435977388,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9169649546896909,
+          "actual": "FLAT",
+          "return": 6.36633319716184e-05,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 32.666666666666664,
+      "date": "2025-07-18",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.64,
+        "sell_threshold": 0.64,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 165,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.6065274456423905,
+          "actual": "UP",
+          "return": 0.009036234750103483,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7742943573462467,
+          "actual": "DOWN",
+          "return": -0.009391088969803982,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.7749143459885501,
+          "actual": "UP",
+          "return": 0.0065228808169122505,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.8255600860908593,
+          "actual": "DOWN",
+          "return": -0.00798081904360733,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.5908709626941226,
+          "actual": "DOWN",
+          "return": -0.02538223247288492,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.8925155622758971,
+          "actual": "DOWN",
+          "return": -0.011445059678735136,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9867881153270145,
+          "actual": "UP",
+          "return": 0.011020107841352067,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.7146889570210364,
+          "actual": "FLAT",
+          "return": 0.00014308956258007419,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.7458887505213888,
+          "actual": "DOWN",
+          "return": -0.005175757620394907,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9487930017298729,
+          "actual": "DOWN",
+          "return": -0.014522285218451433,
+          "correct": 1
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 31.25,
+      "date": "2025-07-21",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.66,
+        "sell_threshold": 0.66,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 166,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.8331411580825681,
+          "actual": "FLAT",
+          "return": -0.0011660748806930665,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7674851355003117,
+          "actual": "FLAT",
+          "return": 0.0011874315663083642,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8165957050327255,
+          "actual": "DOWN",
+          "return": -0.005801195087693588,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.7273326009628167,
+          "actual": "FLAT",
+          "return": 0.0036048360708192412,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8878091659302824,
+          "actual": "UP",
+          "return": 0.02245104336698593,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9311808771086325,
+          "actual": "UP",
+          "return": 0.012443090523611377,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9736698720153829,
+          "actual": "FLAT",
+          "return": 0.0013550095657463579,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.796948526969977,
+          "actual": "UP",
+          "return": 0.008507549960310492,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8015345723139682,
+          "actual": "FLAT",
+          "return": 0.0045613047193254295,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9399975570143885,
+          "actual": "UP",
+          "return": 0.02540067634937025,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 30.58823529411765,
+      "date": "2025-07-22",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.66,
+        "sell_threshold": 0.66,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 167,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.9108925818835953,
+          "actual": "FLAT",
+          "return": -0.0018212004700019593,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8614001262475907,
+          "actual": "UP",
+          "return": 0.009903848028232572,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9061167758904145,
+          "actual": "UP",
+          "return": 0.010198162731449906,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.6722624095140511,
+          "actual": "UP",
+          "return": 0.017258761037624422,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.728047999675854,
+          "actual": "UP",
+          "return": 0.017332274087179796,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9497332724743897,
+          "actual": "FLAT",
+          "return": 0.0017096893552215795,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9728056727377858,
+          "actual": "DOWN",
+          "return": -0.08197020076301287,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8994451774544311,
+          "actual": "FLAT",
+          "return": 0.0003310117794836197,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8919573584130106,
+          "actual": "FLAT",
+          "return": 0.0021283728092407667,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9820662782441585,
+          "actual": "UP",
+          "return": 0.021872053918686088,
+          "correct": 0
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 31.11111111111111,
+      "date": "2025-07-23",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.66,
+        "sell_threshold": 0.66,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 168,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.5796560212790518,
+          "actual": "FLAT",
+          "return": 0.0005614633154648414,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.919740779894031,
+          "actual": "UP",
+          "return": 0.005539503483432863,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8794097045766578,
+          "actual": "UP",
+          "return": 0.005255746356593633,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.7949978116685579,
+          "actual": "FLAT",
+          "return": -0.0034017710918776496,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.6829718033432232,
+          "actual": "FLAT",
+          "return": -0.001381396104178416,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.8670746421429398,
+          "actual": "FLAT",
+          "return": -0.002965894308859728,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9081311702316008,
+          "actual": "UP",
+          "return": 0.03524405566934258,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9205577913354328,
+          "actual": "FLAT",
+          "return": 0.004224357897696023,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.955937941642594,
+          "actual": "FLAT",
+          "return": 0.0024069895272811432,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9525042937752339,
+          "actual": "UP",
+          "return": 0.026832014770116718,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 31.05263157894737,
+      "date": "2025-07-24",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.66,
+        "sell_threshold": 0.66,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 169,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.6816341860714312,
+          "actual": "FLAT",
+          "return": 0.0007948587409903677,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8003347390645577,
+          "actual": "FLAT",
+          "return": -0.0023555180986261724,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8287106557193448,
+          "actual": "FLAT",
+          "return": -0.0031058751130826788,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.6790760744663062,
+          "actual": "UP",
+          "return": 0.0058330056623134546,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.6651863977585939,
+          "actual": "UP",
+          "return": 0.018731989106281478,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.6150041328932374,
+          "actual": "UP",
+          "return": 0.006945691253838376,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.5236342943841518,
+          "actual": "UP",
+          "return": 0.0301524990600246,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9462071887039194,
+          "actual": "FLAT",
+          "return": -0.000251119494356392,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9321468520709647,
+          "actual": "FLAT",
+          "return": 0.0031251547553632613,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.8601259578438365,
+          "actual": "UP",
+          "return": 0.04319097968812931,
+          "correct": 0
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-07-25",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.66,
+        "sell_threshold": 0.66,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 170,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.4932039221610073,
+          "actual": "DOWN",
+          "return": -0.012987668901023673,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.5760433050276462,
+          "actual": "FLAT",
+          "return": 0.0001366022502800615,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8712022336368184,
+          "actual": "UP",
+          "return": 0.016460653729744177,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.716941010223165,
+          "actual": "DOWN",
+          "return": -0.00764637153929979,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "BUY",
+          "confidence": 0.7054349797754502,
+          "actual": "DOWN",
+          "return": -0.00701563995343109,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5965752929895641,
+          "actual": "DOWN",
+          "return": -0.02456705351276456,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.8392241143062706,
+          "actual": "DOWN",
+          "return": -0.013483166498468029,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8581747572415463,
+          "actual": "FLAT",
+          "return": -0.002637609180098384,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9270954571128665,
+          "actual": "FLAT",
+          "return": -0.0015488898403861545,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9470444958387098,
+          "actual": "UP",
+          "return": 0.02176666301730378,
+          "correct": 0
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 29.04761904761905,
+      "date": "2025-07-28",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.68,
+        "sell_threshold": 0.68,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 171,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.6794963217858929,
+          "actual": "DOWN",
+          "return": -0.010507862911703742,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.824629925782393,
+          "actual": "FLAT",
+          "return": 0.0013071037867412702,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.6933724210092669,
+          "actual": "FLAT",
+          "return": 0.003984721165483153,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.8027310765426284,
+          "actual": "FLAT",
+          "return": -0.0035495956232552642,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "BUY",
+          "confidence": 0.8457299148529089,
+          "actual": "UP",
+          "return": 0.021423415612506602,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5823153158433846,
+          "actual": "DOWN",
+          "return": -0.006842820177952065,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.6212396764469643,
+          "actual": "DOWN",
+          "return": -0.006724793213012497,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9250892349059029,
+          "actual": "FLAT",
+          "return": -0.0012593305691199156,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9560788792467834,
+          "actual": "FLAT",
+          "return": 0.0013398359578879152,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.5178919563760107,
+          "actual": "UP",
+          "return": 0.011665870361522536,
+          "correct": 0
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 28.18181818181818,
+      "date": "2025-07-29",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.68,
+        "sell_threshold": 0.68,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 172,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.951293024267045,
+          "actual": "DOWN",
+          "return": -0.007079609380583003,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.7361742903488289,
+          "actual": "UP",
+          "return": 0.039474714300716994,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8184251520651875,
+          "actual": "DOWN",
+          "return": -0.023558779917846058,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.7905495391065547,
+          "actual": "UP",
+          "return": 0.017029402351838148,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "BUY",
+          "confidence": 0.7037140505746149,
+          "actual": "DOWN",
+          "return": -0.007809514778586986,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.7709605881217172,
+          "actual": "UP",
+          "return": 0.11252716637391086,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9297271870332089,
+          "actual": "DOWN",
+          "return": -0.03375758288237867,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9397837201126827,
+          "actual": "FLAT",
+          "return": -0.0037512107798256516,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9163007402239592,
+          "actual": "DOWN",
+          "return": -0.005299137318216321,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.5099922892660687,
+          "actual": "DOWN",
+          "return": -0.017826288486239846,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 27.82608695652174,
+      "date": "2025-07-30",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.68,
+        "sell_threshold": 0.68,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 173,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.9399538808615713,
+          "actual": "DOWN",
+          "return": -0.025003594915492967,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.8785192365773918,
+          "actual": "DOWN",
+          "return": -0.017600826431858865,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.6031452407771755,
+          "actual": "DOWN",
+          "return": -0.014434561707329496,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.6449271115650517,
+          "actual": "DOWN",
+          "return": -0.08269617085933034,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "BUY",
+          "confidence": 0.8004965992050029,
+          "actual": "DOWN",
+          "return": -0.023331641248358924,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5580664503108776,
+          "actual": "DOWN",
+          "return": -0.030293219233175298,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "BUY",
+          "confidence": 0.7230774599676322,
+          "actual": "DOWN",
+          "return": -0.018295599091253868,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9638705521968887,
+          "actual": "DOWN",
+          "return": -0.016390431365516496,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9235911816267836,
+          "actual": "DOWN",
+          "return": -0.019698791043654264,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.829051198874114,
+          "actual": "DOWN",
+          "return": -0.026147131042977324,
+          "correct": 1
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 27.083333333333332,
+      "date": "2025-07-31",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.68,
+        "sell_threshold": 0.68,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 174,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.941187840432052,
+          "actual": "FLAT",
+          "return": 0.004792936108565941,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.48793407289160057,
+          "actual": "UP",
+          "return": 0.021999299045952225,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.7540346231181866,
+          "actual": "UP",
+          "return": 0.031248294135184276,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.7757515914571804,
+          "actual": "DOWN",
+          "return": -0.014435418409851571,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.6125563458580086,
+          "actual": "UP",
+          "return": 0.03615013766361169,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8512663827953078,
+          "actual": "UP",
+          "return": 0.035146201802037744,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.975419683349076,
+          "actual": "UP",
+          "return": 0.021907956170373253,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9061299511295686,
+          "actual": "UP",
+          "return": 0.015199795788522201,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9235528694145547,
+          "actual": "UP",
+          "return": 0.01845158491667606,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9302318273420382,
+          "actual": "UP",
+          "return": 0.02958649925070191,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 26.8,
+      "date": "2025-08-01",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.68,
+        "sell_threshold": 0.68,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 175,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.8354589967049723,
+          "actual": "FLAT",
+          "return": -0.0021146353111311917,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.6683805914537998,
+          "actual": "DOWN",
+          "return": -0.014730099123457503,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.671541340686667,
+          "actual": "FLAT",
+          "return": -0.0018969957760404876,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.8149537857156735,
+          "actual": "UP",
+          "return": 0.009922070229506901,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.5837529927980678,
+          "actual": "DOWN",
+          "return": -0.009666733498278839,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.7336630782072568,
+          "actual": "DOWN",
+          "return": -0.016628686523750564,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.8687894128814091,
+          "actual": "FLAT",
+          "return": -0.00174613117722891,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8677613759374603,
+          "actual": "DOWN",
+          "return": -0.005069964619629502,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.6702273290428539,
+          "actual": "DOWN",
+          "return": -0.006789462007957093,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.7778214029966586,
+          "actual": "DOWN",
+          "return": -0.013972175799066656,
+          "correct": 1
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 27.692307692307693,
+      "date": "2025-08-04",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 176,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.8878306989373888,
+          "actual": "UP",
+          "return": 0.05090679602505534,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "SELL",
+          "confidence": 0.8215161560318613,
+          "actual": "DOWN",
+          "return": -0.00532441972448156,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.6313747994992537,
+          "actual": "UP",
+          "return": 0.0072943200925933115,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.49529436952970274,
+          "actual": "UP",
+          "return": 0.04004677220394737,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8216377921288391,
+          "actual": "UP",
+          "return": 0.00650739424478513,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8456400413694478,
+          "actual": "UP",
+          "return": 0.011172797768208426,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9477680545486413,
+          "actual": "UP",
+          "return": 0.03624644466558727,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9261916929624749,
+          "actual": "UP",
+          "return": 0.007659684291185349,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.942294999084866,
+          "actual": "UP",
+          "return": 0.01258316896312345,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9522443513912442,
+          "actual": "DOWN",
+          "return": -0.06419598759758324,
+          "correct": 1
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 28.14814814814815,
+      "date": "2025-08-05",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 177,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9043990058174391,
+          "actual": "UP",
+          "return": 0.031793629657992616,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.6789602879795171,
+          "actual": "DOWN",
+          "return": -0.007810431667561407,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.4866575774362971,
+          "actual": "FLAT",
+          "return": 0.002192925408914854,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5120832782844802,
+          "actual": "FLAT",
+          "return": 0.0036885760119835477,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.7852021802947217,
+          "actual": "UP",
+          "return": 0.007524277913753637,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.7442858923580408,
+          "actual": "DOWN",
+          "return": -0.013160779328520106,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9266269619343164,
+          "actual": "UP",
+          "return": 0.007377028928595584,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.7986654911202165,
+          "actual": "FLAT",
+          "return": -0.0008376210633260869,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9185994434762554,
+          "actual": "FLAT",
+          "return": 0.003384348993473649,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.8669931957254717,
+          "actual": "UP",
+          "return": 0.056890626882559706,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 28.214285714285715,
+      "date": "2025-08-06",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 178,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.8410089727888594,
+          "actual": "UP",
+          "return": 0.04235791290787298,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.4970121441131135,
+          "actual": "FLAT",
+          "return": 0.0023039865128825446,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.5532604261185174,
+          "actual": "UP",
+          "return": 0.024933814520254165,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9114404397956657,
+          "actual": "FLAT",
+          "return": -0.0019719555047620716,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.618683161668674,
+          "actual": "UP",
+          "return": 0.010676520678441114,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8176145221025701,
+          "actual": "UP",
+          "return": 0.009805342631409999,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9617834917955876,
+          "actual": "UP",
+          "return": 0.022900068682782042,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.785419441576263,
+          "actual": "UP",
+          "return": 0.007797567971946954,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8554689325246037,
+          "actual": "UP",
+          "return": 0.009328194585679614,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.8120913354824224,
+          "actual": "FLAT",
+          "return": 0.002088170667614529,
+          "correct": 1
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 28.965517241379313,
+      "date": "2025-08-07",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 179,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.7883736557036161,
+          "actual": "DOWN",
+          "return": -0.008337431911761657,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.5375704834763929,
+          "actual": "FLAT",
+          "return": -0.0005171818656889959,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.5184860654632786,
+          "actual": "FLAT",
+          "return": -0.0020851554748789946,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.879469843170668,
+          "actual": "DOWN",
+          "return": -0.006241858073597944,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.56896689858916,
+          "actual": "FLAT",
+          "return": -0.003503037563961903,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8480625468920233,
+          "actual": "FLAT",
+          "return": -0.004458581532918748,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.8521480922354933,
+          "actual": "UP",
+          "return": 0.028454436694932805,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "HOLD",
+          "confidence": 0.6358761103552997,
+          "actual": "FLAT",
+          "return": -0.0019774858429226715,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.6967596647222902,
+          "actual": "FLAT",
+          "return": -0.0029588854145273925,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.47900373136906726,
+          "actual": "FLAT",
+          "return": -0.0027783962884999373,
+          "correct": 1
+        }
+      ],
+      "correct": 6,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-08-08",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 180,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.7123922401328924,
+          "actual": "UP",
+          "return": 0.010872426196794162,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.6178861037891392,
+          "actual": "UP",
+          "return": 0.014316610997022318,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.6218098682521862,
+          "actual": "UP",
+          "return": 0.01164177550810294,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9326490757479813,
+          "actual": "FLAT",
+          "return": 0.0007681796954406422,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "BUY",
+          "confidence": 0.7089589496320248,
+          "actual": "UP",
+          "return": 0.006042003347467326,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8780347688447536,
+          "actual": "UP",
+          "return": 0.03150663050056577,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "BUY",
+          "confidence": 0.821013919803216,
+          "actual": "UP",
+          "return": 0.005338753399730947,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.815188479548247,
+          "actual": "UP",
+          "return": 0.010646088630271083,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9110580641022067,
+          "actual": "UP",
+          "return": 0.012568714154875897,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.970691117160652,
+          "actual": "UP",
+          "return": 0.015498015949987166,
+          "correct": 0
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 30.64516129032258,
+      "date": "2025-08-11",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 181,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.8548309201065507,
+          "actual": "UP",
+          "return": 0.016024457949132754,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "SELL",
+          "confidence": 0.8029450796234803,
+          "actual": "DOWN",
+          "return": -0.016363092424020606,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.875595729795253,
+          "actual": "DOWN",
+          "return": -0.006786597929936664,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9202545124872492,
+          "actual": "UP",
+          "return": 0.013952211680404192,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.6659222173544994,
+          "actual": "DOWN",
+          "return": -0.008571763966649052,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8978497355528559,
+          "actual": "DOWN",
+          "return": -0.012556911175657904,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.7742685874056461,
+          "actual": "FLAT",
+          "return": -0.004283509772223935,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8389304436215621,
+          "actual": "FLAT",
+          "return": 0.0034230982805847333,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9071733733950818,
+          "actual": "FLAT",
+          "return": 0.0005000772185804128,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9682761711488026,
+          "actual": "UP",
+          "return": 0.054129759279188575,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 30.312499999999996,
+      "date": "2025-08-12",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 182,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.8866731924584674,
+          "actual": "FLAT",
+          "return": -0.002357183544672523,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "SELL",
+          "confidence": 0.8477669314066753,
+          "actual": "FLAT",
+          "return": 0.0036497222057829152,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.7903634883174062,
+          "actual": "FLAT",
+          "return": 0.0048523785555524635,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9144906074371321,
+          "actual": "UP",
+          "return": 0.028589233339611886,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.6336234427369929,
+          "actual": "FLAT",
+          "return": 0.002367981004387307,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.9371125082566514,
+          "actual": "FLAT",
+          "return": 0.002627892696104065,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.8380177338313224,
+          "actual": "DOWN",
+          "return": -0.011196942235471465,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9508968680459833,
+          "actual": "FLAT",
+          "return": 9.300854748551392e-05,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9614385290606007,
+          "actual": "FLAT",
+          "return": -0.0007753798166022465,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9816364206146206,
+          "actual": "DOWN",
+          "return": -0.018815753471184245,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 30.0,
+      "date": "2025-08-13",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 183,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.9605585519831386,
+          "actual": "DOWN",
+          "return": -0.0051121681057085585,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.9188602178893968,
+          "actual": "FLAT",
+          "return": -0.004421182521546436,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8276228660348943,
+          "actual": "FLAT",
+          "return": 0.004730436677749104,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9802996572409077,
+          "actual": "FLAT",
+          "return": 0.00021648217457236182,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.796527340047358,
+          "actual": "DOWN",
+          "return": -0.008625449460479754,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.6239990847597554,
+          "actual": "FLAT",
+          "return": 0.0039635242693238015,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9581284629640457,
+          "actual": "DOWN",
+          "return": -0.014959143019665277,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9438351066566772,
+          "actual": "FLAT",
+          "return": -0.002341224975672935,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.7453350350019632,
+          "actual": "FLAT",
+          "return": -0.004397404107960059,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.7430265157032904,
+          "actual": "DOWN",
+          "return": -0.01901079027036517,
+          "correct": 0
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 30.58823529411765,
+      "date": "2025-08-14",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 184,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.9700752998711735,
+          "actual": "FLAT",
+          "return": -0.0030225322092916583,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.8035243042796107,
+          "actual": "DOWN",
+          "return": -0.005901973522072142,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8256821151576104,
+          "actual": "FLAT",
+          "return": -0.001961672999222746,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.9196803701251053,
+          "actual": "FLAT",
+          "return": 0.001991112480187615,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9138278390312087,
+          "actual": "UP",
+          "return": 0.008645020880647128,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.4863415896094295,
+          "actual": "DOWN",
+          "return": -0.02274493796188101,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9705079760760766,
+          "actual": "UP",
+          "return": 0.013915797850586099,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "SELL",
+          "confidence": 0.746598722215853,
+          "actual": "FLAT",
+          "return": -0.00021763582620523686,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "SELL",
+          "confidence": 0.9007788331215818,
+          "actual": "FLAT",
+          "return": -0.00039848919147019335,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.5949882236408945,
+          "actual": "DOWN",
+          "return": -0.007717847780873776,
+          "correct": 0
+        }
+      ],
+      "correct": 0,
+      "total": 10,
+      "cumulative_accuracy": 29.714285714285715,
+      "date": "2025-08-15",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7000000000000001,
+        "sell_threshold": 0.7000000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 185,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.9689426340273491,
+          "actual": "FLAT",
+          "return": -0.0014292562793573546,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.9268833166363344,
+          "actual": "DOWN",
+          "return": -0.014175133788019132,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.7589588640365712,
+          "actual": "DOWN",
+          "return": -0.009483995050079706,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.9517936521960593,
+          "actual": "DOWN",
+          "return": -0.015033093886340118,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.5496725939277743,
+          "actual": "DOWN",
+          "return": -0.034998013839239527,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.7961033467892213,
+          "actual": "DOWN",
+          "return": -0.02070707754070921,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9797970661359011,
+          "actual": "DOWN",
+          "return": -0.01745436818115473,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9622056863795035,
+          "actual": "DOWN",
+          "return": -0.005425144902516838,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8483374479738268,
+          "actual": "DOWN",
+          "return": -0.013567480738099245,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9524535839651682,
+          "actual": "DOWN",
+          "return": -0.05444530697809358,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 29.72222222222222,
+      "date": "2025-08-18",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7200000000000001,
+        "sell_threshold": 0.7200000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 186,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.9376701094662362,
+          "actual": "DOWN",
+          "return": -0.019734624185850116,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.8616655604761756,
+          "actual": "DOWN",
+          "return": -0.00794475456358549,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.874281283808757,
+          "actual": "DOWN",
+          "return": -0.011162432582165201,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.9218901714984818,
+          "actual": "DOWN",
+          "return": -0.018420231785568803,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.6108092078345827,
+          "actual": "FLAT",
+          "return": -0.0013664527848339031,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9463105367320089,
+          "actual": "DOWN",
+          "return": -0.0050035175712763325,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9734681403228289,
+          "actual": "DOWN",
+          "return": -0.016428300696053964,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9009349450755875,
+          "actual": "FLAT",
+          "return": -0.0026570585531485846,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.6856096326658837,
+          "actual": "DOWN",
+          "return": -0.005937345834455025,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9757684169080814,
+          "actual": "DOWN",
+          "return": -0.008105710470002761,
+          "correct": 0
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 30.270270270270274,
+      "date": "2025-08-19",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7200000000000001,
+        "sell_threshold": 0.7200000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 187,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.8786288175980361,
+          "actual": "FLAT",
+          "return": -0.004911252928376964,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.49072852157590663,
+          "actual": "FLAT",
+          "return": -0.0012874448271453928,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8247032267915362,
+          "actual": "FLAT",
+          "return": 0.002157312069615093,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.7552114989457699,
+          "actual": "DOWN",
+          "return": -0.008310623433453243,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9081929138403777,
+          "actual": "FLAT",
+          "return": -0.0023945644326968532,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9554019531691414,
+          "actual": "DOWN",
+          "return": -0.011528394680740617,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.7267551504196786,
+          "actual": "DOWN",
+          "return": -0.011701168929731838,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9490994600650042,
+          "actual": "FLAT",
+          "return": -0.00401184014140185,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.7437022044103629,
+          "actual": "FLAT",
+          "return": -0.004629752606908347,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.6270628400604069,
+          "actual": "DOWN",
+          "return": -0.009019311512710378,
+          "correct": 0
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 30.526315789473685,
+      "date": "2025-08-20",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7200000000000001,
+        "sell_threshold": 0.7200000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 188,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.6087195753058209,
+          "actual": "UP",
+          "return": 0.012716733406805892,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8727659016331328,
+          "actual": "UP",
+          "return": 0.005929759328559685,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.3984778134895681,
+          "actual": "UP",
+          "return": 0.03173967847067363,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.7387307560186869,
+          "actual": "UP",
+          "return": 0.031043025385826685,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.8656408036454718,
+          "actual": "UP",
+          "return": 0.017202033480534572,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9098057893925857,
+          "actual": "UP",
+          "return": 0.021228557786528757,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.5872597755612277,
+          "actual": "UP",
+          "return": 0.06216620950517114,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9349349397099367,
+          "actual": "UP",
+          "return": 0.0153568035321823,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.7974068334922788,
+          "actual": "UP",
+          "return": 0.015427375767702086,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.5116020180777585,
+          "actual": "UP",
+          "return": 0.024738791930094598,
+          "correct": 0
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 30.76923076923077,
+      "date": "2025-08-21",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7200000000000001,
+        "sell_threshold": 0.7200000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 189,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9155505010477407,
+          "actual": "FLAT",
+          "return": -0.00263431728880783,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.841698789601505,
+          "actual": "DOWN",
+          "return": -0.005855322614779881,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.8673333583518881,
+          "actual": "UP",
+          "return": 0.01164540883910141,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5659749553225999,
+          "actual": "FLAT",
+          "return": -0.0039328522587262285,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9648558161607191,
+          "actual": "UP",
+          "return": 0.010225311093573912,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9382563464096756,
+          "actual": "FLAT",
+          "return": -0.0019740837980608407,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9033993714020028,
+          "actual": "UP",
+          "return": 0.019381771561470286,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "HOLD",
+          "confidence": 0.7110216291425129,
+          "actual": "FLAT",
+          "return": -0.004401088516102011,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.7226697199043907,
+          "actual": "FLAT",
+          "return": -0.002884735059381078,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9272708756329451,
+          "actual": "DOWN",
+          "return": -0.026227909159266708,
+          "correct": 0
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 31.25,
+      "date": "2025-08-22",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7200000000000001,
+        "sell_threshold": 0.7200000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 190,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.8299003171850493,
+          "actual": "UP",
+          "return": 0.009464698502091747,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8517996887913779,
+          "actual": "FLAT",
+          "return": -0.004402486817823423,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.5612403118221215,
+          "actual": "DOWN",
+          "return": -0.006475164325745267,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.7125660297730896,
+          "actual": "FLAT",
+          "return": 0.0033781006590050955,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9368530863862619,
+          "actual": "UP",
+          "return": 0.010900367670896019,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.938807928819587,
+          "actual": "FLAT",
+          "return": 0.0010620458900469946,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.8195778407280889,
+          "actual": "UP",
+          "return": 0.014627833914995779,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9264937275575607,
+          "actual": "FLAT",
+          "return": 0.004187051216404491,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.7930048043326385,
+          "actual": "FLAT",
+          "return": 0.004015298764006697,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.8582136969888783,
+          "actual": "UP",
+          "return": 0.019955891862486703,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 30.975609756097562,
+      "date": "2025-08-25",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7400000000000001,
+        "sell_threshold": 0.7400000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 191,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9025629640476402,
+          "actual": "UP",
+          "return": 0.005145899965004843,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.5102404227730785,
+          "actual": "UP",
+          "return": 0.00936174929347328,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "BUY",
+          "confidence": 0.816254658263896,
+          "actual": "FLAT",
+          "return": 0.0016413777604889067,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.7245601643567974,
+          "actual": "FLAT",
+          "return": 0.0017926124405795577,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9738682768099508,
+          "actual": "FLAT",
+          "return": -0.0009352065559826481,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9571367376759976,
+          "actual": "DOWN",
+          "return": -0.008911267262613976,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.984900919019486,
+          "actual": "DOWN",
+          "return": -0.0058862207330171515,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.7981751585515127,
+          "actual": "FLAT",
+          "return": 0.002278514804511911,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.9443986388271979,
+          "actual": "FLAT",
+          "return": 0.001536798594866019,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.7412566727591652,
+          "actual": "FLAT",
+          "return": 0.003060915739832419,
+          "correct": 1
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 31.19047619047619,
+      "date": "2025-08-26",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7400000000000001,
+        "sell_threshold": 0.7400000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 192,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9880380003230371,
+          "actual": "UP",
+          "return": 0.008980857430412404,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.523995865806469,
+          "actual": "UP",
+          "return": 0.005722875500879821,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.6104810230392987,
+          "actual": "UP",
+          "return": 0.02005018969827441,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.6706748867652843,
+          "actual": "UP",
+          "return": 0.010824070527147485,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.8138058285592895,
+          "actual": "DOWN",
+          "return": -0.007874516613228485,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9654217320789138,
+          "actual": "FLAT",
+          "return": 0.004990759441897258,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.7963752567475039,
+          "actual": "DOWN",
+          "return": -0.010354676927882058,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.7637615495375223,
+          "actual": "FLAT",
+          "return": 0.0035413784731703783,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.8517684537757451,
+          "actual": "UP",
+          "return": 0.006259975834240792,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9869783797788801,
+          "actual": "UP",
+          "return": 0.008675862537423428,
+          "correct": 0
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 30.697674418604652,
+      "date": "2025-08-27",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7400000000000001,
+        "sell_threshold": 0.7400000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 193,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9721753238788972,
+          "actual": "FLAT",
+          "return": -0.001806020796133425,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.49258800091915667,
+          "actual": "DOWN",
+          "return": -0.00578839867761622,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.617265773017361,
+          "actual": "UP",
+          "return": 0.006000731004438344,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.8199680103862671,
+          "actual": "DOWN",
+          "return": -0.011226278216735148,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9151152997822015,
+          "actual": "DOWN",
+          "return": -0.033246421283048846,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.945126555863019,
+          "actual": "DOWN",
+          "return": -0.016522189260820924,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.4693837479346763,
+          "actual": "DOWN",
+          "return": -0.03500206799409336,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "HOLD",
+          "confidence": 0.7047930862095759,
+          "actual": "DOWN",
+          "return": -0.005963682184690229,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.9028214940554444,
+          "actual": "DOWN",
+          "return": -0.011575476356191081,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9824366274139102,
+          "actual": "DOWN",
+          "return": -0.0352947970317682,
+          "correct": 0
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 30.227272727272727,
+      "date": "2025-08-28",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7400000000000001,
+        "sell_threshold": 0.7400000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 194,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.8795071846525435,
+          "actual": "DOWN",
+          "return": -0.01042470938317273,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.8121102303219099,
+          "actual": "FLAT",
+          "return": -0.0030985624661443584,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.7271398593107742,
+          "actual": "DOWN",
+          "return": -0.0073269821439958865,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5793506434906095,
+          "actual": "DOWN",
+          "return": -0.0159825487428357,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9198882183968057,
+          "actual": "DOWN",
+          "return": -0.019519964928560514,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.9764419647686016,
+          "actual": "FLAT",
+          "return": -0.004859980794890455,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.6059857557650814,
+          "actual": "DOWN",
+          "return": -0.013508281162079265,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8868996434704484,
+          "actual": "DOWN",
+          "return": -0.007410278500998171,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.579943242918195,
+          "actual": "DOWN",
+          "return": -0.008380208156460263,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9670491830917347,
+          "actual": "FLAT",
+          "return": -0.001906152304534008,
+          "correct": 1
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 30.22222222222222,
+      "date": "2025-08-29",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.7400000000000001,
+        "sell_threshold": 0.7400000000000001,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 195,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.837731818439611,
+          "actual": "UP",
+          "return": 0.0380898715787864,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.6883866350815568,
+          "actual": "FLAT",
+          "return": 0.00045536395189327717,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.6952755885880648,
+          "actual": "UP",
+          "return": 0.09136500745700973,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9003819578839924,
+          "actual": "FLAT",
+          "return": 0.002884570719078064,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9523424820104963,
+          "actual": "FLAT",
+          "return": -0.0009368627758283507,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.8324456238275293,
+          "actual": "FLAT",
+          "return": 0.0026391007316600196,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.8233569357964745,
+          "actual": "UP",
+          "return": 0.014361219324439971,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8635484550580015,
+          "actual": "UP",
+          "return": 0.00541956018158944,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.7306242665466216,
+          "actual": "UP",
+          "return": 0.00786754054254646,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9599961912641981,
+          "actual": "FLAT",
+          "return": -0.0011705423412576505,
+          "correct": 1
+        }
+      ],
+      "correct": 6,
+      "total": 10,
+      "cumulative_accuracy": 30.869565217391305,
+      "date": "2025-09-02",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 196,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9705596959177474,
+          "actual": "UP",
+          "return": 0.005493288226302877,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.6851614410169096,
+          "actual": "UP",
+          "return": 0.0051845390236208355,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8933572273250496,
+          "actual": "UP",
+          "return": 0.00711003212203965,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9356482625221352,
+          "actual": "UP",
+          "return": 0.042877945692648335,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.700632123512334,
+          "actual": "UP",
+          "return": 0.006095452674606359,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.6121891550428773,
+          "actual": "UP",
+          "return": 0.015738482336541515,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.8078439833668858,
+          "actual": "UP",
+          "return": 0.013289839534482014,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8457217344552164,
+          "actual": "UP",
+          "return": 0.008357390788786632,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9159033034281934,
+          "actual": "UP",
+          "return": 0.009051461152345987,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.60458072571703,
+          "actual": "FLAT",
+          "return": -0.0020971540519316443,
+          "correct": 1
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 30.851063829787233,
+      "date": "2025-09-03",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 197,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.779881854908089,
+          "actual": "FLAT",
+          "return": -0.0003753104576131363,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "SELL",
+          "confidence": 0.8295208258930975,
+          "actual": "DOWN",
+          "return": -0.02553300317935417,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9643861590806041,
+          "actual": "UP",
+          "return": 0.01162289587347717,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5712827869522141,
+          "actual": "DOWN",
+          "return": -0.014214150326010306,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.4269792643158116,
+          "actual": "DOWN",
+          "return": -0.027030183986951693,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.7052476247306099,
+          "actual": "UP",
+          "return": 0.005075785987299807,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.4794625124825518,
+          "actual": "UP",
+          "return": 0.036363092201525095,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9355676952951786,
+          "actual": "FLAT",
+          "return": -0.002896251458403146,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.8312525635247812,
+          "actual": "FLAT",
+          "return": 0.0014429039517594388,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "BUY",
+          "confidence": 0.7601941962814652,
+          "actual": "DOWN",
+          "return": -0.06582603583924616,
+          "correct": 0
+        }
+      ],
+      "correct": 1,
+      "total": 10,
+      "cumulative_accuracy": 30.416666666666664,
+      "date": "2025-09-04",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 198,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.9070411567498675,
+          "actual": "DOWN",
+          "return": -0.007551402650500592,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "SELL",
+          "confidence": 0.9175289363329117,
+          "actual": "UP",
+          "return": 0.006464664083856444,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9722337456831465,
+          "actual": "FLAT",
+          "return": -0.003194408754602365,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.9229176178180295,
+          "actual": "UP",
+          "return": 0.015107797009308893,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.7110934138699483,
+          "actual": "UP",
+          "return": 0.007723564088241007,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8480986135863777,
+          "actual": "FLAT",
+          "return": -0.00019943463487227822,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.970709262408285,
+          "actual": "DOWN",
+          "return": -0.01265534855703888,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.8859749853736234,
+          "actual": "FLAT",
+          "return": 0.0024566288553796523,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.5402409790912805,
+          "actual": "FLAT",
+          "return": 0.004877992896753005,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.7172350342245298,
+          "actual": "FLAT",
+          "return": 0.0017864514592516934,
+          "correct": 1
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 30.612244897959183,
+      "date": "2025-09-05",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 199,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.9059221603191344,
+          "actual": "DOWN",
+          "return": -0.01483941231001285,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.4016228130253324,
+          "actual": "FLAT",
+          "return": 0.00042149137124067657,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9622782502668573,
+          "actual": "UP",
+          "return": 0.02388485625123671,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.8649300432976395,
+          "actual": "UP",
+          "return": 0.010176429751274746,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.8580268059856417,
+          "actual": "UP",
+          "return": 0.01455646016017419,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.5679305364230983,
+          "actual": "UP",
+          "return": 0.017812083083652036,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.7492868218805684,
+          "actual": "FLAT",
+          "return": 0.0016455177086091024,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9185335307622058,
+          "actual": "FLAT",
+          "return": 0.0023118486488118146,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9356301325585623,
+          "actual": "FLAT",
+          "return": 0.0028331431833555293,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.9060111867198501,
+          "actual": "UP",
+          "return": 0.029126237074472684,
+          "correct": 0
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 30.8,
+      "date": "2025-09-08",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 200,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.8597354857648964,
+          "actual": "DOWN",
+          "return": -0.032259483632404835,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.7290432664401114,
+          "actual": "FLAT",
+          "return": 0.003932486980097218,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9555962738394059,
+          "actual": "FLAT",
+          "return": -0.0019196540687471378,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "BUY",
+          "confidence": 0.8116244552714036,
+          "actual": "DOWN",
+          "return": -0.03320182790348509,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9389132936130835,
+          "actual": "UP",
+          "return": 0.038475121658980246,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.45652239004774575,
+          "actual": "DOWN",
+          "return": -0.017918255958653456,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9218129489410596,
+          "actual": "FLAT",
+          "return": 0.0023633378140295014,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9499723327837797,
+          "actual": "FLAT",
+          "return": 0.002890862664212707,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9359110600135037,
+          "actual": "FLAT",
+          "return": 0.00032726098763766095,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.7852278558920522,
+          "actual": "UP",
+          "return": 0.023873609209719718,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 30.784313725490197,
+      "date": "2025-09-09",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 201,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.6235796638141505,
+          "actual": "UP",
+          "return": 0.014286344459361762,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "SELL",
+          "confidence": 0.8207253275540176,
+          "actual": "FLAT",
+          "return": 0.0012790936833315266,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9616184267653209,
+          "actual": "UP",
+          "return": 0.005017338953168079,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5962027076317058,
+          "actual": "FLAT",
+          "return": -0.0016498279850283278,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9794021136449822,
+          "actual": "FLAT",
+          "return": -0.0008459798617036766,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.504418628966861,
+          "actual": "FLAT",
+          "return": -0.0014361446800837873,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9810232456351655,
+          "actual": "UP",
+          "return": 0.060438737448539594,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9321671374974406,
+          "actual": "UP",
+          "return": 0.008310228771525483,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9713310495193301,
+          "actual": "UP",
+          "return": 0.005820582853809234,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.8734836361296631,
+          "actual": "DOWN",
+          "return": -0.024257209978984492,
+          "correct": 0
+        }
+      ],
+      "correct": 5,
+      "total": 10,
+      "cumulative_accuracy": 31.153846153846153,
+      "date": "2025-09-10",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 202,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "BUY",
+          "confidence": 0.7705032000206282,
+          "actual": "UP",
+          "return": 0.017562991653877265,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8228902123879371,
+          "actual": "UP",
+          "return": 0.017744136656514566,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9548425509694359,
+          "actual": "FLAT",
+          "return": 0.0017889418118125387,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.6417597930209825,
+          "actual": "DOWN",
+          "return": -0.007827802024989644,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.9489137203207054,
+          "actual": "FLAT",
+          "return": 0.0036688443979866355,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.6062641960804932,
+          "actual": "UP",
+          "return": 0.006245827384848836,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.9755602625531881,
+          "actual": "UP",
+          "return": 0.07356092584909467,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9420255111527258,
+          "actual": "FLAT",
+          "return": -0.00033457979430276223,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9545468502918516,
+          "actual": "FLAT",
+          "return": 0.004417122125826203,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.8111213254820671,
+          "actual": "UP",
+          "return": 0.018629210441218864,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 31.132075471698112,
+      "date": "2025-09-11",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 203,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.7142789529860649,
+          "actual": "UP",
+          "return": 0.01123590520057349,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.6839851448443308,
+          "actual": "UP",
+          "return": 0.010707919019930815,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9588699116104589,
+          "actual": "UP",
+          "return": 0.04489201587040777,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5605323475673849,
+          "actual": "UP",
+          "return": 0.014376501718361068,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.6032197729304046,
+          "actual": "FLAT",
+          "return": -0.00039369767931178763,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.63199142326882,
+          "actual": "UP",
+          "return": 0.012056757137544128,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "HOLD",
+          "confidence": 0.6496991307041224,
+          "actual": "UP",
+          "return": 0.03561147147692467,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9405419621594348,
+          "actual": "UP",
+          "return": 0.005323880160421166,
+          "correct": 1
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "BUY",
+          "confidence": 0.9444730798638306,
+          "actual": "UP",
+          "return": 0.00855697398118701,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.8816763125427401,
+          "actual": "UP",
+          "return": 0.01633345663278562,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 31.11111111111111,
+      "date": "2025-09-12",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 204,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.7320081486700909,
+          "actual": "UP",
+          "return": 0.006125886829152962,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.7260064482965107,
+          "actual": "DOWN",
+          "return": -0.012263220518934527,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9620821715739181,
+          "actual": "FLAT",
+          "return": -0.0017884700415348835,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.7468642856034216,
+          "actual": "UP",
+          "return": 0.011320962964584418,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.8521962445379917,
+          "actual": "DOWN",
+          "return": -0.0161462453850211,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.953906370987382,
+          "actual": "UP",
+          "return": 0.018700130363309652,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9801932389614267,
+          "actual": "UP",
+          "return": 0.028241113869250593,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9387162519749931,
+          "actual": "FLAT",
+          "return": -0.0013768692449287214,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.5799009420632021,
+          "actual": "FLAT",
+          "return": -0.0008451015505749334,
+          "correct": 1
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.6166350530447336,
+          "actual": "FLAT",
+          "return": -0.004343490520823096,
+          "correct": 1
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 31.09090909090909,
+      "date": "2025-09-15",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 205,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "SELL",
+          "confidence": 0.7899219556345451,
+          "actual": "FLAT",
+          "return": 0.0035272576825343665,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.8371146496789907,
+          "actual": "FLAT",
+          "return": 0.0019251535011401844,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.9458068570512892,
+          "actual": "DOWN",
+          "return": -0.006489906271085179,
+          "correct": 1
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.7929170569100843,
+          "actual": "DOWN",
+          "return": -0.010382430689534922,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.979773855789461,
+          "actual": "DOWN",
+          "return": -0.026246634655319602,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.782522526717948,
+          "actual": "FLAT",
+          "return": -0.004210505023040055,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.985315566077295,
+          "actual": "UP",
+          "return": 0.010056425889375841,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.7519553026359609,
+          "actual": "FLAT",
+          "return": -0.0012423560605266748,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "SELL",
+          "confidence": 0.8952259679578107,
+          "actual": "FLAT",
+          "return": -0.0019959322672994666,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.39549506509585836,
+          "actual": "DOWN",
+          "return": -0.008101726270496686,
+          "correct": 0
+        }
+      ],
+      "correct": 3,
+      "total": 10,
+      "cumulative_accuracy": 31.071428571428573,
+      "date": "2025-09-16",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 206,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.90809081453203,
+          "actual": "FLAT",
+          "return": -0.004644576907642931,
+          "correct": 1
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.9215030379698722,
+          "actual": "FLAT",
+          "return": -0.003078271631019367,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8229813533110129,
+          "actual": "UP",
+          "return": 0.010018835459584112,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "SELL",
+          "confidence": 0.8132398139615233,
+          "actual": "FLAT",
+          "return": -0.0016837898189710192,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9820236943412708,
+          "actual": "UP",
+          "return": 0.034940468856755634,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "SELL",
+          "confidence": 0.8221401859665832,
+          "actual": "UP",
+          "return": 0.0058397785844446,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9748294033873299,
+          "actual": "DOWN",
+          "return": -0.021157139806429144,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9196887048251718,
+          "actual": "FLAT",
+          "return": 0.004672452908252126,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.5283196597085037,
+          "actual": "UP",
+          "return": 0.0090169539904594,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "HOLD",
+          "confidence": 0.553042841106728,
+          "actual": "DOWN",
+          "return": -0.007790936570952505,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 30.87719298245614,
+      "date": "2025-09-17",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 207,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9649043292384463,
+          "actual": "UP",
+          "return": 0.03203291306373978,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "BUY",
+          "confidence": 0.9075816018045642,
+          "actual": "UP",
+          "return": 0.01864482149928156,
+          "correct": 1
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.48943396652363996,
+          "actual": "UP",
+          "return": 0.010673342278439996,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.8713208733514884,
+          "actual": "FLAT",
+          "return": 0.0010811746080494585,
+          "correct": 1
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "HOLD",
+          "confidence": 0.6659456512551647,
+          "actual": "FLAT",
+          "return": 0.0024398131092768743,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.7152721601932064,
+          "actual": "FLAT",
+          "return": -0.0023967134544251056,
+          "correct": 1
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9681239760929734,
+          "actual": "UP",
+          "return": 0.022118270566640074,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9457411565734454,
+          "actual": "FLAT",
+          "return": 0.004952835223685776,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.7370479380138459,
+          "actual": "UP",
+          "return": 0.006769359058197909,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "BUY",
+          "confidence": 0.7614382739831795,
+          "actual": "FLAT",
+          "return": -0.003356121994947555,
+          "correct": 0
+        }
+      ],
+      "correct": 4,
+      "total": 10,
+      "cumulative_accuracy": 31.03448275862069,
+      "date": "2025-09-18",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 208,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.9849534712511522,
+          "actual": "UP",
+          "return": 0.04309570046510077,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.6268862916115006,
+          "actual": "DOWN",
+          "return": -0.00671896000808509,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "HOLD",
+          "confidence": 0.7150469573043867,
+          "actual": "DOWN",
+          "return": -0.008597685422860508,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.5223784352154663,
+          "actual": "DOWN",
+          "return": -0.016632067201427424,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9394559734156289,
+          "actual": "UP",
+          "return": 0.03928229191902573,
+          "correct": 0
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.4801175805180796,
+          "actual": "DOWN",
+          "return": -0.016320532288124582,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9420216257838057,
+          "actual": "UP",
+          "return": 0.019104804353584172,
+          "correct": 0
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.940993899811696,
+          "actual": "FLAT",
+          "return": 0.004731075170536564,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.715244333219929,
+          "actual": "UP",
+          "return": 0.005920040406268967,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9732096855793204,
+          "actual": "UP",
+          "return": 0.01524870643491611,
+          "correct": 0
+        }
+      ],
+      "correct": 0,
+      "total": 10,
+      "cumulative_accuracy": 30.508474576271187,
+      "date": "2025-09-19",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "day": 209,
+      "predictions": [
+        {
+          "ticker": "AAPL",
+          "signal": "HOLD",
+          "confidence": 0.6954052745284263,
+          "actual": "DOWN",
+          "return": -0.006443258924723872,
+          "correct": 0
+        },
+        {
+          "ticker": "MSFT",
+          "signal": "HOLD",
+          "confidence": 0.650577785329939,
+          "actual": "DOWN",
+          "return": -0.0101467335742065,
+          "correct": 0
+        },
+        {
+          "ticker": "GOOGL",
+          "signal": "SELL",
+          "confidence": 0.8040138830461827,
+          "actual": "FLAT",
+          "return": -0.0034451159125369808,
+          "correct": 0
+        },
+        {
+          "ticker": "AMZN",
+          "signal": "HOLD",
+          "confidence": 0.9468187034693183,
+          "actual": "DOWN",
+          "return": -0.030400202172414997,
+          "correct": 0
+        },
+        {
+          "ticker": "NVDA",
+          "signal": "SELL",
+          "confidence": 0.9069600521352733,
+          "actual": "DOWN",
+          "return": -0.028212014146021817,
+          "correct": 1
+        },
+        {
+          "ticker": "META",
+          "signal": "HOLD",
+          "confidence": 0.6477225108267988,
+          "actual": "DOWN",
+          "return": -0.012755435559911588,
+          "correct": 0
+        },
+        {
+          "ticker": "TSLA",
+          "signal": "SELL",
+          "confidence": 0.9735243778260156,
+          "actual": "DOWN",
+          "return": -0.01925332331378974,
+          "correct": 1
+        },
+        {
+          "ticker": "SPY",
+          "signal": "BUY",
+          "confidence": 0.9471537758307375,
+          "actual": "DOWN",
+          "return": -0.005443591771072958,
+          "correct": 0
+        },
+        {
+          "ticker": "QQQ",
+          "signal": "HOLD",
+          "confidence": 0.7367640656072086,
+          "actual": "DOWN",
+          "return": -0.00664231138976602,
+          "correct": 0
+        },
+        {
+          "ticker": "AMD",
+          "signal": "SELL",
+          "confidence": 0.9055670405913513,
+          "actual": "UP",
+          "return": 0.006946621546969504,
+          "correct": 0
+        }
+      ],
+      "correct": 2,
+      "total": 10,
+      "cumulative_accuracy": 30.333333333333336,
+      "date": "2025-09-22",
+      "config": {
+        "xgb_weight": 0.55,
+        "lgb_weight": 0.45,
+        "buy_threshold": 0.75,
+        "sell_threshold": 0.75,
+        "position_size": 0.1,
+        "stop_loss": 0.02,
+        "take_profit": 0.04,
+        "learning_rate": 0.05
+      }
+    }
+  ]
+}
