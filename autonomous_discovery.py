@@ -36,6 +36,24 @@ import hashlib
 
 warnings.filterwarnings('ignore')
 
+# Custom JSON encoder for numpy types
+class NumpyEncoder(json.JSONEncoder):
+    """JSON encoder that handles numpy types."""
+    def default(self, obj):
+        if isinstance(obj, (np.integer, np.int64, np.int32)):
+            return int(obj)
+        elif isinstance(obj, (np.floating, np.float64, np.float32)):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, np.bool_):
+            return bool(obj)
+        return super().default(obj)
+
+def safe_json_dumps(obj, **kwargs):
+    """JSON dumps that handles numpy types."""
+    return json.dumps(obj, cls=NumpyEncoder, **kwargs)
+
 # Add paths
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent / 'core'))
@@ -165,7 +183,7 @@ class AutonomousPatternDiscovery:
         
     def _config_hash(self, config: Dict) -> str:
         """Generate unique hash for a configuration."""
-        config_str = json.dumps(config, sort_keys=True)
+        config_str = safe_json_dumps(config, sort_keys=True)
         return hashlib.md5(config_str.encode()).hexdigest()[:12]
         
     def _already_tried(self, config: Dict) -> bool:
@@ -485,7 +503,7 @@ class AutonomousPatternDiscovery:
         ''', (
             datetime.now().isoformat(),
             config_hash,
-            json.dumps(results['config']),
+            safe_json_dumps(results['config']),
             results.get('accuracy'),
             results.get('precision_buy'),
             results.get('precision_sell'),
@@ -639,7 +657,7 @@ class AutonomousPatternDiscovery:
                     
                 experiments_run += 1
                 logger.info(f"\n🧪 Experiment {experiments_run}/{max_experiments}")
-                logger.info(f"   Config: {json.dumps(config, indent=2)}")
+                logger.info(f"   Config: {safe_json_dumps(config, indent=2)}")
                 
                 # Run on each ticker and average results
                 all_results = []
@@ -775,7 +793,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Best configurations from local discovery
-BEST_CONFIGS = ''' + json.dumps(best_configs, indent=2) + '''
+BEST_CONFIGS = ''' + safe_json_dumps(best_configs, indent=2) + '''
 
 # Download data
 TICKERS = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'META', 'TSLA', 'AMD', 'SPY', 'QQQ']
@@ -885,7 +903,7 @@ def main():
         print("\nTop 10 Configurations by Accuracy:")
         for i, b in enumerate(best, 1):
             print(f"{i}. Accuracy: {b['accuracy']:.1%} | Sharpe: {b['sharpe_ratio']:.2f}")
-            print(f"   Config: {json.dumps(b['config'], indent=6)}")
+            print(f"   Config: {safe_json_dumps(b['config'], indent=6)}")
             
         promising = discovery.get_promising_directions()
         print("\n📈 Promising Directions:")
@@ -908,7 +926,7 @@ def main():
         print(f"Experiments run: {results['experiments_run']}")
         print(f"Best accuracy: {results['best_accuracy']:.1%}")
         print(f"Target reached: {results['target_reached']}")
-        print(f"\nBest config:\n{json.dumps(results['best_config'], indent=2)}")
+        print(f"\nBest config:\n{safe_json_dumps(results['best_config'], indent=2)}")
 
 
 if __name__ == '__main__':
