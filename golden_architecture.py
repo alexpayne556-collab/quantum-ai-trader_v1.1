@@ -330,6 +330,11 @@ class GoldenArchitecture:
         self.n_classes = 3
         y_class = y.map(self.label_map)
         
+        # Check for unmapped labels
+        if y_class.isna().any():
+            self.log(f"⚠️ Warning: {y_class.isna().sum()} labels could not be mapped. Filling with HOLD(2).")
+            y_class = y_class.fillna(2).astype(int)
+        
         self.log(f"  Classes mapped: SELL(-1)->0, BUY(1)->1, HOLD(0)->2")
         
         self.feature_columns = X.columns.tolist()
@@ -471,8 +476,17 @@ class GoldenArchitecture:
             
             # Evaluate
             y_pred = model.predict(X_test_scaled)
-            acc = accuracy_score(y_test, y_pred)
-            f1 = f1_score(y_test, y_pred, average='weighted')
+            
+            # Ensure y_pred is 1D array of integers
+            if len(y_pred.shape) > 1 and y_pred.shape[1] > 1:
+                # If model returned probabilities/one-hot, take argmax
+                y_pred = np.argmax(y_pred, axis=1)
+            
+            y_pred = y_pred.astype(int)
+            y_test_np = y_test.values.astype(int)
+            
+            acc = accuracy_score(y_test_np, y_pred)
+            f1 = f1_score(y_test_np, y_pred, average='weighted')
             self.log(f"    {name}: Accuracy={acc:.2%}, F1={f1:.3f}")
         
         # Train meta-learner
