@@ -164,15 +164,40 @@
 
 ---
 
-## 12. Achieving "Uncanny" Prediction Accuracy
+## 12. Self-Discovering AI (AlphaZero-Style Pattern Discovery)
 
-### Q12.1 — Realistic Accuracy Targets
+### Q12.1 — AlphaZero for Trading: Is It Possible?
+> AlphaGo/AlphaZero learned Go without human knowledge, discovering strategies humans never conceived. Can we apply the same principle to stock trading — letting an AI discover profitable patterns through self-play and reinforcement learning without feeding it human-designed indicators? What architectures (Monte Carlo Tree Search + neural nets, pure RL, evolutionary strategies) work best for financial pattern discovery?
+
+### Q12.2 — Self-Supervised Representation Learning for Markets
+> How do we train a model to learn meaningful representations of market states WITHOUT labels? Techniques like contrastive learning (SimCLR), masked autoencoders, or variational autoencoders applied to OHLCV sequences — which discovers the most predictive latent features? Provide PyTorch code for a contrastive learning approach on price windows.
+
+### Q12.3 — Evolutionary Alpha Discovery (Rubik's Cube Approach)
+> Can we use genetic algorithms or evolutionary strategies to evolve trading rules from scratch — starting with random operations on OHLCV data and letting survival-of-the-fittest discover profitable formulas humans never imagined? How do we design the fitness function to avoid overfitting while rewarding novel discoveries?
+
+### Q12.4 — Neural Architecture Search for Trading Models
+> Instead of hand-designing CNN/LSTM architectures, can we use Neural Architecture Search (NAS) to let the AI discover its own optimal network topology for price prediction? What NAS methods (DARTS, ENAS, random search) are feasible on Colab Pro?
+
+### Q12.5 — Multi-Agent Market Simulation (Self-Play)
+> AlphaZero improved by playing against itself. Can we create a market simulation where multiple AI agents trade against each other, forcing them to discover robust strategies through competition? How do we prevent mode collapse where all agents converge to the same strategy?
+
+### Q12.6 — Curiosity-Driven Exploration for New Patterns
+> In RL, curiosity-driven exploration (ICM, RND) rewards agents for discovering novel states. Can we apply this to trading — rewarding the AI for finding unusual market conditions that lead to profitable trades? This could discover "black swan" patterns before they happen.
+
+### Q12.7 — Transformer World Models for Market Dynamics
+> Can we train a transformer-based world model (like in Dreamer/MuZero) that learns the underlying dynamics of the market, then use it to imagine future scenarios and plan optimal trades? How much historical data is needed to learn a useful market world model?
+
+---
+
+## 13. Achieving "Uncanny" Prediction Accuracy
+
+### Q13.1 — Realistic Accuracy Targets
 > What prediction accuracy (or precision/recall for BUY signals) is realistically achievable for daily stock direction with state-of-the-art methods? Cite recent research.
 
-### Q12.2 — Signal Quality vs Quantity Trade-off
+### Q13.2 — Signal Quality vs Quantity Trade-off
 > Should we aim for many weak signals or few high-confidence signals? How do we tune the confidence threshold for production?
 
-### Q12.3 — Detecting Model Degradation
+### Q13.3 — Detecting Model Degradation
 > How do we detect when our trained models start degrading due to regime shifts? Online monitoring metrics and automated retraining triggers.
 
 ---
@@ -233,6 +258,26 @@ For multi-ticker stock prediction, how do we incorporate cross-asset features (S
 What's a realistic accuracy target for next-day stock direction prediction using SOTA methods (gradient boosting + CNN + HMM regime)? Cite recent quantitative finance research on achievable precision/recall and how to measure statistical significance of results.
 ```
 
+**Prompt 11 (AlphaZero for Trading):**
+```
+AlphaGo/AlphaZero mastered Go through self-play without human knowledge, discovering strategies humans never conceived. Can we apply the same principle to stock trading — using Monte Carlo Tree Search + neural networks or pure reinforcement learning to discover profitable patterns WITHOUT human-designed indicators? What architecture would work, how would we define the "game state" and "winning", and what are the key challenges compared to board games?
+```
+
+**Prompt 12 (Self-Supervised Market Representations):**
+```
+How do we apply self-supervised learning (contrastive learning like SimCLR, masked autoencoders, or VAEs) to stock OHLCV sequences to learn meaningful representations WITHOUT labels? The goal is to discover latent patterns the model finds predictive on its own. Provide PyTorch code for contrastive learning on 20-day price windows.
+```
+
+**Prompt 13 (Evolutionary Alpha Discovery):**
+```
+Can we use genetic algorithms or evolutionary strategies to evolve trading formulas from scratch — starting with random mathematical operations on OHLCV data and letting survival-of-the-fittest discover profitable rules humans never imagined (like solving a Rubik's cube)? How do we design the fitness function (Sharpe ratio? profit factor?) to avoid overfitting while rewarding novel discoveries? Provide a working DEAP or PySR config.
+```
+
+**Prompt 14 (Curiosity-Driven Trading):**
+```
+In reinforcement learning, curiosity-driven exploration (Intrinsic Curiosity Module, Random Network Distillation) rewards agents for discovering novel states. Can we apply this to trading — rewarding an AI for finding unusual market microstructure patterns that correlate with profitable trades? This could theoretically discover "black swan" setups before they happen. Provide implementation guidance.
+```
+
 ---
 
 ## Quick Reference Checklist
@@ -249,6 +294,10 @@ What's a realistic accuracy target for next-day stock direction prediction using
 | Recommender | Ranking model choice | MEDIUM |
 | GPU Training | Mixed precision setup | HIGH |
 | Meta-Labeling | Confidence filtering | MEDIUM |
+| **Self-Discovery AI** | **AlphaZero-style pattern learning** | **HIGH** |
+| Contrastive Learning | Self-supervised representations | HIGH |
+| Evolutionary Search | Genetic alpha discovery | HIGH |
+| Curiosity-Driven RL | Novel pattern exploration | MEDIUM |
 
 ---
 
