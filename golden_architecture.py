@@ -323,14 +323,14 @@ class GoldenArchitecture:
             y = labels.loc[valid_idx]
         
         # Convert labels to classification format
-        # Force standard mapping: SELL=0, HOLD=1, BUY=2
-        # This ensures consistent meaning for model outputs
-        self.label_map = {-1: 0, 0: 1, 1: 2}
-        self.reverse_label_map = {0: -1, 1: 0, 2: 1}
+        # Robust mapping: SELL=0, BUY=1, HOLD=2
+        # We put HOLD last because it's often missing, avoiding gaps (0, 2) which break XGBoost
+        self.label_map = {-1: 0, 1: 1, 0: 2}
+        self.reverse_label_map = {0: -1, 1: 1, 2: 0}
         self.n_classes = 3
         y_class = y.map(self.label_map)
         
-        self.log(f"  Classes mapped: SELL(-1)->0, HOLD(0)->1, BUY(1)->2")
+        self.log(f"  Classes mapped: SELL(-1)->0, BUY(1)->1, HOLD(0)->2")
         
         self.feature_columns = X.columns.tolist()
         self.log(f"  Training on {len(X)} samples with {len(self.feature_columns)} features")
@@ -448,23 +448,23 @@ class GoldenArchitecture:
         for idx, (name, model) in enumerate(base_models.items()):
             model.fit(X_train_scaled, y_train)
             
-            # Helper to get probability of Class 2 (BUY) safely
+            # Helper to get probability of Class 1 (BUY) safely
             def get_buy_prob(m, X):
                 if hasattr(m, 'predict_proba'):
                     probs = m.predict_proba(X)
                     # Handle case where not all classes are present
                     if probs.shape[1] == 3:
-                        return probs[:, 2]
+                        return probs[:, 1]  # Class 1 is BUY
                     else:
                         # Map columns to classes
                         classes = m.classes_
-                        if 2 in classes:
-                            col_idx = np.where(classes == 2)[0][0]
+                        if 1 in classes:
+                            col_idx = np.where(classes == 1)[0][0]
                             return probs[:, col_idx]
                         else:
                             return np.zeros(len(X))
                 else:
-                    return (m.predict(X) == 2).astype(float)
+                    return (m.predict(X) == 1).astype(float)
 
             meta_train[:, idx] = get_buy_prob(model, X_train_scaled)
             meta_test[:, idx] = get_buy_prob(model, X_test_scaled)
@@ -568,19 +568,19 @@ class GoldenArchitecture:
         for idx, (name, model) in enumerate(self.base_models.items()):
             if hasattr(model, 'predict_proba'):
                 probs = model.predict_proba(X)
-                # We want probability of BUY (Class 2)
+                # We want probability of BUY (Class 1)
                 if probs.shape[1] == 3:
-                    meta_features[0, idx] = probs[0, 2]
+                    meta_features[0, idx] = probs[0, 1]
                 else:
                     # Handle missing classes in base model
                     classes = model.classes_
-                    if 2 in classes:
-                        col_idx = np.where(classes == 2)[0][0]
+                    if 1 in classes:
+                        col_idx = np.where(classes == 1)[0][0]
                         meta_features[0, idx] = probs[0, col_idx]
                     else:
                         meta_features[0, idx] = 0.0
             else:
-                meta_features[0, idx] = 1.0 if model.predict(X)[0] == 2 else 0.0
+                meta_features[0, idx] = 1.0 if model.predict(X)[0] == 1 else 0.0
         
         # Ensemble prediction
         probs = self.meta_model.predict_proba(meta_features)[0]
@@ -588,8 +588,8 @@ class GoldenArchitecture:
         confidence = probs[pred_class]
         
         # Map back to signals using reverse label map
-        # We forced mapping: 0=SELL, 1=HOLD, 2=BUY
-        signal_map = {0: 'SELL', 1: 'HOLD', 2: 'BUY'}
+        # We forced mapping: 0=SELL, 1=BUY, 2=HOLD
+        signal_map = {0: 'SELL', 1: 'BUY', 2: 'HOLD'}
         result['signal'] = signal_map.get(pred_class, 'HOLD')
         result['confidence'] = float(confidence)
         
