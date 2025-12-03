@@ -56,3 +56,5 @@ logs/
 # data/
 # models/
 # SPY_data.csv.env
+ta-lib/
+colab_trained_models/

@@ -372,34 +372,6 @@ class YFinanceProvider:
         return CanonicalSchema.normalize(df)
 
 
-class MockDataFetcher:
-    """Mock provider for testing"""
-    
-    def fetch(self, ticker: str, start: datetime, end: datetime) -> pd.DataFrame:
-        """Generate synthetic OHLCV data"""
-        dates = pd.date_range(start, end, freq='D', tz='UTC')
-        
-        # Generate realistic price movements
-        np.random.seed(hash(ticker) % 2**32)
-        base_price = 100.0
-        returns = np.random.normal(0.001, 0.02, len(dates))
-        prices = base_price * np.exp(np.cumsum(returns))
-        
-        df = pd.DataFrame({
-            'Open': prices * (1 + np.random.normal(0, 0.005, len(dates))),
-            'High': prices * (1 + np.abs(np.random.normal(0.01, 0.01, len(dates)))),
-            'Low': prices * (1 - np.abs(np.random.normal(0.01, 0.01, len(dates)))),
-            'Close': prices,
-            'Volume': np.random.randint(1000000, 10000000, len(dates))
-        }, index=dates)
-        
-        # Ensure OHLC logic
-        df['High'] = df[['Open', 'High', 'Low', 'Close']].max(axis=1)
-        df['Low'] = df[['Open', 'High', 'Low', 'Close']].min(axis=1)
-        
-        return CanonicalSchema.normalize(df)
-
-
 class DataFetcher:
     """
     Production-grade multi-provider OHLCV fetcher.
@@ -412,7 +384,7 @@ class DataFetcher:
     def __init__(
         self,
         primary_provider: str = 'yfinance',
-        fallback_providers: List[str] = ['mock'],
+        fallback_providers: List[str] = ['finnhub', 'alphaVantage'],
         enable_cache: bool = True,
         enable_metrics: bool = True
     ):
@@ -423,9 +395,6 @@ class DataFetcher:
         self.providers = {}
         if HAS_YFINANCE and primary_provider == 'yfinance':
             self.providers['yfinance'] = YFinanceProvider()
-        
-        # Always have mock as fallback
-        self.providers['mock'] = MockDataFetcher()
         
         # Initialize cache and metrics
         self.cache = HybridCache() if enable_cache else None
