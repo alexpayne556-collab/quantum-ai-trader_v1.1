@@ -356,10 +356,27 @@ class AlphaGoTrainerWithExtraction:
         df['bb_lower'] = sma_20 - 2 * std_20
         df['bb_pct'] = (df['Close'] - df['bb_lower']) / (df['bb_upper'] - df['bb_lower'] + 1e-10)
         
-        # EMAs
+        # EMAs - Full Ribbon
         df['ema_8'] = df['Close'].ewm(span=8).mean()
+        df['ema_13'] = df['Close'].ewm(span=13).mean()
         df['ema_21'] = df['Close'].ewm(span=21).mean()
+        df['ema_34'] = df['Close'].ewm(span=34).mean()
+        df['ema_55'] = df['Close'].ewm(span=55).mean()
         df['ema_8_vs_21'] = (df['ema_8'] / df['ema_21'] - 1)
+        
+        # EMA Ribbon Analysis (YOUR PATTERN!)
+        df['ribbon_min'] = df[['ema_8', 'ema_13', 'ema_21', 'ema_34', 'ema_55']].min(axis=1)
+        df['ribbon_max'] = df[['ema_8', 'ema_13', 'ema_21', 'ema_34', 'ema_55']].max(axis=1)
+        df['ribbon_range'] = (df['ribbon_max'] - df['ribbon_min']) / df['ribbon_min'] * 100
+        df['above_ribbon'] = df['Close'] > df['ribbon_min']
+        df['ema_8_rising'] = df['ema_8'] > df['ema_8'].shift(5)
+        df['ema_21_rising'] = df['ema_21'] > df['ema_21'].shift(5)
+        df['ribbon_bullish'] = (df['ema_8'] > df['ema_21']) & (df['ema_21'] > df['ema_55'])
+        
+        # 5-day momentum and bounce detection
+        df['mom_5d'] = df['Close'].pct_change(5) * 100
+        df['low_5d'] = df['Low'].rolling(5).min()
+        df['bounce_from_low'] = (df['Close'] / df['low_5d'] - 1) * 100
         
         # Trend
         df['trend_5d'] = np.sign(df['Close'].pct_change(5))
