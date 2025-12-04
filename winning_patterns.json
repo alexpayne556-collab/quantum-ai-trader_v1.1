@@ -1,0 +1,371 @@
+{
+  "generated_at": "2025-12-04T07:16:40.728986",
+  "total_winning_trades": 375,
+  "total_losing_trades": 183,
+  "overall_win_rate": 67.20430107526882,
+  "trading_rules": [
+    {
+      "name": "MOMENTUM",
+      "priority": 142,
+      "expected_return": 6.2,
+      "win_rate": 100.0,
+      "avg_hold_days": 11.0,
+      "conditions": {
+        "ema_8_above_21": true,
+        "macd_hist_above": 0,
+        "rsi_between": [
+          50,
+          70
+        ],
+        "trend_alignment_above": 0.3
+      },
+      "exit_conditions": {
+        "rsi_above": 75,
+        "profit_target": 8,
+        "stop_loss": -4
+      }
+    },
+    {
+      "name": "OTHER",
+      "priority": 93,
+      "expected_return": 5.6,
+      "win_rate": 100.0,
+      "avg_hold_days": 10.4,
+      "conditions": {},
+      "exit_conditions": {}
+    },
+    {
+      "name": "DIP_BUY",
+      "priority": 59,
+      "expected_return": 11.0,
+      "win_rate": 100.0,
+      "avg_hold_days": 6.6,
+      "conditions": {
+        "rsi_below": 35,
+        "returns_21d_below": -8,
+        "volume_ratio_above": 0.8
+      },
+      "exit_conditions": {
+        "rsi_above": 60,
+        "profit_target": 8,
+        "stop_loss": -5
+      }
+    },
+    {
+      "name": "VOLUME_BREAKOUT",
+      "priority": 50,
+      "expected_return": 6.6,
+      "win_rate": 100.0,
+      "avg_hold_days": 9.6,
+      "conditions": {
+        "volume_ratio_above": 1.5,
+        "macd_hist_above": 0,
+        "ema_8_above_21": true
+      },
+      "exit_conditions": {
+        "volume_ratio_below": 0.8,
+        "profit_target": 10,
+        "stop_loss": -5
+      }
+    },
+    {
+      "name": "BB_BOUNCE",
+      "priority": 17,
+      "expected_return": 8.1,
+      "win_rate": 100.0,
+      "avg_hold_days": 8.1,
+      "conditions": {
+        "bb_pct_below": 0.2,
+        "rsi_below": 45
+      },
+      "exit_conditions": {
+        "bb_pct_above": 0.7,
+        "profit_target": 5,
+        "stop_loss": -3
+      }
+    },
+    {
+      "name": "RSI_BOUNCE",
+      "priority": 10,
+      "expected_return": 10.7,
+      "win_rate": 100.0,
+      "avg_hold_days": 4.7,
+      "conditions": {
+        "rsi_below": 40,
+        "macd_hist_above": 0,
+        "bb_pct_below": 0.3
+      },
+      "exit_conditions": {
+        "rsi_above": 65,
+        "profit_target": 6,
+        "stop_loss": -4
+      }
+    },
+    {
+      "name": "MEAN_REVERSION",
+      "priority": 4,
+      "expected_return": 4.6,
+      "win_rate": 100.0,
+      "avg_hold_days": 16.0,
+      "conditions": {
+        "rsi_below": 45,
+        "ema_8_above_21": true,
+        "returns_21d_between": [
+          -5,
+          0
+        ]
+      },
+      "exit_conditions": {
+        "rsi_above": 55,
+        "profit_target": 5,
+        "stop_loss": -3
+      }
+    }
+  ],
+  "pattern_summary": {
+    "DIP_BUY": {
+      "count": 59,
+      "avg_pnl": 11.02,
+      "win_rate": 100.0,
+      "avg_hold_days": 6.6
+    },
+    "BB_BOUNCE": {
+      "count": 17,
+      "avg_pnl": 8.05,
+      "win_rate": 100.0,
+      "avg_hold_days": 8.1
+    },
+    "RSI_BOUNCE": {
+      "count": 10,
+      "avg_pnl": 10.65,
+      "win_rate": 100.0,
+      "avg_hold_days": 4.7
+    },
+    "OTHER": {
+      "count": 93,
+      "avg_pnl": 5.58,
+      "win_rate": 100.0,
+      "avg_hold_days": 10.4
+    },
+    "MOMENTUM": {
+      "count": 142,
+      "avg_pnl": 6.17,
+      "win_rate": 100.0,
+      "avg_hold_days": 11.0
+    },
+    "VOLUME_BREAKOUT": {
+      "count": 50,
+      "avg_pnl": 6.6,
+      "win_rate": 100.0,
+      "avg_hold_days": 9.6
+    },
+    "MEAN_REVERSION": {
+      "count": 4,
+      "avg_pnl": 4.59,
+      "win_rate": 100.0,
+      "avg_hold_days": 16.0
+    }
+  },
+  "best_trades": [
+    {
+      "ticker": "AMD",
+      "entry_date": "2025-04-08 00:00:00",
+      "exit_date": "2025-04-09 00:00:00",
+      "entry_price": 78.20999908447266,
+      "exit_price": 96.83999633789062,
+      "pnl_pct": 0.23820480081192907,
+      "hold_days": 1,
+      "rsi_at_entry": 20.20415693325731,
+      "macd_hist_at_entry": -2.7720601954113357,
+      "volume_ratio_at_entry": 1.8245807991280873,
+      "bb_pct_at_entry": -0.10859315510525354,
+      "returns_21d_at_entry": -0.19062401627351555,
+      "ema_8_vs_21_at_entry": -0.07354213405625543,
+      "trend_alignment_at_entry": -1.0,
+      "rsi_at_exit": 42.045099933096616,
+      "macd_hist_at_exit": -1.7908272680277446,
+      "pattern_type": "DIP_BUY",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "AMD",
+      "entry_date": "2025-04-08 00:00:00",
+      "exit_date": "2025-04-09 00:00:00",
+      "entry_price": 78.20999908447266,
+      "exit_price": 96.83999633789062,
+      "pnl_pct": 0.23820480081192907,
+      "hold_days": 1,
+      "rsi_at_entry": 20.20415693325731,
+      "macd_hist_at_entry": -2.7720601954113357,
+      "volume_ratio_at_entry": 1.8245807991280873,
+      "bb_pct_at_entry": -0.10859315510525354,
+      "returns_21d_at_entry": -0.19062401627351555,
+      "ema_8_vs_21_at_entry": -0.07354213405625543,
+      "trend_alignment_at_entry": -1.0,
+      "rsi_at_exit": 42.045099933096616,
+      "macd_hist_at_exit": -1.7908272680277446,
+      "pattern_type": "DIP_BUY",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "AMD",
+      "entry_date": "2025-10-03 00:00:00",
+      "exit_date": "2025-10-06 00:00:00",
+      "entry_price": 164.6699981689453,
+      "exit_price": 203.7100067138672,
+      "pnl_pct": 0.23708027557556832,
+      "hold_days": 1,
+      "rsi_at_entry": 57.06805992831125,
+      "macd_hist_at_entry": 1.0106125432899238,
+      "volume_ratio_at_entry": 0.9772568987895263,
+      "bb_pct_at_entry": 0.8083745278621584,
+      "returns_21d_at_entry": 0.017800883876168294,
+      "ema_8_vs_21_at_entry": 0.008803995466573733,
+      "trend_alignment_at_entry": 1.0,
+      "rsi_at_exit": 84.23303126356228,
+      "macd_hist_at_exit": 3.3904619420788666,
+      "pattern_type": "MOMENTUM",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "AMD",
+      "entry_date": "2025-10-03 00:00:00",
+      "exit_date": "2025-10-06 00:00:00",
+      "entry_price": 164.6699981689453,
+      "exit_price": 203.7100067138672,
+      "pnl_pct": 0.23708027557556832,
+      "hold_days": 1,
+      "rsi_at_entry": 57.06805992831125,
+      "macd_hist_at_entry": 1.0106125432899238,
+      "volume_ratio_at_entry": 0.9772568987895263,
+      "bb_pct_at_entry": 0.8083745278621584,
+      "returns_21d_at_entry": 0.017800883876168294,
+      "ema_8_vs_21_at_entry": 0.008803995466573733,
+      "trend_alignment_at_entry": 1.0,
+      "rsi_at_exit": 84.23303126356228,
+      "macd_hist_at_exit": 3.3904619420788666,
+      "pattern_type": "MOMENTUM",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "AMD",
+      "entry_date": "2025-10-03 00:00:00",
+      "exit_date": "2025-10-06 00:00:00",
+      "entry_price": 164.6699981689453,
+      "exit_price": 203.7100067138672,
+      "pnl_pct": 0.23708027557556832,
+      "hold_days": 1,
+      "rsi_at_entry": 57.06805992831125,
+      "macd_hist_at_entry": 1.0106125432899238,
+      "volume_ratio_at_entry": 0.9772568987895263,
+      "bb_pct_at_entry": 0.8083745278621584,
+      "returns_21d_at_entry": 0.017800883876168294,
+      "ema_8_vs_21_at_entry": 0.008803995466573733,
+      "trend_alignment_at_entry": 1.0,
+      "rsi_at_exit": 84.23303126356228,
+      "macd_hist_at_exit": 3.3904619420788666,
+      "pattern_type": "MOMENTUM",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "AMD",
+      "entry_date": "2025-10-03 00:00:00",
+      "exit_date": "2025-10-06 00:00:00",
+      "entry_price": 164.6699981689453,
+      "exit_price": 203.7100067138672,
+      "pnl_pct": 0.23708027557556832,
+      "hold_days": 1,
+      "rsi_at_entry": 57.06805992831125,
+      "macd_hist_at_entry": 1.0106125432899238,
+      "volume_ratio_at_entry": 0.9772568987895263,
+      "bb_pct_at_entry": 0.8083745278621584,
+      "returns_21d_at_entry": 0.017800883876168294,
+      "ema_8_vs_21_at_entry": 0.008803995466573733,
+      "trend_alignment_at_entry": 1.0,
+      "rsi_at_exit": 84.23303126356228,
+      "macd_hist_at_exit": 3.3904619420788666,
+      "pattern_type": "MOMENTUM",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "TSLA",
+      "entry_date": "2025-04-08 00:00:00",
+      "exit_date": "2025-04-09 00:00:00",
+      "entry_price": 221.86000061035156,
+      "exit_price": 272.20001220703125,
+      "pnl_pct": 0.22689989839624536,
+      "hold_days": 1,
+      "rsi_at_entry": 45.83085306107158,
+      "macd_hist_at_entry": -0.1112541016248425,
+      "volume_ratio_at_entry": 1.2044050567416917,
+      "bb_pct_at_entry": 0.09978441453871904,
+      "returns_21d_at_entry": -0.0013053940765263006,
+      "ema_8_vs_21_at_entry": -0.0476340898226445,
+      "trend_alignment_at_entry": -1.0,
+      "rsi_at_exit": 58.249175017331474,
+      "macd_hist_at_exit": 1.9834071993646596,
+      "pattern_type": "OTHER",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "NVDA",
+      "entry_date": "2025-04-04 00:00:00",
+      "exit_date": "2025-04-09 00:00:00",
+      "entry_price": 94.29813385009766,
+      "exit_price": 114.31561279296875,
+      "pnl_pct": 0.2122786329440216,
+      "hold_days": 3,
+      "rsi_at_entry": 20.619765243320828,
+      "macd_hist_at_entry": -1.4567758034697156,
+      "volume_ratio_at_entry": 1.8561036673939815,
+      "bb_pct_at_entry": -0.1703779500275458,
+      "returns_21d_at_entry": -0.14697772003471488,
+      "ema_8_vs_21_at_entry": -0.05533198539568629,
+      "trend_alignment_at_entry": -1.0,
+      "rsi_at_exit": 46.40534067366364,
+      "macd_hist_at_exit": -0.35877390718993407,
+      "pattern_type": "DIP_BUY",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "NVDA",
+      "entry_date": "2025-04-04 00:00:00",
+      "exit_date": "2025-04-09 00:00:00",
+      "entry_price": 94.29813385009766,
+      "exit_price": 114.31561279296875,
+      "pnl_pct": 0.2122786329440216,
+      "hold_days": 3,
+      "rsi_at_entry": 20.619765243320828,
+      "macd_hist_at_entry": -1.4567758034697156,
+      "volume_ratio_at_entry": 1.8561036673939815,
+      "bb_pct_at_entry": -0.1703779500275458,
+      "returns_21d_at_entry": -0.14697772003471488,
+      "ema_8_vs_21_at_entry": -0.05533198539568629,
+      "trend_alignment_at_entry": -1.0,
+      "rsi_at_exit": 46.40534067366364,
+      "macd_hist_at_exit": -0.35877390718993407,
+      "pattern_type": "DIP_BUY",
+      "confidence": 0.7
+    },
+    {
+      "ticker": "NVDA",
+      "entry_date": "2025-04-04 00:00:00",
+      "exit_date": "2025-04-09 00:00:00",
+      "entry_price": 94.29813385009766,
+      "exit_price": 114.31561279296875,
+      "pnl_pct": 0.2122786329440216,
+      "hold_days": 3,
+      "rsi_at_entry": 20.619765243320828,
+      "macd_hist_at_entry": -1.4567758034697156,
+      "volume_ratio_at_entry": 1.8561036673939815,
+      "bb_pct_at_entry": -0.1703779500275458,
+      "returns_21d_at_entry": -0.14697772003471488,
+      "ema_8_vs_21_at_entry": -0.05533198539568629,
+      "trend_alignment_at_entry": -1.0,
+      "rsi_at_exit": 46.40534067366364,
+      "macd_hist_at_exit": -0.35877390718993407,
+      "pattern_type": "DIP_BUY",
+      "confidence": 0.7
+    }
+  ]
+}

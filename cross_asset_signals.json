@@ -1,0 +1,82 @@
+{
+  "date": "2025-12-04",
+  "signals": [
+    {
+      "ticker": "LUNR",
+      "action": "BUY",
+      "up_probability": 1.0,
+      "confidence": 1.0,
+      "n_leaders": 1,
+      "leaders": [
+        "LYFT"
+      ],
+      "price": 10.2
+    },
+    {
+      "ticker": "NOW",
+      "action": "SELL",
+      "up_probability": 0.0,
+      "confidence": 1.0,
+      "n_leaders": 1,
+      "leaders": [
+        "PG"
+      ],
+      "price": 832.9
+    },
+    {
+      "ticker": "KRYS",
+      "action": "SELL",
+      "up_probability": 0.0,
+      "confidence": 1.0,
+      "n_leaders": 1,
+      "leaders": [
+        "MU"
+      ],
+      "price": 217.46
+    },
+    {
+      "ticker": "QTUM",
+      "action": "BUY",
+      "up_probability": 1.0,
+      "confidence": 1.0,
+      "n_leaders": 1,
+      "leaders": [
+        "MRVL"
+      ],
+      "price": 112.0
+    },
+    {
+      "ticker": "WMT",
+      "action": "SELL",
+      "up_probability": 0.0,
+      "confidence": 1.0,
+      "n_leaders": 1,
+      "leaders": [
+        "BAC"
+      ],
+      "price": 114.41
+    },
+    {
+      "ticker": "LMT",
+      "action": "BUY",
+      "up_probability": 1.0,
+      "confidence": 1.0,
+      "n_leaders": 1,
+      "leaders": [
+        "ANET"
+      ],
+      "price": 446.8
+    },
+    {
+      "ticker": "TEM",
+      "action": "BUY",
+      "up_probability": 1.0,
+      "confidence": 1.0,
+      "n_leaders": 1,
+      "leaders": [
+        "NVDA"
+      ],
+      "price": 74.91
+    }
+  ]
+}

@@ -57,15 +57,23 @@ class ForecastEngine:
         # Calculate current ATR
         try:
             atr_series = safe_atr(df['High'], df['Low'], df['Close'], window=14)
-            if atr_series is None or len(atr_series) == 0 or pd.isna(atr_series.iloc[-1]):
-                atr_current = df['Close'].iloc[-1] * 0.01  # Default 1% volatility
+            if atr_series is None or len(atr_series) == 0:
+                atr_current = float(df['Close'].iloc[-1]) * 0.01
             else:
-                atr_current = float(atr_series.iloc[-1])
+                # Handle potential Series/scalar ambiguity
+                last_atr = atr_series.iloc[-1]
+                if hasattr(last_atr, 'item'):
+                    atr_current = float(last_atr.item())
+                else:
+                    atr_current = float(last_atr)
+                    
+                if pd.isna(atr_current):
+                    atr_current = float(df['Close'].iloc[-1]) * 0.01
         except Exception as e:
             print(f"⚠️  ATR calculation error: {e}")
-            atr_current = df['Close'].iloc[-1] * 0.01  # Default 1% volatility
+            atr_current = float(df['Close'].iloc[-1]) * 0.01  # Default 1% volatility
         
-        atr_pct = (atr_current / df['Close'].iloc[-1]) * 100
+        atr_pct = (atr_current / float(df['Close'].iloc[-1])) * 100
         
         forecasts = []
         current_df = df.copy()
@@ -181,10 +189,17 @@ class ForecastEngine:
                         current_df['Close'],
                         window=14
                     )
-                    if atr_series is None or len(atr_series) == 0 or pd.isna(atr_series.iloc[-1]):
+                    if atr_series is None or len(atr_series) == 0:
                         atr_current = forecast_price * 0.01
                     else:
-                        atr_current = float(atr_series.iloc[-1])
+                        last_atr = atr_series.iloc[-1]
+                        if hasattr(last_atr, 'item'):
+                            atr_current = float(last_atr.item())
+                        else:
+                            atr_current = float(last_atr)
+                            
+                        if pd.isna(atr_current):
+                            atr_current = forecast_price * 0.01
                 except Exception as e:
                     print(f"  ⚠️  ATR update error: {e}")
                     atr_current = forecast_price * 0.01

@@ -1,0 +1,1308 @@
+{
+  "generated_at": "2025-12-04T06:48:06.205427",
+  "model_version": "ultimate_v1",
+  "total_tickers": 44,
+  "strong_buys": [
+    {
+      "ticker": "SNOW",
+      "signal": "STRONG_BUY",
+      "confidence": 70,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=47"
+        },
+        {
+          "pattern": "TRINITY_SIGNAL",
+          "strength": "STRONG",
+          "reason": "RSI divergence + MACD + Volume (71% accuracy)"
+        }
+      ],
+      "price": 265.0,
+      "rsi": 46.730867308034014,
+      "macd": 0.4578463004142988,
+      "volume_ratio": 2.9993959131246792,
+      "returns_21d": -4.3804625845306315,
+      "timestamp": "2025-12-04T06:48:06.203055"
+    }
+  ],
+  "buys": [
+    {
+      "ticker": "AMD",
+      "signal": "BUY",
+      "confidence": 50,
+      "patterns": [
+        {
+          "pattern": "DIP_BUY",
+          "strength": "STRONG",
+          "reason": "RSI=28, Down -16.2%"
+        }
+      ],
+      "price": 217.60000610351562,
+      "rsi": 28.452139861256583,
+      "macd": -2.135273973410475,
+      "volume_ratio": 0.5377418772522276,
+      "returns_21d": -16.194873399355046,
+      "timestamp": "2025-12-04T06:48:06.201592"
+    }
+  ],
+  "watch": [
+    {
+      "ticker": "BAC",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 54.09000015258789,
+      "rsi": 49.878046105544506,
+      "macd": 0.12461034705401447,
+      "volume_ratio": 0.9935020059955753,
+      "returns_21d": 0.9895421316422404,
+      "timestamp": "2025-12-04T06:48:06.201111"
+    },
+    {
+      "ticker": "TSLA",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=57"
+        }
+      ],
+      "price": 446.739990234375,
+      "rsi": 56.9353615770381,
+      "macd": 3.697549238294534,
+      "volume_ratio": 1.0443481329695528,
+      "returns_21d": -4.61814486587695,
+      "timestamp": "2025-12-04T06:48:06.201483"
+    },
+    {
+      "ticker": "XME",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=56"
+        }
+      ],
+      "price": 99.66999816894531,
+      "rsi": 56.29063602624473,
+      "macd": 1.0280373315641744,
+      "volume_ratio": 2.1337167923075806,
+      "returns_21d": 5.2148154090085885,
+      "timestamp": "2025-12-04T06:48:06.202000"
+    },
+    {
+      "ticker": "QTUM",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=53"
+        }
+      ],
+      "price": 112.0,
+      "rsi": 52.55326844017692,
+      "macd": 0.6614988405703013,
+      "volume_ratio": 0.5709327673244606,
+      "returns_21d": -1.6940229088089453,
+      "timestamp": "2025-12-04T06:48:06.202332"
+    },
+    {
+      "ticker": "SPY",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 683.8900146484375,
+      "rsi": 50.346709906248215,
+      "macd": 1.6643775783046284,
+      "volume_ratio": 0.6686787949051786,
+      "returns_21d": 0.0804852300983594,
+      "timestamp": "2025-12-04T06:48:06.202436"
+    },
+    {
+      "ticker": "VOO",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 628.77001953125,
+      "rsi": 50.40895897780561,
+      "macd": 1.5247704963921764,
+      "volume_ratio": 0.7950034523884251,
+      "returns_21d": 0.07958361603392916,
+      "timestamp": "2025-12-04T06:48:06.203389"
+    },
+    {
+      "ticker": "ALK",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=57"
+        }
+      ],
+      "price": 45.369998931884766,
+      "rsi": 57.049895303801534,
+      "macd": 0.7824953098853096,
+      "volume_ratio": 1.6843832245274635,
+      "returns_21d": 10.469927608990082,
+      "timestamp": "2025-12-04T06:48:06.204207"
+    },
+    {
+      "ticker": "RIVN",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 17.530000686645508,
+      "rsi": 50.083753981865286,
+      "macd": 0.17984495564323022,
+      "volume_ratio": 0.5188746157064656,
+      "returns_21d": 32.90372436945965,
+      "timestamp": "2025-12-04T06:48:06.204705"
+    }
+  ],
+  "sells": [
+    {
+      "ticker": "KRYS",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=71 - Consider taking profits"
+        }
+      ],
+      "price": 217.4600067138672,
+      "rsi": 71.44133297666525,
+      "macd": 0.199646717370487,
+      "volume_ratio": 0.8795140312302012,
+      "returns_21d": 9.911549156127686,
+      "timestamp": "2025-12-04T06:48:06.202104"
+    },
+    {
+      "ticker": "WMT",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=73 - Consider taking profits"
+        }
+      ],
+      "price": 114.41000366210938,
+      "rsi": 73.17279693127895,
+      "macd": 1.177116356551675,
+      "volume_ratio": 1.1532698489896394,
+      "returns_21d": 12.619359962942722,
+      "timestamp": "2025-12-04T06:48:06.202637"
+    },
+    {
+      "ticker": "GEO",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=76 - Consider taking profits"
+        }
+      ],
+      "price": 17.100000381469727,
+      "rsi": 75.6501218559057,
+      "macd": 0.3407890264294124,
+      "volume_ratio": 0.9629407512267465,
+      "returns_21d": 1.7251690942340359,
+      "timestamp": "2025-12-04T06:48:06.203492"
+    },
+    {
+      "ticker": "GOOGL",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=71 - Consider taking profits"
+        }
+      ],
+      "price": 319.6300048828125,
+      "rsi": 70.76189746522549,
+      "macd": 1.4104646153910743,
+      "volume_ratio": 0.9142504626773597,
+      "returns_21d": 12.656846012831968,
+      "timestamp": "2025-12-04T06:48:06.204805"
+    }
+  ],
+  "holds": [
+    {
+      "ticker": "APLD",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 29.360000610351562,
+      "rsi": 59.400893251269075,
+      "macd": 0.6678118706562657,
+      "volume_ratio": 0.7759301451419963,
+      "returns_21d": -10.678425420112847,
+      "timestamp": "2025-12-04T06:48:06.200535"
+    },
+    {
+      "ticker": "SERV",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 11.800000190734863,
+      "rsi": 60.7779537634693,
+      "macd": 0.3193346680228494,
+      "volume_ratio": 2.8778939810612734,
+      "returns_21d": -8.597983499587357,
+      "timestamp": "2025-12-04T06:48:06.200667"
+    },
+    {
+      "ticker": "MRVL",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 100.19999694824219,
+      "rsi": 62.88830399266115,
+      "macd": 1.4860333046292253,
+      "volume_ratio": 2.6401019555227285,
+      "returns_21d": 10.87749684950845,
+      "timestamp": "2025-12-04T06:48:06.200780"
+    },
+    {
+      "ticker": "HOOD",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 133.63999938964844,
+      "rsi": 50.44378934900877,
+      "macd": 1.7676910553561993,
+      "volume_ratio": 0.7816430588509568,
+      "returns_21d": -9.137885690839386,
+      "timestamp": "2025-12-04T06:48:06.200889"
+    },
+    {
+      "ticker": "LUNR",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 10.199999809265137,
+      "rsi": 56.28654616966267,
+      "macd": 0.17286695039479683,
+      "volume_ratio": 0.9381304108750321,
+      "returns_21d": -11.917099512374296,
+      "timestamp": "2025-12-04T06:48:06.200997"
+    },
+    {
+      "ticker": "QCOM",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 175.07000732421875,
+      "rsi": 47.910148564109505,
+      "macd": 0.5231294557353965,
+      "volume_ratio": 0.7645949164510005,
+      "returns_21d": -3.1263799570166895,
+      "timestamp": "2025-12-04T06:48:06.201266"
+    },
+    {
+      "ticker": "UUUU",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 15.100000381469727,
+      "rsi": 45.200005789901034,
+      "macd": 0.15220422833845526,
+      "volume_ratio": 0.6600297726866449,
+      "returns_21d": -15.168533546727792,
+      "timestamp": "2025-12-04T06:48:06.201375"
+    },
+    {
+      "ticker": "NOW",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 832.9000244140625,
+      "rsi": 39.08748415584218,
+      "macd": 2.566806555003808,
+      "volume_ratio": 0.6273702238714676,
+      "returns_21d": -8.85713035791631,
+      "timestamp": "2025-12-04T06:48:06.201695"
+    },
+    {
+      "ticker": "NVDA",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 179.58999633789062,
+      "rsi": 36.412307764958925,
+      "macd": -0.7601454548536175,
+      "volume_ratio": 0.7614628199591892,
+      "returns_21d": -13.191225783458549,
+      "timestamp": "2025-12-04T06:48:06.201797"
+    },
+    {
+      "ticker": "MU",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 234.16000366210938,
+      "rsi": 45.05889402667477,
+      "macd": -0.5553475225427054,
+      "volume_ratio": 0.6985752393526324,
+      "returns_21d": -0.23007809678493585,
+      "timestamp": "2025-12-04T06:48:06.201897"
+    },
+    {
+      "ticker": "LEU",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 268.1000061035156,
+      "rsi": 46.76556761362816,
+      "macd": 3.6726424578746055,
+      "volume_ratio": 0.6681394571714997,
+      "returns_21d": -21.83445181000322,
+      "timestamp": "2025-12-04T06:48:06.202228"
+    },
+    {
+      "ticker": "UNH",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 339.7099914550781,
+      "rsi": 50.430174545028265,
+      "macd": 2.5421483165065064,
+      "volume_ratio": 1.2295927947364376,
+      "returns_21d": 1.7735650434723915,
+      "timestamp": "2025-12-04T06:48:06.202535"
+    },
+    {
+      "ticker": "OKLO",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 96.58999633789062,
+      "rsi": 38.309812628748496,
+      "macd": 0.7870970254410015,
+      "volume_ratio": 0.5820771224720442,
+      "returns_21d": -23.746745295547946,
+      "timestamp": "2025-12-04T06:48:06.202738"
+    },
+    {
+      "ticker": "RXRX",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 4.659999847412109,
+      "rsi": 50.216444824379195,
+      "macd": 0.07145064135513368,
+      "volume_ratio": 0.7098288512080932,
+      "returns_21d": -14.338239000072495,
+      "timestamp": "2025-12-04T06:48:06.202838"
+    },
+    {
+      "ticker": "MTZ",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 218.2899932861328,
+      "rsi": 68.19329666851341,
+      "macd": 2.5367872101149684,
+      "volume_ratio": 1.3575934587123977,
+      "returns_21d": 8.273395479035983,
+      "timestamp": "2025-12-04T06:48:06.202954"
+    },
+    {
+      "ticker": "BSX",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 98.56999969482422,
+      "rsi": 34.57272049589143,
+      "macd": -0.13196283239428852,
+      "volume_ratio": 1.1304031590672847,
+      "returns_21d": -0.020282628876333586,
+      "timestamp": "2025-12-04T06:48:06.203172"
+    },
+    {
+      "ticker": "LLY",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 1033.56005859375,
+      "rsi": 54.54991247221721,
+      "macd": -6.581514372989936,
+      "volume_ratio": 0.8039024983283691,
+      "returns_21d": 15.453793250903658,
+      "timestamp": "2025-12-04T06:48:06.203284"
+    },
+    {
+      "ticker": "CXW",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 18.600000381469727,
+      "rsi": 66.37930394618542,
+      "macd": 0.24443847067963353,
+      "volume_ratio": 0.6848033675020462,
+      "returns_21d": -1.326259920109918,
+      "timestamp": "2025-12-04T06:48:06.203591"
+    },
+    {
+      "ticker": "LYFT",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 22.329999923706055,
+      "rsi": 36.20689938042277,
+      "macd": 0.059422548026594565,
+      "volume_ratio": 0.509588145101656,
+      "returns_21d": 6.5871079260666265,
+      "timestamp": "2025-12-04T06:48:06.203688"
+    },
+    {
+      "ticker": "MNDY",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 152.52000427246094,
+      "rsi": 42.430516995365565,
+      "macd": 0.6448549806194546,
+      "volume_ratio": 0.7928894638510207,
+      "returns_21d": -25.643521888090703,
+      "timestamp": "2025-12-04T06:48:06.203785"
+    },
+    {
+      "ticker": "BA",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 202.5399932861328,
+      "rsi": 56.874993851715466,
+      "macd": 2.5262724607503477,
+      "volume_ratio": 1.5322029118341736,
+      "returns_21d": -0.9826495896538279,
+      "timestamp": "2025-12-04T06:48:06.203883"
+    },
+    {
+      "ticker": "LAC",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 5.25,
+      "rsi": 56.64335719858803,
+      "macd": 0.1176947394637261,
+      "volume_ratio": 0.5877660113226478,
+      "returns_21d": 3.143415375552805,
+      "timestamp": "2025-12-04T06:48:06.203980"
+    },
+    {
+      "ticker": "INTC",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 43.7599983215332,
+      "rsi": 67.19390077081445,
+      "macd": 0.8599376163251469,
+      "volume_ratio": 1.1103301589371046,
+      "returns_21d": 10.784805877299242,
+      "timestamp": "2025-12-04T06:48:06.204075"
+    },
+    {
+      "ticker": "LMT",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 446.79998779296875,
+      "rsi": 45.34310752726194,
+      "macd": -0.7858360198412875,
+      "volume_ratio": 1.2615331427048595,
+      "returns_21d": -7.736157942650845,
+      "timestamp": "2025-12-04T06:48:06.204319"
+    },
+    {
+      "ticker": "CRDO",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 189.19000244140625,
+      "rsi": 63.68725784789523,
+      "macd": 4.545919705125528,
+      "volume_ratio": 1.0618925338822056,
+      "returns_21d": 4.733172653148143,
+      "timestamp": "2025-12-04T06:48:06.204417"
+    },
+    {
+      "ticker": "ANET",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 127.80000305175781,
+      "rsi": 40.95718041793827,
+      "macd": 0.755505989666525,
+      "volume_ratio": 0.5568647454597575,
+      "returns_21d": -18.903479902531206,
+      "timestamp": "2025-12-04T06:48:06.204511"
+    },
+    {
+      "ticker": "META",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 639.5999755859375,
+      "rsi": 64.36823853921706,
+      "macd": 8.37901958533741,
+      "volume_ratio": 0.5669333952821073,
+      "returns_21d": 0.29636567533233293,
+      "timestamp": "2025-12-04T06:48:06.204606"
+    },
+    {
+      "ticker": "HL",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 17.360000610351562,
+      "rsi": 63.005797607059776,
+      "macd": 0.321850639910771,
+      "volume_ratio": 0.8472706552071476,
+      "returns_21d": 36.09084445600759,
+      "timestamp": "2025-12-04T06:48:06.204901"
+    },
+    {
+      "ticker": "TEM",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 74.91000366210938,
+      "rsi": 56.56218799160288,
+      "macd": 1.0874498981647585,
+      "volume_ratio": 0.46275894441417825,
+      "returns_21d": -15.556302068296112,
+      "timestamp": "2025-12-04T06:48:06.204994"
+    },
+    {
+      "ticker": "TDOC",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 7.53000020980835,
+      "rsi": 51.25000841409349,
+      "macd": 0.08666244267638407,
+      "volume_ratio": 0.7834813998909318,
+      "returns_21d": -7.493858818013289,
+      "timestamp": "2025-12-04T06:48:06.205087"
+    }
+  ],
+  "all_signals": [
+    {
+      "ticker": "SNOW",
+      "signal": "STRONG_BUY",
+      "confidence": 70,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=47"
+        },
+        {
+          "pattern": "TRINITY_SIGNAL",
+          "strength": "STRONG",
+          "reason": "RSI divergence + MACD + Volume (71% accuracy)"
+        }
+      ],
+      "price": 265.0,
+      "rsi": 46.730867308034014,
+      "macd": 0.4578463004142988,
+      "volume_ratio": 2.9993959131246792,
+      "returns_21d": -4.3804625845306315,
+      "timestamp": "2025-12-04T06:48:06.203055"
+    },
+    {
+      "ticker": "AMD",
+      "signal": "BUY",
+      "confidence": 50,
+      "patterns": [
+        {
+          "pattern": "DIP_BUY",
+          "strength": "STRONG",
+          "reason": "RSI=28, Down -16.2%"
+        }
+      ],
+      "price": 217.60000610351562,
+      "rsi": 28.452139861256583,
+      "macd": -2.135273973410475,
+      "volume_ratio": 0.5377418772522276,
+      "returns_21d": -16.194873399355046,
+      "timestamp": "2025-12-04T06:48:06.201592"
+    },
+    {
+      "ticker": "BAC",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 54.09000015258789,
+      "rsi": 49.878046105544506,
+      "macd": 0.12461034705401447,
+      "volume_ratio": 0.9935020059955753,
+      "returns_21d": 0.9895421316422404,
+      "timestamp": "2025-12-04T06:48:06.201111"
+    },
+    {
+      "ticker": "TSLA",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=57"
+        }
+      ],
+      "price": 446.739990234375,
+      "rsi": 56.9353615770381,
+      "macd": 3.697549238294534,
+      "volume_ratio": 1.0443481329695528,
+      "returns_21d": -4.61814486587695,
+      "timestamp": "2025-12-04T06:48:06.201483"
+    },
+    {
+      "ticker": "XME",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=56"
+        }
+      ],
+      "price": 99.66999816894531,
+      "rsi": 56.29063602624473,
+      "macd": 1.0280373315641744,
+      "volume_ratio": 2.1337167923075806,
+      "returns_21d": 5.2148154090085885,
+      "timestamp": "2025-12-04T06:48:06.202000"
+    },
+    {
+      "ticker": "QTUM",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=53"
+        }
+      ],
+      "price": 112.0,
+      "rsi": 52.55326844017692,
+      "macd": 0.6614988405703013,
+      "volume_ratio": 0.5709327673244606,
+      "returns_21d": -1.6940229088089453,
+      "timestamp": "2025-12-04T06:48:06.202332"
+    },
+    {
+      "ticker": "SPY",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 683.8900146484375,
+      "rsi": 50.346709906248215,
+      "macd": 1.6643775783046284,
+      "volume_ratio": 0.6686787949051786,
+      "returns_21d": 0.0804852300983594,
+      "timestamp": "2025-12-04T06:48:06.202436"
+    },
+    {
+      "ticker": "VOO",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 628.77001953125,
+      "rsi": 50.40895897780561,
+      "macd": 1.5247704963921764,
+      "volume_ratio": 0.7950034523884251,
+      "returns_21d": 0.07958361603392916,
+      "timestamp": "2025-12-04T06:48:06.203389"
+    },
+    {
+      "ticker": "ALK",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=57"
+        }
+      ],
+      "price": 45.369998931884766,
+      "rsi": 57.049895303801534,
+      "macd": 0.7824953098853096,
+      "volume_ratio": 1.6843832245274635,
+      "returns_21d": 10.469927608990082,
+      "timestamp": "2025-12-04T06:48:06.204207"
+    },
+    {
+      "ticker": "RIVN",
+      "signal": "WATCH",
+      "confidence": 30,
+      "patterns": [
+        {
+          "pattern": "MOMENTUM_ENTRY",
+          "strength": "MEDIUM",
+          "reason": "MACD+, EMA crossover, RSI=50"
+        }
+      ],
+      "price": 17.530000686645508,
+      "rsi": 50.083753981865286,
+      "macd": 0.17984495564323022,
+      "volume_ratio": 0.5188746157064656,
+      "returns_21d": 32.90372436945965,
+      "timestamp": "2025-12-04T06:48:06.204705"
+    },
+    {
+      "ticker": "APLD",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 29.360000610351562,
+      "rsi": 59.400893251269075,
+      "macd": 0.6678118706562657,
+      "volume_ratio": 0.7759301451419963,
+      "returns_21d": -10.678425420112847,
+      "timestamp": "2025-12-04T06:48:06.200535"
+    },
+    {
+      "ticker": "SERV",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 11.800000190734863,
+      "rsi": 60.7779537634693,
+      "macd": 0.3193346680228494,
+      "volume_ratio": 2.8778939810612734,
+      "returns_21d": -8.597983499587357,
+      "timestamp": "2025-12-04T06:48:06.200667"
+    },
+    {
+      "ticker": "MRVL",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 100.19999694824219,
+      "rsi": 62.88830399266115,
+      "macd": 1.4860333046292253,
+      "volume_ratio": 2.6401019555227285,
+      "returns_21d": 10.87749684950845,
+      "timestamp": "2025-12-04T06:48:06.200780"
+    },
+    {
+      "ticker": "HOOD",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 133.63999938964844,
+      "rsi": 50.44378934900877,
+      "macd": 1.7676910553561993,
+      "volume_ratio": 0.7816430588509568,
+      "returns_21d": -9.137885690839386,
+      "timestamp": "2025-12-04T06:48:06.200889"
+    },
+    {
+      "ticker": "LUNR",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 10.199999809265137,
+      "rsi": 56.28654616966267,
+      "macd": 0.17286695039479683,
+      "volume_ratio": 0.9381304108750321,
+      "returns_21d": -11.917099512374296,
+      "timestamp": "2025-12-04T06:48:06.200997"
+    },
+    {
+      "ticker": "QCOM",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 175.07000732421875,
+      "rsi": 47.910148564109505,
+      "macd": 0.5231294557353965,
+      "volume_ratio": 0.7645949164510005,
+      "returns_21d": -3.1263799570166895,
+      "timestamp": "2025-12-04T06:48:06.201266"
+    },
+    {
+      "ticker": "UUUU",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 15.100000381469727,
+      "rsi": 45.200005789901034,
+      "macd": 0.15220422833845526,
+      "volume_ratio": 0.6600297726866449,
+      "returns_21d": -15.168533546727792,
+      "timestamp": "2025-12-04T06:48:06.201375"
+    },
+    {
+      "ticker": "NOW",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 832.9000244140625,
+      "rsi": 39.08748415584218,
+      "macd": 2.566806555003808,
+      "volume_ratio": 0.6273702238714676,
+      "returns_21d": -8.85713035791631,
+      "timestamp": "2025-12-04T06:48:06.201695"
+    },
+    {
+      "ticker": "NVDA",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 179.58999633789062,
+      "rsi": 36.412307764958925,
+      "macd": -0.7601454548536175,
+      "volume_ratio": 0.7614628199591892,
+      "returns_21d": -13.191225783458549,
+      "timestamp": "2025-12-04T06:48:06.201797"
+    },
+    {
+      "ticker": "MU",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 234.16000366210938,
+      "rsi": 45.05889402667477,
+      "macd": -0.5553475225427054,
+      "volume_ratio": 0.6985752393526324,
+      "returns_21d": -0.23007809678493585,
+      "timestamp": "2025-12-04T06:48:06.201897"
+    },
+    {
+      "ticker": "KRYS",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=71 - Consider taking profits"
+        }
+      ],
+      "price": 217.4600067138672,
+      "rsi": 71.44133297666525,
+      "macd": 0.199646717370487,
+      "volume_ratio": 0.8795140312302012,
+      "returns_21d": 9.911549156127686,
+      "timestamp": "2025-12-04T06:48:06.202104"
+    },
+    {
+      "ticker": "LEU",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 268.1000061035156,
+      "rsi": 46.76556761362816,
+      "macd": 3.6726424578746055,
+      "volume_ratio": 0.6681394571714997,
+      "returns_21d": -21.83445181000322,
+      "timestamp": "2025-12-04T06:48:06.202228"
+    },
+    {
+      "ticker": "UNH",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 339.7099914550781,
+      "rsi": 50.430174545028265,
+      "macd": 2.5421483165065064,
+      "volume_ratio": 1.2295927947364376,
+      "returns_21d": 1.7735650434723915,
+      "timestamp": "2025-12-04T06:48:06.202535"
+    },
+    {
+      "ticker": "WMT",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=73 - Consider taking profits"
+        }
+      ],
+      "price": 114.41000366210938,
+      "rsi": 73.17279693127895,
+      "macd": 1.177116356551675,
+      "volume_ratio": 1.1532698489896394,
+      "returns_21d": 12.619359962942722,
+      "timestamp": "2025-12-04T06:48:06.202637"
+    },
+    {
+      "ticker": "OKLO",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 96.58999633789062,
+      "rsi": 38.309812628748496,
+      "macd": 0.7870970254410015,
+      "volume_ratio": 0.5820771224720442,
+      "returns_21d": -23.746745295547946,
+      "timestamp": "2025-12-04T06:48:06.202738"
+    },
+    {
+      "ticker": "RXRX",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 4.659999847412109,
+      "rsi": 50.216444824379195,
+      "macd": 0.07145064135513368,
+      "volume_ratio": 0.7098288512080932,
+      "returns_21d": -14.338239000072495,
+      "timestamp": "2025-12-04T06:48:06.202838"
+    },
+    {
+      "ticker": "MTZ",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 218.2899932861328,
+      "rsi": 68.19329666851341,
+      "macd": 2.5367872101149684,
+      "volume_ratio": 1.3575934587123977,
+      "returns_21d": 8.273395479035983,
+      "timestamp": "2025-12-04T06:48:06.202954"
+    },
+    {
+      "ticker": "BSX",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 98.56999969482422,
+      "rsi": 34.57272049589143,
+      "macd": -0.13196283239428852,
+      "volume_ratio": 1.1304031590672847,
+      "returns_21d": -0.020282628876333586,
+      "timestamp": "2025-12-04T06:48:06.203172"
+    },
+    {
+      "ticker": "LLY",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 1033.56005859375,
+      "rsi": 54.54991247221721,
+      "macd": -6.581514372989936,
+      "volume_ratio": 0.8039024983283691,
+      "returns_21d": 15.453793250903658,
+      "timestamp": "2025-12-04T06:48:06.203284"
+    },
+    {
+      "ticker": "GEO",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=76 - Consider taking profits"
+        }
+      ],
+      "price": 17.100000381469727,
+      "rsi": 75.6501218559057,
+      "macd": 0.3407890264294124,
+      "volume_ratio": 0.9629407512267465,
+      "returns_21d": 1.7251690942340359,
+      "timestamp": "2025-12-04T06:48:06.203492"
+    },
+    {
+      "ticker": "CXW",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 18.600000381469727,
+      "rsi": 66.37930394618542,
+      "macd": 0.24443847067963353,
+      "volume_ratio": 0.6848033675020462,
+      "returns_21d": -1.326259920109918,
+      "timestamp": "2025-12-04T06:48:06.203591"
+    },
+    {
+      "ticker": "LYFT",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 22.329999923706055,
+      "rsi": 36.20689938042277,
+      "macd": 0.059422548026594565,
+      "volume_ratio": 0.509588145101656,
+      "returns_21d": 6.5871079260666265,
+      "timestamp": "2025-12-04T06:48:06.203688"
+    },
+    {
+      "ticker": "MNDY",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 152.52000427246094,
+      "rsi": 42.430516995365565,
+      "macd": 0.6448549806194546,
+      "volume_ratio": 0.7928894638510207,
+      "returns_21d": -25.643521888090703,
+      "timestamp": "2025-12-04T06:48:06.203785"
+    },
+    {
+      "ticker": "BA",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 202.5399932861328,
+      "rsi": 56.874993851715466,
+      "macd": 2.5262724607503477,
+      "volume_ratio": 1.5322029118341736,
+      "returns_21d": -0.9826495896538279,
+      "timestamp": "2025-12-04T06:48:06.203883"
+    },
+    {
+      "ticker": "LAC",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 5.25,
+      "rsi": 56.64335719858803,
+      "macd": 0.1176947394637261,
+      "volume_ratio": 0.5877660113226478,
+      "returns_21d": 3.143415375552805,
+      "timestamp": "2025-12-04T06:48:06.203980"
+    },
+    {
+      "ticker": "INTC",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 43.7599983215332,
+      "rsi": 67.19390077081445,
+      "macd": 0.8599376163251469,
+      "volume_ratio": 1.1103301589371046,
+      "returns_21d": 10.784805877299242,
+      "timestamp": "2025-12-04T06:48:06.204075"
+    },
+    {
+      "ticker": "LMT",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 446.79998779296875,
+      "rsi": 45.34310752726194,
+      "macd": -0.7858360198412875,
+      "volume_ratio": 1.2615331427048595,
+      "returns_21d": -7.736157942650845,
+      "timestamp": "2025-12-04T06:48:06.204319"
+    },
+    {
+      "ticker": "CRDO",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 189.19000244140625,
+      "rsi": 63.68725784789523,
+      "macd": 4.545919705125528,
+      "volume_ratio": 1.0618925338822056,
+      "returns_21d": 4.733172653148143,
+      "timestamp": "2025-12-04T06:48:06.204417"
+    },
+    {
+      "ticker": "ANET",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 127.80000305175781,
+      "rsi": 40.95718041793827,
+      "macd": 0.755505989666525,
+      "volume_ratio": 0.5568647454597575,
+      "returns_21d": -18.903479902531206,
+      "timestamp": "2025-12-04T06:48:06.204511"
+    },
+    {
+      "ticker": "META",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 639.5999755859375,
+      "rsi": 64.36823853921706,
+      "macd": 8.37901958533741,
+      "volume_ratio": 0.5669333952821073,
+      "returns_21d": 0.29636567533233293,
+      "timestamp": "2025-12-04T06:48:06.204606"
+    },
+    {
+      "ticker": "GOOGL",
+      "signal": "SELL",
+      "confidence": 0,
+      "patterns": [
+        {
+          "pattern": "OVERBOUGHT",
+          "strength": "SELL",
+          "reason": "RSI=71 - Consider taking profits"
+        }
+      ],
+      "price": 319.6300048828125,
+      "rsi": 70.76189746522549,
+      "macd": 1.4104646153910743,
+      "volume_ratio": 0.9142504626773597,
+      "returns_21d": 12.656846012831968,
+      "timestamp": "2025-12-04T06:48:06.204805"
+    },
+    {
+      "ticker": "HL",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 17.360000610351562,
+      "rsi": 63.005797607059776,
+      "macd": 0.321850639910771,
+      "volume_ratio": 0.8472706552071476,
+      "returns_21d": 36.09084445600759,
+      "timestamp": "2025-12-04T06:48:06.204901"
+    },
+    {
+      "ticker": "TEM",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 74.91000366210938,
+      "rsi": 56.56218799160288,
+      "macd": 1.0874498981647585,
+      "volume_ratio": 0.46275894441417825,
+      "returns_21d": -15.556302068296112,
+      "timestamp": "2025-12-04T06:48:06.204994"
+    },
+    {
+      "ticker": "TDOC",
+      "signal": "HOLD",
+      "confidence": 0,
+      "patterns": [],
+      "price": 7.53000020980835,
+      "rsi": 51.25000841409349,
+      "macd": 0.08666244267638407,
+      "volume_ratio": 0.7834813998909318,
+      "returns_21d": -7.493858818013289,
+      "timestamp": "2025-12-04T06:48:06.205087"
+    }
+  ],
+  "discovered_patterns": {
+    "dip_buy": {
+      "rsi_threshold": 35,
+      "drawdown_threshold": -0.08,
+      "volume_surge": 1.5,
+      "confidence_boost": 50,
+      "description": "Buy when RSI < 35 AND price down 8%+ from 21-day high"
+    },
+    "momentum_entry": {
+      "rsi_range": [
+        40,
+        60
+      ],
+      "macd_positive": true,
+      "ema_8_above_21": true,
+      "volume_confirmation": 1.25,
+      "confidence_boost": 30,
+      "description": "Buy when momentum aligns: MACD+, EMA crossover, volume"
+    },
+    "oversold_bounce": {
+      "rsi_threshold": 30,
+      "bb_position": 0.1,
+      "prior_trend": "down",
+      "confidence_boost": 40,
+      "description": "Buy oversold bounce at Bollinger lower band"
+    },
+    "profit_take": {
+      "gain_min": 0.05,
+      "gain_max": 0.08,
+      "rsi_overbought": 70,
+      "confidence_boost": 40,
+      "description": "Sell at 5-8% gain when RSI > 70"
+    },
+    "cut_loss": {
+      "loss_threshold": -0.05,
+      "immediate_exit": true,
+      "confidence_boost": 10,
+      "description": "Exit immediately at -5% loss"
+    },
+    "trinity_signal": {
+      "rsi_divergence": true,
+      "macd_confirmation": true,
+      "volume_spike": 1.5,
+      "accuracy": 0.71,
+      "description": "RSI divergence + MACD crossover + Volume confirmation"
+    }
+  },
+  "feature_importance": {
+    "rsi_14": 0.31,
+    "macd_hist_12_26": 0.28,
+    "volume_ratio": 0.19,
+    "atr_pct_14": 0.12,
+    "bb_pct_20": 0.1,
+    "returns_21d": 0.08,
+    "ema_8_21_cross": 0.07,
+    "trend_alignment": 0.06
+  }
+}

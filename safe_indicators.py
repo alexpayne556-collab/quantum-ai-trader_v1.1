@@ -65,54 +65,18 @@ def safe_atr(high_series: pd.Series, low_series: pd.Series, close_series: pd.Ser
     if len(close_series) < window or len(high_series) < window or len(low_series) < window:
         return pd.Series(index=close_series.index, data=np.nan)
     
-    if not HAS_TA:
-        # Fallback: manual ATR
+    # Always use manual ATR calculation for reliability
+    # (ta library has issues with certain data formats)
+    try:
         tr1 = high_series - low_series
         tr2 = abs(high_series - close_series.shift())
         tr3 = abs(low_series - close_series.shift())
         tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
         atr = tr.rolling(window=window).mean()
         return atr
-    
-    try:
-        # Use ta library with additional safety checks
-        # Ensure all series have the same index
-        high_clean = high_series.dropna()
-        low_clean = low_series.dropna()
-        close_clean = close_series.dropna()
-        
-        if len(high_clean) < window or len(low_clean) < window or len(close_clean) < window:
-            return pd.Series(index=close_series.index, data=np.nan)
-        
-        # Use only the common index
-        common_index = high_clean.index.intersection(low_clean.index).intersection(close_clean.index)
-        if len(common_index) < window:
-            return pd.Series(index=close_series.index, data=np.nan)
-        
-        high_aligned = high_clean.loc[common_index]
-        low_aligned = low_clean.loc[common_index]
-        close_aligned = close_clean.loc[common_index]
-        
-        atr_indicator = ta.volatility.AverageTrueRange(
-            high=high_aligned,
-            low=low_aligned,
-            close=close_aligned,
-            window=window
-        )
-        return atr_indicator.average_true_range()
     except Exception as e:
         print(f"⚠️  ATR calculation error: {e}")
-        # Fallback to manual calculation
-        try:
-            tr1 = high_series - low_series
-            tr2 = abs(high_series - close_series.shift())
-            tr3 = abs(low_series - close_series.shift())
-            tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
-            atr = tr.rolling(window=window).mean()
-            return atr
-        except Exception as e2:
-            print(f"⚠️  Fallback ATR calculation error: {e2}")
-            return pd.Series(index=close_series.index, data=np.nan)
+        return pd.Series(index=close_series.index, data=np.nan)
 
 
 def safe_macd(close_series: pd.Series, window_slow: int = 26, window_fast: int = 12, window_sign: int = 9) -> dict:

@@ -1,0 +1,1307 @@
+[
+  {
+    "ticker": "APLD",
+    "date": "2025-12-04T04:11:15.404177",
+    "price_at_prediction": 29.360000610351562,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +9.0%"
+    ],
+    "projection_21d": {
+      "current": 29.360000610351562,
+      "bull_target": 33.745913552050595,
+      "bear_target": 26.260119984753132,
+      "likely_target": 31.991548375370982,
+      "confidence": 0.5,
+      "expected_return": 8.963037160467923,
+      "upside": 14.93839526744654,
+      "downside": -10.558176298216745,
+      "vol_range": 10.785768240343106,
+      "days": 21
+    },
+    "rsi": 59.400892726542345,
+    "macd_hist": 0.6184725593203808,
+    "warnings": [],
+    "target_price": 31.991548375370982
+  },
+  {
+    "ticker": "SERV",
+    "date": "2025-12-04T04:11:16.521386",
+    "price_at_prediction": 11.800000190734863,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Above BB upper",
+      "21d target +7.3%"
+    ],
+    "projection_21d": {
+      "current": 11.800000190734863,
+      "bull_target": 13.235366677529043,
+      "bear_target": 10.971800111660999,
+      "likely_target": 12.661220082811372,
+      "confidence": 0.5,
+      "expected_return": 7.298473543693011,
+      "upside": 12.164122572821675,
+      "downside": -7.018644624464936,
+      "vol_range": 4.5191669731888835,
+      "days": 21
+    },
+    "rsi": 60.77795239818219,
+    "macd_hist": 0.3125608997135543,
+    "warnings": [],
+    "target_price": 12.661220082811372
+  },
+  {
+    "ticker": "MRVL",
+    "date": "2025-12-04T04:11:17.465779",
+    "price_at_prediction": 100.19999694824219,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish",
+      "Above BB upper",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 100.19999694824219,
+      "bull_target": 106.81260153742076,
+      "bear_target": 91.43140573935867,
+      "likely_target": 104.16755970174933,
+      "confidence": 0.75,
+      "expected_return": 3.959643587171528,
+      "upside": 6.599405978619223,
+      "downside": -8.751089297350871,
+      "vol_range": 20.235913545776445,
+      "days": 21
+    },
+    "rsi": 62.888303785966365,
+    "macd_hist": 1.4486299080217782,
+    "warnings": [],
+    "target_price": 104.16755970174933
+  },
+  {
+    "ticker": "HOOD",
+    "date": "2025-12-04T04:11:18.384687",
+    "price_at_prediction": 133.63999938964844,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +6.8%"
+    ],
+    "projection_21d": {
+      "current": 133.63999938964844,
+      "bull_target": 148.76848956110663,
+      "bear_target": 124.00124317649882,
+      "likely_target": 142.71709349252336,
+      "confidence": 0.5,
+      "expected_return": 6.792198551579777,
+      "upside": 11.32033091929962,
+      "downside": -7.212478492345925,
+      "vol_range": 29.63933975508986,
+      "days": 21
+    },
+    "rsi": 50.443789254986335,
+    "macd_hist": 1.6742577601688309,
+    "warnings": [],
+    "target_price": 142.71709349252336
+  },
+  {
+    "ticker": "LUNR",
+    "date": "2025-12-04T04:11:19.390898",
+    "price_at_prediction": 10.199999809265137,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +8.4%"
+    ],
+    "projection_21d": {
+      "current": 10.199999809265137,
+      "bull_target": 11.619855332190884,
+      "bear_target": 9.550283205233654,
+      "likely_target": 11.051913123020585,
+      "confidence": 0.5,
+      "expected_return": 8.352091467507826,
+      "upside": 13.920152445846382,
+      "downside": -6.3697707468711355,
+      "vol_range": 3.072459706192213,
+      "days": 21
+    },
+    "rsi": 56.28654502911971,
+    "macd_hist": 0.168387396255418,
+    "warnings": [],
+    "target_price": 11.051913123020585
+  },
+  {
+    "ticker": "BAC",
+    "date": "2025-12-04T04:11:20.486069",
+    "price_at_prediction": 54.09000015258789,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 54.09000015258789,
+      "bull_target": 55.51474887502742,
+      "bear_target": 52.609622931071414,
+      "likely_target": 54.94484938605161,
+      "confidence": 0.75,
+      "expected_return": 1.5804200980813234,
+      "upside": 2.6340334968022097,
+      "downside": -2.7368778283237805,
+      "vol_range": 4.223856296555178,
+      "days": 21
+    },
+    "rsi": 49.878045262484754,
+    "macd_hist": 0.11287122708008432,
+    "warnings": [],
+    "target_price": 54.94484938605161
+  },
+  {
+    "ticker": "QCOM",
+    "date": "2025-12-04T04:11:21.580593",
+    "price_at_prediction": 175.07000732421875,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 175.07000732421875,
+      "bull_target": 182.7690604210921,
+      "bear_target": 168.98109002128658,
+      "likely_target": 179.68943918234277,
+      "confidence": 0.5,
+      "expected_return": 2.638619789150472,
+      "upside": 4.397699648584109,
+      "downside": -3.4779899744082825,
+      "vol_range": 19.53434038429569,
+      "days": 21
+    },
+    "rsi": 47.91014839064179,
+    "macd_hist": 0.47146419387461513,
+    "warnings": [],
+    "target_price": 179.68943918234277
+  },
+  {
+    "ticker": "UUUU",
+    "date": "2025-12-04T04:11:22.461133",
+    "price_at_prediction": 15.100000381469727,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +9.2%"
+    ],
+    "projection_21d": {
+      "current": 15.100000381469727,
+      "bull_target": 17.408595017068002,
+      "bear_target": 14.390392439771317,
+      "likely_target": 16.485157162828692,
+      "confidence": 0.5,
+      "expected_return": 9.173223485866853,
+      "upside": 15.288705809778088,
+      "downside": -4.699390223653371,
+      "vol_range": 3.6594140028749704,
+      "days": 21
+    },
+    "rsi": 45.20000495460516,
+    "macd_hist": 0.12373503124538354,
+    "warnings": [],
+    "target_price": 16.485157162828692
+  },
+  {
+    "ticker": "TSLA",
+    "date": "2025-12-04T04:11:23.447136",
+    "price_at_prediction": 446.739990234375,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 446.739990234375,
+      "bull_target": 476.6831802692069,
+      "bear_target": 423.0822731503925,
+      "likely_target": 464.70590425527416,
+      "confidence": 0.75,
+      "expected_return": 4.0215593888233805,
+      "upside": 6.702598981372293,
+      "downside": -5.29563450802129,
+      "vol_range": 84.4600373741549,
+      "days": 21
+    },
+    "rsi": 56.935361509220684,
+    "macd_hist": 3.3639767021411573,
+    "warnings": [],
+    "target_price": 464.70590425527416
+  },
+  {
+    "ticker": "AMD",
+    "date": "2025-12-04T04:11:24.331736",
+    "price_at_prediction": 217.60000610351562,
+    "signal": "HOLD",
+    "score": 0,
+    "reasons": [
+      "RSI oversold (28)",
+      "MACD bearish",
+      "21d target -4.5%"
+    ],
+    "projection_21d": {
+      "current": 217.60000610351562,
+      "bull_target": 234.05166343269974,
+      "bear_target": 201.16206389374923,
+      "likely_target": 207.73724077765578,
+      "confidence": 0.35,
+      "expected_return": -4.532520702765042,
+      "upside": 7.560504075242449,
+      "downside": -7.554201171275066,
+      "vol_range": 38.20189497713617,
+      "days": 21
+    },
+    "rsi": 28.452139820097344,
+    "macd_hist": -2.375725378679165,
+    "warnings": [],
+    "target_price": 207.73724077765578
+  },
+  {
+    "ticker": "NOW",
+    "date": "2025-12-04T04:11:25.237855",
+    "price_at_prediction": 832.9000244140625,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "RSI low (39)",
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 832.9000244140625,
+      "bull_target": 883.627803918598,
+      "bear_target": 833.9380959086484,
+      "likely_target": 868.4094700672374,
+      "confidence": 0.5,
+      "expected_return": 4.263350295631877,
+      "upside": 6.090500422331246,
+      "downside": 0.12463338505916918,
+      "vol_range": 93.75455160078974,
+      "days": 21
+    },
+    "rsi": 39.087484117872414,
+    "macd_hist": 2.5651508159880194,
+    "warnings": [],
+    "target_price": 868.4094700672374
+  },
+  {
+    "ticker": "NVDA",
+    "date": "2025-12-04T04:11:26.417269",
+    "price_at_prediction": 179.58999633789062,
+    "signal": "HOLD",
+    "score": 0,
+    "reasons": [
+      "RSI low (36)",
+      "MACD bearish"
+    ],
+    "projection_21d": {
+      "current": 179.58999633789062,
+      "bull_target": 190.61706226523967,
+      "bear_target": 170.93708808289045,
+      "likely_target": 174.39825138489053,
+      "confidence": 0.35,
+      "expected_return": -2.890887610038177,
+      "upside": 6.140133722483132,
+      "downside": -4.8181460167303,
+      "vol_range": 25.816920968670054,
+      "days": 21
+    },
+    "rsi": 36.41230766844436,
+    "macd_hist": -0.8164821343730932,
+    "warnings": [],
+    "target_price": 174.39825138489053
+  },
+  {
+    "ticker": "MU",
+    "date": "2025-12-04T04:11:27.708386",
+    "price_at_prediction": 234.16000366210938,
+    "signal": "SELL",
+    "score": -3,
+    "reasons": [
+      "MACD bearish",
+      "21d target -6.3%"
+    ],
+    "projection_21d": {
+      "current": 234.16000366210938,
+      "bull_target": 246.32987760907264,
+      "bear_target": 209.75896637386836,
+      "likely_target": 219.51938128916476,
+      "confidence": 0.5,
+      "expected_return": -6.252400983931866,
+      "upside": 5.197247077483085,
+      "downside": -10.420668306553102,
+      "vol_range": 43.04235364351988,
+      "days": 21
+    },
+    "rsi": 45.05889396921102,
+    "macd_hist": -0.8682362975775968,
+    "warnings": [],
+    "target_price": 219.51938128916476
+  },
+  {
+    "ticker": "PG",
+    "date": "2025-12-04T04:11:28.710370",
+    "price_at_prediction": 146.7100067138672,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 146.7100067138672,
+      "bull_target": 151.5309370039256,
+      "bear_target": 145.6063992497849,
+      "likely_target": 149.60256488790225,
+      "confidence": 0.5,
+      "expected_return": 1.9716161418194877,
+      "upside": 3.2860269030324663,
+      "downside": -0.7522373482230831,
+      "vol_range": 7.803494149257359,
+      "days": 21
+    },
+    "rsi": 45.992639260443326,
+    "macd_hist": 0.01075059067245554,
+    "warnings": [],
+    "target_price": 149.60256488790225
+  },
+  {
+    "ticker": "DLB",
+    "date": "2025-12-04T04:11:29.621401",
+    "price_at_prediction": 66.29000091552734,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 66.29000091552734,
+      "bull_target": 69.1522423424067,
+      "bear_target": 65.46784675122814,
+      "likely_target": 68.00734577165495,
+      "confidence": 0.5,
+      "expected_return": 2.590654446235421,
+      "upside": 4.3177574103923675,
+      "downside": -1.2402385773789155,
+      "vol_range": 4.6663106378376344,
+      "days": 21
+    },
+    "rsi": 48.761768399775065,
+    "macd_hist": 0.2676946023245625,
+    "warnings": [],
+    "target_price": 68.00734577165495
+  },
+  {
+    "ticker": "XME",
+    "date": "2025-12-04T04:11:30.570767",
+    "price_at_prediction": 99.66999816894531,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish",
+      "Above BB upper",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 99.66999816894531,
+      "bull_target": 104.03515046681588,
+      "bear_target": 95.27772608169354,
+      "likely_target": 102.28908954766766,
+      "confidence": 0.75,
+      "expected_return": 2.6277630448862483,
+      "upside": 4.379605074810404,
+      "downside": -4.406814656308774,
+      "vol_range": 9.32596292646799,
+      "days": 21
+    },
+    "rsi": 56.29063572789344,
+    "macd_hist": 0.9745239344843751,
+    "warnings": [],
+    "target_price": 102.28908954766766
+  },
+  {
+    "ticker": "KRYS",
+    "date": "2025-12-04T04:11:31.435449",
+    "price_at_prediction": 217.4600067138672,
+    "signal": "HOLD",
+    "score": 1,
+    "reasons": [
+      "RSI overbought (71)",
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 217.4600067138672,
+      "bull_target": 225.33279356104705,
+      "bear_target": 205.02094556007643,
+      "likely_target": 222.1836788221751,
+      "confidence": 0.75,
+      "expected_return": 2.1722026866867954,
+      "upside": 3.620337811144668,
+      "downside": -5.720160383402368,
+      "vol_range": 27.866754708749376,
+      "days": 21
+    },
+    "rsi": 71.44133268240745,
+    "macd_hist": 0.06731145509993741,
+    "warnings": [],
+    "target_price": 222.1836788221751
+  },
+  {
+    "ticker": "LEU",
+    "date": "2025-12-04T04:11:33.520966",
+    "price_at_prediction": 268.1000061035156,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +9.0%"
+    ],
+    "projection_21d": {
+      "current": 268.1000061035156,
+      "bull_target": 308.0969520385637,
+      "bear_target": 257.63042866819717,
+      "likely_target": 292.09817366454445,
+      "confidence": 0.5,
+      "expected_return": 8.951199930880618,
+      "upside": 14.91866655146771,
+      "downside": -3.9051015281499346,
+      "vol_range": 73.47573449089694,
+      "days": 21
+    },
+    "rsi": 46.765567557722434,
+    "macd_hist": 3.2234168728591115,
+    "warnings": [],
+    "target_price": 292.09817366454445
+  },
+  {
+    "ticker": "QTUM",
+    "date": "2025-12-04T04:11:35.452670",
+    "price_at_prediction": 112.0,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 112.0,
+      "bull_target": 116.78505174146386,
+      "bear_target": 107.88257562855321,
+      "likely_target": 114.87103104487832,
+      "confidence": 0.75,
+      "expected_return": 2.563420575784216,
+      "upside": 4.272367626307018,
+      "downside": -3.676271760220346,
+      "vol_range": 10.57700692435094,
+      "days": 21
+    },
+    "rsi": 52.553268147298844,
+    "macd_hist": 0.6090797700667057,
+    "warnings": [],
+    "target_price": 114.87103104487832
+  },
+  {
+    "ticker": "SPY",
+    "date": "2025-12-04T04:11:36.691554",
+    "price_at_prediction": 683.8900146484375,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 683.8900146484375,
+      "bull_target": 698.891779953092,
+      "bear_target": 671.3051687089351,
+      "likely_target": 692.8910738312302,
+      "confidence": 0.75,
+      "expected_return": 1.3161559592911731,
+      "upside": 2.1935932654852994,
+      "downside": -1.8401856541174728,
+      "vol_range": 39.090727807132076,
+      "days": 21
+    },
+    "rsi": 50.34670981137315,
+    "macd_hist": 1.5585430853422126,
+    "warnings": [],
+    "target_price": 692.8910738312302
+  },
+  {
+    "ticker": "UNH",
+    "date": "2025-12-04T04:11:37.616540",
+    "price_at_prediction": 339.7099914550781,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 339.7099914550781,
+      "bull_target": 354.7168491352319,
+      "bear_target": 330.2252752287267,
+      "likely_target": 348.7141060631704,
+      "confidence": 0.5,
+      "expected_return": 2.6505298150122067,
+      "upside": 4.417549691687006,
+      "downside": -2.7920039047793717,
+      "vol_range": 47.82735801875172,
+      "days": 21
+    },
+    "rsi": 50.43017445251177,
+    "macd_hist": 2.36906719920571,
+    "warnings": [],
+    "target_price": 348.7141060631704
+  },
+  {
+    "ticker": "WMT",
+    "date": "2025-12-04T04:11:38.732773",
+    "price_at_prediction": 114.41000366210938,
+    "signal": "HOLD",
+    "score": 0,
+    "reasons": [
+      "RSI overbought (73)",
+      "MACD bullish",
+      "Above BB upper",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 114.41000366210938,
+      "bull_target": 118.97278768353688,
+      "bear_target": 109.32707997817784,
+      "likely_target": 117.14767407496588,
+      "confidence": 0.75,
+      "expected_return": 2.392859300085113,
+      "upside": 3.988098833475188,
+      "downside": -4.442726615885003,
+      "vol_range": 8.348878236822197,
+      "days": 21
+    },
+    "rsi": 73.17279650281463,
+    "macd_hist": 1.170945175856975,
+    "warnings": [],
+    "target_price": 117.14767407496588
+  },
+  {
+    "ticker": "OKLO",
+    "date": "2025-12-04T04:11:39.605910",
+    "price_at_prediction": 96.58999633789062,
+    "signal": "STRONG BUY",
+    "score": 5,
+    "reasons": [
+      "RSI low (38)",
+      "MACD bullish",
+      "21d target +15.3%"
+    ],
+    "projection_21d": {
+      "current": 96.58999633789062,
+      "bull_target": 117.77023841660352,
+      "bear_target": 94.71520716251621,
+      "likely_target": 111.41616579298964,
+      "confidence": 0.5,
+      "expected_return": 15.349591072800326,
+      "upside": 21.927987246857615,
+      "downside": -1.9409765466974853,
+      "vol_range": 34.02281317769107,
+      "days": 21
+    },
+    "rsi": 38.30981254360192,
+    "macd_hist": 0.5925912383151815,
+    "warnings": [],
+    "target_price": 111.41616579298964
+  },
+  {
+    "ticker": "RXRX",
+    "date": "2025-12-04T04:11:40.509426",
+    "price_at_prediction": 4.659999847412109,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +7.3%"
+    ],
+    "projection_21d": {
+      "current": 4.659999847412109,
+      "bull_target": 5.226048937500822,
+      "bear_target": 4.496073471101086,
+      "likely_target": 4.999629301465337,
+      "confidence": 0.5,
+      "expected_return": 7.288185947942417,
+      "upside": 12.146976579904042,
+      "downside": -3.517733512417567,
+      "vol_range": 1.3021766462080873,
+      "days": 21
+    },
+    "rsi": 50.21644181139261,
+    "macd_hist": 0.07103214456094548,
+    "warnings": [],
+    "target_price": 4.999629301465337
+  },
+  {
+    "ticker": "MTZ",
+    "date": "2025-12-04T04:11:42.472167",
+    "price_at_prediction": 218.2899932861328,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish",
+      "Above BB upper",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 218.2899932861328,
+      "bull_target": 232.04539688139033,
+      "bear_target": 205.640612717105,
+      "likely_target": 226.54323544328733,
+      "confidence": 0.75,
+      "expected_return": 3.7808614279154025,
+      "upside": 6.301435713192332,
+      "downside": -5.79475970410018,
+      "vol_range": 29.110733617180937,
+      "days": 21
+    },
+    "rsi": 68.19329648509411,
+    "macd_hist": 2.4742591086192354,
+    "warnings": [],
+    "target_price": 226.54323544328733
+  },
+  {
+    "ticker": "SNOW",
+    "date": "2025-12-04T04:11:43.477236",
+    "price_at_prediction": 265.0,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 265.0,
+      "bull_target": 281.96196026065354,
+      "bear_target": 251.05644670811904,
+      "likely_target": 275.17717615639214,
+      "confidence": 0.75,
+      "expected_return": 3.840443832600806,
+      "upside": 6.400739721001337,
+      "downside": -5.261718223351306,
+      "vol_range": 37.063817353765565,
+      "days": 21
+    },
+    "rsi": 46.73086722017589,
+    "macd_hist": 0.31258880778418496,
+    "warnings": [],
+    "target_price": 275.17717615639214
+  },
+  {
+    "ticker": "GRRR",
+    "date": "2025-12-04T04:11:44.362393",
+    "price_at_prediction": 13.979999542236328,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +10.0%"
+    ],
+    "projection_21d": {
+      "current": 13.979999542236328,
+      "bull_target": 16.30270636483376,
+      "bear_target": 13.483809417550933,
+      "likely_target": 15.373623635794788,
+      "confidence": 0.5,
+      "expected_return": 9.968699135847945,
+      "upside": 16.614498559746572,
+      "downside": -3.549285700520281,
+      "vol_range": 5.7086579368899875,
+      "days": 21
+    },
+    "rsi": 53.559866315429105,
+    "macd_hist": 0.1910633983580059,
+    "warnings": [],
+    "target_price": 15.373623635794788
+  },
+  {
+    "ticker": "BSX",
+    "date": "2025-12-04T04:11:46.253961",
+    "price_at_prediction": 98.56999969482422,
+    "signal": "HOLD",
+    "score": 0,
+    "reasons": [
+      "RSI low (35)",
+      "MACD bearish"
+    ],
+    "projection_21d": {
+      "current": 98.56999969482422,
+      "bull_target": 101.70468908945205,
+      "bear_target": 96.25693225557501,
+      "likely_target": 97.1821592312747,
+      "confidence": 0.35,
+      "expected_return": -1.4079745032426907,
+      "upside": 3.180165774914196,
+      "downside": -2.346624172071156,
+      "vol_range": 6.764328993234397,
+      "days": 21
+    },
+    "rsi": 34.57272022997722,
+    "macd_hist": -0.11531523265699861,
+    "warnings": [],
+    "target_price": 97.1821592312747
+  },
+  {
+    "ticker": "LLY",
+    "date": "2025-12-04T04:11:47.267197",
+    "price_at_prediction": 1033.56005859375,
+    "signal": "SELL",
+    "score": -3,
+    "reasons": [
+      "MACD bearish",
+      "21d target -3.2%"
+    ],
+    "projection_21d": {
+      "current": 1033.56005859375,
+      "bull_target": 1035.667254958829,
+      "bear_target": 979.2639392854062,
+      "likely_target": 1000.9823870087437,
+      "confidence": 0.5,
+      "expected_return": -3.1519863131447954,
+      "upside": 0.20387749580281664,
+      "downside": -5.253310521907985,
+      "vol_range": 120.96283402292319,
+      "days": 21
+    },
+    "rsi": 54.54991243238513,
+    "macd_hist": -7.0223267967181044,
+    "warnings": [],
+    "target_price": 1000.9823870087437
+  },
+  {
+    "ticker": "VOO",
+    "date": "2025-12-04T04:11:48.240530",
+    "price_at_prediction": 628.77001953125,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 628.77001953125,
+      "bull_target": 642.5714879785521,
+      "bear_target": 617.1922081641172,
+      "likely_target": 637.0509005996313,
+      "confidence": 0.75,
+      "expected_return": 1.316996805056754,
+      "upside": 2.194994675094584,
+      "downside": -1.8413427815410253,
+      "vol_range": 34.20707299802586,
+      "days": 21
+    },
+    "rsi": 50.408958873914244,
+    "macd_hist": 1.4270911066055056,
+    "warnings": [],
+    "target_price": 637.0509005996313
+  },
+  {
+    "ticker": "GEO",
+    "date": "2025-12-04T04:11:49.170456",
+    "price_at_prediction": 17.100000381469727,
+    "signal": "WEAK SELL",
+    "score": -1,
+    "reasons": [
+      "RSI overbought (76)",
+      "MACD bullish",
+      "Above BB upper"
+    ],
+    "projection_21d": {
+      "current": 17.100000381469727,
+      "bull_target": 18.19682720881824,
+      "bear_target": 16.63523953530378,
+      "likely_target": 17.758096477878837,
+      "confidence": 0.5,
+      "expected_return": 3.848515097825675,
+      "upside": 6.414191829709445,
+      "downside": -2.7178996245496125,
+      "vol_range": 2.379891571571977,
+      "days": 21
+    },
+    "rsi": 75.65011937715683,
+    "macd_hist": 0.35865908217056885,
+    "warnings": [],
+    "target_price": 17.758096477878837
+  },
+  {
+    "ticker": "CXW",
+    "date": "2025-12-04T04:11:51.162214",
+    "price_at_prediction": 18.600000381469727,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 18.600000381469727,
+      "bull_target": 19.563210270647243,
+      "bear_target": 18.049814614421184,
+      "likely_target": 19.177926314976236,
+      "confidence": 0.5,
+      "expected_return": 3.107128611041693,
+      "upside": 5.178547685069488,
+      "downside": -2.9579879342188944,
+      "vol_range": 1.8379083720896743,
+      "days": 21
+    },
+    "rsi": 66.37930196339127,
+    "macd_hist": 0.2529233903171304,
+    "warnings": [],
+    "target_price": 19.177926314976236
+  },
+  {
+    "ticker": "LYFT",
+    "date": "2025-12-04T04:11:53.094611",
+    "price_at_prediction": 22.329999923706055,
+    "signal": "STRONG BUY",
+    "score": 6,
+    "reasons": [
+      "RSI low (36)",
+      "MACD bullish",
+      "21d target +6.6%",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 22.329999923706055,
+      "bull_target": 24.433157167601287,
+      "bear_target": 21.079331411568766,
+      "likely_target": 23.80220999443272,
+      "confidence": 0.75,
+      "expected_return": 6.592969439125394,
+      "upside": 9.418527770179127,
+      "downside": -5.6008442293344975,
+      "vol_range": 3.8855729025563868,
+      "days": 21
+    },
+    "rsi": 36.20689876240852,
+    "macd_hist": 0.04140512749641835,
+    "warnings": [],
+    "target_price": 23.80220999443272
+  },
+  {
+    "ticker": "MNDY",
+    "date": "2025-12-04T04:11:53.993783",
+    "price_at_prediction": 152.52000427246094,
+    "signal": "STRONG BUY",
+    "score": 5,
+    "reasons": [
+      "RSI low (42)",
+      "MACD bullish",
+      "21d target +6.7%"
+    ],
+    "projection_21d": {
+      "current": 152.52000427246094,
+      "bull_target": 169.56615765553272,
+      "bear_target": 151.81549780314137,
+      "likely_target": 162.747696302304,
+      "confidence": 0.5,
+      "expected_return": 6.705803660726612,
+      "upside": 11.176339434544353,
+      "downside": -0.46191086387661107,
+      "vol_range": 29.479832198881287,
+      "days": 21
+    },
+    "rsi": 42.43051686026643,
+    "macd_hist": 0.6988603469940458,
+    "warnings": [],
+    "target_price": 162.747696302304
+  },
+  {
+    "ticker": "BA",
+    "date": "2025-12-04T04:11:55.038376",
+    "price_at_prediction": 202.5399932861328,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 202.5399932861328,
+      "bull_target": 213.59175334509405,
+      "bear_target": 197.5276408513813,
+      "likely_target": 209.17104932150954,
+      "confidence": 0.5,
+      "expected_return": 3.2739489756025058,
+      "upside": 5.456581626004187,
+      "downside": -2.474747013381423,
+      "vol_range": 22.216323483716888,
+      "days": 21
+    },
+    "rsi": 56.87499369775307,
+    "macd_hist": 2.60732131846812,
+    "warnings": [],
+    "target_price": 209.17104932150954
+  },
+  {
+    "ticker": "LAC",
+    "date": "2025-12-04T04:11:55.958606",
+    "price_at_prediction": 5.25,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +8.2%"
+    ],
+    "projection_21d": {
+      "current": 5.25,
+      "bull_target": 5.967336526136207,
+      "bear_target": 4.93900470528097,
+      "likely_target": 5.680401915681724,
+      "confidence": 0.5,
+      "expected_return": 8.198131727270933,
+      "upside": 13.663552878784897,
+      "downside": -5.923719899410091,
+      "vol_range": 1.9512549621114226,
+      "days": 21
+    },
+    "rsi": 56.64335445356451,
+    "macd_hist": 0.10807369878859666,
+    "warnings": [],
+    "target_price": 5.680401915681724
+  },
+  {
+    "ticker": "INTC",
+    "date": "2025-12-04T04:11:57.932570",
+    "price_at_prediction": 43.7599983215332,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish",
+      "Above BB upper",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 43.7599983215332,
+      "bull_target": 46.840731323220865,
+      "bear_target": 39.80989652966791,
+      "likely_target": 45.6084381225458,
+      "confidence": 0.75,
+      "expected_return": 4.224039926672083,
+      "upside": 7.040066544453477,
+      "downside": -9.026741186874194,
+      "vol_range": 8.08877366747002,
+      "days": 21
+    },
+    "rsi": 67.19390022523316,
+    "macd_hist": 0.820536404544618,
+    "warnings": [],
+    "target_price": 45.6084381225458
+  },
+  {
+    "ticker": "ALK",
+    "date": "2025-12-04T04:11:59.851864",
+    "price_at_prediction": 45.369998931884766,
+    "signal": "HOLD",
+    "score": 1,
+    "reasons": [
+      "MACD bullish",
+      "Above BB upper"
+    ],
+    "projection_21d": {
+      "current": 45.369998931884766,
+      "bull_target": 48.37786183618337,
+      "bear_target": 43.92929294500992,
+      "likely_target": 47.17471667446393,
+      "confidence": 0.5,
+      "expected_return": 3.9777777938426606,
+      "upside": 6.629629656404429,
+      "downside": -3.1754596006004276,
+      "vol_range": 6.967712436338846,
+      "days": 21
+    },
+    "rsi": 57.049894732064985,
+    "macd_hist": 0.8272949788649233,
+    "warnings": [],
+    "target_price": 47.17471667446393
+  },
+  {
+    "ticker": "LMT",
+    "date": "2025-12-04T04:12:00.952086",
+    "price_at_prediction": 446.79998779296875,
+    "signal": "WEAK SELL",
+    "score": -1,
+    "reasons": [
+      "MACD bearish"
+    ],
+    "projection_21d": {
+      "current": 446.79998779296875,
+      "bull_target": 463.10382930947264,
+      "bear_target": 435.84241488827126,
+      "likely_target": 440.22544405015026,
+      "confidence": 0.35,
+      "expected_return": -1.4714735726145323,
+      "upside": 3.649024610998538,
+      "downside": -2.4524559543575535,
+      "vol_range": 33.8549498611308,
+      "days": 21
+    },
+    "rsi": 45.34310744113593,
+    "macd_hist": -0.940236139696478,
+    "warnings": [],
+    "target_price": 440.22544405015026
+  },
+  {
+    "ticker": "CRDO",
+    "date": "2025-12-04T04:12:01.846306",
+    "price_at_prediction": 189.19000244140625,
+    "signal": "STRONG BUY",
+    "score": 5,
+    "reasons": [
+      "MACD bullish",
+      "21d target +7.4%",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 189.19000244140625,
+      "bull_target": 212.54669146571277,
+      "bear_target": 164.94653065254866,
+      "likely_target": 203.20401585599015,
+      "confidence": 0.75,
+      "expected_return": 7.407375249082815,
+      "upside": 12.345625415138036,
+      "downside": -12.814351432954815,
+      "vol_range": 50.483346091093864,
+      "days": 21
+    },
+    "rsi": 63.687257764139154,
+    "macd_hist": 4.4469487702826145,
+    "warnings": [],
+    "target_price": 203.20401585599015
+  },
+  {
+    "ticker": "ANET",
+    "date": "2025-12-04T04:12:02.745491",
+    "price_at_prediction": 127.80000305175781,
+    "signal": "STRONG BUY",
+    "score": 5,
+    "reasons": [
+      "RSI low (41)",
+      "MACD bullish",
+      "21d target +5.7%"
+    ],
+    "projection_21d": {
+      "current": 127.80000305175781,
+      "bull_target": 139.92997867133232,
+      "bear_target": 125.53621861735003,
+      "likely_target": 135.07798842350252,
+      "confidence": 0.5,
+      "expected_return": 5.6948240985543555,
+      "upside": 9.491373497590592,
+      "downside": -1.771349280399446,
+      "vol_range": 21.167127681970605,
+      "days": 21
+    },
+    "rsi": 40.9571802749491,
+    "macd_hist": 0.7012930731370615,
+    "warnings": [],
+    "target_price": 135.07798842350252
+  },
+  {
+    "ticker": "META",
+    "date": "2025-12-04T04:12:03.695724",
+    "price_at_prediction": 639.5999755859375,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 639.5999755859375,
+      "bull_target": 673.8239800263586,
+      "bear_target": 634.8660054399286,
+      "likely_target": 660.1343782501901,
+      "confidence": 0.5,
+      "expected_return": 3.2105071057016654,
+      "upside": 5.350845176169454,
+      "downside": -0.7401454544572371,
+      "vol_range": 70.65661375202494,
+      "days": 21
+    },
+    "rsi": 64.36823845540832,
+    "macd_hist": 8.61412794424465,
+    "warnings": [],
+    "target_price": 660.1343782501901
+  },
+  {
+    "ticker": "RIVN",
+    "date": "2025-12-04T04:12:04.660117",
+    "price_at_prediction": 17.530000686645508,
+    "signal": "BUY",
+    "score": 3,
+    "reasons": [
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 17.530000686645508,
+      "bull_target": 18.734074513273438,
+      "bear_target": 15.967656405211038,
+      "likely_target": 18.252444982622265,
+      "confidence": 0.75,
+      "expected_return": 4.121188064340013,
+      "upside": 6.86864677390003,
+      "downside": -8.91240285361013,
+      "vol_range": 3.207949558130316,
+      "days": 21
+    },
+    "rsi": 50.0837528191171,
+    "macd_hist": 0.17806450004483665,
+    "warnings": [],
+    "target_price": 18.252444982622265
+  },
+  {
+    "ticker": "GOOGL",
+    "date": "2025-12-04T04:12:05.553939",
+    "price_at_prediction": 319.6300048828125,
+    "signal": "HOLD",
+    "score": 1,
+    "reasons": [
+      "RSI overbought (71)",
+      "MACD bullish",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 319.6300048828125,
+      "bull_target": 332.80372481299935,
+      "bear_target": 297.2298015760519,
+      "likely_target": 327.5342368409246,
+      "confidence": 0.75,
+      "expected_return": 2.472931776542721,
+      "upside": 4.121552960904529,
+      "downside": -7.008166619079863,
+      "vol_range": 30.810327837048405,
+      "days": 21
+    },
+    "rsi": 70.76189734151694,
+    "macd_hist": 1.231344680290313,
+    "warnings": [],
+    "target_price": 327.5342368409246
+  },
+  {
+    "ticker": "HL",
+    "date": "2025-12-04T04:12:06.557586",
+    "price_at_prediction": 17.360000610351562,
+    "signal": "STRONG BUY",
+    "score": 5,
+    "reasons": [
+      "MACD bullish",
+      "21d target +6.1%",
+      "Strong trend alignment"
+    ],
+    "projection_21d": {
+      "current": 17.360000610351562,
+      "bull_target": 19.138521353903748,
+      "bear_target": 15.411179145051069,
+      "likely_target": 18.427113056482874,
+      "confidence": 0.75,
+      "expected_return": 6.146960879108523,
+      "upside": 10.244934798514205,
+      "downside": -11.22592970497037,
+      "vol_range": 3.2168813917163166,
+      "days": 21
+    },
+    "rsi": 63.00579636895089,
+    "macd_hist": 0.30669439166006374,
+    "warnings": [],
+    "target_price": 18.427113056482874
+  },
+  {
+    "ticker": "TEM",
+    "date": "2025-12-04T04:12:07.479455",
+    "price_at_prediction": 74.91000366210938,
+    "signal": "BUY",
+    "score": 4,
+    "reasons": [
+      "MACD bullish",
+      "21d target +6.6%"
+    ],
+    "projection_21d": {
+      "current": 74.91000366210938,
+      "bull_target": 83.20100785979076,
+      "bear_target": 72.4192543281383,
+      "likely_target": 79.88460618071821,
+      "confidence": 0.5,
+      "expected_return": 6.640771960240957,
+      "upside": 11.067953267068262,
+      "downside": -3.324988936332064,
+      "vol_range": 20.98622580696337,
+      "days": 21
+    },
+    "rsi": 56.56218772155391,
+    "macd_hist": 1.0479680927666348,
+    "warnings": [],
+    "target_price": 79.88460618071821
+  },
+  {
+    "ticker": "TDOC",
+    "date": "2025-12-04T04:12:08.403781",
+    "price_at_prediction": 7.53000020980835,
+    "signal": "HOLD",
+    "score": 2,
+    "reasons": [
+      "MACD bullish"
+    ],
+    "projection_21d": {
+      "current": 7.53000020980835,
+      "bull_target": 8.114293059960339,
+      "bear_target": 7.35868936964174,
+      "likely_target": 7.8805759198995435,
+      "confidence": 0.5,
+      "expected_return": 4.655719791807504,
+      "upside": 7.759532986345833,
+      "downside": -2.275044294732754,
+      "vol_range": 1.320573837153552,
+      "days": 21
+    },
+    "rsi": 51.25000545440639,
+    "macd_hist": 0.0849069629418453,
+    "warnings": [],
+    "target_price": 7.8805759198995435
+  },
+  {
+    "ticker": "KMTS",
+    "date": "2025-12-04T04:12:09.414712",
+    "price_at_prediction": 25.81999969482422,
+    "signal": "SELL",
+    "score": -3,
+    "reasons": [
+      "MACD bearish",
+      "21d target -6.8%"
+    ],
+    "projection_21d": {
+      "current": 25.81999969482422,
+      "bull_target": 28.25833639931242,
+      "bear_target": 22.889701065582813,
+      "likely_target": 24.061820517279376,
+      "confidence": 0.35,
+      "expected_return": -6.809369474536753,
+      "upside": 9.443596953167201,
+      "downside": -11.348949124227925,
+      "vol_range": 5.070262014821647,
+      "days": 21
+    },
+    "rsi": 46.22861079274585,
+    "macd_hist": -0.23897009080213735,
+    "warnings": [],
+    "target_price": 24.061820517279376
+  }
+]
