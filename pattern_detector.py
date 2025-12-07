@@ -1,6 +1,8 @@
 """
 Pattern Detection Engine
 Combines TA-Lib (60+ candlestick patterns) + custom patterns (EMA ribbon, ORB, VWAP)
++ OPTIMIZED ENTRY SIGNALS (from DEEP_PATTERN_EVOLUTION_TRAINER analysis)
+
 Outputs structured data with coordinates for chart visualization
 
 Run: python pattern_detector.py
@@ -12,6 +14,23 @@ import talib
 from datetime import datetime, timedelta
 from typing import Dict, List, Tuple
 import json
+
+# Import optimized signal configuration
+try:
+    from optimized_signal_config import (
+        OPTIMAL_SIGNAL_WEIGHTS,
+        REGIME_SIGNAL_WEIGHTS,
+        ENABLED_SIGNALS,
+        DISABLED_SIGNALS,
+        classify_regime,
+        get_signal_weight,
+        SIGNAL_PARAMS
+    )
+    OPTIMIZED_SIGNALS_AVAILABLE = True
+except ImportError:
+    OPTIMIZED_SIGNALS_AVAILABLE = False
+    ENABLED_SIGNALS = ['trend', 'rsi_divergence', 'dip_buy', 'bounce', 'momentum']
+    DISABLED_SIGNALS = ['nuclear_dip', 'vol_squeeze', 'consolidation', 'uptrend_pullback']
 
 class PatternDetector:
     """Unified pattern detection engine for candlestick + custom patterns."""
@@ -355,6 +374,188 @@ class PatternDetector:
         
         return detected
     
+    def detect_optimized_entry_signals(self, df: pd.DataFrame) -> List[Dict]:
+        """
+        Detect OPTIMIZED ENTRY SIGNALS from DEEP_PATTERN_EVOLUTION_TRAINER.
+        
+        TIER S (weight 1.8): trend - 65% WR, +13.7% avg PnL
+        TIER A (weight 1.0): rsi_divergence - 57.9% WR, +8.0% avg PnL
+        TIER B (weight 0.5): dip_buy, bounce, momentum - conditional use
+        TIER F (disabled): nuclear_dip, vol_squeeze, consolidation, uptrend_pullback
+        
+        CRITICAL: 'trend' is DISABLED in sideways markets (negative returns there!)
+        """
+        if len(df) < 60:
+            return []
+        
+        detected = []
+        close_arr = np.asarray(self.get_array(df, 'Close'), dtype='float64')
+        high_arr = np.asarray(self.get_array(df, 'High'), dtype='float64')
+        low_arr = np.asarray(self.get_array(df, 'Low'), dtype='float64')
+        volume_arr = np.asarray(self.get_array(df, 'Volume'), dtype='float64')
+        
+        # Calculate all indicators
+        rsi = talib.RSI(close_arr, timeperiod=14)
+        macd, macd_signal, _ = talib.MACD(close_arr)
+        
+        # EMAs for ribbon
+        ema_8 = talib.EMA(close_arr, timeperiod=8)
+        ema_13 = talib.EMA(close_arr, timeperiod=13)
+        ema_21 = talib.EMA(close_arr, timeperiod=21)
+        
+        for i in range(60, len(df)):
+            if np.isnan(rsi[i]) or np.isnan(macd[i]):
+                continue
+            
+            # Calculate features for this bar
+            mom_5d = (close_arr[i] / close_arr[i-5] - 1) * 100 if i >= 5 else 0
+            ret_21d = (close_arr[i] / close_arr[i-21] - 1) * 100 if i >= 21 else 0
+            
+            # Ribbon bullish check
+            ribbon_bullish = ema_8[i] > ema_13[i] > ema_21[i]
+            
+            # MACD rising
+            macd_rising = macd[i] > macd_signal[i]
+            
+            # Bounce calculation
+            low_5d = min(low_arr[max(0, i-4):i+1])
+            bounce = (close_arr[i] / low_5d - 1) * 100
+            ema_8_rising = ema_8[i] > ema_8[i-3] if i >= 3 else False
+            bounce_signal = bounce > 3 and ema_8_rising
+            
+            # Trend alignment
+            ret_5d = (close_arr[i] / close_arr[i-5] - 1) if i >= 5 else 0
+            ret_10d = (close_arr[i] / close_arr[i-10] - 1) if i >= 10 else 0
+            trend_align = (np.sign(ret_5d) + np.sign(ret_10d) + np.sign(ret_21d/100)) / 3
+            
+            # RSI Divergence (simplified)
+            price_low_5d = min(close_arr[max(0, i-4):i+1])
+            rsi_min_5d = min(rsi[max(0, i-4):i+1])
+            rsi_divergence = (close_arr[i] <= price_low_5d * 1.02) and (rsi[i] > rsi_min_5d + 5)
+            
+            # === CLASSIFY REGIME FOR SIGNAL SWITCHING ===
+            if OPTIMIZED_SIGNALS_AVAILABLE:
+                regime = classify_regime(ret_21d, ribbon_bullish)
+                weights = REGIME_SIGNAL_WEIGHTS.get(regime, OPTIMAL_SIGNAL_WEIGHTS)
+            else:
+                regime = 'bull' if ret_21d > 5 and ribbon_bullish else ('bear' if ret_21d < -5 else 'sideways')
+                weights = {'trend': 1.8 if regime != 'sideways' else 0.0,
+                          'rsi_divergence': 1.0, 'dip_buy': 0.5, 'bounce': 0.5, 'momentum': 0.5}
+            
+            # === TIER S: TREND SIGNAL (65% WR, +13.7% avg) ===
+            if weights.get('trend', 0) > 0 and 'trend' not in DISABLED_SIGNALS:
+                if trend_align > 0.5 and ribbon_bullish:
+                    confidence = min(0.65 + (trend_align - 0.5) * 0.3, 0.95)
+                    detected.append({
+                        'pattern': '🏆 TREND (Tier S)',
+                        'type': 'BULLISH',
+                        'start_idx': int(i - 1),
+                        'end_idx': int(i),
+                        'price_level': float(close_arr[i]),
+                        'confidence': float(confidence),
+                        'timestamp': df.index[i],
+                        'source': 'optimized',
+                        'signal_weight': weights['trend'],
+                        'regime': regime,
+                        'confluence': ['TREND_ALIGN', 'RIBBON_BULLISH'],
+                        'metadata': {
+                            'trend_align': float(trend_align),
+                            'win_rate': 0.65,
+                            'avg_pnl': 13.7
+                        }
+                    })
+            
+            # === TIER A: RSI DIVERGENCE (57.9% WR, +8.0% avg) ===
+            if weights.get('rsi_divergence', 0) > 0 and 'rsi_divergence' not in DISABLED_SIGNALS:
+                if rsi_divergence and macd_rising:
+                    confidence = 0.58
+                    detected.append({
+                        'pattern': '🥇 RSI Divergence (Tier A)',
+                        'type': 'BULLISH',
+                        'start_idx': int(i - 1),
+                        'end_idx': int(i),
+                        'price_level': float(close_arr[i]),
+                        'confidence': float(confidence),
+                        'timestamp': df.index[i],
+                        'source': 'optimized',
+                        'signal_weight': weights['rsi_divergence'],
+                        'regime': regime,
+                        'confluence': ['RSI_DIVERGENCE', 'MACD_RISING'],
+                        'metadata': {
+                            'rsi': float(rsi[i]),
+                            'win_rate': 0.579,
+                            'avg_pnl': 8.0
+                        }
+                    })
+            
+            # === TIER B: DIP BUY (best in sideways: 62.5% WR, +12.2% avg) ===
+            if weights.get('dip_buy', 0) > 0 and 'dip_buy' not in DISABLED_SIGNALS:
+                if rsi[i] < 30 and mom_5d < -3:
+                    confidence = 0.54 + (0.08 if regime == 'sideways' else 0)
+                    detected.append({
+                        'pattern': '📉 Dip Buy (Tier B)',
+                        'type': 'BULLISH',
+                        'start_idx': int(i - 1),
+                        'end_idx': int(i),
+                        'price_level': float(close_arr[i]),
+                        'confidence': float(confidence),
+                        'timestamp': df.index[i],
+                        'source': 'optimized',
+                        'signal_weight': weights['dip_buy'],
+                        'regime': regime,
+                        'confluence': ['RSI_OVERSOLD', 'MOMENTUM_NEGATIVE'],
+                        'metadata': {
+                            'rsi': float(rsi[i]),
+                            'momentum': float(mom_5d),
+                            'best_regime': 'sideways'
+                        }
+                    })
+            
+            # === TIER B: BOUNCE (works in bear/sideways: 60% WR) ===
+            if weights.get('bounce', 0) > 0 and 'bounce' not in DISABLED_SIGNALS:
+                if bounce > 8 and macd_rising:
+                    confidence = 0.54 + (0.06 if regime in ['bear', 'sideways'] else 0)
+                    detected.append({
+                        'pattern': '📈 Bounce (Tier B)',
+                        'type': 'BULLISH',
+                        'start_idx': int(i - 1),
+                        'end_idx': int(i),
+                        'price_level': float(close_arr[i]),
+                        'confidence': float(confidence),
+                        'timestamp': df.index[i],
+                        'source': 'optimized',
+                        'signal_weight': weights['bounce'],
+                        'regime': regime,
+                        'confluence': ['BOUNCE_FROM_LOW', 'MACD_RISING'],
+                        'metadata': {
+                            'bounce_pct': float(bounce),
+                            'best_regime': 'bear/sideways'
+                        }
+                    })
+            
+            # === TIER B: MOMENTUM (51% WR, needs confirmation) ===
+            if weights.get('momentum', 0) > 0 and 'momentum' not in DISABLED_SIGNALS:
+                if mom_5d > 5 and macd_rising and bounce_signal:
+                    confidence = 0.51
+                    detected.append({
+                        'pattern': '🚀 Momentum (Tier B)',
+                        'type': 'BULLISH',
+                        'start_idx': int(i - 1),
+                        'end_idx': int(i),
+                        'price_level': float(close_arr[i]),
+                        'confidence': float(confidence),
+                        'timestamp': df.index[i],
+                        'source': 'optimized',
+                        'signal_weight': weights['momentum'],
+                        'regime': regime,
+                        'confluence': ['STRONG_MOMENTUM', 'MACD_RISING', 'BOUNCE_CONFIRM'],
+                        'metadata': {
+                            'momentum': float(mom_5d)
+                        }
+                    })
+        
+        return detected
+    
     def detect_opening_range_breakout(self, df: pd.DataFrame) -> List[Dict]:
         """
         Detect opening range breakouts (first 30 minutes).
@@ -419,9 +620,12 @@ class PatternDetector:
     def detect_all_patterns(self, ticker: str, period='60d', interval='1d') -> Dict:
         """
         Main detection pipeline: fetch data and run all pattern detectors.
+        Now includes OPTIMIZED ENTRY SIGNALS from DEEP_PATTERN_EVOLUTION_TRAINER.
         """
         print(f"\n{'='*60}")
         print(f"Pattern Detection: {ticker}")
+        if OPTIMIZED_SIGNALS_AVAILABLE:
+            print(f"🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)")
         print(f"{'='*60}")
         
         # Fetch data
@@ -440,7 +644,10 @@ class PatternDetector:
         vwap_patterns = self.detect_vwap_pullback(df)
         orb_patterns = self.detect_opening_range_breakout(df)
         
-        all_patterns = talib_patterns + ema_patterns + vwap_patterns + orb_patterns
+        # 🎯 NEW: Run OPTIMIZED ENTRY SIGNALS
+        optimized_signals = self.detect_optimized_entry_signals(df)
+        
+        all_patterns = talib_patterns + ema_patterns + vwap_patterns + orb_patterns + optimized_signals
         
         detection_time = time.time() - start_time
         
@@ -456,8 +663,18 @@ class PatternDetector:
         print(f"  EMA ribbon alignments: {len(ema_patterns)}")
         print(f"  VWAP pullbacks: {len(vwap_patterns)}")
         print(f"  Opening range breakouts: {len(orb_patterns)}")
+        print(f"  🎯 OPTIMIZED SIGNALS: {len(optimized_signals)}")
         print(f"  High-confidence patterns (>0.7): {len([p for p in all_patterns if p['confidence'] > 0.7])}")
         print(f"  Detection time: {detection_time*1000:.1f}ms")
+        
+        # Show optimized signals first (they're the most important)
+        if optimized_signals:
+            print(f"\n🎯 OPTIMIZED ENTRY SIGNALS (from training):")
+            for i, sig in enumerate(sorted(optimized_signals, key=lambda x: x.get('signal_weight', 0), reverse=True)[:5], 1):
+                weight = sig.get('signal_weight', 0)
+                regime = sig.get('regime', 'unknown')
+                print(f"  {i}. {sig['pattern']} - Weight: {weight:.1f} - Regime: {regime} - "
+                      f"Confidence: {sig['confidence']:.2%}")
         
         # Show latest 5 patterns
         print(f"\n🔍 Latest Patterns Detected:")
@@ -470,11 +687,13 @@ class PatternDetector:
         return {
             'ticker': ticker,
             'patterns': all_patterns,
+            'optimized_signals': optimized_signals,
             'confluence_patterns': confluence_patterns,
             'stats': {
                 'total': len(all_patterns),
                 'talib': len(talib_patterns),
                 'custom': len(ema_patterns) + len(vwap_patterns) + len(orb_patterns),
+                'optimized': len(optimized_signals),
                 'high_confidence': len([p for p in all_patterns if p['confidence'] > 0.7]),
                 'detection_time_ms': detection_time * 1000
             }

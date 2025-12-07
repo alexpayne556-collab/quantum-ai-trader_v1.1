@@ -1,0 +1,337 @@
+{
+  "timestamp": "2025-12-07T02:58:28.334960",
+  "tickers_tested": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "GOOGL",
+    "AMZN",
+    "META",
+    "TSLA",
+    "AMD",
+    "MU",
+    "SPY"
+  ],
+  "modules": {
+    "forecaster": {
+      "per_ticker": {
+        "AAPL": {
+          "direction_accuracy": 0.6956521739130435,
+          "mae": 14.609768837386435,
+          "rmse": 16.378485225933616,
+          "hit_rate_5pct": 0.5,
+          "forecast_days": 24,
+          "current_price": 278.7799987792969
+        },
+        "MSFT": {
+          "direction_accuracy": 0.5217391304347826,
+          "mae": 8.858149404488794,
+          "rmse": 10.860449622765298,
+          "hit_rate_5pct": 1.0,
+          "forecast_days": 24,
+          "current_price": 483.1600036621094
+        },
+        "NVDA": {
+          "direction_accuracy": 0.4782608695652174,
+          "mae": 5.955861199996999,
+          "rmse": 7.096678240630536,
+          "hit_rate_5pct": 0.875,
+          "forecast_days": 24,
+          "current_price": 182.41000366210938
+        },
+        "GOOGL": {
+          "direction_accuracy": 0.6521739130434783,
+          "mae": 8.882541695386587,
+          "rmse": 10.369610807171242,
+          "hit_rate_5pct": 0.7916666666666666,
+          "forecast_days": 24,
+          "current_price": 321.2699890136719
+        },
+        "AMZN": {
+          "direction_accuracy": 0.5652173913043478,
+          "mae": 9.416958383676494,
+          "rmse": 11.968200033255966,
+          "hit_rate_5pct": 0.5416666666666666,
+          "forecast_days": 24,
+          "current_price": 229.52999877929688
+        },
+        "META": {
+          "direction_accuracy": 0.6086956521739131,
+          "mae": 55.88681163132487,
+          "rmse": 58.45928094974945,
+          "hit_rate_5pct": 0.125,
+          "forecast_days": 24,
+          "current_price": 673.4199829101562
+        },
+        "TSLA": {
+          "direction_accuracy": 0.43478260869565216,
+          "mae": 15.8333026061007,
+          "rmse": 18.773408413684006,
+          "hit_rate_5pct": 0.7083333333333334,
+          "forecast_days": 24,
+          "current_price": 455.0
+        },
+        "AMD": {
+          "direction_accuracy": 0.6956521739130435,
+          "mae": 48.24778707970148,
+          "rmse": 56.459395078162736,
+          "hit_rate_5pct": 0.25,
+          "forecast_days": 24,
+          "current_price": 217.97000122070312
+        },
+        "MU": {
+          "direction_accuracy": 0.5217391304347826,
+          "mae": 22.681432412518024,
+          "rmse": 24.555764512868553,
+          "hit_rate_5pct": 0.125,
+          "forecast_days": 24,
+          "current_price": 237.22000122070312
+        },
+        "SPY": {
+          "direction_accuracy": 0.5652173913043478,
+          "mae": 15.05762426387181,
+          "rmse": 18.609982235741924,
+          "hit_rate_5pct": 1.0,
+          "forecast_days": 24,
+          "current_price": 685.6900024414062
+        }
+      },
+      "aggregate": {
+        "avg_direction_accuracy": 0.5739130434782609,
+        "avg_mae": 20.54302375144522,
+        "avg_hit_rate_5pct": 0.5916666666666666,
+        "tickers_tested": 10
+      }
+    },
+    "pattern_detector": {
+      "per_ticker": {
+        "AAPL": {
+          "total_patterns": 106,
+          "high_confidence_patterns": 106,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 75,
+            "BEARISH": 31
+          },
+          "detection_time_ms": 14.889001846313477
+        },
+        "MSFT": {
+          "total_patterns": 102,
+          "high_confidence_patterns": 102,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 64,
+            "BEARISH": 38
+          },
+          "detection_time_ms": 14.698028564453125
+        },
+        "NVDA": {
+          "total_patterns": 106,
+          "high_confidence_patterns": 105,
+          "avg_confidence": 0.9928771310429676,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 61,
+            "BEARISH": 45
+          },
+          "detection_time_ms": 14.661788940429688
+        },
+        "GOOGL": {
+          "total_patterns": 102,
+          "high_confidence_patterns": 102,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BEARISH": 41,
+            "BULLISH": 61
+          },
+          "detection_time_ms": 21.67820930480957
+        },
+        "AMZN": {
+          "total_patterns": 92,
+          "high_confidence_patterns": 92,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 51,
+            "BEARISH": 41
+          },
+          "detection_time_ms": 28.734445571899414
+        },
+        "META": {
+          "total_patterns": 120,
+          "high_confidence_patterns": 120,
+          "avg_confidence": 0.9983333333333333,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BEARISH": 43,
+            "BULLISH": 77
+          },
+          "detection_time_ms": 14.986276626586914
+        },
+        "TSLA": {
+          "total_patterns": 96,
+          "high_confidence_patterns": 96,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 62,
+            "BEARISH": 34
+          },
+          "detection_time_ms": 15.133380889892578
+        },
+        "AMD": {
+          "total_patterns": 85,
+          "high_confidence_patterns": 85,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 53,
+            "BEARISH": 32
+          },
+          "detection_time_ms": 15.695810317993164
+        },
+        "MU": {
+          "total_patterns": 113,
+          "high_confidence_patterns": 113,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 86,
+            "BEARISH": 27
+          },
+          "detection_time_ms": 18.857717514038086
+        },
+        "SPY": {
+          "total_patterns": 82,
+          "high_confidence_patterns": 82,
+          "avg_confidence": 1.0,
+          "optimized_signals": 0,
+          "pattern_types": {
+            "BULLISH": 50,
+            "BEARISH": 32
+          },
+          "detection_time_ms": 14.626502990722656
+        }
+      },
+      "aggregate": {
+        "avg_patterns_per_ticker": 100.4,
+        "avg_high_confidence_patterns": 100.3,
+        "avg_confidence_score": 0.9991210464376301,
+        "avg_detection_time_ms": 17.396116256713867,
+        "tickers_tested": 10
+      }
+    },
+    "ai_recommender": {
+      "per_ticker": {
+        "AAPL": {
+          "cv_mean_accuracy": 0.39918374750589514,
+          "cv_std": 0.05616977088415753,
+          "n_samples": 744,
+          "n_selected_features": 12,
+          "signal": "SELL",
+          "confidence": 0.806006739958867,
+          "label_stats": {
+            "BUY": 215,
+            "HOLD": 412,
+            "SELL": 124,
+            "BUY_pct": 0.2862849533954727,
+            "HOLD_pct": 0.5486018641810919,
+            "SELL_pct": 0.16511318242343542,
+            "total": 751
+          }
+        },
+        "MSFT": {
+          "cv_mean_accuracy": 0.4270814438599674,
+          "cv_std": 0.16548800199697622,
+          "n_samples": 744,
+          "n_selected_features": 12,
+          "signal": "SELL",
+          "confidence": 1.0,
+          "label_stats": {
+            "BUY": 192,
+            "HOLD": 452,
+            "SELL": 107,
+            "BUY_pct": 0.255659121171771,
+            "HOLD_pct": 0.6018641810918774,
+            "SELL_pct": 0.14247669773635152,
+            "total": 751
+          }
+        },
+        "NVDA": {
+          "cv_mean_accuracy": 0.28890803555233086,
+          "cv_std": 0.0957763484956223,
+          "n_samples": 744,
+          "n_selected_features": 12,
+          "signal": "SELL",
+          "confidence": 0.9986253713434742,
+          "label_stats": {
+            "BUY": 250,
+            "HOLD": 396,
+            "SELL": 105,
+            "BUY_pct": 0.33288948069241014,
+            "HOLD_pct": 0.5272969374167776,
+            "SELL_pct": 0.13981358189081225,
+            "total": 751
+          }
+        },
+        "GOOGL": {
+          "cv_mean_accuracy": 0.4288771993469981,
+          "cv_std": 0.1052446872002992,
+          "n_samples": 744,
+          "n_selected_features": 12,
+          "signal": "HOLD",
+          "confidence": 1.0,
+          "label_stats": {
+            "BUY": 213,
+            "HOLD": 436,
+            "SELL": 102,
+            "BUY_pct": 0.2836218375499334,
+            "HOLD_pct": 0.5805592543275633,
+            "SELL_pct": 0.13581890812250333,
+            "total": 751
+          }
+        },
+        "AMZN": {
+          "cv_mean_accuracy": 0.4326773081806639,
+          "cv_std": 0.09991031793222899,
+          "n_samples": 744,
+          "n_selected_features": 12,
+          "signal": "SELL",
+          "confidence": 0.49268171979331826,
+          "label_stats": {
+            "BUY": 193,
+            "HOLD": 454,
+            "SELL": 104,
+            "BUY_pct": 0.2569906790945406,
+            "HOLD_pct": 0.6045272969374168,
+            "SELL_pct": 0.1384820239680426,
+            "total": 751
+          }
+        }
+      },
+      "aggregate": {
+        "avg_cv_accuracy": 0.39534554688917106,
+        "avg_samples": 744.0,
+        "avg_selected_features": 12.0,
+        "signal_distribution": {
+          "SELL": 4,
+          "HOLD": 1
+        },
+        "tickers_tested": 5
+      }
+    }
+  },
+  "overall_health": {
+    "forecaster_score": 58.10144927536232,
+    "forecaster_status": "\ud83d\udfe1 ACCEPTABLE",
+    "pattern_detector_score": 99.60812999674724,
+    "pattern_detector_status": "\u2705 EXCELLENT",
+    "ai_recommender_score": 39.534554688917105,
+    "ai_recommender_status": "\ud83d\udd34 NEEDS IMPROVEMENT",
+    "overall_score": 64.05504038652197,
+    "overall_status": "\ud83d\udfe2 GOOD"
+  }
+}

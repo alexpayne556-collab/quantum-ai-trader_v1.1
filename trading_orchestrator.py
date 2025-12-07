@@ -37,6 +37,35 @@ from pattern_detector import PatternDetector
 from chart_engine import ChartEngine
 from production_logger import ProductionLogger, TradeSignal, SignalType
 
+# Import optimized signal configuration (from DEEP_PATTERN_EVOLUTION_TRAINER analysis)
+try:
+    from optimized_signal_config import (
+        OPTIMAL_SIGNAL_WEIGHTS,
+        REGIME_SIGNAL_WEIGHTS,
+        ENABLED_SIGNALS,
+        DISABLED_SIGNALS,
+        evaluate_entry_signals,
+        should_enter_trade,
+        classify_regime,
+        get_signal_weight,
+        is_signal_enabled
+    )
+    OPTIMIZED_SIGNALS_AVAILABLE = True
+except ImportError:
+    OPTIMIZED_SIGNALS_AVAILABLE = False
+
+# Import optimized exit configuration (from exit signal training)
+try:
+    from optimized_exit_config import (
+        get_exit_params,
+        get_position_size_multiplier,
+        calculate_trailing_stop,
+        TRAILING_STOP_CONFIG
+    )
+    OPTIMIZED_EXITS_AVAILABLE = True
+except ImportError:
+    OPTIMIZED_EXITS_AVAILABLE = False
+
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -208,10 +237,75 @@ class RiskManager:
 
 
 class SignalGenerator:
-    """Generate BUY/SELL signals from patterns + forecast + regime."""
+    """Generate BUY/SELL signals from patterns + forecast + regime.
+    
+    Enhanced with OPTIMIZED_SIGNALS from DEEP_PATTERN_EVOLUTION_TRAINER:
+    - Tier S: trend (1.8 weight) - 65% WR, +13.7% avg PnL
+    - Tier A: rsi_divergence (1.0 weight) - 57.9% WR, +8.0% avg PnL
+    - Tier B: dip_buy, bounce, momentum (0.5 weight) - conditional use
+    - Tier F: nuclear_dip, vol_squeeze, consolidation, uptrend_pullback (DISABLED)
+    """
     
     def __init__(self):
-        pass
+        self.use_optimized = OPTIMIZED_SIGNALS_AVAILABLE if 'OPTIMIZED_SIGNALS_AVAILABLE' in dir() else False
+    
+    def _compute_features(self, df: pd.DataFrame) -> Dict:
+        """Extract features needed for optimized signal evaluation"""
+        if len(df) < 60:
+            return {}
+        
+        close = df['Close'].values if 'Close' in df.columns else df['close'].values
+        high = df['High'].values if 'High' in df.columns else df['high'].values
+        low = df['Low'].values if 'Low' in df.columns else df['low'].values
+        
+        # RSI
+        rsi = talib.RSI(close, timeperiod=14)[-1]
+        
+        # Momentum
+        mom_5d = (close[-1] / close[-6] - 1) * 100 if len(close) > 5 else 0
+        
+        # Returns
+        ret_21d = (close[-1] / close[-22] - 1) * 100 if len(close) > 21 else 0
+        
+        # EMAs
+        ema_8 = talib.EMA(close, timeperiod=8)[-1]
+        ema_13 = talib.EMA(close, timeperiod=13)[-1]
+        ema_21 = talib.EMA(close, timeperiod=21)[-1]
+        
+        # Ribbon bullish
+        ribbon_bullish = 1 if (ema_8 > ema_13 > ema_21) else 0
+        
+        # MACD
+        macd, signal, _ = talib.MACD(close)
+        macd_rising = 1 if macd[-1] > signal[-1] else 0
+        
+        # Bounce
+        low_5d = min(low[-5:])
+        bounce = (close[-1] / low_5d - 1) * 100
+        ema_8_rising = 1 if ema_8 > talib.EMA(close[:-3], timeperiod=8)[-1] else 0
+        bounce_signal = 1 if (bounce > 3 and ema_8_rising) else 0
+        
+        # Trend alignment
+        ret_5d = (close[-1] / close[-6] - 1) if len(close) > 5 else 0
+        ret_10d = (close[-1] / close[-11] - 1) if len(close) > 10 else 0
+        trend_align = (np.sign(ret_5d) + np.sign(ret_10d) + np.sign(ret_21d/100)) / 3
+        
+        # RSI Divergence (simplified)
+        price_low_5d = min(close[-5:])
+        rsi_at_low = min(talib.RSI(close, timeperiod=14)[-5:])
+        rsi_divergence = 1 if (close[-1] <= price_low_5d * 1.02 and rsi > rsi_at_low + 5) else 0
+        
+        return {
+            'rsi': rsi,
+            'mom_5d': mom_5d,
+            'ret_21d': ret_21d,
+            'ribbon_bullish': ribbon_bullish,
+            'macd_rising': macd_rising,
+            'bounce': bounce,
+            'bounce_signal': bounce_signal,
+            'trend_align': trend_align,
+            'rsi_divergence': rsi_divergence
+        }
     
     def generate_signal(self, 
                        ticker: str,
@@ -222,6 +316,8 @@ class SignalGenerator:
         """
         Combine all signals into final BUY/SELL/HOLD decision.
         Returns: {signal, confidence, entry, stop, target, confluence_factors}
+        
+        ENHANCED: Uses regime-aware optimized signals when available.
         """
         try:
             if len(df) < 20:
@@ -235,6 +331,65 @@ class SignalGenerator:
             low = df['Low'].values if 'Low' in df.columns else df['low'].values
             atr = talib.ATR(high, low, close, timeperiod=14)[-1]
             
+            # === OPTIMIZED SIGNAL EVALUATION ===
+            if OPTIMIZED_SIGNALS_AVAILABLE:
+                features = self._compute_features(df)
+                
+                if features:
+                    # Classify regime for signal switching
+                    current_regime = classify_regime(
+                        features.get('ret_21d', 0), 
+                        features.get('ribbon_bullish', 0) > 0
+                    )
+                    
+                    # Evaluate optimized signals with regime-specific weights
+                    should_buy, score, triggered_signals = should_enter_trade(
+                        features, 
+                        regime=current_regime,
+                        min_score=0.5
+                    )
+                    
+                    if should_buy and score > 0:
+                        signal_type = 'BUY'
+                        base_confidence = min(score / 2.0, 1.0)  # Normalize to 0-1
+                        confluence_factors = triggered_signals + [f"REGIME_{current_regime.upper()}"]
+                        
+                        # Calculate entry/stop/target using OPTIMIZED EXIT CONFIG
+                        entry = current_price
+                        primary_signal = triggered_signals[0] if triggered_signals else 'trend'
+                        
+                        if OPTIMIZED_EXITS_AVAILABLE:
+                            exit_params = get_exit_params(primary_signal, current_regime)
+                            tp_pct = exit_params['take_profit'] / 100
+                            sl_pct = exit_params['stop_loss'] / 100
+                            size_mult = get_position_size_multiplier(primary_signal, current_regime)
+                            
+                            stop = entry * (1 - sl_pct)
+                            target = entry * (1 + tp_pct)
+                            
+                            logger.info(f"📊 {ticker}: Using optimized exits - TP:{exit_params['take_profit']}% SL:{exit_params['stop_loss']}% Size:{size_mult:.1f}x")
+                        else:
+                            stop = current_price - (2 * atr)
+                            target = current_price + (3 * atr)
+                            size_mult = 1.0
+                        
+                        return {
+                            'ticker': ticker,
+                            'signal': signal_type,
+                            'confidence': float(base_confidence),
+                            'entry_price': float(entry),
+                            'stop_loss': float(stop),
+                            'take_profit': float(target),
+                            'confluence_factors': confluence_factors,
+                            'regime': current_regime,
+                            'patterns_detected': len(patterns),
+                            'primary_pattern': triggered_signals[0] if triggered_signals else 'optimized',
+                            'optimized_score': score,
+                            'position_size_mult': size_mult if OPTIMIZED_EXITS_AVAILABLE else 1.0,
+                            'max_hold_days': exit_params.get('max_hold_days', 10) if OPTIMIZED_EXITS_AVAILABLE else 10
+                        }
+            
+            # === FALLBACK TO ORIGINAL PATTERN-BASED SIGNALS ===
             # Pattern score (0-100)
             bullish_patterns = [p for p in patterns if p['type'] == 'BULLISH']
             bearish_patterns = [p for p in patterns if p['type'] == 'BEARISH']

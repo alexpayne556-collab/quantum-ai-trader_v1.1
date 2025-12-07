@@ -1,0 +1,423 @@
+⚠️  'ta' library not found. Install with: pip install ta
+
+================================================================================
+🚀 RUNNING COMPREHENSIVE ACCURACY VALIDATION
+================================================================================
+Testing on 10 tickers: AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, MU, SPY
+
+================================================================================
+📊 VALIDATING FORECASTER ACCURACY
+================================================================================
+
+🔍 Testing AAPL...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing MSFT...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing NVDA...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing GOOGL...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing AMZN...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing META...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing TSLA...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing AMD...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing MU...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+🔍 Testing SPY...
+   ❌ Error: operands could not be broadcast together with shapes (24,0) (23,) 
+
+================================================================================
+🔍 VALIDATING PATTERN DETECTOR
+================================================================================
+
+🔍 Testing AAPL...
+
+============================================================
+Pattern Detection: AAPL
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 106
+  TA-Lib patterns: 106
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 106
+  Detection time: 15.6ms
+
+🔍 Latest Patterns Detected:
+  1. BELTHOLD (BULLISH) - Confidence: 100.00% - Price: $286.19 - 2025-12-02
+  2. LONGLINE (BULLISH) - Confidence: 100.00% - Price: $286.19 - 2025-12-02
+  3. CLOSINGMARUBOZU (BULLISH) - Confidence: 100.00% - Price: $283.10 - 2025-12-01
+  4. HIKKAKE (BULLISH) - Confidence: 100.00% - Price: $283.10 - 2025-12-01
+  5. HIKKAKE (BULLISH) - Confidence: 100.00% - Price: $278.85 - 2025-11-28
+   ✅ Total Patterns: 106
+   🎯 High Confidence (>70%): 106
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 15.6ms
+
+🔍 Testing MSFT...
+
+============================================================
+Pattern Detection: MSFT
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 102
+  TA-Lib patterns: 102
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 102
+  Detection time: 14.9ms
+
+🔍 Latest Patterns Detected:
+  1. Engulfing (BULLISH) - Confidence: 100.00% - Price: $490.00 - 2025-12-02
+  2. SHORTLINE (BEARISH) - Confidence: 100.00% - Price: $486.74 - 2025-12-01
+  3. SHORTLINE (BULLISH) - Confidence: 100.00% - Price: $492.01 - 2025-11-28
+  4. Doji (BULLISH) - Confidence: 100.00% - Price: $485.50 - 2025-11-26
+  5. HIGHWAVE (BEARISH) - Confidence: 100.00% - Price: $485.50 - 2025-11-26
+   ✅ Total Patterns: 102
+   🎯 High Confidence (>70%): 102
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 14.9ms
+
+🔍 Testing NVDA...
+
+============================================================
+Pattern Detection: NVDA
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 106
+  TA-Lib patterns: 105
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 1
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 105
+  Detection time: 15.4ms
+
+🔍 Latest Patterns Detected:
+  1. SHORTLINE (BULLISH) - Confidence: 100.00% - Price: $183.38 - 2025-12-04
+  2. SHORTLINE (BEARISH) - Confidence: 100.00% - Price: $179.58 - 2025-12-03
+  3. 3OUTSIDE (BULLISH) - Confidence: 100.00% - Price: $181.45 - 2025-12-02
+  4. Doji (BULLISH) - Confidence: 100.00% - Price: $181.45 - 2025-12-02
+  5. DOJISTAR (BEARISH) - Confidence: 100.00% - Price: $181.45 - 2025-12-02
+   ✅ Total Patterns: 106
+   🎯 High Confidence (>70%): 105
+   📊 Avg Confidence: 99.3%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 15.4ms
+
+🔍 Testing GOOGL...
+
+============================================================
+Pattern Detection: GOOGL
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 102
+  TA-Lib patterns: 102
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 102
+  Detection time: 14.9ms
+
+🔍 Latest Patterns Detected:
+  1. BELTHOLD (BEARISH) - Confidence: 100.00% - Price: $317.62 - 2025-12-04
+  2. HIKKAKE (BEARISH) - Confidence: 100.00% - Price: $319.63 - 2025-12-03
+  3. SHORTLINE (BULLISH) - Confidence: 100.00% - Price: $319.63 - 2025-12-03
+  4. Doji (BULLISH) - Confidence: 100.00% - Price: $315.81 - 2025-12-02
+  5. LONGLEGGEDDOJI (BULLISH) - Confidence: 100.00% - Price: $315.81 - 2025-12-02
+   ✅ Total Patterns: 102
+   🎯 High Confidence (>70%): 102
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 14.9ms
+
+🔍 Testing AMZN...
+
+============================================================
+Pattern Detection: AMZN
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 92
+  TA-Lib patterns: 92
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 92
+  Detection time: 14.9ms
+
+🔍 Latest Patterns Detected:
+  1. Hammer (BULLISH) - Confidence: 100.00% - Price: $232.38 - 2025-12-03
+  2. SPINNINGTOP (BEARISH) - Confidence: 100.00% - Price: $234.42 - 2025-12-02
+  3. SPINNINGTOP (BULLISH) - Confidence: 100.00% - Price: $233.88 - 2025-12-01
+  4. SHORTLINE (BULLISH) - Confidence: 100.00% - Price: $233.22 - 2025-11-28
+  5. SHORTLINE (BEARISH) - Confidence: 100.00% - Price: $229.16 - 2025-11-26
+   ✅ Total Patterns: 92
+   🎯 High Confidence (>70%): 92
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 14.9ms
+
+🔍 Testing META...
+
+============================================================
+Pattern Detection: META
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 120
+  TA-Lib patterns: 120
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 120
+  Detection time: 15.0ms
+
+🔍 Latest Patterns Detected:
+  1. BELTHOLD (BEARISH) - Confidence: 100.00% - Price: $661.53 - 2025-12-04
+  2. LONGLINE (BEARISH) - Confidence: 100.00% - Price: $661.53 - 2025-12-04
+  3. XSIDEGAP3METHODS (BULLISH) - Confidence: 100.00% - Price: $639.60 - 2025-12-03
+  4. HIKKAKE (BEARISH) - Confidence: 100.00% - Price: $647.10 - 2025-12-02
+  5. Doji (BULLISH) - Confidence: 100.00% - Price: $640.87 - 2025-12-01
+   ✅ Total Patterns: 120
+   🎯 High Confidence (>70%): 120
+   📊 Avg Confidence: 99.8%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 15.0ms
+
+🔍 Testing TSLA...
+
+============================================================
+Pattern Detection: TSLA
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 96
+  TA-Lib patterns: 96
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 96
+  Detection time: 14.9ms
+
+🔍 Latest Patterns Detected:
+  1. BELTHOLD (BULLISH) - Confidence: 100.00% - Price: $446.74 - 2025-12-03
+  2. CLOSINGMARUBOZU (BULLISH) - Confidence: 100.00% - Price: $446.74 - 2025-12-03
+  3. LONGLINE (BULLISH) - Confidence: 100.00% - Price: $446.74 - 2025-12-03
+  4. MARUBOZU (BULLISH) - Confidence: 100.00% - Price: $446.74 - 2025-12-03
+  5. Doji (BULLISH) - Confidence: 100.00% - Price: $429.24 - 2025-12-02
+   ✅ Total Patterns: 96
+   🎯 High Confidence (>70%): 96
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 14.9ms
+
+🔍 Testing AMD...
+
+============================================================
+Pattern Detection: AMD
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 85
+  TA-Lib patterns: 85
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 85
+  Detection time: 14.7ms
+
+🔍 Latest Patterns Detected:
+  1. Doji (BULLISH) - Confidence: 100.00% - Price: $215.98 - 2025-12-04
+  2. HIGHWAVE (BEARISH) - Confidence: 100.00% - Price: $215.98 - 2025-12-04
+  3. LONGLEGGEDDOJI (BULLISH) - Confidence: 100.00% - Price: $215.98 - 2025-12-04
+  4. RICKSHAWMAN (BULLISH) - Confidence: 100.00% - Price: $215.98 - 2025-12-04
+  5. SHORTLINE (BEARISH) - Confidence: 100.00% - Price: $215.98 - 2025-12-04
+   ✅ Total Patterns: 85
+   🎯 High Confidence (>70%): 85
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 14.7ms
+
+🔍 Testing MU...
+
+============================================================
+Pattern Detection: MU
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 113
+  TA-Lib patterns: 113
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 113
+  Detection time: 15.0ms
+
+🔍 Latest Patterns Detected:
+  1. Doji (BULLISH) - Confidence: 100.00% - Price: $239.49 - 2025-12-02
+  2. Harami (BEARISH) - Confidence: 100.00% - Price: $239.49 - 2025-12-02
+  3. HARAMICROSS (BEARISH) - Confidence: 100.00% - Price: $239.49 - 2025-12-02
+  4. HIGHWAVE (BULLISH) - Confidence: 100.00% - Price: $239.49 - 2025-12-02
+  5. LONGLEGGEDDOJI (BULLISH) - Confidence: 100.00% - Price: $239.49 - 2025-12-02
+   ✅ Total Patterns: 113
+   🎯 High Confidence (>70%): 113
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 15.0ms
+
+🔍 Testing SPY...
+
+============================================================
+Pattern Detection: SPY
+🎯 OPTIMIZED SIGNALS ENABLED (Tier S/A/B ranking)
+============================================================
+
+📊 Detection Summary:
+  Total patterns detected: 82
+  TA-Lib patterns: 82
+  EMA ribbon alignments: 0
+  VWAP pullbacks: 0
+  Opening range breakouts: 0
+  🎯 OPTIMIZED SIGNALS: 0
+  High-confidence patterns (>0.7): 82
+  Detection time: 16.7ms
+
+🔍 Latest Patterns Detected:
+  1. 3OUTSIDE (BULLISH) - Confidence: 100.00% - Price: $684.39 - 2025-12-04
+  2. Hanging Man (BEARISH) - Confidence: 100.00% - Price: $684.39 - 2025-12-04
+  3. Engulfing (BULLISH) - Confidence: 100.00% - Price: $683.89 - 2025-12-03
+  4. SHORTLINE (BULLISH) - Confidence: 100.00% - Price: $683.89 - 2025-12-03
+  5. Doji (BULLISH) - Confidence: 100.00% - Price: $681.53 - 2025-12-02
+   ✅ Total Patterns: 82
+   🎯 High Confidence (>70%): 82
+   📊 Avg Confidence: 100.0%
+   ⚡ Optimized Signals: 0
+   ⏱️  Detection Time: 16.7ms
+
+📊 AGGREGATE PATTERN DETECTOR METRICS:
+   Avg Patterns Per Ticker: 100.4
+   Avg High Confidence: 100.3
+   Avg Confidence Score: 99.9%
+   Avg Detection Speed: 15.2ms
+
+================================================================================
+🤖 VALIDATING AI RECOMMENDER
+================================================================================
+
+🔍 Testing AAPL...
+   Label distribution (initial): BUY=215 (28.6%), HOLD=412 (54.9%), SELL=124 (16.5%)
+   Final label distribution: BUY=215 (28.6%), HOLD=412 (54.9%), SELL=124 (16.5%)
+   ✅ CV Mean Accuracy: 39.9%
+   📊 CV Std Dev: ±5.6%
+   📈 Samples: 744
+   🎯 Selected Features: 12
+   🔮 Current Signal: SELL (100.0%)
+
+🔍 Testing MSFT...
+   Label distribution (initial): BUY=192 (25.6%), HOLD=452 (60.2%), SELL=107 (14.2%)
+   Final label distribution: BUY=192 (25.6%), HOLD=452 (60.2%), SELL=107 (14.2%)
+   ✅ CV Mean Accuracy: 42.6%
+   📊 CV Std Dev: ±16.6%
+   📈 Samples: 744
+   🎯 Selected Features: 12
+   🔮 Current Signal: SELL (98.4%)
+
+🔍 Testing NVDA...
+   Label distribution (initial): BUY=250 (33.3%), HOLD=396 (52.7%), SELL=105 (14.0%)
+   Final label distribution: BUY=250 (33.3%), HOLD=396 (52.7%), SELL=105 (14.0%)
+   ⚠️ Low CV accuracy 0.29 - consider more features or different horizon
+   ✅ CV Mean Accuracy: 28.9%
+   📊 CV Std Dev: ±9.6%
+   📈 Samples: 744
+   🎯 Selected Features: 12
+   🔮 Current Signal: SELL (90.6%)
+
+🔍 Testing GOOGL...
+   Label distribution (initial): BUY=213 (28.4%), HOLD=436 (58.1%), SELL=102 (13.6%)
+   Final label distribution: BUY=213 (28.4%), HOLD=436 (58.1%), SELL=102 (13.6%)
+   ✅ CV Mean Accuracy: 42.9%
+   📊 CV Std Dev: ±10.5%
+   📈 Samples: 744
+   🎯 Selected Features: 12
+   🔮 Current Signal: SELL (86.5%)
+
+🔍 Testing AMZN...
+   Label distribution (initial): BUY=193 (25.7%), HOLD=454 (60.5%), SELL=104 (13.8%)
+   Final label distribution: BUY=193 (25.7%), HOLD=454 (60.5%), SELL=104 (13.8%)
+   ✅ CV Mean Accuracy: 43.3%
+   📊 CV Std Dev: ±10.0%
+   📈 Samples: 744
+   🎯 Selected Features: 12
+   🔮 Current Signal: HOLD (100.0%)
+
+📊 AGGREGATE AI RECOMMENDER METRICS:
+   Avg CV Accuracy: 39.5%
+   Avg Training Samples: 744
+   Avg Features Selected: 12
+   Signal Distribution: {'SELL': 4, 'HOLD': 1}
+
+================================================================================
+✅ VALIDATION COMPLETE
+================================================================================
+📁 Report saved to: system_accuracy_report.json
+
+🏥 SYSTEM HEALTH SUMMARY:
+   Forecaster: 🔴 NEEDS IMPROVEMENT (0/100)
+   Pattern Detector: ✅ EXCELLENT (100/100)
+   AI Recommender: 🔴 NEEDS IMPROVEMENT (40/100)
+
+   📊 Overall Score: 44/100 - 🔴 NEEDS IMPROVEMENT
+
+================================================================================
+🎯 READY FOR SPARK FRONTEND INTEGRATION
+================================================================================
+
+The system_accuracy_report.json file contains:
+  • Forecaster: Direction accuracy, MAE, RMSE, hit rates
+  • Pattern Detector: Pattern counts, confidence scores, detection speed
+  • AI Recommender: CV accuracy, feature selection, signals
+
+Use this data to:
+  1. Display real-time accuracy metrics in dashboard
+  2. Show health status for each module
+  3. Track performance over time
+  4. Alert when accuracy drops below thresholds
