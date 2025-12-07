@@ -304,6 +304,18 @@ class PortfolioAwareTrader:
             
             try:
                 df = yf.download(ticker, period=period, interval='1d', progress=False)
+                
+                # Fix multi-index columns from yfinance
+                if isinstance(df.columns, pd.MultiIndex):
+                    df.columns = df.columns.get_level_values(0)
+                
+                # Flatten any remaining multi-column issues
+                if 'Close' in df.columns:
+                    close_col = df['Close']
+                    if isinstance(close_col, pd.DataFrame):
+                        close_col = close_col.iloc[:, 0]
+                    df['Close'] = close_col.values.flatten()
+                
                 if len(df) < 200:
                     print(f"   ⚠️ Insufficient data ({len(df)} days)")
                     continue
@@ -313,7 +325,8 @@ class PortfolioAwareTrader:
                 horizon = 5
                 
                 df = df.copy()
-                df['Return'] = df['Close'].pct_change(horizon).shift(-horizon)
+                returns = df['Close'].pct_change(horizon).shift(-horizon)
+                df['Return'] = returns.values.flatten() if hasattr(returns, 'values') else returns
                 
                 for j in range(window_size, len(df) - horizon):
                     window = df.iloc[j-window_size:j]
