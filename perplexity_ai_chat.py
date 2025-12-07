@@ -61,18 +61,18 @@ class PerplexityAIChat:
         ] + self.conversation_history[-10:]  # Last 10 messages for context
         
         try:
+            payload = {
+                "model": "sonar",  # Perplexity's current model
+                "messages": messages,
+            }
+            
             response = requests.post(
                 self.base_url,
                 headers={
                     "Authorization": f"Bearer {self.api_key}",
                     "Content-Type": "application/json"
                 },
-                json={
-                    "model": "llama-3.1-sonar-large-128k-online",  # Perplexity's best model
-                    "messages": messages,
-                    "temperature": 0.7,
-                    "max_tokens": 1000
-                },
+                json=payload,
                 timeout=30
             )
             
