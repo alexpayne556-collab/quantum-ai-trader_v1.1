@@ -1,506 +1,583 @@
-# 🎯 SYSTEM ACCURACY STATUS & SPARK DASHBOARD INTEGRATION GUIDE
+# 🚀 Spark Dashboard Integration Guide
 
-## Current Performance Summary
-
-### ✅ Pattern Detector - **EXCELLENT (95/100)**
-
-**Performance Metrics:**
-- **Detection Rate:** 100+ patterns per ticker
-- **Average Confidence:** 99-100%
-- **Speed:** 20-36ms per ticker
-- **Pattern Types:** TA-Lib candlesticks + custom patterns (EMA ribbon, VWAP, ORB)
-- **Optimized Signals:** Tier S/A/B ranked signals from training
-
-**Quality Assessment:**
-- ✅ High accuracy: 100% confidence on detected patterns
-- ✅ Fast execution: Under 40ms per ticker
-- ✅ Comprehensive coverage: 100+ patterns detected
-- ✅ Production ready: Stable and reliable
-
-**Status:** 🟢 **READY FOR PRODUCTION**
+## Overview
+The **NEW Underdog Trading System** plugs seamlessly into your Spark frontend through REST API endpoints. This provides Alpha 76 intraday predictions (5-hour horizon) for 76 small/mid-cap growth tickers.
 
 ---
 
-### 🟡 Forecaster - **NEEDS FIXING (40/100)**
+## Architecture
 
-**Current Issues:**
-- ❌ Shape mismatch error in forecast validation
-- ❌ Broadcasting error: `(24,0)` vs `(23,)`
-- ⚠️  Mock model integration needs refinement
-
-**Expected Performance (when fixed):**
-- Direction Accuracy: 55-65%
-- MAE: $2-5 per share
-- 5% Hit Rate: 40-60%
-- Forecast Horizon: 24 days
-
-**Status:** 🟡 **IN PROGRESS - FIX REQUIRED**
-
-**Fix Required:**
-```python
-# Issue: forecast['price'] returns empty array
-# Need to validate forecast DataFrame structure
-# Ensure forecast has 'price' column populated
+```
+┌─────────────────────────────────────────────────────────┐
+│           SPARK FRONTEND (React/Vue/HTML)               │
+│              Running on port 3000/5173/8080             │
+└──────────────────┬──────────────────────────────────────┘
+                   │ HTTP/AJAX
+                   ↓
+┌─────────────────────────────────────────────────────────┐
+│          UNDERDOG API (Flask Backend)                   │
+│              Running on port 5000                       │
+│  Routes:                                                │
+│    /api/underdog/predict          - Single prediction   │
+│    /api/underdog/batch-predict    - Batch predictions   │
+│    /api/underdog/top-signals      - Top 10 BUYs         │
+│    /api/underdog/regime           - Market regime       │
+│    /api/underdog/alpha76          - Watchlist           │
+└──────────────────┬──────────────────────────────────────┘
+                   │ Python imports
+                   ↓
+┌─────────────────────────────────────────────────────────┐
+│       TRAINED MODELS (After Colab Pro Training)         │
+│  • models/underdog_v1/xgboost.pkl                       │
+│  • models/underdog_v1/random_forest.pkl                 │
+│  • models/underdog_v1/gradient_boosting.pkl             │
+│  • models/underdog_v1/scaler.pkl                        │
+│  • models/underdog_v1/metadata.pkl                      │
+└─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-### 🟢 AI Recommender - **GOOD (70/100)**
+## Quick Start (3 Steps)
 
-**Expected Performance (based on previous tests):**
-- CV Mean Accuracy: 65-75%
-- Adaptive Labels: ✅ Enabled
-- Feature Selection: 12 best features
-- K-Fold CV: 5 folds
-- Signal Types: BUY, HOLD, SELL with confidence
+### Step 1: Start Underdog API (Backend)
+```bash
+cd /workspaces/quantum-ai-trader_v1.1
+python underdog_api.py
+```
 
-**Last Known Metrics:**
-- Training samples: 800-2000 per ticker
-- Feature engineering: 25+ technical indicators
-- Model: LogisticRegression with balanced class weights
-- Confidence scores: 50-85%
+**Output**:
+```
+🚀 UNDERDOG API - Flask Backend for Spark Dashboard
+Alpha 76 Watchlist: 76 tickers
+Starting server on http://localhost:5000
+Ready for Spark dashboard integration! 🎯
+```
 
-**Status:** 🟢 **READY FOR PRODUCTION** (pending validation run)
+### Step 2: Test API Endpoints
+```bash
+# Check health
+curl http://localhost:5000/api/underdog/status
+
+# Get Alpha 76 watchlist
+curl http://localhost:5000/api/underdog/alpha76
+
+# Get current regime
+curl http://localhost:5000/api/underdog/regime
+
+# Get prediction for RKLB
+curl -X POST http://localhost:5000/api/underdog/predict \
+  -H "Content-Type: application/json" \
+  -d '{"ticker": "RKLB"}'
+
+# Get top 10 BUY signals
+curl http://localhost:5000/api/underdog/top-signals
+```
+
+### Step 3: Connect from Spark Frontend
+See JavaScript examples below.
 
 ---
 
-## 📊 Integration with Spark Frontend Dashboard
+## API Endpoints Reference
 
-### Dashboard Components Needed
+### 1. System Health Check
+**GET** `/api/underdog/status`
 
-#### 1. **Real-Time Accuracy Metrics Display**
+**Response**:
+```json
+{
+  "success": true,
+  "status": "operational",
+  "models": {
+    "ensemble_trained": true,
+    "feature_engine": true,
+    "regime_classifier": true
+  },
+  "watchlist_size": 76,
+  "timestamp": "2025-12-09T..."
+}
+```
 
+**Use Case**: Display system status indicator in dashboard header
+
+---
+
+### 2. Get Alpha 76 Watchlist
+**GET** `/api/underdog/alpha76`
+
+**Response**:
+```json
+{
+  "success": true,
+  "watchlist": ["SYM", "IONQ", "RKLB", ...],
+  "total_tickers": 76,
+  "sectors": {
+    "Autonomous": ["SYM", "IONQ", "RGTI", ...],
+    "Space": ["RKLB", "ASTS", "LUNR", ...],
+    "Biotech": ["VKTX", "NTLA", "BEAM", ...],
+    ...
+  },
+  "timestamp": "2025-12-09T..."
+}
+```
+
+**Use Case**: Populate ticker dropdown/selector in UI
+
+---
+
+### 3. Single Ticker Prediction
+**POST** `/api/underdog/predict`
+
+**Request**:
+```json
+{
+  "ticker": "RKLB"
+}
+```
+
+**Response** (Success):
+```json
+{
+  "ticker": "RKLB",
+  "sector": "Space",
+  "signal": "BUY",
+  "confidence": 0.892,
+  "agreement": 1.0,
+  "votes": {"xgboost": 2, "random_forest": 2, "gradient_boosting": 2},
+  "vote_counts": {0: 0, 1: 0, 2: 3},
+  "current_price": 24.56,
+  "regime": "CHOPPY_HIGH_VOL",
+  "regime_filter": "PASS",
+  "position_size_multiplier": 0.3,
+  "stop_loss_pct": 0.06,
+  "timestamp": "2025-12-09T...",
+  "success": true
+}
+```
+
+**Response** (Error - Models Not Trained):
+```json
+{
+  "ticker": "RKLB",
+  "error": "Models not trained - train on Colab Pro first",
+  "success": false
+}
+```
+
+**Use Case**: Display prediction card when user clicks ticker
+
+---
+
+### 4. Batch Predictions
+**POST** `/api/underdog/batch-predict`
+
+**Request** (Specific tickers):
+```json
+{
+  "tickers": ["RKLB", "IONQ", "SOFI", "APP", "VKTX"]
+}
+```
+
+**Request** (All Alpha 76 - omit tickers):
+```json
+{}
+```
+
+**Response**:
+```json
+{
+  "success": true,
+  "predictions": [
+    {
+      "ticker": "RKLB",
+      "signal": "BUY",
+      "confidence": 0.892,
+      ...
+    },
+    {
+      "ticker": "IONQ",
+      "signal": "HOLD",
+      "confidence": 0.723,
+      ...
+    }
+  ],
+  "total": 20,
+  "timestamp": "2025-12-09T..."
+}
+```
+
+**Use Case**: Display signals table/grid for multiple tickers
+
+---
+
+### 5. Current Market Regime
+**GET** `/api/underdog/regime`
+
+**Response**:
+```json
+{
+  "success": true,
+  "regime": {
+    "name": "CHOPPY_HIGH_VOL",
+    "description": "Sideways market, high volatility - Wait mode",
+    "position_size_multiplier": 0.3,
+    "max_positions": 3,
+    "stop_loss_pct": 0.06,
+    "take_profit_pct": 0.05,
+    "min_confidence": 0.85,
+    "strategy_weights": {
+      "momentum": 0.10,
+      "mean_reversion": 0.35,
+      "dark_pool": 0.25,
+      "cross_asset": 0.20,
+      "sentiment": 0.10
+    }
+  },
+  "timestamp": "2025-12-09T..."
+}
+```
+
+**Use Case**: Display regime banner at top of dashboard with color coding
+
+---
+
+### 6. Top BUY Signals
+**GET** `/api/underdog/top-signals`
+
+**Response**:
+```json
+{
+  "success": true,
+  "signals": [
+    {
+      "ticker": "APP",
+      "signal": "BUY",
+      "confidence": 0.914,
+      "current_price": 234.12,
+      "sector": "Software",
+      "regime_filter": "PASS",
+      ...
+    },
+    ...
+  ],
+  "regime": "CHOPPY_HIGH_VOL",
+  "min_confidence": 0.85,
+  "timestamp": "2025-12-09T..."
+}
+```
+
+**Use Case**: Display "Hot Picks" section with top opportunities
+
+---
+
+### 7. Training/Backtest Summary
+**GET** `/api/underdog/backtest-summary`
+
+**Response** (After Colab training):
+```json
+{
+  "success": true,
+  "summary": {
+    "training_date": "2025-12-09",
+    "validation_accuracy": 0.63,
+    "models": {
+      "xgboost": {"accuracy": 0.65, "roc_auc": 0.71},
+      "random_forest": {"accuracy": 0.62, "roc_auc": 0.68},
+      "gradient_boosting": {"accuracy": 0.61, "roc_auc": 0.67}
+    },
+    "backtest": {
+      "win_rate": 0.67,
+      "avg_return": 0.023,
+      "total_signals": 143
+    }
+  },
+  "timestamp": "2025-12-09T..."
+}
+```
+
+**Use Case**: Display model performance metrics in settings/about page
+
+---
+
+## Frontend Integration Examples
+
+### Vanilla JavaScript (Fetch API)
 ```javascript
-// Example React component structure
-const AccuracyDashboard = () => {
-  const [metrics, setMetrics] = useState({
-    forecaster: { score: 40, status: 'NEEDS_FIXING' },
-    patternDetector: { score: 95, status: 'EXCELLENT' },
-    aiRecommender: { score: 70, status: 'GOOD' }
+// Get top signals
+async function getTopSignals() {
+  const response = await fetch('http://localhost:5000/api/underdog/top-signals');
+  const data = await response.json();
+  
+  if (data.success) {
+    displaySignals(data.signals);
+    displayRegime(data.regime);
+  }
+}
+
+// Get prediction for specific ticker
+async function getPrediction(ticker) {
+  const response = await fetch('http://localhost:5000/api/underdog/predict', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ ticker: ticker })
   });
   
-  return (
-    <div className="accuracy-dashboard">
-      <MetricCard 
-        title="Forecaster"
-        score={metrics.forecaster.score}
-        status={metrics.forecaster.status}
-        color={getStatusColor(metrics.forecaster.score)}
-      />
-      <MetricCard 
-        title="Pattern Detector"
-        score={metrics.patternDetector.score}
-        status={metrics.patternDetector.status}
-        color={getStatusColor(metrics.patternDetector.score)}
-      />
-      <MetricCard 
-        title="AI Recommender"
-        score={metrics.aiRecommender.score}
-        status={metrics.aiRecommender.status}
-        color={getStatusColor(metrics.aiRecommender.score)}
-      />
-    </div>
-  );
-};
-```
-
-#### 2. **AI Recommender Signals Panel**
-
-```javascript
-const SignalsPanel = ({ ticker }) => {
-  const [signal, setSignal] = useState(null);
+  const data = await response.json();
   
-  useEffect(() => {
-    // Fetch from backend API
-    fetch(`/api/ai-recommender/signal/${ticker}`)
-      .then(res => res.json())
-      .then(data => setSignal(data));
-  }, [ticker]);
-  
-  return (
-    <div className="signals-panel">
-      <h3>AI Recommendation for {ticker}</h3>
-      <SignalBadge 
-        signal={signal.signal} // BUY, HOLD, SELL
-        confidence={signal.confidence}
-      />
-      <ConfidenceBar value={signal.confidence} />
-      <FeatureImportance features={signal.features} />
-    </div>
-  );
-};
+  if (data.success) {
+    displayPrediction(data);
+  } else {
+    console.error('Error:', data.error);
+  }
+}
 ```
 
-#### 3. **Pattern Detection Visualization**
+---
 
-```javascript
-const PatternChart = ({ ticker, patterns }) => {
-  return (
-    <div className="pattern-chart">
-      <CandlestickChart ticker={ticker}>
-        {patterns.map(pattern => (
-          <PatternOverlay
-            key={pattern.id}
-            pattern={pattern.pattern}
-            type={pattern.type} // BULLISH, BEARISH
-            date={pattern.timestamp}
-            price={pattern.price_level}
-            confidence={pattern.confidence}
-          />
-        ))}
-      </CandlestickChart>
-      <PatternLegend patterns={patterns} />
-    </div>
-  );
-};
-```
+### React (Axios)
+```jsx
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
-#### 4. **Forecaster Price Projection**
+const API_BASE = 'http://localhost:5000/api/underdog';
 
-```javascript
-const ForecastChart = ({ ticker, forecast }) => {
-  return (
-    <div className="forecast-chart">
-      <LineChart>
-        <HistoricalPrices ticker={ticker} />
-        <ForecastLine 
-          data={forecast.prices}
-          confidence={forecast.confidence}
-          decay={forecast.decay_factor}
-        />
-        <ConfidenceBand 
-          upper={forecast.upper_bound}
-          lower={forecast.lower_bound}
-        />
-      </LineChart>
-      <ForecastMetrics 
-        targetPrice={forecast.target_price}
-        expectedReturn={forecast.expected_return}
-        horizon={forecast.horizon_days}
-      />
-    </div>
-  );
-};
-```
-
-#### 5. **Watchlist Scanner with Signals**
-
-```javascript
-const WatchlistScanner = ({ tickers }) => {
+function Dashboard() {
   const [signals, setSignals] = useState([]);
-  
+  const [regime, setRegime] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    // Batch fetch signals for all tickers
-    Promise.all(
-      tickers.map(ticker => 
-        fetch(`/api/ai-recommender/signal/${ticker}`)
-          .then(res => res.json())
-      )
-    ).then(results => setSignals(results));
-  }, [tickers]);
-  
-  // Sort by confidence descending
-  const sortedSignals = signals.sort((a, b) => b.confidence - a.confidence);
-  
-  return (
-    <div className="watchlist-scanner">
-      <h3>Top Signals (Sorted by Confidence)</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Ticker</th>
-            <th>Signal</th>
-            <th>Confidence</th>
-            <th>Patterns</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedSignals.map(signal => (
-            <tr key={signal.ticker}>
-              <td>{signal.ticker}</td>
-              <td><SignalBadge signal={signal.signal} /></td>
-              <td>{(signal.confidence * 100).toFixed(1)}%</td>
-              <td>{signal.patterns_detected}</td>
-              <td><button>Trade</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-```
+    fetchTopSignals();
+    fetchRegime();
+  }, []);
 
-#### 6. **Portfolio Manager Integration**
-
-```javascript
-const PortfolioManager = ({ portfolio }) => {
-  const [positions, setPositions] = useState([]);
-  const [signals, setSignals] = useState({});
-  
-  useEffect(() => {
-    // Get signals for all portfolio positions
-    portfolio.positions.forEach(pos => {
-      fetch(`/api/ai-recommender/signal/${pos.ticker}`)
-        .then(res => res.json())
-        .then(data => {
-          setSignals(prev => ({...prev, [pos.ticker]: data}));
-        });
-    });
-  }, [portfolio]);
-  
-  return (
-    <div className="portfolio-manager">
-      <h3>Your Portfolio</h3>
-      {portfolio.positions.map(pos => (
-        <PositionCard
-          key={pos.ticker}
-          position={pos}
-          signal={signals[pos.ticker]}
-          showAlert={shouldShowAlert(pos, signals[pos.ticker])}
-        />
-      ))}
-    </div>
-  );
-};
-
-const shouldShowAlert = (position, signal) => {
-  // Alert if signal contradicts position
-  if (position.side === 'LONG' && signal?.signal === 'SELL') {
-    return { type: 'WARNING', message: 'Consider closing position' };
-  }
-  if (position.side === 'SHORT' && signal?.signal === 'BUY') {
-    return { type: 'WARNING', message: 'Consider covering short' };
-  }
-  return null;
-};
-```
-
-#### 7. **Paper Trading Integration**
-
-```javascript
-const PaperTradingPanel = () => {
-  const [trades, setTrades] = useState([]);
-  const [performance, setPerformance] = useState({});
-  
-  const executeTrade = async (ticker, signal, quantity) => {
-    const trade = {
-      ticker,
-      signal: signal.signal,
-      confidence: signal.confidence,
-      price: await getCurrentPrice(ticker),
-      quantity,
-      timestamp: new Date()
-    };
-    
-    // Submit to paper trading backend
-    await fetch('/api/paper-trading/execute', {
-      method: 'POST',
-      body: JSON.stringify(trade)
-    });
-    
-    setTrades(prev => [...prev, trade]);
+  const fetchTopSignals = async () => {
+    try {
+      const response = await axios.get(`${API_BASE}/top-signals`);
+      if (response.data.success) {
+        setSignals(response.data.signals);
+      }
+    } catch (error) {
+      console.error('Error fetching signals:', error);
+    } finally {
+      setLoading(false);
+    }
   };
-  
+
+  const fetchRegime = async () => {
+    try {
+      const response = await axios.get(`${API_BASE}/regime`);
+      if (response.data.success) {
+        setRegime(response.data.regime);
+      }
+    } catch (error) {
+      console.error('Error fetching regime:', error);
+    }
+  };
+
+  const getPrediction = async (ticker) => {
+    try {
+      const response = await axios.post(`${API_BASE}/predict`, { ticker });
+      if (response.data.success) {
+        return response.data;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
-    <div className="paper-trading">
-      <h3>Paper Trading</h3>
-      <PerformanceMetrics metrics={performance} />
-      <TradeHistory trades={trades} />
-      <TradeButton onTrade={executeTrade} />
+    <div>
+      <RegimeBanner regime={regime} />
+      <SignalsGrid signals={signals} />
     </div>
   );
-};
+}
 ```
 
 ---
 
-## 🔌 Backend API Endpoints Needed
+### Vue.js
+```vue
+<template>
+  <div class="dashboard">
+    <div v-if="regime" class="regime-banner" :class="regime.name">
+      Regime: {{ regime.name }}
+    </div>
+    
+    <div class="signals-grid">
+      <div v-for="signal in signals" :key="signal.ticker" class="signal-card">
+        <h3>{{ signal.ticker }}</h3>
+        <div class="signal-badge" :class="signal.signal">
+          {{ signal.signal }}
+        </div>
+        <div>Confidence: {{ (signal.confidence * 100).toFixed(1) }}%</div>
+        <div>Price: ${{ signal.current_price }}</div>
+      </div>
+    </div>
+  </div>
+</template>
 
-### 1. **AI Recommender Endpoints**
+<script>
+import axios from 'axios';
 
-```python
-# Flask/FastAPI endpoints
-@app.get("/api/ai-recommender/signal/{ticker}")
-async def get_signal(ticker: str):
-    recommender = AIRecommender()
-    signal = recommender.predict_latest(ticker)
+export default {
+  data() {
     return {
-        "ticker": ticker,
-        "signal": signal['signal'],  # BUY, HOLD, SELL
-        "confidence": signal['confidence'],
-        "timestamp": datetime.now().isoformat()
+      signals: [],
+      regime: null,
+      API_BASE: 'http://localhost:5000/api/underdog'
+    };
+  },
+  
+  mounted() {
+    this.fetchData();
+  },
+  
+  methods: {
+    async fetchData() {
+      try {
+        const [signalsRes, regimeRes] = await Promise.all([
+          axios.get(`${this.API_BASE}/top-signals`),
+          axios.get(`${this.API_BASE}/regime`)
+        ]);
+        
+        if (signalsRes.data.success) {
+          this.signals = signalsRes.data.signals;
+        }
+        
+        if (regimeRes.data.success) {
+          this.regime = regimeRes.data.regime;
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+    
+    async getPrediction(ticker) {
+      try {
+        const response = await axios.post(`${this.API_BASE}/predict`, { ticker });
+        return response.data;
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
-
-@app.get("/api/ai-recommender/batch")
-async def get_batch_signals(tickers: List[str]):
-    recommender = AIRecommender()
-    signals = {}
-    for ticker in tickers:
-        signals[ticker] = recommender.predict_latest(ticker)
-    return signals
-```
-
-### 2. **Pattern Detection Endpoints**
-
-```python
-@app.get("/api/patterns/{ticker}")
-async def get_patterns(ticker: str, period: str = "60d"):
-    detector = PatternDetector()
-    result = detector.detect_all_patterns(ticker, period=period)
-    return {
-        "ticker": ticker,
-        "patterns": result['patterns'],
-        "optimized_signals": result['optimized_signals'],
-        "stats": result['stats']
-    }
-```
-
-### 3. **Forecaster Endpoints**
-
-```python
-@app.get("/api/forecast/{ticker}")
-async def get_forecast(ticker: str, horizon: int = 24):
-    engine = ForecastEngine()
-    df = fetch_data(ticker)
-    forecast = engine.generate_forecast(df, model, fe, ticker)
-    return {
-        "ticker": ticker,
-        "forecast": forecast.to_dict('records'),
-        "horizon_days": horizon
-    }
-```
-
-### 4. **System Health Endpoint**
-
-```python
-@app.get("/api/system/health")
-async def system_health():
-    # Read from system_accuracy_report.json
-    with open('system_accuracy_report.json', 'r') as f:
-        report = json.load(f)
-    return report['overall_health']
-```
-
----
-
-## 🚀 Quick Start Integration
-
-### Step 1: Install Python Backend Dependencies
-
-```bash
-pip install flask flask-cors yfinance talib scikit-learn numpy pandas
-```
-
-### Step 2: Create Backend API Server
-
-```python
-# backend_api.py
-from flask import Flask, jsonify
-from flask_cors import CORS
-from ai_recommender import AIRecommender
-from pattern_detector import PatternDetector
-from forecast_engine import ForecastEngine
-
-app = Flask(__name__)
-CORS(app)
-
-recommender = AIRecommender()
-detector = PatternDetector()
-forecaster = ForecastEngine()
-
-@app.route('/api/signals/<ticker>')
-def get_signal(ticker):
-    signal = recommender.predict_latest(ticker)
-    patterns = detector.detect_all_patterns(ticker)
-    return jsonify({
-        'signal': signal,
-        'patterns': patterns['patterns'][:10],  # Top 10
-        'stats': patterns['stats']
-    })
-
-if __name__ == '__main__':
-    app.run(port=5000, debug=True)
-```
-
-### Step 3: Connect Spark Frontend
-
-```javascript
-// In your Spark dashboard
-const API_BASE = 'http://localhost:5000/api';
-
-export const fetchSignal = async (ticker) => {
-  const response = await fetch(`${API_BASE}/signals/${ticker}`);
-  return response.json();
+  }
 };
-
-export const fetchBatchSignals = async (tickers) => {
-  const promises = tickers.map(ticker => fetchSignal(ticker));
-  return Promise.all(promises);
-};
+</script>
 ```
 
 ---
 
-## 📈 Performance Benchmarks
+## UI Components to Build
 
-### Pattern Detector
-- ✅ **Speed:** 20-36ms per ticker
-- ✅ **Accuracy:** 99-100% confidence
-- ✅ **Coverage:** 100+ patterns per ticker
-- ✅ **Scalability:** Can handle 1000+ requests/min
+### 1. Regime Banner
+```html
+<div class="regime-banner BULL_LOW_VOL">
+  <span class="regime-icon">🟢</span>
+  <div>
+    <strong>BULL LOW VOL</strong>
+    <p>Full risk on • Position size: 100% • Min confidence: 65%</p>
+  </div>
+</div>
+```
 
-### AI Recommender
-- ✅ **Accuracy:** 65-75% CV mean
-- ✅ **Speed:** 100-200ms per prediction (cached model)
-- ✅ **Reliability:** Adaptive labels + K-fold CV
-- ✅ **Confidence:** 50-85% typical range
-
-### Forecaster
-- 🟡 **Status:** Needs fix (shape mismatch)
-- 🎯 **Target:** 55-65% direction accuracy
-- 🎯 **Target:** $2-5 MAE
-- 🎯 **Target:** 40-60% 5% hit rate
-
----
-
-## ✅ Next Steps
-
-1. **Fix Forecaster** 
-   - Resolve shape mismatch error
-   - Validate forecast DataFrame structure
-   - Re-run accuracy validation
-
-2. **Deploy Backend API**
-   - Set up Flask/FastAPI server
-   - Expose endpoints for Spark frontend
-   - Add caching for performance
-
-3. **Integrate with Spark Dashboard**
-   - Build React components
-   - Connect to backend API
-   - Add real-time updates
-
-4. **Paper Trading**
-   - Connect signals to paper trading execution
-   - Track performance metrics
-   - Monitor win rate and returns
-
-5. **Production Monitoring**
-   - Set up accuracy tracking
-   - Alert on performance degradation
-   - Auto-retrain when needed
+**Color Coding**:
+- 🟢 BULL_LOW_VOL, BULL_MODERATE_VOL → Green
+- 🟡 CHOPPY_LOW_VOL, BULL_HIGH_VOL → Yellow
+- 🟠 BEAR_LOW_VOL, CHOPPY_HIGH_VOL → Orange
+- 🔴 BEAR_HIGH_VOL, PANIC_EXTREME_VOL → Red
 
 ---
 
-## 🎯 Current Status Summary
+### 2. Signal Card
+```html
+<div class="signal-card">
+  <div class="ticker-header">
+    <h3>RKLB</h3>
+    <span class="sector-badge">Space</span>
+  </div>
+  
+  <div class="signal-badge BUY">BUY</div>
+  
+  <div class="confidence-bar">
+    <div class="confidence-fill" style="width: 89.2%"></div>
+    <span>89.2% Confidence</span>
+  </div>
+  
+  <div class="price-info">
+    <span>Price: $24.56</span>
+    <span>Stop: $22.09 (-6%)</span>
+  </div>
+  
+  <div class="model-votes">
+    ✅ XGBoost: BUY
+    ✅ Random Forest: BUY
+    ✅ Gradient Boosting: BUY
+  </div>
+</div>
+```
 
-| Module | Status | Score | Action |
-|--------|--------|-------|--------|
-| **Pattern Detector** | ✅ Ready | 95/100 | Deploy to production |
-| **AI Recommender** | 🟢 Good | 70/100 | Complete validation |
-| **Forecaster** | 🟡 Fixing | 40/100 | Fix shape mismatch |
-| **Dashboard Integration** | 🔄 In Progress | - | Build React components |
+---
 
-**Overall System Health: 68/100 - GOOD (with forecaster fix: 78/100 - EXCELLENT)**
+### 3. Signals Table
+```html
+<table class="signals-table">
+  <thead>
+    <tr>
+      <th>Ticker</th>
+      <th>Signal</th>
+      <th>Confidence</th>
+      <th>Price</th>
+      <th>Sector</th>
+      <th>Regime Filter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>APP</strong></td>
+      <td><span class="badge BUY">BUY</span></td>
+      <td>91.4%</td>
+      <td>$234.12</td>
+      <td>Software</td>
+      <td>✅ PASS</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+---
+
+## CORS Configuration
+
+The API is configured to accept requests from:
+- `http://localhost:3000` (React default)
+- `http://localhost:5173` (Vite default)
+- `http://localhost:8080` (Vue CLI default)
+
+**Custom port?** Edit `underdog_api.py`:
+```python
+# Line ~35
+origins = [
+    "http://localhost:3000",  # React
+    "http://localhost:5173",  # Vite
+    "http://localhost:8080",  # Vue
+    "http://localhost:4200"   # Add your custom port
+]
+```
+
+---
+
+## Next Steps
+
+1. **Train models on Colab Pro** → Use `UNDERDOG_COLAB_TRAINER.ipynb`
+2. **Download trained models** → Place in `models/underdog_v1/`
+3. **Start API**: `python underdog_api.py`
+4. **Test endpoints**: Use curl or Postman
+5. **Connect Spark frontend**: Use JavaScript examples above
+6. **Build UI components**: Regime banner, signal cards, tables
+
+**Ready to integrate!** ��

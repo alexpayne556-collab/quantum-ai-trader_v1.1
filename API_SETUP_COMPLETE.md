@@ -195,7 +195,7 @@ Paid tier ($20/month): **5,000 requests/month**
 - yfinance is always available as backup
 
 ### "Perplexity API error"
-- Verify key in .env: `PERPLEXITY_API_KEY=pplx-...`
+- Verify key in .env: `PERPLEXITY_API_KEY=your_perplexity_api_key_here...`
 - Free tier: 5-10 requests/day limit
 - Upgrade to paid: $20/month for 5,000 requests
 

@@ -26,7 +26,7 @@ nano .env
 1. **Perplexity AI** (For AI chat in dashboard)
    - Get key: https://www.perplexity.ai/settings/api
    - Free tier: 5 requests/day
-   - Add to .env: `PERPLEXITY_API_KEY=pplx-xxxxx`
+   - Add to .env: `PERPLEXITY_API_KEY=your_perplexity_api_key_herexxxxx`
 
 2. **Finnhub** (For real-time market data)
    - Get key: https://finnhub.io/register
