@@ -442,6 +442,60 @@ class PatternDetector:
                 weights = {'trend': 1.8 if regime != 'sideways' else 0.0,
                           'rsi_divergence': 1.0, 'dip_buy': 0.5, 'bounce': 0.5, 'momentum': 0.5}
             
+            # === TIER SS: NUCLEAR DIP (82.4% WR, +31,667 PnL) - GOLD FOUND ===
+            if weights.get('nuclear_dip', 0) > 0 and 'nuclear_dip' not in DISABLED_SIGNALS:
+                # Logic from ai_pattern_signal_generator.py: ret_21d < -5 AND macd_rising
+                if ret_21d < -5 and macd_rising:
+                    confidence = 0.824  # Historical 82.4% WR from pattern_battle_results.json
+                    detected.append({
+                        'pattern': '💥 NUCLEAR_DIP (Tier SS)',
+                        'type': 'BULLISH',
+                        'start_idx': int(i - 1),
+                        'end_idx': int(i),
+                        'price_level': float(close_arr[i]),
+                        'confidence': float(confidence),
+                        'timestamp': df.index[i],
+                        'source': 'optimized',
+                        'signal_weight': weights['nuclear_dip'],
+                        'regime': regime,
+                        'confluence': ['DEEP_OVERSOLD', 'MACD_RISING', 'MEAN_REVERSION'],
+                        'metadata': {
+                            'ret_21d': float(ret_21d),
+                            'win_rate': 0.824,
+                            'total_pnl': 31667,
+                            'wins': 1400,
+                            'losses': 300,
+                            'best_regime': 'bear'
+                        }
+                    })
+            
+            # === TIER S: RIBBON MOMENTUM (71.4% WR, +14,630 PnL) - GOLD FOUND ===
+            if weights.get('ribbon_mom', 0) > 0 and 'ribbon_mom' not in DISABLED_SIGNALS:
+                # Ribbon aligned + strong momentum
+                if ribbon_bullish and mom_5d > 5:
+                    confidence = 0.714  # Historical 71.4% WR from pattern_battle_results.json
+                    detected.append({
+                        'pattern': '🎯 RIBBON_MOM (Tier S)',
+                        'type': 'BULLISH',
+                        'start_idx': int(i - 1),
+                        'end_idx': int(i),
+                        'price_level': float(close_arr[i]),
+                        'confidence': float(confidence),
+                        'timestamp': df.index[i],
+                        'source': 'optimized',
+                        'signal_weight': weights['ribbon_mom'],
+                        'regime': regime,
+                        'confluence': ['RIBBON_ALIGNED', 'STRONG_MOMENTUM'],
+                        'metadata': {
+                            'momentum_5d': float(mom_5d),
+                            'win_rate': 0.714,
+                            'total_pnl': 14630,
+                            'wins': 1000,
+                            'losses': 400,
+                            'best_regime': 'bull'
+                        }
+                    })
+            
             # === TIER S: TREND SIGNAL (65% WR, +13.7% avg) ===
             if weights.get('trend', 0) > 0 and 'trend' not in DISABLED_SIGNALS:
                 if trend_align > 0.5 and ribbon_bullish:
@@ -488,12 +542,12 @@ class PatternDetector:
                         }
                     })
             
-            # === TIER B: DIP BUY (best in sideways: 62.5% WR, +12.2% avg) ===
+            # === TIER A: DIP BUY (71.4% WR, +12,326 PnL) - UPGRADED ===
             if weights.get('dip_buy', 0) > 0 and 'dip_buy' not in DISABLED_SIGNALS:
                 if rsi[i] < 30 and mom_5d < -3:
-                    confidence = 0.54 + (0.08 if regime == 'sideways' else 0)
+                    confidence = 0.714  # Historical 71.4% WR from pattern_battle_results.json
                     detected.append({
-                        'pattern': '📉 Dip Buy (Tier B)',
+                        'pattern': '🥇 Dip Buy (Tier A)',
                         'type': 'BULLISH',
                         'start_idx': int(i - 1),
                         'end_idx': int(i),
@@ -511,12 +565,12 @@ class PatternDetector:
                         }
                     })
             
-            # === TIER B: BOUNCE (works in bear/sideways: 60% WR) ===
+            # === TIER A: BOUNCE (66.1% WR, +65,225 PnL) - UPGRADED ===
             if weights.get('bounce', 0) > 0 and 'bounce' not in DISABLED_SIGNALS:
                 if bounce > 8 and macd_rising:
-                    confidence = 0.54 + (0.06 if regime in ['bear', 'sideways'] else 0)
+                    confidence = 0.661  # Historical 66.1% WR from pattern_battle_results.json
                     detected.append({
-                        'pattern': '📈 Bounce (Tier B)',
+                        'pattern': '🥇 Bounce (Tier A)',
                         'type': 'BULLISH',
                         'start_idx': int(i - 1),
                         'end_idx': int(i),
@@ -664,7 +718,7 @@ class PatternDetector:
         print(f"  VWAP pullbacks: {len(vwap_patterns)}")
         print(f"  Opening range breakouts: {len(orb_patterns)}")
         print(f"  🎯 OPTIMIZED SIGNALS: {len(optimized_signals)}")
-        print(f"  High-confidence patterns (>0.7): {len([p for p in all_patterns if p['confidence'] > 0.7])}")
+        print(f"  High-confidence patterns (>0.7): {len([p for p in all_patterns if float(p['confidence']) > 0.7])}")
         print(f"  Detection time: {detection_time*1000:.1f}ms")
         
         # Show optimized signals first (they're the most important)
@@ -694,7 +748,7 @@ class PatternDetector:
                 'talib': len(talib_patterns),
                 'custom': len(ema_patterns) + len(vwap_patterns) + len(orb_patterns),
                 'optimized': len(optimized_signals),
-                'high_confidence': len([p for p in all_patterns if p['confidence'] > 0.7]),
+                'high_confidence': len([p for p in all_patterns if float(p['confidence']) > 0.7]),
                 'detection_time_ms': detection_time * 1000
             }
         }

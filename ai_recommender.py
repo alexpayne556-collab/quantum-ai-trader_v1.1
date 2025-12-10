@@ -1,6 +1,7 @@
 """
 AI Recommender: Train a lightweight per-ticker classifier that predicts 7-day direction
 - Feature engineering (RSI, MACD, ATR, ADX, EMA diffs, returns, volume features)
+- GOLD INTEGRATION: Microstructure features (spread proxy, order flow, institutional activity)
 - Labels: future 7-day return -> BUY / HOLD / SELL
 - Model: sklearn LogisticRegression (class_weight='balanced')
 - Fallback: rule-based indicator aggregator if training fails
@@ -13,6 +14,13 @@ import pandas as pd
 import talib
 from datetime import datetime, timedelta
 from typing import Dict, Any
+
+# GOLD INTEGRATION: Import microstructure features
+try:
+    from src.features.microstructure import MicrostructureFeatures
+    MICROSTRUCTURE_AVAILABLE = True
+except Exception:
+    MICROSTRUCTURE_AVAILABLE = False
 
 # Try to import sklearn; if unavailable we'll fallback to rule-based
 try:
@@ -64,6 +72,38 @@ class FeatureEngineer:
         out['log_ret'] = np.log(pd.Series(close) / pd.Series(close).shift(1))
 
         out['obv'] = talib.OBV(close, volume)
+
+        # GOLD INTEGRATION: Add microstructure features (52 -> 56 features)
+        if MICROSTRUCTURE_AVAILABLE:
+            try:
+                high_s = pd.Series(high, index=df.index)
+                low_s = pd.Series(low, index=df.index)
+                close_s = pd.Series(close, index=df.index)
+                volume_s = pd.Series(volume, index=df.index)
+                open_s = pd.Series(FeatureEngineer.get_array(df, 'Open'), index=df.index)
+                
+                # 1. Spread Proxy (wider spreads = institutional activity)
+                out['spread_proxy'] = MicrostructureFeatures.compute_spread_proxy(
+                    high_s, low_s, close_s
+                )
+                
+                # 2. Order Flow CLV (buying/selling pressure)
+                out['order_flow_clv'] = MicrostructureFeatures.compute_order_flow_clv(
+                    high_s, low_s, close_s
+                )
+                
+                # 3. Institutional Activity (volume with small price movement)
+                out['institutional_activity'] = MicrostructureFeatures.compute_institutional_activity(
+                    volume_s, close_s, open_s
+                )
+                
+                # 4. Volume-Weighted CLV (strength of order flow)
+                out['vw_clv'] = MicrostructureFeatures.compute_volume_weighted_clv(
+                    high_s, low_s, close_s, volume_s
+                )
+            except Exception as e:
+                # If microstructure fails, continue without it
+                pass
 
         # Clean infinities and NaNs: median imputation fallback
         out = out.replace([np.inf, -np.inf], np.nan)
