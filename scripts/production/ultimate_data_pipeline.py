@@ -45,8 +45,8 @@ class UltimateDataPipeline:
         
         os.makedirs(output_dir, exist_ok=True)
         
-        # Initialize feature engineer
-        self.feature_engineer = FeatureEngineer70(use_gold=use_gold)
+        # Note: FeatureEngineer70 is a static class - no initialization needed
+        # We'll call FeatureEngineer70.engineer_all_features(df, ticker) directly
         
         # Ticker tiers
         self.tier1_tickers = self._load_tier1_tickers()
@@ -359,7 +359,8 @@ class UltimateDataPipeline:
                 return None
             
             # Engineer features
-            df_features = self.feature_engineer.engineer_all_features(df)
+            # Engineer features using static method
+            df_features = FeatureEngineer70.engineer_all_features(df, ticker)
             
             if len(df_features) == 0:
                 logger.debug(f"{ticker}: Feature engineering failed")
