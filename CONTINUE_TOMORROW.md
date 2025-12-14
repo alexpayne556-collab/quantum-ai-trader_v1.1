@@ -6,6 +6,15 @@
 
 ---
 
+## REMINDER: PIVOT STANDS, PATTERN LAB STAYS IN THE BACKGROUND
+
+- We pivot to **Inside Edge** (information synthesis) as the core path.
+- **Pattern Lab is not abandoned**: it can be a secondary checker ("look twice" signal), never the ultimate decider.
+- After the core foundation is stable (v1.0), we can add a **Pattern Assist module** as an optional layer.
+- Avoid scope creep: build foundation first, then iterate.
+
+---
+
 ## THE PIVOT SUMMARY
 
 ### What We Were Doing (Old Approach)
@@ -17,7 +26,7 @@
 
 > "Stop trying to beat institutions at their game (speed, data).
 > Start playing YOUR game: depth, synthesis, patience.
-> Know your 20 stocks better than analysts know their 50."
+> Know your 30 stocks better than analysts know their 50."
 
 ---
 
@@ -195,6 +204,7 @@ WE SURFACE:
 3. Send Perplexity prompt for discovery
 4. Send Claude prompt for validation
 5. Finalize 30-stock watchlist
+6. Lock a **tight build plan** (no guessing) for the week
 
 ### Afternoon
 1. Set up inside-edge repo properly
