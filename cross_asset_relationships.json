@@ -1,0 +1,76 @@
+{
+  "relationships": {
+    "LUNR": [
+      {
+        "leader": "LYFT",
+        "lag": 2,
+        "correlation": 0.175,
+        "direction": "SAME",
+        "accuracy": 0.527,
+        "strength": 0.092
+      }
+    ],
+    "NOW": [
+      {
+        "leader": "PG",
+        "lag": 4,
+        "correlation": 0.164,
+        "direction": "SAME",
+        "accuracy": 0.565,
+        "strength": 0.093
+      }
+    ],
+    "KRYS": [
+      {
+        "leader": "MU",
+        "lag": 2,
+        "correlation": 0.164,
+        "direction": "SAME",
+        "accuracy": 0.545,
+        "strength": 0.089
+      }
+    ],
+    "QTUM": [
+      {
+        "leader": "MRVL",
+        "lag": 2,
+        "correlation": 0.164,
+        "direction": "SAME",
+        "accuracy": 0.553,
+        "strength": 0.09
+      }
+    ],
+    "WMT": [
+      {
+        "leader": "BAC",
+        "lag": 2,
+        "correlation": 0.155,
+        "direction": "SAME",
+        "accuracy": 0.533,
+        "strength": 0.083
+      }
+    ],
+    "LMT": [
+      {
+        "leader": "ANET",
+        "lag": 1,
+        "correlation": 0.152,
+        "direction": "SAME",
+        "accuracy": 0.521,
+        "strength": 0.079
+      }
+    ],
+    "TEM": [
+      {
+        "leader": "NVDA",
+        "lag": 2,
+        "correlation": 0.15,
+        "direction": "SAME",
+        "accuracy": 0.541,
+        "strength": 0.081
+      }
+    ]
+  },
+  "last_update": "2025-12-04T05:07:36.057346",
+  "n_tickers": 48
+}

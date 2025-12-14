@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "evolved_at": "2025-12-04",
+  "source": "EVOLUTION_OPTIMIZER.ipynb - 30 generations",
+  
+  "pattern_params": {
+    "description": "Evolved trading pattern parameters",
+    "test_return": 31.3,
+    "test_win_rate": 71.1,
+    "test_sharpe": 3.34,
+    
+    "entry_thresholds": {
+      "rsi_oversold": 21,
+      "rsi_overbought": 76,
+      "momentum_min_pct": 4,
+      "bounce_min_pct": 8,
+      "drawdown_trigger_pct": -6
+    },
+    
+    "exit_thresholds": {
+      "profit_target_1_pct": 14,
+      "profit_target_2_pct": 25,
+      "stop_loss_pct": -19,
+      "trailing_stop_pct": 11,
+      "max_hold_days": 32
+    },
+    
+    "position_sizing": {
+      "position_size_pct": 21,
+      "max_positions": 11
+    }
+  },
+  
+  "key_insights": [
+    "Buy deeper dips - RSI 21 vs human's 35",
+    "Use wider stops - 19% vs 12% to let winners run",
+    "Faster turnover - 32 days vs 60 days max hold",
+    "Bigger positions - 21% vs 15% per trade",
+    "Wait for bigger bounces - 8% vs 5% minimum",
+    "Lower momentum threshold - 4% vs 10% catches more moves"
+  ],
+  
+  "human_baseline_comparison": {
+    "human_return": 19.4,
+    "evolved_return": 31.3,
+    "improvement_pct": 61.4,
+    "human_win_rate": 60.9,
+    "evolved_win_rate": 71.1,
+    "win_rate_improvement": 10.2
+  }
+}

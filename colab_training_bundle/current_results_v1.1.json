@@ -1,0 +1,72 @@
+{
+  "generated_at": "2025-12-06T19:18:39.072520",
+  "version": "1.1",
+  "signal_optimization": {
+    "tier_s_signals": [
+      "trend"
+    ],
+    "tier_a_signals": [
+      "rsi_divergence"
+    ],
+    "tier_b_signals": [
+      "dip_buy",
+      "bounce",
+      "momentum"
+    ],
+    "disabled_signals": [
+      "nuclear_dip",
+      "vol_squeeze",
+      "consolidation",
+      "uptrend_pullback"
+    ],
+    "backtest_results": {
+      "win_rate": 61.7,
+      "avg_return_pct": 0.82,
+      "total_trades": 587
+    }
+  },
+  "forecast_optimization": {
+    "best_model": "HistGB",
+    "horizon_days": 5,
+    "threshold": 0.03,
+    "decay_start_day": 5,
+    "decay_rate": 0.2
+  },
+  "ai_recommender_optimization": {
+    "top_features": [
+      "atr_pct",
+      "ema_50",
+      "ema_21",
+      "ema_8",
+      "bb_width",
+      "obv",
+      "rsi_21",
+      "rsi_14",
+      "macd",
+      "macd_signal",
+      "vol_sma",
+      "trend_long",
+      "atr_14",
+      "rsi_7",
+      "cci"
+    ],
+    "atr_multiplier": 0.75,
+    "model_params": {
+      "max_iter": 358,
+      "max_depth": 15,
+      "learning_rate": 0.011819161482309668,
+      "min_samples_leaf": 7,
+      "l2_regularization": 0.48339224620158877
+    }
+  },
+  "risk_manager_optimization": {
+    "risk_per_trade": 0.015,
+    "max_daily_loss": 0.01,
+    "max_positions": 3
+  },
+  "market_regime_optimization": {
+    "bull_threshold": 10.0,
+    "bear_threshold": -3.0,
+    "adx_trend_threshold": 30.0
+  }
+}

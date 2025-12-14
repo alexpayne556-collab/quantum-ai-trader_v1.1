@@ -1,0 +1,47 @@
+{
+  "cash": 50000,
+  "positions": [
+    {
+      "ticker": "SERV",
+      "entry_price": 0.0,
+      "shares": 0,
+      "entry_date": "2025-12-07T03:38:14.539752",
+      "sector": "TECH",
+      "current_price": 0.0,
+      "stop_loss": null,
+      "target_price": null
+    },
+    {
+      "ticker": "YYAI",
+      "entry_price": 0.0,
+      "shares": 0,
+      "entry_date": "2025-12-07T03:38:14.539757",
+      "sector": "TECH",
+      "current_price": 0.0,
+      "stop_loss": null,
+      "target_price": null
+    },
+    {
+      "ticker": "APLD",
+      "entry_price": 0.0,
+      "shares": 0,
+      "entry_date": "2025-12-07T03:38:14.539758",
+      "sector": "TECH",
+      "current_price": 0.0,
+      "stop_loss": null,
+      "target_price": null
+    },
+    {
+      "ticker": "HOOD",
+      "entry_price": 0.0,
+      "shares": 0,
+      "entry_date": "2025-12-07T03:38:14.539760",
+      "sector": "FINANCE",
+      "current_price": 0.0,
+      "stop_loss": null,
+      "target_price": null
+    }
+  ],
+  "max_position_size": 0.2,
+  "max_sector_allocation": 0.4
+}

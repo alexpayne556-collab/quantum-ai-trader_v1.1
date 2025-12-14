@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scanner - Data Unavailable</title>
+    <style>
+        body { 
+            background: #0a0e27; 
+            color: #fff; 
+            font-family: monospace; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+            margin: 0;
+        }
+        .fallback-box {
+            background: #1a1d35;
+            border: 2px solid #ffd60a;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 { color: #ffd60a; }
+        ul { text-align: left; margin: 20px auto; max-width: 400px; }
+        li { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="fallback-box">
+        <h1>📊 Scanner Temporarily Offline</h1>
+        <p>Unable to collect scanner data. This could be due to:</p>
+        <ul>
+            <li>🔌 Network connectivity issues</li>
+            <li>📉 Data provider rate limits</li>
+            <li>⏰ Market hours (some data requires active session)</li>
+            <li>🔧 System resources temporarily unavailable</li>
+        </ul>
+        <p>The system will retry automatically on next run.</p>
+    </div>
+</body>
+</html>

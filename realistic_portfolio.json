@@ -1,0 +1,47 @@
+{
+  "cash": 50000,
+  "positions": [
+    {
+      "ticker": "AAPL",
+      "entry_price": 275.0,
+      "shares": 100,
+      "entry_date": "2025-11-22T03:22:50.094162",
+      "sector": "TECH",
+      "current_price": 278.7799987792969,
+      "stop_loss": 265.0,
+      "target_price": 290.0
+    },
+    {
+      "ticker": "MSFT",
+      "entry_price": 480.0,
+      "shares": 50,
+      "entry_date": "2025-11-27T03:22:50.094171",
+      "sector": "TECH",
+      "current_price": 483.1600036621094,
+      "stop_loss": 470.0,
+      "target_price": 500.0
+    },
+    {
+      "ticker": "XOM",
+      "entry_price": 118.0,
+      "shares": 200,
+      "entry_date": "2025-11-17T03:22:50.094174",
+      "sector": "ENERGY",
+      "current_price": 116.54000091552734,
+      "stop_loss": 115.0,
+      "target_price": 125.0
+    },
+    {
+      "ticker": "JPM",
+      "entry_price": 230.0,
+      "shares": 100,
+      "entry_date": "2025-11-25T03:22:50.094176",
+      "sector": "FINANCE",
+      "current_price": 315.0400085449219,
+      "stop_loss": 225.0,
+      "target_price": 242.0
+    }
+  ],
+  "max_position_size": 0.2,
+  "max_sector_allocation": 0.4
+}

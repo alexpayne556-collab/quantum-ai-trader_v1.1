@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Trader – 2030 Cyberpunk Preview</title>
+  <script src="https://cdn.plot.ly/plotly-2.33.0.min.js"></script>
+  <style>
+    :root {
+      --bg: #0a0e27;
+      --panel: #121635;
+      --grid: #1a1f3a;
+      --bull: #00ff88;
+      --bear: #ff006e;
+      --forecast: #00d9ff;
+      --fib: #ffd60a;
+      --wave: #ff6b35;
+      --supply: rgba(255, 0, 110, 0.20);
+      --demand: rgba(0, 255, 136, 0.20);
+      --text: #ffffff;
+    }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, Arial, sans-serif; }
+    .app {
+      display: grid; grid-template-columns: 300px 1fr; grid-template-rows: auto 1fr; height: 100vh; gap: 8px; padding: 8px;
+      background: radial-gradient(800px 400px at 20% 0%, rgba(0,255,136,0.08), transparent 70%),
+                  radial-gradient(800px 400px at 80% 100%, rgba(255,0,110,0.08), transparent 70%), var(--bg);
+      transition: background 400ms ease;
+    }
+    header { grid-column: 1 / -1; display:flex; justify-content: space-between; align-items:center; background: var(--panel); border: 1px solid var(--grid); border-radius: 10px; padding: 10px 16px; }
+    .left { background: var(--panel); border: 1px solid var(--grid); border-radius: 10px; padding: 12px; overflow: auto; }
+    .right { background: var(--panel); border: 1px solid var(--grid); border-radius: 10px; padding: 8px; position: relative; }
+    .section { margin-bottom: 16px; }
+    .section h3 { margin: 0 0 8px 0; font-size: 14px; letter-spacing: 0.6px; text-transform: uppercase; color: #c6d0ff; }
+    .badge { display:inline-block; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--grid); background: #0f1439; margin-right: 8px; font-size: 12px; }
+    .ribbon { height: 8px; background: linear-gradient(90deg, #00ffff, #00ccff, #0099ff, #0066ff, #0033ff, #0000ff, #2200ff); border-radius: 99px; box-shadow: 0 0 15px rgba(0,217,255,0.6); margin: 4px 0 12px; animation: breathe 3.2s ease-in-out infinite; }
+    @keyframes breathe { 0%,100% { filter: brightness(0.9); } 50% { filter: brightness(1.25); } }
+    .tempo-bg { position:absolute; inset:0; pointer-events:none; border-radius: 10px; box-shadow: inset 0 0 80px rgba(0,255,136,0.08), inset 0 0 80px rgba(255,0,110,0.08); animation: tempo 2.6s linear infinite; }
+    @keyframes tempo { 0%,100% { opacity: 0.35; } 50% { opacity: 0.75; } }
+    .legend { position: absolute; right: 12px; top: 12px; background: rgba(18,22,53,0.9); border: 1px solid var(--grid); border-radius: 8px; padding: 8px 10px; font-size: 12px; }
+    .legend div { margin: 3px 0; }
+    .legend .swatch { display:inline-block; width: 10px; height: 10px; border-radius:2px; margin-right:6px; vertical-align: middle; }
+    .panel-title { font-weight: 700; }
+    .btn-row { display:flex; gap:8px; }
+    .btn { cursor:pointer; background:#0f1439; border:1px solid var(--grid); color:#c6d0ff; padding:6px 10px; border-radius:8px; font-size:12px; }
+    .btn:hover { background:#121a48; }
+  </style>
+</head>
+<body>
+  <div class="app" id="app">
+    <header>
+      <div>
+        <div class="badge">Preview</div>
+        <span class="panel-title">Quantum AI Cockpit – 2030 Cyberpunk Charts</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn" onclick="simulateTrade()">Simulate Trade</button>
+        <button class="btn" onclick="toggleTheme()">Toggle Ambient</button>
+      </div>
+    </header>
+
+    <div class="left">
+      <div class="section">
+        <h3>AI Recommendation</h3>
+        <div id="aiRec">Signal: <b>Neutral</b> • Confidence: <span id="conf">0.62</span></div>
+        <div class="ribbon" title="EMA ribbon"></div>
+        <div>Factors: EMA spread • RSI • ATR • Regime</div>
+      </div>
+
+      <div class="section">
+        <h3>Overlays</h3>
+        <label><input type="checkbox" checked onchange="toggleOverlay('waves')"> Elliott Waves</label><br/>
+        <label><input type="checkbox" checked onchange="toggleOverlay('fibonacci')"> Fibonacci</label><br/>
+        <label><input type="checkbox" checked onchange="toggleOverlay('supplyDemand')"> Supply/Demand</label><br/>
+        <label><input type="checkbox" checked onchange="toggleOverlay('patterns')"> Candlestick Patterns</label><br/>
+        <label><input type="checkbox" checked onchange="toggleOverlay('forecast')"> Forecast Cone</label>
+      </div>
+
+      <div class="section">
+        <h3>Context</h3>
+        <div class="badge">5m Base</div>
+        <div class="badge">1h Context</div>
+        <div class="badge">Daily Context</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="tempo-bg" id="tempo"></div>
+      <div id="chart" style="height: calc(100% - 0px);"></div>
+      <div class="legend">
+        <div><span class="swatch" style="background: var(--bull)"></span>Bullish</div>
+        <div><span class="swatch" style="background: var(--bear)"></span>Bearish</div>
+        <div><span class="swatch" style="background: var(--forecast)"></span>Forecast</div>
+        <div><span class="swatch" style="background: var(--fib)"></span>Fibonacci</div>
+        <div><span class="swatch" style="background: var(--wave)"></span>Wave</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Synthetic 5m OHLC for preview
+    function genSeries(n=240, start=123.0) {
+      const times = [], open=[], high=[], low=[], close=[], vol=[];
+      let p = start;
+      const startTs = Date.now() - n*5*60*1000;
+      for (let i=0;i<n;i++) {
+        const drift = (Math.sin(i/28) + Math.cos(i/47))*0.15;
+        const rnd = (Math.random()-0.5)*0.4;
+        const o = p + rnd;
+        const c = p + drift + rnd*0.3;
+        const h = Math.max(o,c) + Math.random()*0.3;
+        const l = Math.min(o,c) - Math.random()*0.3;
+        open.push(o); close.push(c); high.push(h); low.push(l); vol.push(8000 + Math.random()*6000);
+        times.push(new Date(startTs + i*5*60*1000));
+        p = c;
+      }
+      return {times, open, high, low, close, vol};
+    }
+
+    const S = genSeries();
+
+    // Base candlesticks
+    const candle = {
+      x: S.times, open: S.open, high: S.high, low: S.low, close: S.close,
+      type: 'candlestick', name: 'HOOD', increasing: {line: {color: getComputedStyle(document.documentElement).getPropertyValue('--bull')}},
+      decreasing: {line: {color: getComputedStyle(document.documentElement).getPropertyValue('--bear')}}
+    };
+
+    // EMA ribbon preview (8..55)
+    function ema(arr, span) {
+      const k = 2/(span+1); let ema=arr[0]; const out=[ema];
+      for (let i=1;i<arr.length;i++){ ema = arr[i]*k + ema*(1-k); out.push(ema);} return out;
+    }
+    const spans = [8,13,21,34,55];
+    const emaTraces = spans.map((s,idx)=>({
+      x:S.times, y:ema(S.close, s), type:'scatter', mode:'lines', line:{width:1, color:['#00ffff','#00ccff','#0099ff','#0066ff','#0033ff'][idx]}, name:`EMA ${s}`, opacity:0.65
+    }));
+
+    // Forecast cone preview with breathing upper/lower
+    const last = S.close[S.close.length-1];
+    const futureX = Array.from({length:24}, (_,i)=> new Date(S.times[S.times.length-1].getTime() + (i+1)*24*60*60*1000));
+    const futureY = futureX.map((_,i)=> last + i*0.25 + Math.sin(i/3)*0.3);
+    const conf = futureY.map((_,i)=> 0.55 + 0.4*Math.max(0, Math.cos(i/5)) );
+    const upper = futureY.map((y,i)=> y*(1 + (1-conf[i])*0.08));
+    const lower = futureY.map((y,i)=> y*(1 - (1-conf[i])*0.08));
+    const forecast = { x: futureX, y: futureY, type:'scatter', mode:'lines+markers', name:'24d Forecast', line:{color: getComputedStyle(document.documentElement).getPropertyValue('--forecast'), width:3, dash:'dash'}, marker:{size:6, symbol:'diamond'} };
+    const cone = { x: [...futureX, ...futureX.slice().reverse()], y: [...upper, ...lower.slice().reverse()], type:'scatter', mode:'lines', fill:'toself', fillcolor: getComputedStyle(document.documentElement).getPropertyValue('--forecast'), opacity:0.18, line:{width:0}, name:'Confidence' };
+
+    // Supply/Demand zones preview
+    const zoneShapes = [
+      { type:'rect', x0:S.times[S.times.length-60], x1:S.times[S.times.length-1], y0:last-2.2, y1:last-1.2, fillcolor: getComputedStyle(document.documentElement).getPropertyValue('--demand'), opacity:0.25, line:{width:0}},
+      { type:'rect', x0:S.times[S.times.length-120], x1:S.times[S.times.length-90], y0:last+1.0, y1:last+2.0, fillcolor: getComputedStyle(document.documentElement).getPropertyValue('--supply'), opacity:0.25, line:{width:0}},
+    ];
+
+    // Fibonacci preview (last 50 bars span)
+    const slice = S.close.slice(-50);
+    const hi = Math.max(...slice), lo = Math.min(...slice);
+    const fibs = [0.236,0.382,0.5,0.618,0.786].map(r=> lo + (hi-lo)*r);
+
+    // Candlestick pattern rectangles (hover labels)
+    function patternRect(i, type='BULLISH') {
+      const x0=S.times[i], x1=S.times[Math.min(i+8, S.times.length-1)];
+      const lvlHigh = Math.max(...S.high.slice(i, Math.min(i+8,S.high.length)));
+      const lvlLow = Math.min(...S.low.slice(i, Math.min(i+8,S.low.length)));
+      const color = type==='BULLISH' ? getComputedStyle(document.documentElement).getPropertyValue('--bull') : getComputedStyle(document.documentElement).getPropertyValue('--bear');
+      return { type:'rect', x0, x1, y0:lvlLow*0.998, y1:lvlHigh*1.002, line:{width:1, color}, opacity:0.22 };
+    }
+    const patternShapes = [patternRect(S.times.length-200,'BULLISH'), patternRect(S.times.length-160,'BEARISH'), patternRect(S.times.length-120,'BULLISH')];
+
+    // Elliott wave lines (simple demo)
+    function waveLine(i0,i1,num){ return {
+      x:[S.times[i0], S.times[i1]], y:[S.close[i0], S.close[i1]], type:'scatter', mode:'lines+markers', name:`Wave ${num}`, line:{color:getComputedStyle(document.documentElement).getPropertyValue('--wave'), width:3}, marker:{size:7}
+    } }
+    const waves = [waveLine(S.times.length-90, S.times.length-75, 1), waveLine(S.times.length-75, S.times.length-60, 2), waveLine(S.times.length-60, S.times.length-45, 3), waveLine(S.times.length-45, S.times.length-30, 4), waveLine(S.times.length-30, S.times.length-20, 5)];
+
+    // Build layout with cyberpunk theme
+    const layout = {
+      paper_bgcolor: getComputedStyle(document.documentElement).getPropertyValue('--panel'),
+      plot_bgcolor: getComputedStyle(document.documentElement).getPropertyValue('--panel'),
+      height: 800, margin: {l: 50, r: 20, t: 40, b: 40},
+      xaxis: { gridcolor: getComputedStyle(document.documentElement).getPropertyValue('--grid'), showgrid:true, rangeslider: {visible:false}},
+      yaxis: { gridcolor: getComputedStyle(document.documentElement).getPropertyValue('--grid'), showgrid:true },
+      shapes: [ ...zoneShapes, ...patternShapes, ...fibs.map(y=> ({type:'line', x0:S.times[0], x1:S.times[S.times.length-1], y0:y, y1:y, line:{color:getComputedStyle(document.documentElement).getPropertyValue('--fib'), width:1, dash:'dot'}})) ],
+      annotations: [ ...fibs.map((y,i)=> ({ x:S.times[S.times.length-1], y, text:['23.6%','38.2%','50%','61.8%','78.6%'][i], showarrow:false, font:{size:10, color:getComputedStyle(document.documentElement).getPropertyValue('--fib')} })) ]
+    };
+
+    const config = { displayModeBar: true, responsive: true };
+    const baseTraces = [candle, ...emaTraces, forecast, cone, ...waves];
+    Plotly.newPlot('chart', baseTraces, layout, config);
+
+    function toggleOverlay(name) {
+      // Simple preview toggles: re-render with subsets
+      const on = event.target.checked;
+      const traces = [...emaTraces];
+      if (name==='forecast' && on) traces.push(forecast, cone);
+      if (name==='waves' && on) traces.push(...waves);
+      const base = [candle, ...traces];
+      const newShapes = [];
+      if (document.querySelector('input[onchange*="fibonacci"]').checked) newShapes.push(...layout.shapes.filter(s=> s.type==='line'));
+      if (document.querySelector('input[onchange*="supplyDemand"]').checked) newShapes.push(...layout.shapes.filter(s=> s.type==='rect').slice(0,2));
+      if (document.querySelector('input[onchange*="patterns"]').checked) newShapes.push(...layout.shapes.filter(s=> s.type==='rect').slice(2));
+      Plotly.react('chart', base, {...layout, shapes:newShapes}, config);
+    }
+
+    function simulateTrade() {
+      const price = S.close[S.close.length-1];
+      const atr = 1.2; // preview only
+      const stop = price - 1.5*atr; const targets = [price + 1*atr, price + 2*atr, price + 3*atr];
+      const lines = targets.map(t=> ({type:'line', x0:S.times[S.times.length-1], x1:new Date(S.times[S.times.length-1].getTime()+24*60*60*1000), y0:t, y1:t, line:{color:'#6df2ff', dash:'dash', width:1}}));
+      const stopLine = {type:'line', x0:S.times[S.times.length-1], x1:new Date(S.times[S.times.length-1].getTime()+24*60*60*1000), y0:stop, y1:stop, line:{color:'#ff4d6d', dash:'dot', width:2}};
+      Plotly.relayout('chart', { shapes: [...layout.shapes, stopLine, ...lines] });
+    }
+
+    function toggleTheme() {
+      const tempo = document.getElementById('tempo');
+      tempo.style.animationDuration = (parseFloat(getComputedStyle(tempo).animationDuration) === 2.6 ? '1.6s' : '2.6s');
+      const app = document.getElementById('app');
+      app.style.background = app.style.background.includes('rgba(0,255,136,0.08)')
+        ? 'radial-gradient(800px 400px at 20% 0%, rgba(255,0,110,0.08), transparent 70%), radial-gradient(800px 400px at 80% 100%, rgba(0,255,136,0.08), transparent 70%), var(--bg)'
+        : 'radial-gradient(800px 400px at 20% 0%, rgba(0,255,136,0.08), transparent 70%), radial-gradient(800px 400px at 80% 100%, rgba(255,0,110,0.08), transparent 70%), var(--bg)';
+    }
+  </script>
+</body>
+</html>

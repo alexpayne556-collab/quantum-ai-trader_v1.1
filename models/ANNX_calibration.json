@@ -1,0 +1,8 @@
+{
+  "ticker": "ANNX",
+  "accuracy": 0.4,
+  "brier_buy": 0.25701166217028376,
+  "n_train": 999,
+  "n_test": 250,
+  "model_path": "E:\\quantum-ai-trader-v1.1\\models\\ANNX_tuned.pkl"
+}
