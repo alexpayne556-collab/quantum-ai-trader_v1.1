@@ -58,3 +58,18 @@ logs/
 # SPY_data.csv.env
 ta-lib/
 colab_trained_models/
+
+# Pattern Discovery Lab
+pattern_discovery_lab/runs/*/
+*.json
+
+# Prediction logs (keep recent only)
+prediction_logs/*.csv
+
+# Cache and compiled
+.pytest_cache/
+*.pyc
+
+# Model artifacts
+trained_models/*.pkl
+archive/old_models/

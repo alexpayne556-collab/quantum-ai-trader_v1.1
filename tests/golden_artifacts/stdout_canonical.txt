@@ -1,0 +1,1 @@
+../../pattern_discovery_lab/golden/stdout_canonical.txt

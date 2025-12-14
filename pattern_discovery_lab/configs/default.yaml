@@ -1,0 +1,140 @@
+# Default configuration for calibration runs
+
+# Runner configuration
+mode: single  # single | calibrate (calibrate not yet implemented - PHASE_2)
+seed: 42
+series_length: 1000
+n_shuffles: 100
+n_surrogates: 100
+n_blocks: 3
+stability_threshold: 0.5  # Coefficient of variation threshold for stability test
+
+# Scope control (v0.1)
+enable_extra_detectors: false  # Only autocorrelation_dependence + time_reversal_asymmetry by default
+
+# Calibration mode settings (PHASE_2 - not yet implemented)
+calibration:
+  n_realizations: 100  # Number of realizations per dataset
+  # Will aggregate: rejection_rate vs shuffle/surrogate, stability_fail_rate
+
+ar1_phi: 0.7
+garch_params:
+  omega: 0.1
+  alpha: 0.1
+  beta: 0.85
+
+# Dataset configurations
+datasets:
+  pure_noise:
+    white_noise:
+      length: 1000
+      mean: 0.0
+      std: 1.0
+    
+    random_walk:
+      length: 1000
+      innovation_std: 1.0
+      drift: 0.0
+    
+    iid_uniform:
+      length: 1000
+      low: 0.0
+      high: 1.0
+  
+  known_structure:
+    ar1:
+      length: 1000
+      phi: 0.7
+      innovation_std: 1.0
+    
+    garch:
+      length: 1000
+      omega: 0.1
+      alpha: 0.1
+      beta: 0.85
+    
+    regime_shift:
+      length: 1000
+      breakpoint: 500
+      regime1_std: 1.0
+      regime2_std: 3.0
+    
+    ma1:
+      length: 1000
+      theta: 0.5
+      innovation_std: 1.0
+  
+  finance_null:
+    garch_jumps:
+      length: 1000
+      omega: 0.1
+      alpha: 0.1
+      beta: 0.85
+      dof: 5
+      jump_prob: 0.01
+      jump_std: 5.0
+    
+    stochastic_vol:
+      length: 1000
+      mu: 0.0
+      phi: 0.95
+      sigma_eta: 0.2
+    
+    levy_jumps:
+      length: 1000
+      lambda_jumps: 0.05
+      jump_mean: 0.0
+      jump_std: 2.0
+      diffusion_std: 1.0
+
+# Random seeds for reproducibility
+seeds:
+  calibration: 42
+  validation: 123
+  test: 456
+
+# Detector parameters (will be used when detectors are implemented)
+detectors:
+  compressibility:
+    lempel_ziv:
+      normalize: true
+  
+  dependence:
+    autocorrelation:
+      max_lag: 20
+    mutual_information:
+      bins: 10
+      max_lag: 10
+  
+  regime:
+    changepoint:
+      model: "rbf"
+      min_size: 50
+  
+  cross_series:
+    transfer_entropy:
+      k: 1
+      bins: 10
+  
+  stability:
+    window_shift:
+      n_windows: 5
+    bootstrap:
+      n_resamples: 100
+
+# Control parameters
+controls:
+  time_shuffle:
+    n_shuffles: 100
+  
+  phase_randomization:
+    n_surrogates: 100
+  
+  null_comparison:
+    significance_level: 0.01  # Bonferroni-corrected if needed
+
+# Reporting
+reporting:
+  output_format: ["json", "markdown"]
+  include_plots: false  # Set to true for visual diagnostics
+  verbosity: "normal"  # "minimal", "normal", "verbose"

@@ -1,0 +1,70 @@
+CLI Command: python -m pattern_discovery_lab --run-all --seed 42 --n-surrogates 99
+
+Run Folder: /workspaces/quantum-ai-trader_v1.1/pattern_discovery_lab/runs/20251213_192230
+
+======================================================================
+STOP RULES EVALUATED (ENFORCE_NOW)
+======================================================================
+
+shuffle_check: PASS
+  rho1_shuffled_max=0.0945 <= T(N=1000)=0.1423
+
+spectrum_check: PASS
+  spectrum_error_max=0.000000 <= 0.05
+
+stability_gate: PASS
+  white_noise/autocorrelation_dependence: 1.000
+  ar1_phi_0p9/autocorrelation_dependence: 1.000
+  garch/autocorrelation_dependence: 1.000
+
+no_hallucination_check: PASS
+  autocorrelation_dependence on white_noise: ACCEPT
+
+======================================================================
+| Dataset         | Detector                  | Class        | Surr Formula             | Stat Dec | Exp Dec  | Exp Match | rho1_shuf | Spec Err   | Stab Dec | Gate Status |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| white_noise     | autocorrelation_dependence | CERTIFIED    | p=(81+1)/(99+1)=0.8200   | ACCEPT   | ACCEPT   | PASS      | 0.0893    | 0.000000   | 1.000    | CONTRIBUTES |
+| white_noise     | time_reversal_asymmetry   | EXPERIMENTAL | p=(36+1)/(99+1)=0.3700   | ACCEPT   | N/A      | N/A       | 0.0893    | 0.000000   | N/A      | EXCLUDED    |
+| ar1_phi_0p9     | autocorrelation_dependence | CERTIFIED    | p=(0+1)/(99+1)=0.0100    | REJECT   | REJECT   | PASS      | 0.0945    | 0.000000   | 1.000    | CONTRIBUTES |
+| ar1_phi_0p9     | time_reversal_asymmetry   | EXPERIMENTAL | p=(56+1)/(99+1)=0.5700   | ACCEPT   | N/A      | N/A       | 0.0945    | 0.000000   | N/A      | EXCLUDED    |
+| garch           | autocorrelation_dependence | CERTIFIED    | p=(85+1)/(99+1)=0.8600   | ACCEPT   | ACCEPT   | PASS      | 0.0839    | 0.000000   | 1.000    | CONTRIBUTES |
+| garch           | time_reversal_asymmetry   | EXPERIMENTAL | p=(31+1)/(99+1)=0.3200   | ACCEPT   | N/A      | N/A       | 0.0839    | 0.000000   | N/A      | EXCLUDED    |
+
+======================================================================
+OVERALL STATUS DETERMINATION
+======================================================================
+
+STOP RULES:
+  shuffle_check: PASS
+    - Threshold: T(N) = 4.5/√1000 = 0.1423
+    - Max observed: 0.0945
+  spectrum_check: PASS
+    - Threshold: 0.05
+    - Max observed: 0.000000
+  stability_gate: PASS
+    - white_noise/autocorrelation_dependence: 1.000 ✓
+    - ar1_phi_0p9/autocorrelation_dependence: 1.000 ✓
+    - garch/autocorrelation_dependence: 1.000 ✓
+  no_hallucination_check: PASS
+    - autocorrelation_dependence on white_noise: ACCEPT
+
+CERTIFIED DETECTORS (contribute to gating):
+  ✓ white_noise × autocorrelation_dependence: ACCEPT (expected ACCEPT) → PASS
+  ✓ ar1_phi_0p9 × autocorrelation_dependence: REJECT (expected REJECT) → PASS
+  ✓ garch × autocorrelation_dependence: ACCEPT (expected ACCEPT) → PASS
+
+EXPERIMENTAL DETECTORS (excluded from gating):
+  - white_noise × time_reversal_asymmetry: ACCEPT (informational only)
+  - ar1_phi_0p9 × time_reversal_asymmetry: ACCEPT (informational only)
+  - garch × time_reversal_asymmetry: ACCEPT (informational only)
+
+GATING LOGIC:
+  All stop rules PASS: True
+  All CERTIFIED expectation matches PASS: True
+  EXPERIMENTAL detectors: excluded from overall verdict
+
+Overall Status: PASS
+Reason: All gates passed
+
+Results written to: /workspaces/quantum-ai-trader_v1.1/pattern_discovery_lab/runs/20251213_192230/results.json
+
