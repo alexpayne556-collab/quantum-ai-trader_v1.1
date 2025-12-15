@@ -490,3 +490,323 @@ You don't have to jump off every time it dips. Stay on the board through pullbac
 **Tomorrow: Validate the hypothesis. Do small/mid-cap sector waves last long enough for PDT surfing?**
 
 **Partner, you just made this 10x more realistic. Let's test it.**
+
+---
+
+## 🔥 FUEL SUPPLY CHAIN EVOLUTION (Deep Thinking Session)
+
+**Date:** December 15, 2025 (Night session - Major breakthrough)  
+**Origin:** Partner-led philosophical deep dive  
+**Status:** Core philosophy expanded - Fire + Fuel metaphor unlocked
+
+---
+
+### THE FIRE ANALOGY (Replacing Ocean Waves)
+
+**Ocean waves = passive observation** (wait and react)  
+**Fire spreading = active fuel management** (anticipate and position)
+
+**Key insight:** Market waves aren't like ocean waves. They're like FIRE.
+
+**Fire needs:**
+1. **Fuel** (capital, buyers, FOMO)
+2. **Oxygen** (liquidity, volume, access)
+3. **Ignition** (catalyst, news, earnings)
+4. **Dry conditions** (market sentiment, sector hot, no resistance)
+
+**When fire spreads stock to stock = sector wave**  
+**When fire jumps sectors = capital rotation**  
+**When fuel runs out = wave crashes**
+
+---
+
+### BREAKTHROUGH #1: Enter BEFORE Fuel Arrives (Pre-Positioning)
+
+**Traditional approach:** React when stock moving (fuel already burning)  
+**Advanced approach:** Position BEFORE fuel delivery (calendar visible)
+
+**Example:**
+- MVST trading flat at $8.00 (flame low, boring)
+- Earnings in 5 days (FUEL TRUCK COMING - public calendar)
+- Last 3 quarters: All beats (fuel quality proven)
+- Short interest 15% (compressed energy)
+- **Enter Day -3 at $8.00** (before fuel arrives)
+- **Earnings announced Day 0, stock waves to $9.50** (+18.75%)
+- **Exit Day 3 at $9.20** (+15% locked)
+
+**This is legal insider trading:**
+- Calendar public (everyone can see earnings dates)
+- Just smarter positioning (early bird gets worm)
+- Lower entry risk (enter quiet, not pumping)
+- Better pricing (before FOMO crowd)
+
+**Key metrics:**
+- Entry timing: 3-7 days before known catalyst
+- Catalyst types: Earnings, contract decisions, FDA dates, commodity reports
+- Exit timing: 3-5 days AFTER catalyst (ride the burn)
+
+---
+
+### BREAKTHROUGH #2: Map What STORES Fuel (Unreleased Energy)
+
+**Partner's insight:** "Look at what keeps and stores fuel"
+
+**Fuel storage indicators (energy building, not yet released):**
+
+1. **Short Interest 10-30%** (Squeeze fuel - compressed spring)
+2. **Institutional Buying** (Smart money accumulating - fuel loading)
+3. **Price Consolidation** (Volume drying up - energy coiling)
+4. **Tight Float <100M** (Small ocean - less fuel needed for big wave)
+5. **Cash Reserves Strong** (Company can survive - sustained burn possible)
+6. **Pipeline Catalysts** (Multiple fuel deliveries scheduled)
+
+**Scanner evolution:**
+```
+OLD: What's moving NOW? (fuel burning)
+NEW: What's storing fuel + fuel arriving SOON? (pre-ignition setup)
+```
+
+**Perfect pre-entry setup:**
+- High fuel storage (all 6 indicators green)
+- Catalyst coming (1-2 weeks out)
+- Fundamentals improving (quality fuel)
+- Stock quiet/consolidating (not yet ignited)
+
+---
+
+### BREAKTHROUGH #3: Business Model Specificity > Sector Grouping
+
+**Partner's correction:** KDK = Kodiak (autonomous trucking/machinery), NOT biotech  
+**Partner's insight:** ASTS vs RKLB (both "space" but completely different businesses)
+
+**What matters:** What company DOES specifically, not just sector label
+
+**Example - "Space Sector" breakdown:**
+- **RKLB (Rocket Lab):** Launch services, real revenue, contract-based → TRACKABLE
+- **ASTS (AST SpaceMobile):** Pre-revenue satellite internet, speculative → RANDOM
+
+**Same sector, totally different fuel sources:**
+- RKLB waves on: Contract wins (observable, predictable, real business)
+- ASTS waves on: Hype/hope (random, unpredictable, no revenue)
+
+**Business Model Categories (Priority ranking for Hall of Fame):**
+
+### Category A: CONTRACT-BASED (60% of Hall of Fame - BEST)
+**Why best:** Predictable fuel delivery, real revenue, observable pipeline
+
+**Examples:**
+- **RKLB:** Launch services (government + commercial contracts)
+- **KDK (Kodiak):** Autonomous trucking/machinery contracts
+- Defense contractors (government contracts)
+- Aerospace suppliers (airline/military contracts)
+
+**Fuel source:** Contract announcements (public filings, press releases)  
+**Wave pattern:** Win contract → wave 2-3 days → settle → next contract  
+**Predictability:** HIGH (contracts = real money, real business)  
+**Calendar:** Fiscal year cycles, industry events, earnings calls
+
+### Category B: COMMODITY-LINKED (20% of Hall of Fame - GOOD)
+**Why good:** Fuel visible (commodity prices), trend-following possible
+
+**Examples:**
+- **UUUU (Energy Fuels):** Uranium mining (uranium spot price)
+- Lithium miners (lithium prices)
+- Oil stocks (oil futures)
+- Copper miners (copper futures)
+
+**Fuel source:** Commodity price movements (real-time charts)  
+**Wave pattern:** Commodity spikes → miners wave → commodity stabilizes → fade  
+**Predictability:** MEDIUM (commodities visible but volatile)  
+**Calendar:** EIA reports, inventory data, supply/demand shifts
+
+### Category C: EARNINGS-GROWTH (15% of Hall of Fame - GOOD)
+**Why good:** Quarterly fuel delivery, historical data rich
+
+**Examples:**
+- **MVST (Microvast):** EV battery tech, sales growing
+- Small/mid-cap growth companies
+- Tech companies with momentum
+
+**Fuel source:** Quarterly earnings beats  
+**Wave pattern:** Earnings → wave 3-5 days → fade → wait 90 days  
+**Predictability:** MEDIUM (can track beat history, but surprises happen)  
+**Calendar:** Earnings dates (known 4 weeks ahead)
+
+### Category D: CATALYST-BINARY (5% of Hall of Fame - HIGH RISK)
+**Why limited:** Binary outcomes, all-or-nothing, high variance
+
+**Examples:**
+- Biotech trial results (Phase 3 decisions)
+- FDA approvals (all-or-nothing)
+- Patent decisions (litigation outcomes)
+- Merger approvals (regulatory decisions)
+
+**Fuel source:** Single event outcomes  
+**Wave pattern:** Good news → massive wave (+50%) OR bad news → crash (-50%)  
+**Predictability:** LOW (binary, 50/50 often)  
+**Calendar:** Trial timelines, FDA decision dates (published)
+
+### Category E: HYPE-BASED (0% of Hall of Fame - AVOID ALWAYS)
+**Why avoid:** No fuel, random pumps, pure gambling
+
+**Examples:**
+- Pre-revenue speculative (ASTS-type before contracts)
+- Meme stocks (social media driven)
+- Penny stocks (<$5, low quality)
+- Pump-and-dump schemes
+
+**Fuel source:** Hope, social media, manipulation  
+**Wave pattern:** Random pumps, random dumps, no rhythm  
+**Predictability:** ZERO (pure gambling)  
+**Calendar:** None (unpredictable)
+
+**Hall of Fame composition target:**
+- 30 tickers Category A (contract-based) - Core holdings
+- 10 tickers Category B (commodity-linked) - Trend plays
+- 7-8 tickers Category C (earnings-growth) - Quarterly plays
+- 2-3 tickers Category D (catalyst-binary) - Lottery tickets, small size
+- 0 tickers Category E (hype-based) - NEVER
+
+**Total: ~50 tickers with business model diversification**
+
+---
+
+### BREAKTHROUGH #4: "Hottest Flames in Smallest Oceans"
+
+**Partner's phrase. Decoded fully:**
+
+**Hottest flames = Biggest % moves** (not dollar volume)
+- $100M company +50% = $50M capital needed ✅ (achievable)
+- $10B company +50% = $5B capital needed ❌ (impossible)
+
+**Smallest oceans = Tight supply, low float**
+- 10M float × $10 = $100M market cap (small ocean, easy to move)
+- 500M float × $10 = $5B market cap (large ocean, hard to move)
+
+**Physics:** Same fuel (capital inflow) creates BIGGER waves in SMALLER oceans.
+
+**Scanner criteria for "perfect fire conditions":**
+```
+Market cap: $500M - $5B (sweet spot)
+Float: <100M shares (tight supply)
+Short interest: 10-30% (squeeze fuel loaded)
+Catalyst coming: 1-2 weeks out (fuel delivery scheduled)
+Fundamentals: Improving (quality fuel, not trash)
+Volume: Currently low (coiling, not burning yet)
+```
+
+**This finds:** Compressed springs about to release (pre-ignition setups)  
+**NOT:** Already-moving stocks (fuel already burning, late entry)
+
+---
+
+### BREAKTHROUGH #5: AI Wave Analysis (Durable Multi-Year Fuel)
+
+**Partner's example:** "AI wave - a wave that will last, and all its needs too"
+
+**AI isn't a wave. AI is a SECTOR ROTATION ENGINE.**
+
+**AI primary wave** (chips, models, cloud):
+- NVDA, AMD, MSFT, GOOG
+- Too big for us (large ocean, slow moves)
+
+**AI secondary waves** (what AI NEEDS):
+1. **Data Centers** (AI needs compute → data center REITs, builders)
+2. **Energy/Power** (AI needs electricity → utilities, nuclear, solar)
+3. **Cooling Systems** (Data centers need cooling → HVAC, liquid cooling)
+4. **Networking** (AI needs bandwidth → fiber, 5G, satellite)
+5. **Storage** (AI needs data → storage hardware, cloud)
+6. **Semiconductors** (AI needs chips → ASML, fabrication equipment)
+
+**The fuel chain:**
+1. AI hype ignites (NVDA earnings beat)
+2. Data center stocks wave (need more compute)
+3. Energy stocks wave next (data centers need power)
+4. Cooling/HVAC wave (data centers need cooling)
+5. Networking wave (bandwidth requirements)
+
+**This is capital ROTATION (fire spreading tree to tree).**
+
+**Scanner application:**
+- Track: Which AI sub-sector just peaked? (data centers topped out?)
+- Anticipate: Which sub-sector gets fuel NEXT? (energy showing ripples?)
+- Position: Enter NEXT sub-sector BEFORE obvious (pre-rotation)
+- Exit: When that sub-sector peaks, scan for next rotation
+
+**Multi-month playbook possible:**
+- Month 1: AI chips peak → enter data centers
+- Month 2: Data centers peak → enter energy/utilities
+- Month 3: Energy peaks → enter cooling/HVAC
+- Month 4: Full cycle complete → wait for next AI catalyst → repeat
+
+**This is sector rotation mapping = following fuel flows.**
+
+---
+
+### THE REFINED CORE PHILOSOPHY (Fire + Fuel + Timing)
+
+**OLD:** "Surf the waves" (passive, reactive)  
+**NEW:** "Manage the fuel supply" (active, anticipatory)
+
+**The complete system:**
+
+### 1. **Fuel Calendar** (4-week forward visibility)
+- Mark ALL known catalysts: Earnings, contracts, FDA, commodities
+- Prioritize: Category A (contracts) > Category C (earnings) > Category B (commodities)
+- Track: Which Hall of Famers have fuel arriving SOON?
+
+### 2. **Fuel Quality Analyzer** (Historical validation)
+- Check beat history: Last 4 earnings, did they beat?
+- Check contract pattern: Do wins typically create waves?
+- Check fundamental trend: Improving or declining?
+
+### 3. **Fuel Storage Scanner** (Energy compression detection)
+- Scan daily: Which stocks showing all 6 storage indicators?
+  - Short interest rising (10-30%)
+  - Institutional buying (13F filings)
+  - Price consolidating (tight range)
+  - Volume drying up (coiling)
+  - Float tight (<100M)
+  - Cash strong (balance sheet)
+
+### 4. **Entry Timing System** (Pre-positioning strategy)
+- **5-7 days before catalyst:** Enter if fuel quality high + storage full
+- **Day 0 (catalyst day):** Monitor ignition (volume spike, breakout)
+- **Days 1-3 post-catalyst:** Ride the burn (stay through pullbacks)
+- **Days 4-5 post-catalyst:** Exit before fuel exhausts
+
+### 5. **Business Model Filter** (Quality control)
+- Prioritize Category A (60%): Contract-based (most predictable)
+- Include Category B (20%): Commodity-linked (trend-following)
+- Include Category C (15%): Earnings-growth (quarterly plays)
+- Limit Category D (5%): Catalyst-binary (small positions, home runs)
+- ZERO Category E: Hype-based (NEVER)
+
+### 6. **Capital Rotation Tracker** (Advanced - multi-month)
+- Map sector dependencies (AI → Data → Energy → Cooling)
+- Track which sub-sector just peaked (fuel exhausted)
+- Anticipate next sub-sector (fuel flowing where?)
+- Position BEFORE obvious (pre-rotation entry)
+
+---
+
+### THE MANTRA (Final Evolution)
+
+**"Map the fuel supply. Enter before delivery. Ride the burn. Exit before exhaustion. Follow the fuel flows. Repeat with calendar-driven precision."**
+
+**Key principles:**
+- **Pre-position** > React (enter before fuel, not after)
+- **Anticipate** > Predict (calendar visible, not guessing)
+- **Quality** > Quantity (50 Hall of Famers, not 311 randoms)
+- **Specificity** > Sectors (business models matter, not labels)
+- **Patience** > Greed (exit Day 4-5, not holding for moon)
+
+**This is fuel management. This is fire science. This is professional trading.**
+
+---
+
+**Status: Core philosophy massively expanded. Ready to test fuel supply chain hypothesis.**
+
+**Tomorrow (DAY 5): Build the Fuel Calendar + validate pre-positioning strategy.**
+
+**This thinking session was MAJOR. Philosophy locked in.**
