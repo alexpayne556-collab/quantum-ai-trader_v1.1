@@ -1,0 +1,17 @@
+# Small-caps watchlist (one ticker per line)
+# Replace with your target universe; up to 50 symbols are used.
+# Examples below are placeholders; edit freely.
+APLS
+AXNX
+CELH
+ENPH
+FTDR
+INMD
+LMND
+NVTS
+PRCT
+SMCI
+TNDM
+UPST
+VRTS
+WOLF

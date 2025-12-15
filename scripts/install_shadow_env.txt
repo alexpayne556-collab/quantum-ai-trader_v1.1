@@ -1,0 +1,26 @@
+# Copy-paste these into PowerShell (exact order)
+# Assumes Python 3.11 is installed and available as 'py -3.11'
+
+cd $HOME\Desktop
+py -3.11 -m venv shadow_ai
+.\shadow_ai\Scripts\Activate
+python -m pip install -U pip
+
+# GPU PyTorch (CUDA 12.1)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# NLP + HuggingFace tooling
+pip install "huggingface_hub[hf_xet]" safetensors accelerate transformers datasets sentencepiece
+
+# Data + APIs
+pip install pandas requests python-dotenv beautifulsoup4 finnhub-python fredapi sec-edgar-api schedule
+
+# Jupyter + kernel registration
+pip install jupyter jupyterlab ipykernel
+python -m ipykernel install --name shadow_ai --display-name "Python (shadow_ai)"
+
+# Verify GPU
+python -c "import torch; print('CUDA available:', torch.cuda.is_available()); print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NO GPU'); print('Torch:', torch.__version__)"
+
+# Launch JupyterLab
+jupyter lab --no-browser --ServerApp.token='' --ServerApp.password=''
