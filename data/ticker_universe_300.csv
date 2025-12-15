@@ -1,0 +1,354 @@
+ticker,sector,industry,market_cap_category,notes
+AAPL,Technology,Consumer Electronics,Large Cap,Benchmark
+MSFT,Technology,Software,Large Cap,Benchmark
+NVDA,Technology,Semiconductors,Large Cap,AI Leader
+AMD,Technology,Semiconductors,Large Cap,AI/GPU
+AVGO,Technology,Semiconductors,Large Cap,Networking
+MSTR,Technology,Software,Mid Cap,Bitcoin Proxy
+IONQ,Technology,Quantum Computing,Small Cap,Current Holding
+GOOGL,Technology,Internet,Large Cap,AI/Cloud
+META,Technology,Social Media,Large Cap,AI Investment
+TSLA,Automotive,Electric Vehicles,Large Cap,Innovation Leader
+PLTR,Technology,Software,Mid Cap,AI/Data
+SNOW,Technology,Cloud,Mid Cap,Data Analytics
+CRWD,Technology,Cybersecurity,Mid Cap,Security Leader
+DDOG,Technology,Software,Mid Cap,Monitoring
+NET,Technology,Internet,Mid Cap,Edge Computing
+PANW,Technology,Cybersecurity,Mid Cap,Security
+ZS,Technology,Cybersecurity,Mid Cap,Cloud Security
+S,Technology,Software,Mid Cap,Database
+MDB,Technology,Software,Mid Cap,Database
+ESTC,Technology,Software,Small Cap,Search/Analytics
+CFLT,Technology,Data,Small Cap,Streaming Data
+GTLB,Technology,Software,Small Cap,DevOps
+DOCN,Technology,Cloud,Small Cap,Cloud Infrastructure
+PATH,Technology,Analytics,Small Cap,Customer Analytics
+FROG,Technology,AI,Small Cap,AI Platform
+SOUN,Technology,AI,Small Cap,Voice AI
+BBAI,Technology,AI,Small Cap,Decision Intelligence
+ASTS,Communications,Space,Small Cap,Current Holding - SpaceMobile
+LUNR,Aerospace,Space,Small Cap,Current Holding - Lunar Lander
+RKLB,Aerospace,Space,Small Cap,Launch Services
+SPCE,Aerospace,Space Tourism,Small Cap,Virgin Galactic
+PL,Aerospace,Space,Small Cap,Planet Labs
+BLDE,Aerospace,Drones,Small Cap,Drone Defense
+AVAV,Aerospace,Drones,Small Cap,Tactical Drones
+UAVS,Aerospace,Drones,Micro Cap,Drone Systems
+IRDM,Communications,Satellite,Small Cap,Iridium
+GSAT,Communications,Satellite,Micro Cap,Globalstar
+SATS,Communications,Satellite,Small Cap,EchoStar Mobile
+HOOD,Fintech,Brokerage,Mid Cap,Current Holding - Retail Trading
+SOFI,Fintech,Banking,Small Cap,Digital Bank
+UPST,Fintech,Lending,Small Cap,AI Lending
+AFRM,Fintech,BNPL,Small Cap,Buy Now Pay Later
+LC,Fintech,Lending,Small Cap,Peer-to-Peer
+NU,Fintech,Banking,Large Cap,Latin America Neobank
+COIN,Fintech,Crypto Exchange,Mid Cap,Coinbase
+MARA,Crypto,Bitcoin Mining,Small Cap,Mining Leader
+RIOT,Crypto,Bitcoin Mining,Small Cap,Mining
+CLSK,Crypto,Bitcoin Mining,Small Cap,Mining + Energy
+CIFR,Crypto,Bitcoin Mining,Small Cap,Infrastructure
+BTBT,Crypto,Bitcoin Mining,Micro Cap,Mining
+HUT,Crypto,Bitcoin Mining,Small Cap,Canadian Miner
+APLD,Crypto,Data Center,Small Cap,Current Holding - Applied Digital
+CORZ,Crypto,Data Center,Small Cap,Core Scientific
+UBER,Transportation,Ride Sharing,Large Cap,Current Holding - Gig Economy
+LYFT,Transportation,Ride Sharing,Mid Cap,Current Holding - Ride Share
+DASH,Transportation,Food Delivery,Mid Cap,DoorDash
+ABNB,Travel,Home Sharing,Large Cap,Airbnb
+EXPE,Travel,Online Travel,Large Cap,Expedia
+BKNG,Travel,Online Travel,Large Cap,Booking Holdings
+FVRR,Technology,Freelance,Small Cap,Fiverr
+UPWK,Technology,Freelance,Small Cap,Upwork
+SKLZ,Gaming,Mobile Gaming,Micro Cap,Skill Gaming
+DKNG,Gaming,Sports Betting,Mid Cap,DraftKings
+FLUT,Gaming,Sports Betting,Small Cap,Flutter
+PENN,Gaming,Casino/Betting,Mid Cap,Penn Entertainment
+RSI,Gaming,Casino,Small Cap,Rush Street
+POWL,Industrials,Electrical Equipment,Small Cap,Powell Industries
+GNRC,Industrials,Power Generation,Mid Cap,Generac
+BE,Energy,Fuel Cells,Small Cap,Bloom Energy
+PLUG,Energy,Fuel Cells,Small Cap,Plug Power
+FCEL,Energy,Fuel Cells,Micro Cap,FuelCell Energy
+BLDP,Energy,Fuel Cells,Small Cap,Ballard Power
+RUN,Energy,Solar,Small Cap,Sunrun
+NOVA,Energy,Solar,Small Cap,Sunnova
+ENPH,Energy,Solar,Mid Cap,Enphase
+SEDG,Energy,Solar,Small Cap,SolarEdge
+CSIQ,Energy,Solar,Small Cap,Canadian Solar
+MAXN,Energy,Solar,Small Cap,Maxeon Solar
+ARRY,Energy,Solar,Small Cap,Array Technologies
+SHLS,Energy,Solar,Small Cap,Shoals Technologies
+LAC,Materials,Lithium,Small Cap,Lithium Americas
+ALB,Materials,Lithium,Mid Cap,Albemarle
+SQM,Materials,Lithium,Mid Cap,Sociedad Quimica
+LTHM,Materials,Lithium,Small Cap,Livent
+PLL,Materials,Lithium,Small Cap,Piedmont Lithium
+MP,Materials,Rare Earth,Small Cap,MP Materials
+LYNAS,Materials,Rare Earth,Small Cap,Lynas Rare Earths
+UUUU,Materials,Uranium,Small Cap,Energy Fuels
+UEC,Materials,Uranium,Small Cap,Uranium Energy
+CCJ,Materials,Uranium,Mid Cap,Cameco
+DNN,Materials,Uranium,Micro Cap,Denison Mines
+LEU,Materials,Uranium Enrichment,Small Cap,Centrus Energy
+SMR,Energy,Nuclear,Small Cap,NuScale Power
+OKLO,Energy,Nuclear,Micro Cap,Oklo (SPAC)
+NNE,Energy,Nuclear,Small Cap,Nano Nuclear
+HIMS,Healthcare,Telehealth,Small Cap,Hims & Hers
+TDOC,Healthcare,Telehealth,Mid Cap,Teladoc
+AMWL,Healthcare,Telehealth,Micro Cap,American Well
+DOCS,Healthcare,Medical Software,Small Cap,Doximity
+VEEV,Healthcare,Medical Software,Large Cap,Veeva Systems
+SDGR,Healthcare,Genomics,Small Cap,Schrodinger
+PACB,Healthcare,Genomics,Small Cap,Pacific Biosciences
+ILMN,Healthcare,Genomics,Large Cap,Illumina
+CRSP,Healthcare,Gene Editing,Small Cap,CRISPR Therapeutics
+EDIT,Healthcare,Gene Editing,Small Cap,Editas Medicine
+NTLA,Healthcare,Gene Editing,Small Cap,Intellia
+BEAM,Healthcare,Gene Editing,Small Cap,Beam Therapeutics
+VRTX,Healthcare,Biotech,Large Cap,Vertex Pharma
+MRNA,Healthcare,Biotech,Mid Cap,Moderna
+BNTX,Healthcare,Biotech,Mid Cap,BioNTech
+NVAX,Healthcare,Biotech,Small Cap,Novavax
+REGN,Healthcare,Biotech,Large Cap,Regeneron
+GILD,Healthcare,Biotech,Large Cap,Gilead
+RGEN,Healthcare,Biotech,Small Cap,Repligen
+GERN,Healthcare,Biotech,Micro Cap,Geron
+SAVA,Healthcare,Biotech,Small Cap,Cassava Sciences
+RXRX,Healthcare,AI Drug Discovery,Small Cap,Recursion Pharma
+SDGR,Healthcare,Drug Discovery,Small Cap,Schrodinger
+ABCL,Healthcare,Biotech,Small Cap,AbCellera
+IOVA,Healthcare,Biotech,Small Cap,Iovance Biotherapeutics
+XBIO,Healthcare,Biotech,Micro Cap,Current Holding - Xenetic Bio
+KDK,Healthcare,Medical Devices,Micro Cap,Current Holding - Kodiak
+LIVN,Healthcare,Medical Devices,Mid Cap,LivaNova
+NARI,Healthcare,Medical Devices,Small Cap,Inari Medical
+PRCT,Healthcare,Medical Devices,Small Cap,PROCEPT BioRobotics
+NVCR,Healthcare,Medical Devices,Small Cap,NovoCure
+TMDX,Healthcare,Medical Devices,Small Cap,TransMedics
+ONEM,Healthcare,Mental Health,Small Cap,1Life Healthcare
+CALM,Healthcare,Mental Health,Small Cap,Calm (private - placeholder)
+TALK,Healthcare,Mental Health,Micro Cap,Talkspace
+LFST,Healthcare,Healthcare Services,Small Cap,LifeStance Health
+CLOV,Healthcare,Health Insurance,Micro Cap,Clover Health
+OSCR,Healthcare,Health Insurance,Small Cap,Oscar Health
+SHOP,E-commerce,E-commerce Platform,Large Cap,Shopify
+MELI,E-commerce,E-commerce,Large Cap,MercadoLibre
+SE,E-commerce,E-commerce,Mid Cap,Sea Limited
+CPNG,E-commerce,E-commerce,Large Cap,Coupang
+BABA,E-commerce,E-commerce,Large Cap,Alibaba
+JD,E-commerce,E-commerce,Mid Cap,JD.com
+PDD,E-commerce,E-commerce,Large Cap,Pinduoduo
+ETSY,E-commerce,Marketplace,Mid Cap,Etsy
+EBAY,E-commerce,Marketplace,Large Cap,eBay
+W,E-commerce,Home Goods,Small Cap,Wayfair
+CHWY,E-commerce,Pet Supplies,Mid Cap,Chewy
+RVLV,E-commerce,Fashion,Small Cap,Revolve
+REAL,E-commerce,Real Estate,Small Cap,RealReal
+POSH,E-commerce,Fashion Resale,Micro Cap,Poshmark
+FTCH,E-commerce,Luxury Fashion,Small Cap,Farfetch
+VSCO,E-commerce,Beauty,Small Cap,Victoria's Secret
+LULU,Retail,Apparel,Large Cap,Lululemon
+NKE,Retail,Apparel,Large Cap,Nike
+DECK,Retail,Footwear,Mid Cap,Deckers (Hoka/UGG)
+BIRK,Retail,Footwear,Small Cap,Birkenstock
+ONON,Retail,Footwear,Small Cap,On Running
+CROX,Retail,Footwear,Mid Cap,Crocs
+SKX,Retail,Footwear,Mid Cap,Skechers
+UAA,Retail,Apparel,Mid Cap,Under Armour
+LEVI,Retail,Apparel,Small Cap,Levi Strauss
+GPS,Retail,Apparel,Small Cap,Gap
+ANF,Retail,Apparel,Small Cap,Abercrombie & Fitch
+URBN,Retail,Apparel,Small Cap,Urban Outfitters
+PTON,Consumer,Fitness,Small Cap,Peloton
+FIGS,Retail,Medical Apparel,Small Cap,Figs
+BBWI,Retail,Beauty,Mid Cap,Bath & Body Works
+ELF,Consumer,Beauty,Mid Cap,e.l.f. Beauty
+ULTA,Retail,Beauty,Large Cap,Ulta Beauty
+COTY,Consumer,Beauty,Mid Cap,Coty
+BYND,Consumer,Plant-Based Food,Small Cap,Beyond Meat
+TTCF,Consumer,Plant-Based Food,Micro Cap,Tattooed Chef
+VERY,Consumer,Beauty,Small Cap,Verily (placeholder)
+OUST,Technology,Lidar,Small Cap,Ouster
+LAZR,Technology,Lidar,Small Cap,Luminar
+VLDR,Technology,Lidar,Micro Cap,Velodyne
+INVZ,Technology,Lidar,Micro Cap,Innoviz
+MBLY,Technology,Autonomous,Mid Cap,Mobileye
+WKHS,Automotive,Electric Vehicles,Micro Cap,Workhorse
+FSR,Automotive,Electric Vehicles,Micro Cap,Fisker
+LCID,Automotive,Electric Vehicles,Small Cap,Lucid Motors
+RIVN,Automotive,Electric Vehicles,Mid Cap,Rivian
+NIO,Automotive,Electric Vehicles,Small Cap,Nio
+XPEV,Automotive,Electric Vehicles,Small Cap,XPeng
+LI,Automotive,Electric Vehicles,Small Cap,Li Auto
+ARVL,Automotive,Electric Vehicles,Micro Cap,Arrival
+BLNK,Energy,EV Charging,Small Cap,Blink Charging
+CHPT,Energy,EV Charging,Small Cap,ChargePoint
+EVGO,Energy,EV Charging,Small Cap,EVgo
+WBX,Industrials,Construction,Small Cap,Wallbox
+STEM,Energy,Energy Storage,Small Cap,Stem Inc
+FREYR,Energy,Battery,Small Cap,Freyr Battery
+QS,Energy,Battery,Small Cap,QuantumScape
+SES,Energy,Battery,Micro Cap,SES AI
+ENVX,Energy,Battery,Small Cap,Enovix
+ARQQ,Technology,Quantum,Micro Cap,Arqit Quantum
+RGTI,Technology,Quantum,Micro Cap,Rigetti Computing
+QMCO,Technology,Quantum,Micro Cap,Quantum Computing Inc
+QUBT,Technology,Quantum,Micro Cap,Quantum Computing
+AIXI,Technology,AI,Micro Cap,Ambrx (placeholder)
+PATH,Technology,Analytics,Small Cap,UiPath
+RBRK,Technology,Software,Small Cap,Rubrik
+CXM,Technology,Customer Experience,Small Cap,Sprinklr
+MNDY,Technology,Project Management,Mid Cap,Monday.com
+TEAM,Technology,Collaboration,Large Cap,Atlassian
+ZM,Technology,Video Conferencing,Mid Cap,Zoom
+DOCU,Technology,E-Signature,Mid Cap,DocuSign
+BOX,Technology,Cloud Storage,Small Cap,Box
+DBX,Technology,Cloud Storage,Mid Cap,Dropbox
+AI,Technology,AI,Mid Cap,C3.ai
+BBAI,Technology,AI,Small Cap,BigBear.ai
+SOUN,Technology,Voice AI,Small Cap,SoundHound
+EXAI,Technology,AI,Small Cap,Exscientia
+RXRX,Healthcare,AI Biotech,Small Cap,Recursion
+GDRX,Healthcare,Pharmacy,Small Cap,GoodRx
+HCAT,Healthcare,Digital Health,Micro Cap,Health Catalyst
+SDGR,Healthcare,Computational,Small Cap,Schrodinger
+QURE,Healthcare,Gene Therapy,Small Cap,uniQure
+BLUE,Healthcare,Gene Therapy,Small Cap,bluebird bio
+FOLD,Healthcare,Protein Folding,Small Cap,Amicus Therapeutics
+RARE,Healthcare,Rare Disease,Mid Cap,Ultragenyx
+UTHR,Healthcare,Biotech,Mid Cap,United Therapeutics
+IONS,Healthcare,Biotech,Mid Cap,Ionis Pharma
+EXEL,Healthcare,Oncology,Mid Cap,Exelixis
+NBIX,Healthcare,Neuroscience,Mid Cap,Neurocrine
+INCY,Healthcare,Oncology,Large Cap,Incyte
+BMRN,Healthcare,Biotech,Large Cap,BioMarin
+ALNY,Healthcare,RNAi,Large Cap,Alnylam
+VRTX,Healthcare,Cystic Fibrosis,Large Cap,Vertex
+Jazz,Healthcare,Sleep Disorders,Mid Cap,Jazz Pharma
+TECH,Healthcare,Dental,Mid Cap,Bio-Techne
+HOLX,Healthcare,Diagnostics,Large Cap,Hologic
+QDEL,Healthcare,Diagnostics,Mid Cap,Quidel
+EXAS,Healthcare,Diagnostics,Mid Cap,Exact Sciences
+MYGN,Healthcare,Diagnostics,Mid Cap,Myriad Genetics
+CDNA,Healthcare,Genomics,Small Cap,CareDx
+VCYT,Healthcare,Diagnostics,Small Cap,Veracyte
+NTRA,Healthcare,Diagnostics,Small Cap,Natera
+GH,Healthcare,Diagnostics,Small Cap,Guardant Health
+ADPT,Healthcare,Cell Therapy,Small Cap,Adaptive Biotech
+FATE,Healthcare,Cell Therapy,Small Cap,Fate Therapeutics
+BLUE,Healthcare,Cell Therapy,Small Cap,bluebird bio
+LEGN,Healthcare,Cell Therapy,Small Cap,Legend Biotech
+AUTL,Healthcare,Cell Therapy,Small Cap,Autolus Therapeutics
+TCRR,Healthcare,T-Cell Therapy,Micro Cap,TCR2 Therapeutics
+ALLO,Healthcare,Allogeneic Therapy,Small Cap,Allogene
+IMTX,Healthcare,Immunotherapy,Small Cap,Immatics
+IMCR,Healthcare,Immunotherapy,Small Cap,Immunocore
+AURA,Healthcare,Oncology,Small Cap,Aura Biosciences
+ARVN,Healthcare,Oncology,Small Cap,Arvinas
+KYMR,Healthcare,Gene Editing,Small Cap,Kymera Therapeutics
+CGEM,Healthcare,Gene Editing,Micro Cap,Cullinan Oncology
+RLAY,Healthcare,Precision Medicine,Small Cap,Relay Therapeutics
+GLUE,Healthcare,Protein Degradation,Small Cap,Monte Rosa (placeholder)
+VERV,Healthcare,Gene Editing,Small Cap,Verve Therapeutics
+PRME,Healthcare,Gene Editing,Small Cap,Prime Medicine
+DTIL,Healthcare,T-Cell Therapy,Small Cap,Precision BioSciences
+CAPR,Healthcare,Oncology,Small Cap,Capricor Therapeutics
+AKRO,Healthcare,Metabolic,Small Cap,Akero Therapeutics
+MDGL,Healthcare,Metabolic,Small Cap,Madrigal Pharma
+VKTX,Healthcare,Rare Disease,Small Cap,Viking Therapeutics
+KRYS,Healthcare,Rare Disease,Small Cap,Krystal Biotech
+PTCT,Healthcare,Rare Disease,Small Cap,PTC Therapeutics
+DAWN,Healthcare,Metabolic,Small Cap,Day One Biopharmaceuticals
+RCKT,Healthcare,Gene Therapy,Small Cap,Rocket Pharmaceuticals
+SGMO,Healthcare,Gene Editing,Small Cap,Sangamo Therapeutics
+CRBU,Healthcare,Oncology,Small Cap,Caribou Biosciences
+PGEN,Healthcare,Oncology,Small Cap,Precigen
+SANA,Healthcare,Cell Therapy,Small Cap,Sana Biotechnology
+BCYC,Healthcare,Oncology,Small Cap,Bicycle Therapeutics
+GLPG,Healthcare,Biotech,Mid Cap,Galapagos
+ARWR,Healthcare,RNAi,Small Cap,Arrowhead Pharma
+MNKD,Healthcare,Diabetes,Small Cap,MannKind
+TNDM,Healthcare,Diabetes,Mid Cap,Tandem Diabetes
+DXCM,Healthcare,Diabetes,Large Cap,DexCom
+PODD,Healthcare,Diabetes,Large Cap,Insulet
+ISRG,Healthcare,Robotics,Large Cap,Intuitive Surgical
+AXON,Industrials,Law Enforcement,Large Cap,Axon Enterprise
+IRDM,Communications,Satellite,Small Cap,Iridium
+GRMN,Technology,GPS,Large Cap,Garmin
+RMBS,Technology,Semiconductor,Small Cap,Rambus
+PLAB,Technology,Semiconductor,Small Cap,Photronics
+FORM,Technology,3D Printing,Small Cap,FormLabs (private)
+DM,Technology,3D Printing,Small Cap,Desktop Metal
+NNDM,Technology,3D Printing,Small Cap,Nano Dimension
+SSYS,Technology,3D Printing,Small Cap,Stratasys
+MTLS,Technology,3D Printing,Small Cap,Materialise
+XMTR,Technology,3D Printing,Micro Cap,Xometry
+PRNT,Technology,3D Printing,Micro Cap,3D Printing ETF
+GRAB,Transportation,Super App,Mid Cap,Grab Holdings
+DIDI,Transportation,Ride Hailing,Mid Cap,Didi (delisted - placeholder)
+BIRD,Transportation,Micro-Mobility,Micro Cap,Bird (bankrupt)
+GOEV,Automotive,Electric Vehicles,Micro Cap,Canoo
+HYLN,Automotive,Electric Trucks,Micro Cap,Hyliion
+RIDE,Automotive,Electric Trucks,Micro Cap,Lordstown
+NKLA,Automotive,Hydrogen Trucks,Small Cap,Nikola
+HYZON,Automotive,Hydrogen Trucks,Micro Cap,Hyzon Motors
+PLUG,Energy,Hydrogen,Small Cap,Plug Power (duplicate)
+BLDP,Energy,Hydrogen,Small Cap,Ballard (duplicate)
+FCEL,Energy,Fuel Cells,Micro Cap,FuelCell (duplicate)
+SERV,Technology,Robotics/AI,Small Cap,Robotics - Dark Pool Activity
+MRVL,Technology,Semiconductors,Large Cap,Data Center/AI
+KMTS,Technology,Cybersecurity,Small Cap,Key Materials Tech
+ANNX,Healthcare,Biotech,Small Cap,Annexed Biosciences
+PALI,Healthcare,Biotech,Micro Cap,Palisade Bio - Analyst $12 Target
+SMCI,Technology,Servers,Mid Cap,Super Micro Computer - AI Servers
+SGBX,Healthcare,Biotech,Micro Cap,SG Blocks
+TLRY,Consumer,Cannabis,Small Cap,Tilray
+RR,Industrials,Oil Services,Small Cap,Richtech Robotics
+MVST,Energy,Battery,Small Cap,Microvast Holdings
+AEVA,Technology,Lidar,Small Cap,Aeva Technologies
+CRNC,Technology,Robotics,Small Cap,Cerence AI
+REKR,Technology,Solar,Small Cap,Rekor Systems
+BKSY,Aerospace,Space Imaging,Small Cap,BlackSky
+MNTS,Aerospace,Space,Small Cap,Momentus
+LLAP,Aerospace,Space,Small Cap,Terran Orbital
+ACHR,Aerospace,eVTOL,Small Cap,Archer Aviation
+JOBY,Aerospace,eVTOL,Small Cap,Joby Aviation
+LILM,Aerospace,eVTOL,Small Cap,Lilium
+KOD,Aerospace,Drones,Small Cap,Kodiak Robotics
+SPIR,Aerospace,Space,Small Cap,Spire Global
+AKYA,Healthcare,Gene Therapy,Small Cap,Akoya Biosciences
+HALO,Healthcare,Gene Therapy,Small Cap,Halozyme
+VRDN,Healthcare,Gene Therapy,Small Cap,Viridian Therapeutics
+URGN,Healthcare,Gene Therapy,Small Cap,UroGen Pharma
+LQDA,Healthcare,Ophthalmology,Small Cap,Liquidia
+TLSA,Healthcare,Gene Therapy,Small Cap,Tiziana Life Sciences
+PVLA,Healthcare,Ophthalmology,Small Cap,Privya
+OKYO,Healthcare,Oncology,Small Cap,OKYO Pharma
+IOBT,Healthcare,Medical Tech,Small Cap,IO Biotech
+SPRO,Healthcare,Oncology,Small Cap,Spero Therapeutics
+CYTK,Healthcare,Oncology,Small Cap,Cytokinetics
+FLNC,Healthcare,Gene Therapy,Small Cap,Fluence Energy (duplicate check)
+ALKT,Fintech,Payments,Small Cap,Alkami Technology
+DUOL,Technology,EdTech,Mid Cap,Duolingo
+CELH,Consumer,Beverages,Small Cap,Celsius Holdings
+AMPL,Healthcare,Biotech,Small Cap,Amplitude
+APP,Technology,Software,Small Cap,AppLovin
+VRNS,Technology,Software,Small Cap,Varonis Systems
+AMBA,Technology,Semiconductors,Small Cap,Ambarella - AI Vision
+SYM,Technology,Semiconductors,Small Cap,Symbotic - Warehouse AI
+ENOV,Energy,Solar,Small Cap,Enova Systems
+AMSC,Energy,Grid,Small Cap,American Superconductor
+RDW,Energy,Renewable,Small Cap,Redwire
+CRDO,Technology,Semiconductors,Mid Cap,Credo Technology
+INTC,Technology,Semiconductors,Large Cap,Intel
+MU,Technology,Memory,Large Cap,Micron
+QCOM,Technology,Mobile Chips,Large Cap,Qualcomm
+MRVL,Technology,Data Infrastructure,Large Cap,Marvell
+AMZN,Technology,E-commerce/Cloud,Large Cap,Amazon
+CRM,Technology,CRM Software,Large Cap,Salesforce
+ORCL,Technology,Database,Large Cap,Oracle
+ADBE,Technology,Creative Software,Large Cap,Adobe
+INTU,Technology,Financial Software,Large Cap,Intuit
+NOW,Technology,IT Service Management,Large Cap,ServiceNow
+FTNT,Technology,Cybersecurity,Mid Cap,Fortinet
