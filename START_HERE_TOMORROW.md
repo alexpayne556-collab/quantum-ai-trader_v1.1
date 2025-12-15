@@ -4,12 +4,21 @@
 
 > "Read DAY4_NIGHT_SESSION_DEEP_THINKING.md and prepare for today's work"
 
-**That's it. Copilot will:**
-1. Read the complete night session file
-2. Summarize all breakthroughs
-3. Explain where we left off (Option C - more philosophy)
+**Copilot will automatically read ALL these files:**
+1. **DAY4_NIGHT_SESSION_DEEP_THINKING.md** (complete deep thinking - 24KB)
+2. **SURFING_PHILOSOPHY.md** (fire/fuel metaphor, business models, frameworks)
+3. **DAY4_SESSION_COMPLETE.md** (day summary, Lesson #1, tomorrow's plan)
+4. **DAY4_RESULTS_REALITY_CHECK.md** (scanner results, reality check)
+5. **SECTOR_MOMENTUM_HYPOTHESIS.md** (your sector insight)
+
+**Then Copilot will:**
+1. Summarize all breakthroughs from night session
+2. Remember the partnership methodology (red team/blue team, boxing, one idea at a time)
+3. Explain where we left off (Option C - more philosophy before building)
 4. Ask what you want to explore next
-5. Continue with same red team/blue team sparring methodology
+5. Continue exact same thinking style - no confusion, no memory loss
+
+**Everything will be fresh in Copilot's context. Seamless continuation.**
 
 ---
 
