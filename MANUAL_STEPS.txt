@@ -1,0 +1,41 @@
+# ========================================
+# MANUAL SETUP (Copy-Paste These Lines)
+# ========================================
+# Use this if the .ps1 script has execution issues
+
+# STEP 1: Create venv (takes ~30 seconds)
+python -m venv shadow_ai
+
+# STEP 2: Activate it
+.\shadow_ai\Scripts\Activate.ps1
+
+# You should see (shadow_ai) in your prompt now
+
+# STEP 3: Upgrade pip
+python -m pip install --upgrade pip
+
+# STEP 4: Install PyTorch with CUDA (takes 3-5 min)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# STEP 5: Install Jupyter (takes 1-2 min)
+pip install jupyter jupyterlab ipykernel
+
+# STEP 6: Install trading packages (takes 30 sec)
+pip install yfinance plotly hmmlearn pandas numpy matplotlib scipy scikit-learn
+
+# STEP 7: Register kernel
+python -m ipykernel install --user --name shadow_ai --display-name "Python (shadow_ai)"
+
+# STEP 8: Check GPU
+nvidia-smi
+
+# STEP 9: Launch Jupyter
+jupyter lab
+
+# ========================================
+# After Jupyter Opens:
+# ========================================
+# 1. Create new notebook
+# 2. Select kernel: "Python (shadow_ai)"
+# 3. Copy cells from AI_COUNCIL_COMPLETE.py
+# 4. Test everything!

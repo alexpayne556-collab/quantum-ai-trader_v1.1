@@ -1,0 +1,17 @@
+# COPY AND PASTE THESE COMMANDS INTO POWERSHELL
+# Hit Enter after each block
+
+# 1. Navigate to project
+cd C:\Users\alexj\Desktop\shadow_ai\quantum-ai-trader_v1.1
+
+# 2. Activate shadow_ai venv (from yesterday)
+.\shadow_ai\Scripts\Activate.ps1
+
+# 3. Install missing packages
+pip install yfinance plotly hmmlearn
+
+# 4. Check GPU
+nvidia-smi
+
+# 5. Start Jupyter Lab
+jupyter lab

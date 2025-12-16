@@ -1,0 +1,46 @@
+# RSI < 10 Champions - 65%+ win rate, 2+ signals
+# Generated from 2yr backtest on full universe
+
+RXRX # WR:100% Sigs:2 Avg:+12.1%
+FTNT # WR:100% Sigs:3 Avg:+8.0%
+AMBA # WR:100% Sigs:2 Avg:+13.7%
+IOBT # WR:100% Sigs:3 Avg:+62.7%
+CLSK # WR:100% Sigs:8 Avg:+45.2%
+APP # WR:100% Sigs:2 Avg:+29.4%
+MRNA # WR:100% Sigs:2 Avg:+14.8%
+ESTC # WR:100% Sigs:3 Avg:+8.6%
+APLS # WR:100% Sigs:3 Avg:+10.2%
+BLDP # WR:100% Sigs:3 Avg:+11.4%
+DUOL # WR:100% Sigs:3 Avg:+11.4%
+MARA # WR:100% Sigs:4 Avg:+27.0%
+UPST # WR:100% Sigs:2 Avg:+17.3%
+LQDA # WR:100% Sigs:2 Avg:+8.4%
+CRSP # WR:100% Sigs:2 Avg:+3.9%
+MNTS # WR:100% Sigs:3 Avg:+25.3%
+SPRO # WR:100% Sigs:2 Avg:+14.3%
+LCID # WR:100% Sigs:8 Avg:+11.9%
+SYM # WR:100% Sigs:2 Avg:+17.6%
+QMCO # WR:100% Sigs:4 Avg:+27.4%
+ACHR # WR:100% Sigs:3 Avg:+5.9%
+CHPT # WR:100% Sigs:4 Avg:+38.1%
+RIOT # WR:100% Sigs:5 Avg:+43.3%
+PRCT # WR:100% Sigs:2 Avg:+12.7%
+ARRY # WR:100% Sigs:2 Avg:+10.1%
+CRNC # WR:100% Sigs:3 Avg:+12.2%
+BKSY # WR:100% Sigs:3 Avg:+5.3%
+LUNR # WR:90% Sigs:10 Avg:+10.2%
+MDAI # WR:88% Sigs:16 Avg:+16.4%
+SERV # WR:83% Sigs:6 Avg:+32.8%
+SNOW # WR:80% Sigs:5 Avg:+3.4%
+IONQ # WR:78% Sigs:9 Avg:+17.5%
+AEVA # WR:75% Sigs:4 Avg:+31.2%
+PATH # WR:75% Sigs:12 Avg:+6.0%
+LAZR # WR:75% Sigs:8 Avg:+23.8%
+BBAI # WR:75% Sigs:8 Avg:+3.3%
+FCEL # WR:71% Sigs:7 Avg:+6.0%
+REKR # WR:71% Sigs:7 Avg:+4.1%
+ELF # WR:71% Sigs:7 Avg:+8.8%
+KOD # WR:67% Sigs:3 Avg:+2.2%
+INVZ # WR:67% Sigs:6 Avg:+10.4%
+FLNC # WR:67% Sigs:3 Avg:+10.5%
+QUBT # WR:67% Sigs:3 Avg:+3.8%
