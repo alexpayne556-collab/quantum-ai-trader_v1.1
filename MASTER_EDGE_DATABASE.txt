@@ -1,0 +1,144 @@
+
+================================================================================
+🎯 QUANTUM AI TRADER - MASTER EDGE DATABASE
+================================================================================
+Generated: 2025-12-17 03:33:05
+Experiments: 52
+Total Patterns Tested: 150+
+
+================================================================================
+💎 TIER S+ - HIGHEST CONVICTION (90%+ WR)
+================================================================================
+1. RGTI -30% week → 100% bounce, +40.2% avg (n=6)
+2. HOOD Vol>2x + Down Day → 100% bounce, +8.9% avg (n=7)
+3. QQQ RSI<30 + VIX>30 → 100% WR, +4.4% avg (n=16)
+4. NVDA RSI<25 → 100% bounce, +10.4% avg (n=5)
+5. SPY 5+ down days → 100% up in 5D, +2.0% avg (n=4)
+6. AVGO RSI<30 + Vol>1.5x → 93% WR, +9.7% avg (n=14)
+7. NVDA RSI<30 + VIX>30 → 93% WR, +8.2% avg (n=14)
+8. HOOD RSI<20 → 92% bounce, +5.7% avg (n=12)
+9. PLTR +30% week → 91% continue, +4.9% avg (n=11)
+10. MSTR -20% week → 90% bounce, +10.5% avg (n=10)
+
+================================================================================
+💎 TIER S - STRONG EDGES (80-89% WR)
+================================================================================
+11. PLTR Vol>2x + Down → 88% bounce, +5.4% avg (n=8)
+12. ARM 5 down days → 88% bounce next day (n=8)
+13. SPY RSI<30 + VIX>30 → 89% WR (n=19)
+14. ARM -20% week → 86% bounce, +6.5% avg (n=7)
+15. PLTR +20% week → 86% continue, +5.5% avg (n=21)
+16. CEG +20% week → 85% continue, +2.8% avg (n=13)
+17. MDB +20% week → 85% continue, +3.0% avg (n=13)
+18. DELL -20% week → 83% bounce, +8.0% avg (n=6)
+19. HUT -30% week → 83% bounce, +13.9% avg (n=6)
+20. MSTR RSI<25 → 83% bounce, +4.4% avg (n=23)
+21. SPY RSI<30 + VIX>25 → 83% WR (n=18)
+22. CHPT -20% week → 82% bounce, +8.4% avg (n=17)
+23. ARM -15% week → 82% bounce, +7.8% avg (n=17)
+24. QQQ RSI<30 + VIX>25 → 82% WR (n=17)
+25. MSTR RSI<20 → 82% bounce, +3.7% avg (n=11)
+26. RGTI -25% week → 80% bounce, +23.8% avg (n=10)
+27. HOOD -20% week → 80% bounce, +7.1% avg (n=5)
+28. QBTS -30% week → 80% bounce, +23.5% avg (n=5)
+29. MSTR Vol>2x + Up → 80% continue, +12.6% avg (n=5)
+30. NVDA Feb/May/Aug/Nov → 80% WR, +9.4% avg (n=40)
+31. RGTI Vol>2x + Down → 80% bounce, +17.0% avg (n=10)
+32. PLTR RSI<20 → 80% bounce, +5.1% avg (n=5)
+33. QQQ 5+ down days → 80% up in 5D, +1.7% avg (n=5)
+
+================================================================================
+💎 TIER A - GOOD EDGES (65-79% WR)
+================================================================================
+34. HOOD -15% week → 79% bounce, +9.6% avg (n=14)
+35. VST +15% week → 79% continue, +6.1% avg (n=28)
+36. VST +20% week → 78% continue, +5.6% avg (n=9)
+37. IONQ +40% week → 77% continue, +8.5% avg (n=13)
+38. CEG +15% week → 77% continue, +2.5% avg (n=22)
+39. LEU -20% week → 75% bounce, +12.4% avg (n=8)
+40. HOOD Vol>2x + Up → 75% continue, +3.8% avg (n=16)
+41. NVDA 5+ down days → 75% up in 5D, +3.5% avg (n=4)
+42. RGTI +40% week → 74% continue, +22.5% avg (n=35)
+43. IONQ Vol>2x + Up → 73% continue, +9.3% avg (n=11)
+44. AVGO -10% week → 73% bounce, +7.0% avg
+45. BKSY +30% week → 72% continue, +5.7% avg (n=18)
+46. ASTS +30% week → 71% continue, +10.5% avg (n=41)
+47. HOOD 5+ down days → 71% up in 5D (n=7)
+48. SNOW +20% week → 71% continue, +1.5% avg (n=7)
+49. RDW +30% week → 71% continue, +1.9% avg (n=14)
+50. QQQ 3 down days → 70% bounce next day (n=20)
+51. S (SentinelOne) -15% week → 70% bounce, +1.2% avg (n=10)
+52. RGTI -20% week → 69% bounce, +14.9% avg (n=26)
+53. RGTI Vol>3x + Up → 69% continue, +16.3% avg (n=13)
+54. DELL -15% week → 69% bounce, +6.4% avg (n=13)
+55. CHPT -15% week → 68% bounce, +5.0% avg (n=41)
+56. S (SentinelOne) -10% week → 67% bounce, +1.8% avg (n=36)
+57. IONQ Vol>2x + Down → 67% bounce, +2.6% avg (n=9)
+58. IONQ -25% week → 67% bounce, +18.1% avg (n=6)
+59. SPY 4 down days → 67% bounce next day (n=9)
+60. PLTR 5 down days → 67% bounce, +67% in 3D (n=9)
+61. NVDA 3 down days → 65% bounce next day (n=23)
+62. NVDA Monday → 62% WR, +0.37% avg
+63. SPY Monday → 65% WR, +0.16% avg
+64. RGTI Vol>2x + Up → 65% continue, +16.0% avg (n=31)
+65. AMD Gap Up ≥3% → 61% close lower, -1.60% avg (FADE)
+
+================================================================================
+📅 CALENDAR EDGES
+================================================================================
+• SPY Monday → 65% WR, +0.16% avg
+• QQQ Monday → 64% WR, +0.24% avg
+• SPY Wednesday → 63% WR, +0.20% avg
+• NVDA Thursday → 62% WR, +0.25% avg
+• AAPL End of Month (day 26+) → 61% WR
+• SPY End of Month → 60% WR
+• NVDA Day 1 of Month → 59% WR, +0.52% avg
+• AMD Day 1 of Month → 59% WR, +0.42% avg
+
+================================================================================
+☠️ DEATH TRAPS - NEVER TRADE
+================================================================================
+CRASH BOUNCES THAT FAIL:
+• AMC crash → 29% bounce (DEATH TRAP)
+• SMR crash → 32% bounce (DEATH TRAP)
+• MDB -20% crash → 8% bounce (DEATH TRAP)
+• RIOT crash → 25-28% bounce (DEATH TRAP)
+• SPCE crash → 32% bounce (DEATH TRAP)
+• LUNR crash → 32-37% bounce (DEATH TRAP)
+• CLSK -30% → 20% bounce (DEATH TRAP)
+• ARM 5+ down days → 11% up in 5D (DEATH)
+
+MOMENTUM THAT FAILS:
+• LCID momentum → 0% continue (DEATH)
+• PATH +20% momentum → 0% continue (DEATH)
+• DDOG +20% momentum → 0% continue (DEATH)
+• MARA momentum → 0-7% continue (DEATH)
+• RIOT momentum → 7% continue (DEATH)
+• SPCE +30% momentum → 0% continue (DEATH)
+• GME momentum → 37-42% continue (FADE)
+• AMC momentum → 12-25% continue (DEATH)
+
+CALENDAR TRAPS:
+• TSLA Thursday → 40% WR (AVOID)
+• MSTR Thursday → 40% WR (AVOID)
+• TSLA Day 1 of Month → 36% WR (AVOID)
+• MSTR Day 1 of Month → 36% WR (AVOID)
+
+================================================================================
+💼 CURRENT PORTFOLIO (10 orders queued for market open)
+================================================================================
+• AVGO: 46 shares @ ~$341 = ~$15,700 (73% bounce edge)
+• ZS: 53 shares @ ~$233 = ~$12,337 (original)
+• QBTS: 277 shares @ ~$26 = ~$7,069 (80% if -30%)
+• ARM: 41 shares @ ~$121 = ~$4,965 (82% if -15%)
+• RGTI: 208 shares @ ~$24 = ~$4,984 (69-100% edges)
+• LEU: 21 shares @ ~$236 = ~$4,952 (75% if -20%)
+• HOOD: 41 shares @ ~$119 = ~$4,895 (79% if -15%)
+• S: 304 shares @ ~$15 = ~$4,499 (70% if -15%)
+• DELL: 33 shares @ ~$134 = ~$4,414 (83% if -20%)
+• CHPT: 394 shares @ ~$8 = ~$2,998 (68% active)
+
+TOTAL DEPLOYED: ~$67K
+CASH REMAINING: ~$33K
+
+================================================================================

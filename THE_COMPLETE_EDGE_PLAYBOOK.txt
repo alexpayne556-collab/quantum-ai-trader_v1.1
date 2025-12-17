@@ -1,0 +1,85 @@
+================================================================================
+🎯 THE COMPLETE EDGE PLAYBOOK - All Validated Edges
+================================================================================
+
+================================================================================
+TIER S - CRASH BOUNCES (80%+ WR)
+================================================================================
+• RGTI -30% week → 100% bounce, +40.2% avg (n=6)
+• MSTR -20% week → 90% bounce, +10.5% avg (n=10)
+• QQQ RSI<30 + VIX>30 → 100% WR, +4.4% avg (n=16)
+• SPY RSI<30 + VIX>30 → 89% WR, +3.6% avg (n=19)
+• AVGO RSI<30 + Vol>1.5x → 93% WR, +9.7% avg (n=14)
+• NVDA RSI<30 + VIX>30 → 93% WR, +8.2% avg (n=14)
+• ARM -20% week → 86% bounce, +6.5% avg (n=7)
+• ARM -15% week → 82% bounce, +7.8% avg (n=17)
+• DELL -20% week → 83% bounce, +8.0% avg (n=6)
+• CHPT -20% week → 82% bounce, +8.4% avg (n=17)
+• SPY RSI<30 + VIX>25 → 83% WR (n=18)
+• QQQ RSI<30 + VIX>25 → 82% WR (n=17)
+• RGTI -25% week → 80% bounce, +23.8% avg (n=10)
+• HOOD -20% week → 80% bounce, +7.1% avg (n=5)
+• QBTS -30% week → 80% bounce, +23.5% avg (n=5)
+• HUT -30% week → 83% bounce, +13.9% avg (n=6)
+
+================================================================================
+TIER A - CRASH BOUNCES (65-79% WR)
+================================================================================
+• HOOD -15% week → 79% bounce, +9.6% avg (n=14)
+• LEU -20% week → 75% bounce, +12.4% avg (n=8)
+• AVGO -10% week → 73% bounce, +7.0% avg (n=?)
+• S (SentinelOne) -15% week → 70% bounce, +1.2% avg (n=10)
+• RGTI -20% week → 69% bounce, +14.9% avg (n=26)
+• DELL -15% week → 69% bounce, +6.4% avg (n=13)
+• CHPT -15% week → 68% bounce, +5.0% avg (n=41)
+• S (SentinelOne) -10% week → 67% bounce, +1.8% avg (n=36)
+• IONQ -25% week → 67% bounce, +18.1% avg (n=6)
+
+================================================================================
+TIER S - MOMENTUM CONTINUATION (85%+ WR)
+================================================================================
+• PLTR +30% week → 91% continue, +4.9% avg (n=11)
+• PLTR +20% week → 86% continue, +5.5% avg (n=21)
+• CEG +20% week → 85% continue, +2.8% avg (n=13)
+• MDB +20% week → 85% continue, +3.0% avg (n=13)
+
+================================================================================
+TIER A - MOMENTUM CONTINUATION (70-84% WR)
+================================================================================
+• NVDA Feb/May/Aug/Nov → 80% WR, +9.4% avg (n=40)
+• VST +15% week → 79% continue, +6.1% avg (n=28)
+• IONQ +40% week → 77% continue, +8.5% avg (n=13)
+• CEG +15% week → 77% continue, +2.5% avg (n=22)
+• RGTI +40% week → 74% continue, +22.5% avg (n=35)
+• PLTR +15% week → 73% continue, +3.0% avg (n=37)
+• VST +10% week → 73% continue, +4.6% avg (n=66)
+• BKSY +30% week → 72% continue, +5.7% avg (n=18)
+• ASTS +30% week → 71% continue, +10.5% avg (n=41)
+• SNOW +20% week → 71% continue, +1.5% avg (n=7)
+• RDW +30% week → 71% continue, +1.9% avg (n=14)
+
+================================================================================
+☠️ DEATH TRAPS - NEVER TRADE THESE
+================================================================================
+• AMC crash → 29% bounce (DEATH TRAP)
+• SMR crash → 32% bounce (DEATH TRAP)
+• MDB -20% crash → 8% bounce (DEATH TRAP)
+• RIOT crash → 25-28% bounce (DEATH TRAP)
+• SPCE crash → 32% bounce (DEATH TRAP)
+• LUNR crash → 32-37% bounce (DEATH TRAP)
+• LCID momentum → 0% continue (DEATH)
+• PATH +20% momentum → 0% continue (DEATH)
+• DDOG +20% momentum → 0% continue (DEATH)
+• MARA momentum → 0-7% continue (DEATH)
+• RIOT momentum → 7% continue (DEATH)
+• SPCE +30% momentum → 0% continue (DEATH)
+• GME momentum → 37-42% continue (FADE)
+• AMC momentum → 12-25% continue (DEATH)
+
+================================================================================
+🎯 CURRENT ACTIVE SETUPS (as of scan)
+================================================================================
+• CHPT: -18.4% week → 68% bounce edge ACTIVE
+• HOOD: -12.0% week → approaching -15% edge
+• HUT: -20.0% week → only 48% bounce (wait for -30%)
+• AVGO: -17.4% week → 73% bounce edge ACTIVE

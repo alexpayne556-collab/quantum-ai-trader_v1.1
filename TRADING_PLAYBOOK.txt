@@ -1,0 +1,37 @@
+============================================================
+YOUR DATA-DRIVEN TRADING PLAYBOOK
+Generated: 2025-12-17 01:26
+============================================================
+
+GENERAL STRATEGY:
+   Entry: Buy when RSI < 30
+   Exit: Hold 11 days, sell at close
+   Expected Win Rate: 81.9%
+   Expected Return: 14.99%
+
+TOP 20 PLAYS WITH PERSONALIZED PARAMETERS:
+------------------------------------------------------------
+URGN_365: RSI<28, Hold 11d → WR:100.0%, EV:126.38%
+AEVA_365: RSI<26, Hold 11d → WR:84.2%, EV:45.28%
+IOBT_365: RSI<30, Hold 11d → WR:100.0%, EV:79.58%
+ASTS_365: RSI<34, Hold 11d → WR:93.8%, EV:33.17%
+ARRY_365: RSI<32, Hold 11d → WR:90.5%, EV:25.55%
+SPRO_365: RSI<34, Hold 10d → WR:71.4%, EV:27.44%
+STEM_365: RSI<34, Hold 10d → WR:100.0%, EV:33.41%
+AKRO_365: RSI<34, Hold 11d → WR:71.4%, EV:18.44%
+SHLS_365: RSI<32, Hold 9d → WR:85.7%, EV:19.96%
+HOOD_365: RSI<34, Hold 9d → WR:100.0%, EV:18.98%
+INTC_365: RSI<32, Hold 11d → WR:100.0%, EV:14.32%
+BEAM_365: RSI<26, Hold 11d → WR:76.9%, EV:18.88%
+EDIT_365: RSI<30, Hold 11d → WR:83.3%, EV:37.25%
+APP_365: RSI<24, Hold 8d → WR:100.0%, EV:24.85%
+RXRX_365: RSI<32, Hold 11d → WR:71.4%, EV:16.27%
+BKSY_365: RSI<32, Hold 11d → WR:78.6%, EV:16.02%
+SANA_365: RSI<32, Hold 10d → WR:100.0%, EV:16.98%
+NVTS_365: RSI<28, Hold 11d → WR:100.0%, EV:19.52%
+BA_365: RSI<32, Hold 10d → WR:100.0%, EV:11.76%
+SYM_365: RSI<34, Hold 4d → WR:85.7%, EV:25.89%
+
+
+TRADINGVIEW WATCHLIST:
+URGN_365,AEVA_365,IOBT_365,ASTS_365,ARRY_365,SPRO_365,STEM_365,AKRO_365,SHLS_365,HOOD_365,INTC_365,BEAM_365,EDIT_365,APP_365,RXRX_365,BKSY_365,SANA_365,NVTS_365,BA_365,SYM_365

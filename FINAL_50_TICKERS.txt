@@ -1,0 +1,54 @@
+# FINAL 50 TRADING LIST - DATA-DRIVEN OPTIMAL PARAMETERS
+# Generated: 2025-12-17 01:25
+# Format: TICKER | RSI_THRESHOLD | HOLD_DAYS | VOL_FILTER | WIN_RATE | EV%
+
+URGN_365 | RSI<28 | 11d | 1.0x | WR:100.0% | EV:126.38%
+AEVA_365 | RSI<26 | 11d | 1.0x | WR:84.2% | EV:45.28%
+IOBT_365 | RSI<30 | 11d | 1.0x | WR:100.0% | EV:79.58%
+ASTS_365 | RSI<34 | 11d | 1.0x | WR:93.8% | EV:33.17%
+ARRY_365 | RSI<32 | 11d | 1.0x | WR:90.5% | EV:25.55%
+SPRO_365 | RSI<34 | 10d | 1.0x | WR:71.4% | EV:27.44%
+STEM_365 | RSI<34 | 10d | 1.5x | WR:100.0% | EV:33.41%
+AKRO_365 | RSI<34 | 11d | 1.0x | WR:71.4% | EV:18.44%
+SHLS_365 | RSI<32 | 9d | 1.0x | WR:85.7% | EV:19.96%
+HOOD_365 | RSI<34 | 9d | 1.0x | WR:100.0% | EV:18.98%
+INTC_365 | RSI<32 | 11d | 1.0x | WR:100.0% | EV:14.32%
+BEAM_365 | RSI<26 | 11d | 1.0x | WR:76.9% | EV:18.88%
+EDIT_365 | RSI<30 | 11d | 1.0x | WR:83.3% | EV:37.25%
+APP_365 | RSI<24 | 8d | 1.0x | WR:100.0% | EV:24.85%
+RXRX_365 | RSI<32 | 11d | 1.0x | WR:71.4% | EV:16.27%
+BKSY_365 | RSI<32 | 11d | 1.0x | WR:78.6% | EV:16.02%
+SANA_365 | RSI<32 | 10d | 1.0x | WR:100.0% | EV:16.98%
+NVTS_365 | RSI<28 | 11d | 1.0x | WR:100.0% | EV:19.52%
+BA_365 | RSI<32 | 10d | 1.0x | WR:100.0% | EV:11.76%
+SYM_365 | RSI<34 | 4d | 1.0x | WR:85.7% | EV:25.89%
+LLY_365 | RSI<32 | 11d | 1.0x | WR:92.9% | EV:12.28%
+LUNR_365 | RSI<26 | 11d | 1.0x | WR:77.8% | EV:19.03%
+CRNC_365 | RSI<34 | 11d | 1.0x | WR:100.0% | EV:22.25%
+KOD_365 | RSI<32 | 11d | 1.0x | WR:35.7% | EV:14.11%
+ESTC_365 | RSI<26 | 11d | 1.0x | WR:100.0% | EV:11.10%
+CELH_365 | RSI<30 | 11d | 1.0x | WR:61.9% | EV:8.56%
+OUST_365 | RSI<32 | 11d | 1.0x | WR:87.5% | EV:18.34%
+NXT_365 | RSI<34 | 11d | 1.0x | WR:100.0% | EV:13.22%
+WFC_365 | RSI<34 | 11d | 1.0x | WR:88.2% | EV:7.49%
+SOFI_365 | RSI<34 | 10d | 1.0x | WR:100.0% | EV:16.96%
+NFLX_365 | RSI<34 | 11d | 1.0x | WR:82.4% | EV:7.91%
+C_365 | RSI<34 | 11d | 1.0x | WR:93.3% | EV:7.89%
+LQDA_365 | RSI<30 | 11d | 1.0x | WR:100.0% | EV:6.88%
+BLDP_365 | RSI<34 | 9d | 1.0x | WR:88.2% | EV:6.84%
+VRDN_365 | RSI<30 | 9d | 1.0x | WR:73.3% | EV:8.13%
+ORCL_365 | RSI<28 | 9d | 1.0x | WR:60.0% | EV:6.64%
+CRSP_365 | RSI<34 | 11d | 1.0x | WR:72.7% | EV:6.34%
+BTBT_365 | RSI<30 | 11d | 1.0x | WR:56.2% | EV:8.06%
+CHPT_365 | RSI<24 | 11d | 1.0x | WR:61.5% | EV:9.63%
+NU_365 | RSI<34 | 11d | 1.0x | WR:78.6% | EV:8.24%
+SERV_365 | RSI<32 | 11d | 1.0x | WR:80.0% | EV:22.76%
+PANW_365 | RSI<30 | 11d | 1.0x | WR:81.2% | EV:6.59%
+HL_365 | RSI<34 | 11d | 1.0x | WR:100.0% | EV:11.28%
+BAC_365 | RSI<34 | 11d | 1.0x | WR:88.9% | EV:5.98%
+CRDO_365 | RSI<30 | 6d | 1.5x | WR:83.3% | EV:18.38%
+UPST_365 | RSI<30 | 11d | 1.0x | WR:70.0% | EV:11.17%
+RKLB_365 | RSI<28 | 11d | 1.0x | WR:60.0% | EV:11.31%
+AVGO_365 | RSI<32 | 11d | 1.0x | WR:69.2% | EV:7.92%
+INVZ_365 | RSI<16 | 11d | 1.0x | WR:80.0% | EV:20.51%
+SMCI_365 | RSI<34 | 11d | 1.0x | WR:40.0% | EV:11.35%

@@ -1,0 +1,223 @@
+
+================================================================================
+🕳️ RABBIT HOLES TO EXPLORE
+================================================================================
+
+CATEGORY 1: FREE DATA SOURCES WE HAVEN'T FULLY TAPPED
+-----------------------------------------------------
+
+1. SEC EDGAR (100% Free)
+   - 13F filings: What are hedge funds buying?
+   - Form 4: Insider buys/sells with exact dates
+   - 8-K: Material events (earnings surprises, acquisitions)
+   - DEF 14A: Executive compensation (incentive alignment)
+   URL: https://www.sec.gov/cgi-bin/browse-edgar
+
+2. FINRA ATS Data (100% Free)
+   - Dark pool trading volumes
+   - Off-exchange activity
+   - Weekly reports show institutional accumulation
+   URL: https://otctransparency.finra.org/otctransparency/AtsData
+
+3. CBOE Data (Partially Free)
+   - Put/Call ratio: Sentiment indicator
+   - VIX term structure: Is fear short or long term?
+   - Total options volume by ticker
+   URL: https://www.cboe.com/us/options/market_statistics/
+
+4. Quiver Quant (Free Tier)
+   - Congressional trading
+   - Government contracts
+   - Lobbying data
+   - Wikipedia page views (retail interest)
+   URL: https://www.quiverquant.com/
+
+5. OpenInsider (100% Free)
+   - All SEC Form 4 filings
+   - Cluster buy detection
+   - CEO/CFO transactions
+   URL: http://openinsider.com/
+
+6. Stocktwits API (Free Tier)
+   - Real-time social sentiment
+   - Message volume (hype indicator)
+   - Bull/Bear ratio
+   URL: https://api.stocktwits.com/
+
+7. Polygon.io (We have API key!)
+   - Real-time and historical data
+   - Options flow
+   - News aggregation
+   Already in .env: POLYGON_API_KEY
+
+CATEGORY 2: ALTERNATIVE DATA IDEAS
+----------------------------------
+
+1. Google Trends (Done ✓)
+   - Retail search interest
+   - Can be leading indicator for meme stocks
+
+2. Indeed Job Postings
+   - Companies hiring = bullish
+   - Layoff announcements = bearish
+   - Can scrape or use APIs
+
+3. Glassdoor Sentiment
+   - Employee satisfaction correlates with stock performance
+   - CEO approval ratings
+   - "Business Outlook" metric
+
+4. Patent Filings
+   - USPTO data is free
+   - New patents = innovation
+   - Patent lawsuits = risk
+
+5. App Store Rankings
+   - For consumer tech companies
+   - SensorTower, App Annie (paid) or scraping
+
+6. Satellite Data
+   - Parking lot counts (retail traffic)
+   - Oil tanker movements (energy)
+   - Usually expensive, but some free sources exist
+
+7. GitHub Activity
+   - For tech companies
+   - Commit frequency, stars, forks
+   - Open source health
+
+CATEGORY 3: STRATEGY ENHANCEMENTS
+---------------------------------
+
+1. Add Stop-Loss?
+   - Current strategy: Hold 11 days no matter what
+   - Alternative: 7% stop-loss
+   - Need to backtest both
+
+2. Trailing Stop?
+   - Lock in gains after 5%+ move
+   - Or ride until day 11 regardless
+
+3. Position Sizing
+   - Current: Flat percentage
+   - Better: Kelly Criterion based on win rate
+   - Even better: Scale with VIX level
+
+4. Multiple Timeframes
+   - RSI(14) is standard
+   - What about RSI(7) for faster signals?
+   - Or RSI(21) for more confirmation?
+
+5. Volume Confirmation
+   - High volume on oversold days = capitulation
+   - Low volume = weak signal
+   - Relative volume > 1.5x average
+
+6. Gap Analysis
+   - Gap down into oversold = stronger signal
+   - Gap up into oversold = less reliable
+
+7. Support/Resistance
+   - Oversold at support = better
+   - Oversold at resistance = worse
+
+CATEGORY 4: MACHINE LEARNING APPROACHES
+---------------------------------------
+
+1. Classification Model
+   - Features: RSI, VIX, volume, sentiment
+   - Target: Win/Loss
+   - Model: XGBoost, LightGBM (we have both installed)
+
+2. Regime Detection
+   - Unsupervised clustering of market conditions
+   - K-means on VIX, spreads, sentiment
+   - Different strategy per regime
+
+3. Reinforcement Learning
+   - Agent learns entry/exit timing
+   - Complex but potentially powerful
+
+4. NLP on News
+   - FinBERT for sentiment
+   - Extract entities (companies, people)
+   - Detect unusual language patterns
+
+5. Anomaly Detection
+   - Unusual trading patterns
+   - Volume spikes
+   - Price dislocations
+
+CATEGORY 5: QUESTIONS FOR OTHER AIs
+-----------------------------------
+
+FOR DEEPSEEK (Academic/Research):
+- Is there academic evidence for VIX regime filtering?
+- What's the optimal lookback period for RSI?
+- Mean reversion vs momentum in different regimes?
+
+FOR PERPLEXITY (Current Events):
+- What are institutional investors positioning for Q1 2025?
+- What are the biggest risks to tech/semis right now?
+- What sectors are getting inflows?
+
+FOR CLAUDE (Analysis):
+- Monte Carlo simulation of our strategy
+- Statistical significance of 83% win rate with N=5000 trades
+- Drawdown analysis and risk metrics
+
+FOR CHATGPT (Creative):
+- What alternative data sources are hedge funds using?
+- Novel sentiment indicators
+- Unconventional market signals
+
+CATEGORY 6: EXECUTION IMPROVEMENTS
+----------------------------------
+
+1. Alpaca Paper Trading
+   - We have the API key
+   - Validate with real order execution
+   - Track slippage
+
+2. Automated Alerts
+   - Push notification when conditions met
+   - Email/SMS integration
+   - Slack webhook
+
+3. Daily Scanner
+   - Run every morning before market open
+   - Log all opportunities
+   - Track what we missed
+
+4. Position Tracker
+   - Log all entries/exits
+   - Calculate actual vs expected returns
+   - Identify execution errors
+
+5. Risk Dashboard
+   - Current exposure
+   - Correlation to market
+   - Maximum position limits
+
+================================================================================
+PRIORITY ORDER FOR EXPLORATION:
+================================================================================
+
+HIGH PRIORITY (Do This Week):
+1. OpenInsider cluster buys (free, high signal)
+2. FINRA dark pool data (free, institutional footprint)
+3. Polygon options flow (we have API key!)
+4. Paper trading with Alpaca
+
+MEDIUM PRIORITY (Do This Month):
+5. 13F filing analysis (quarterly, can wait)
+6. XGBoost classification model (need clean data first)
+7. Regime detection model
+8. Stocktwits sentiment
+
+LOW PRIORITY (Future):
+9. Satellite data (expensive)
+10. Patent analysis (time consuming)
+11. RL agent (complex)
+
+================================================================================

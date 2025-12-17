@@ -1,0 +1,69 @@
+
+╔══════════════════════════════════════════════════════════════════════════════════════╗
+║                    🏆 TIER 1: HIGHEST CONVICTION EDGES (80%+ WR)                    ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║ QQQ:  RSI<30 + VIX>30       = 100% WR, +4.4% avg (n=16)  ← WAIT FOR THIS           ║
+║ NVDA: RSI<30 + VIX>30       = 93% WR, +8.2% avg (n=14)                              ║
+║ AAPL: RSI<30 + VIX>30       = 93% WR, +5.9% avg (n=15)                              ║
+║ GOOGL:RSI<30 + VIX>30       = 91% WR, +4.6% avg (n=11)                              ║
+║ SMCI: RSI<30 + VIX>30       = 90% WR, +6.4% avg (n=10)                              ║
+║ SPY:  RSI<30 + VIX>30       = 89% WR, +3.6% avg (n=19)                              ║
+║ AVGO: RSI<30 + VIX>30       = 86% WR, +7.7% avg (n=14)                              ║
+║ SPY:  RSI<30 + VIX>25       = 83% WR, +2.5% avg (n=35)                              ║
+║ QQQ:  RSI<30 + VIX>25       = 82% WR, +2.5% avg (n=40)                              ║
+║ NVDA: Feb/May/Aug/Nov month = 80% WR, +9.4% avg (n=40)  ← CALENDAR EDGE            ║
+║ META: RSI<30 + VIX>30       = 80% WR, +4.2% avg (n=15)                              ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║                    🥈 TIER 2: HIGH CONFIDENCE EDGES (70-79% WR)                     ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║ SPY:  -5% week crash        = 77% bounce, +1.9% avg (n=26) ← MEAN REVERSION        ║
+║ NVDA: High-vol up day       = 77% continue, +4.0% avg (n=13) ← MOMENTUM            ║
+║ AVGO: RSI<30 + VIX>25       = 76% WR, +5.2% avg (n=25)                              ║
+║ SPY:  Feb/May/Aug/Nov month = 75% WR, +1.6% avg (n=40)                              ║
+║ AAPL: RSI<30 + VIX>25       = 74% WR, +3.4% avg (n=35)                              ║
+║ AMZN: High-vol up day       = 73% continue, +1.8% avg (n=11)                        ║
+║ NVDA: Pair divergence catch = 71% WR, +2.6% (NVDA vs SMH)                           ║
+║ AAPL: Pair divergence catch = 71% WR, +2.3% (AAPL vs MSFT)                          ║
+║ AVGO: -10% week crash       = 71% bounce, +4.4% (n=31)                              ║
+║ SPY:  RSI<35 + VIX>20 + <MA = 70% WR, +1.3% avg (n=98)                              ║
+║ SPY:  Jan/Apr/Jul/Oct month = 70% WR, +1.8% avg (n=40)                              ║
+║ QQQ:  Jan/Apr/Jul/Oct month = 70% WR, +2.2% avg (n=40)                              ║
+║ MSFT: Jan/Apr/Jul/Oct month = 70% WR, +3.0% avg (n=40)                              ║
+║ GOOGL:Pair divergence catch = 70% WR (vs sector)                                    ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║                    🥉 TIER 3: SOLID EDGES (65-69% WR)                               ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║ SPY:  Monday bias           = 65% WR (day of week)                                  ║
+║ AAPL: MACD bullish cross    = 67% WR (n=49)                                         ║
+║ GOOGL:MACD bullish cross    = 65% WR (n=57)                                         ║
+║ AVGO: MA50 touch            = 65% WR, +1.9% avg                                     ║
+║ AMZN: After -3% drop bounce = 75% 10D (n=8)                                         ║
+║ AVGO: High-vol down day     = 69% bounce, +6.8% (n=13)                              ║
+║ AMZN: Jan/Apr/Jul/Oct month = 68% WR, +4.0% avg                                     ║
+║ SPY:  Mar/Jun/Sep/Dec month = 68% WR                                                ║
+║ GOOGL:Jan/Apr/Jul/Oct month = 78% WR, +4.5% avg                                     ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║                         📆 CALENDAR/EVENT EDGES                                      ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║ NVDA: Post-OPEX week        = 63% WR, +2.4% avg (n=59)                              ║
+║ AMD:  Post-OPEX week        = 64% WR, +1.1% avg (n=59)                              ║
+║ SPY:  Post-OPEX week        = 61% WR, +0.5% avg (n=59)                              ║
+║ NVDA: Post-FOMC day         = 62% WR (n=32)                                         ║
+║ NVDA: Post-FOMC week        = 62% WR, +1.5% avg (n=32)                              ║
+║ ALL:  November              = 66% green historically                                ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║                         📊 TECHNICAL EDGES                                          ║
+╠══════════════════════════════════════════════════════════════════════════════════════╣
+║ MSFT: MA200 touch           = 62% bounce (n=68)                                     ║
+║ AAPL: MA200 touch           = 61% bounce (n=31)                                     ║
+║ META: MA200 touch           = 60% bounce (n=20)                                     ║
+║ NVDA: 2-5% below MA50       = 64% bounce (n=75)                                     ║
+║ NVDA: +5% week momentum     = 61% continue, +1.7% (n=348)                           ║
+╚══════════════════════════════════════════════════════════════════════════════════════╝
+
+
+================================================================================
+Generated: 2025-12-17 03:04:53
+Experiments Run: 28
+Time Period: 5-10 years of data
+================================================================================

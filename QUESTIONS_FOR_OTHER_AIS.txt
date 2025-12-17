@@ -1,0 +1,105 @@
+
+================================================================================
+🤖 QUESTIONS FOR OTHER AIs (COPY-PASTE THESE)
+================================================================================
+
+We've built a mean-reversion trading system with the following proven parameters:
+- Entry: RSI < 32 (14-period)
+- Entry: VIX > 20 (ideally > 25)
+- Entry: MFI < 30 (optional confirmation)
+- Hold period: 11 trading days
+- Exit: Market close on day 11
+
+BACKTESTED on 189 small/mid cap tickers with 145,530 parameter combinations.
+
+KEY FINDING: VIX regime is CRITICAL
+- VIX < 15: 28% win rate, -2.2% avg return (LOSING)
+- VIX > 25: 82% win rate, +17.2% avg return (WINNING)
+
+================================================================================
+QUESTION 1 (Strategy Validation):
+================================================================================
+Our mean-reversion strategy only works when VIX > 20. We believe this is because:
+1. High VIX = fear/uncertainty = oversold bounces are stronger
+2. Low VIX = complacency = mean-reversion doesn't work as well
+
+Are there academic papers or other evidence that support or contradict this?
+What other macro indicators should we add to filter trades (Fed rate expectations,
+credit spreads, put/call ratio, etc.)?
+
+================================================================================
+QUESTION 2 (Alternative Indicators):
+================================================================================
+We use RSI(14) < 32 as our primary entry signal. What other indicators should we
+consider adding or replacing RSI with? Specifically:
+- Williams %R
+- Stochastic RSI
+- Rate of Change (ROC)
+- Bollinger Band %B
+- VWAP deviation
+
+Which would work best for an 11-day mean-reversion strategy on small/mid caps?
+
+================================================================================
+QUESTION 3 (Sector Rotation):
+================================================================================
+Our current universe has heavy weighting in:
+- Semiconductors (NVDA, AMD, MU, AVGO, SMCI)
+- Quantum Computing (IONQ, RGTI, QBTS)
+- Biotech (DNA, BEAM, CRSP, EDIT, NTLA)
+- Space (RKLB, LUNR)
+
+Given current macro conditions (December 2025), what sectors should we:
+- OVERWEIGHT for the next 6 months?
+- AVOID for the next 6 months?
+- What catalysts should we watch for sector rotation signals?
+
+================================================================================
+QUESTION 4 (Risk Management):
+================================================================================
+Our strategy has NO stop-loss. We simply hold for 11 days and exit. Historical
+max drawdown was ~15% on individual trades. Should we:
+1. Add a stop-loss (if so, what %)?
+2. Add profit targets?
+3. Use position sizing based on VIX level?
+4. Hedge with VIX calls when entering trades?
+
+================================================================================
+QUESTION 5 (Data Sources):
+================================================================================
+We're using these FREE data sources:
+- yfinance (price data)
+- Finnhub (news, insider trading)
+- Alpha Vantage (sentiment)
+- FMP (fundamentals)
+- FRED (VIX, macro)
+
+What other FREE or low-cost data sources should we tap for edge?
+- Social sentiment (Reddit, Twitter/X)?
+- Options flow data?
+- Dark pool data?
+- Congressional trading?
+- Unusual volume alerts?
+
+================================================================================
+QUESTION 6 (Timing):
+================================================================================
+Currently VIX = 16.48 and most of our tickers are OVERBOUGHT (RSI > 70).
+This means we're in WAIT MODE. What should we be doing RIGHT NOW while waiting?
+- Paper trading to validate?
+- Building alerts for when conditions are met?
+- Researching new tickers?
+- What typically causes VIX to spike (so we can be ready)?
+
+================================================================================
+QUESTION 7 (Creative Edge):
+================================================================================
+What unconventional or creative strategies could give us an edge that most retail
+traders don't have? Things like:
+- Earnings whisper analysis
+- Patent filing analysis
+- Glassdoor sentiment (employee sentiment → company health)
+- Alternative data (satellite imagery, credit card data, etc.)
+- Social media trend detection
+
+================================================================================

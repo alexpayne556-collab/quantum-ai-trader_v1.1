@@ -1,0 +1,521 @@
+================================================================================
+QUANTUM AI TRADER - COMPREHENSIVE RESEARCH FINDINGS
+Generated: 2025-12-17 01:31
+For Partner Review - Discuss Before Implementation
+================================================================================
+
+================================================================================
+SECTION 1: METHODOLOGY - HOW WE FOUND THESE NUMBERS
+================================================================================
+
+We did NOT guess or use hardcoded thresholds. Here's what we did:
+
+1. UNIVERSE: 189 tickers across 10+ sectors
+2. PARAMETER SWEEP: For each ticker, we tested:
+   - RSI thresholds: 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34
+   - Hold periods: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 days
+   - Volume filters: 1.0x, 1.5x, 2.0x, 2.5x, 3.0x average
+
+3. TOTAL BACKTESTS: 189 tickers × 14 RSI × 11 holds × 5 vol = 145,530 tests
+
+4. SCORING: Each combo scored by:
+   - Expected Value (average return per trade)
+   - Win Rate (% of profitable trades)
+   - Sample size penalty (more trades = more reliable)
+   - Sharpe ratio bonus (consistency)
+
+5. OUTPUT: For each ticker, we found its OPTIMAL parameters
+
+
+================================================================================
+SECTION 2: KEY FINDINGS - WHAT THE DATA SAYS
+================================================================================
+
+OPTIMAL PARAMETERS (Median of Top 50 performers):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Entry Signal: RSI drops below 32
+• Exit Rule: Hold for 11 days, sell at close
+• Average Win Rate: 83.1%
+• Average Expected Return: 19.5% per trade
+
+KEY INSIGHT: The data suggests LONGER holds (11 days) and HIGHER RSI 
+thresholds (32) work better than aggressive dip-buying (RSI<10).
+
+This makes sense: You're catching the RECOVERY, not the falling knife.
+
+
+================================================================================
+SECTION 3: TOP 50 TICKERS WITH PERSONALIZED PARAMETERS
+================================================================================
+
+Rank | Ticker | Optimal RSI | Hold Days | Win Rate | Exp. Value | Notes
+-------------------------------------------------------------------------------------
+  1  | URGN   | RSI < 28    | 11 days   | 100.0%   |  126.4%    | BIOTECH/SMALL_CAP
+  2  | AEVA   | RSI < 26    | 11 days   |  84.2%   |   45.3%    | ROBOTICS_AUTOMATION/LIDAR
+  3  | IOBT   | RSI < 30    | 11 days   | 100.0%   |   79.6%    | BIOTECH/SMALL_CAP
+  4  | ASTS   | RSI < 34    | 11 days   |  93.8%   |   33.2%    | SPACE_TECH/SATELLITES
+  5  | ARRY   | RSI < 32    | 11 days   |  90.5%   |   25.6%    | EV_CLEAN_ENERGY/SOLAR
+  6  | SPRO   | RSI < 34    | 10 days   |  71.4%   |   27.4%    | BIOTECH/SMALL_CAP
+  7  | STEM   | RSI < 34    | 10 days   | 100.0%   |   33.4%    | EV_CLEAN_ENERGY/STORAGE
+  8  | AKRO   | RSI < 34    | 11 days   |  71.4%   |   18.4%    | BIOTECH/ONCOLOGY
+  9  | SHLS   | RSI < 32    |  9 days   |  85.7%   |   20.0%    | EV_CLEAN_ENERGY/SOLAR
+ 10  | HOOD   | RSI < 34    |  9 days   | 100.0%   |   19.0%    | FINTECH/TRADING
+ 11  | INTC   | RSI < 32    | 11 days   | 100.0%   |   14.3%    | SEMICONDUCTORS/AI_CHIPS
+ 12  | BEAM   | RSI < 26    | 11 days   |  76.9%   |   18.9%    | BIOTECH/GENE_EDITING
+ 13  | EDIT   | RSI < 30    | 11 days   |  83.3%   |   37.2%    | BIOTECH/GENE_EDITING
+ 14  | APP    | RSI < 24    |  8 days   | 100.0%   |   24.9%    | 
+ 15  | RXRX   | RSI < 32    | 11 days   |  71.4%   |   16.3%    | BIOTECH/ONCOLOGY
+ 16  | BKSY   | RSI < 32    | 11 days   |  78.6%   |   16.0%    | SPACE_TECH/SATELLITES
+ 17  | SANA   | RSI < 32    | 10 days   | 100.0%   |   17.0%    | BIOTECH/SMALL_CAP
+ 18  | NVTS   | RSI < 28    | 11 days   | 100.0%   |   19.5%    | 
+ 19  | BA     | RSI < 32    | 10 days   | 100.0%   |   11.8%    | 
+ 20  | SYM    | RSI < 34    |  4 days   |  85.7%   |   25.9%    | ROBOTICS_AUTOMATION/INDUSTRIAL
+ 21  | LLY    | RSI < 32    | 11 days   |  92.9%   |   12.3%    | 
+ 22  | LUNR   | RSI < 26    | 11 days   |  77.8%   |   19.0%    | SPACE_TECH/LUNAR
+ 23  | CRNC   | RSI < 34    | 11 days   | 100.0%   |   22.2%    | ROBOTICS_AUTOMATION/AUTONOMOUS
+ 24  | KOD    | RSI < 32    | 11 days   |  35.7%   |   14.1%    | BIOTECH/SMALL_CAP
+ 25  | ESTC   | RSI < 26    | 11 days   | 100.0%   |   11.1%    | 
+ 26  | CELH   | RSI < 30    | 11 days   |  61.9%   |    8.6%    | 
+ 27  | OUST   | RSI < 32    | 11 days   |  87.5%   |   18.3%    | ROBOTICS_AUTOMATION/LIDAR
+ 28  | NXT    | RSI < 34    | 11 days   | 100.0%   |   13.2%    | 
+ 29  | WFC    | RSI < 34    | 11 days   |  88.2%   |    7.5%    | 
+ 30  | SOFI   | RSI < 34    | 10 days   | 100.0%   |   17.0%    | FINTECH/NEOBANKS
+ 31  | NFLX   | RSI < 34    | 11 days   |  82.4%   |    7.9%    | 
+ 32  | C      | RSI < 34    | 11 days   |  93.3%   |    7.9%    | 
+ 33  | LQDA   | RSI < 30    | 11 days   | 100.0%   |    6.9%    | 
+ 34  | BLDP   | RSI < 34    |  9 days   |  88.2%   |    6.8%    | EV_CLEAN_ENERGY/HYDROGEN
+ 35  | VRDN   | RSI < 30    |  9 days   |  73.3%   |    8.1%    | 
+ 36  | ORCL   | RSI < 28    |  9 days   |  60.0%   |    6.6%    | 
+ 37  | CRSP   | RSI < 34    | 11 days   |  72.7%   |    6.3%    | BIOTECH/GENE_EDITING
+ 38  | BTBT   | RSI < 30    | 11 days   |  56.2%   |    8.1%    | CRYPTO_MINING/MINERS
+ 39  | CHPT   | RSI < 24    | 11 days   |  61.5%   |    9.6%    | EV_CLEAN_ENERGY/CHARGING
+ 40  | NU     | RSI < 34    | 11 days   |  78.6%   |    8.2%    | FINTECH/NEOBANKS
+ 41  | SERV   | RSI < 32    | 11 days   |  80.0%   |   22.8%    | ROBOTICS_AUTOMATION/INDUSTRIAL
+ 42  | PANW   | RSI < 30    | 11 days   |  81.2%   |    6.6%    | 
+ 43  | HL     | RSI < 34    | 11 days   | 100.0%   |   11.3%    | 
+ 44  | BAC    | RSI < 34    | 11 days   |  88.9%   |    6.0%    | 
+ 45  | CRDO   | RSI < 30    |  6 days   |  83.3%   |   18.4%    | 
+ 46  | UPST   | RSI < 30    | 11 days   |  70.0%   |   11.2%    | FINTECH/LENDING
+ 47  | RKLB   | RSI < 28    | 11 days   |  60.0%   |   11.3%    | SPACE_TECH/LAUNCH
+ 48  | AVGO   | RSI < 32    | 11 days   |  69.2%   |    7.9%    | SEMICONDUCTORS/AI_CHIPS
+ 49  | INVZ   | RSI < 16    | 11 days   |  80.0%   |   20.5%    | ROBOTICS_AUTOMATION/LIDAR
+ 50  | SMCI   | RSI < 34    | 11 days   |  40.0%   |   11.4%    | SEMICONDUCTORS/AI_CHIPS
+
+================================================================================
+SECTION 4: SECTOR BREAKDOWN WITH SUB-SECTORS
+================================================================================
+
+────────────────────────────────────────────────────────────
+📊 SEMICONDUCTORS
+────────────────────────────────────────────────────────────
+WHY: AI infrastructure backbone - every AI model needs chips
+MACRO SENSITIVE: Fed rates affect capex, Earnings critical, China exposure
+
+  AI_CHIPS:
+    NVDA: RSI<30, 5d hold, WR:100%, EV:8.4% 
+    AMD: RSI<30, 11d hold, WR:89%, EV:8.8% 
+    AVGO: RSI<32, 11d hold, WR:69%, EV:7.9% ✓ TOP 50
+    SMCI: RSI<34, 11d hold, WR:40%, EV:11.4% ✓ TOP 50
+    INTC: RSI<32, 11d hold, WR:100%, EV:14.3% ✓ TOP 50
+    MU: RSI<32, 11d hold, WR:80%, EV:9.3% 
+    MRVL: RSI<30, 11d hold, WR:90%, EV:7.4% 
+
+  macro_sensitive:
+    Fed rates affect capex: Not in dataset
+    Earnings critical: Not in dataset
+    China exposure: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 QUANTUM_COMPUTING
+────────────────────────────────────────────────────────────
+WHY: Next computing paradigm - 5-10 year thesis
+MACRO SENSITIVE: Growth stocks hammered by rate hikes
+
+  PURE_PLAY:
+    IONQ: RSI<24, 8d hold, WR:78%, EV:11.3% 
+    RGTI: Not in dataset
+    QUBT: RSI<32, 2d hold, WR:33%, EV:6.8% 
+
+  ADJACENT:
+    QMCO: RSI<28, 1d hold, WR:50%, EV:-2.1% 
+    ARQQ: RSI<32, 1d hold, WR:40%, EV:-0.8% 
+
+  macro_sensitive:
+    Growth stocks hammered by rate hikes: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 SPACE_TECH
+────────────────────────────────────────────────────────────
+WHY: Government contracts + commercial upside
+MACRO SENSITIVE: Defense budget, NASA contracts
+
+  LAUNCH:
+    RKLB: RSI<28, 11d hold, WR:60%, EV:11.3% ✓ TOP 50
+    ASTR: Not in dataset
+
+  SATELLITES:
+    ASTS: RSI<34, 11d hold, WR:94%, EV:33.2% ✓ TOP 50
+    PL: RSI<34, 11d hold, WR:83%, EV:9.1% 
+    SPIR: RSI<22, 11d hold, WR:67%, EV:5.7% 
+    BKSY: RSI<32, 11d hold, WR:79%, EV:16.0% ✓ TOP 50
+
+  LUNAR:
+    LUNR: RSI<26, 11d hold, WR:78%, EV:19.0% ✓ TOP 50
+    INTUITIVE: Not in dataset
+
+  macro_sensitive:
+    Defense budget: Not in dataset
+    NASA contracts: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 AI_SOFTWARE
+────────────────────────────────────────────────────────────
+WHY: Software margins + AI tailwind
+MACRO SENSITIVE: Enterprise spending tied to economy
+
+  ENTERPRISE:
+    PLTR: RSI<30, 9d hold, WR:80%, EV:14.9% 
+    PATH: RSI<24, 9d hold, WR:38%, EV:4.8% 
+    AI: RSI<34, 11d hold, WR:64%, EV:2.7% 
+    SNOW: RSI<34, 5d hold, WR:87%, EV:6.7% 
+    DDOG: RSI<34, 11d hold, WR:80%, EV:8.4% 
+
+  CONSUMER:
+    SOUN: RSI<34, 11d hold, WR:56%, EV:4.6% 
+    DUOL: RSI<14, 1d hold, WR:67%, EV:0.8% 
+
+  DEFENSE:
+    BBAI: RSI<32, 7d hold, WR:50%, EV:9.3% 
+
+  macro_sensitive:
+    Enterprise spending tied to economy: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 BIOTECH
+────────────────────────────────────────────────────────────
+WHY: Binary outcomes but massive upside on approval
+MACRO SENSITIVE: FDA calendar, Clinical trial dates
+
+  GENE_EDITING:
+    CRSP: RSI<34, 11d hold, WR:73%, EV:6.3% ✓ TOP 50
+    NTLA: RSI<26, 11d hold, WR:71%, EV:9.8% 
+    BEAM: RSI<26, 11d hold, WR:77%, EV:18.9% ✓ TOP 50
+    EDIT: RSI<30, 11d hold, WR:83%, EV:37.2% ✓ TOP 50
+
+  ONCOLOGY:
+    RXRX: RSI<32, 11d hold, WR:71%, EV:16.3% ✓ TOP 50
+    VKTX: RSI<30, 11d hold, WR:80%, EV:10.2% 
+    AKRO: RSI<34, 11d hold, WR:71%, EV:18.4% ✓ TOP 50
+
+  SMALL_CAP:
+    KOD: RSI<32, 11d hold, WR:36%, EV:14.1% ✓ TOP 50
+    SANA: RSI<32, 10d hold, WR:100%, EV:17.0% ✓ TOP 50
+    URGN: RSI<28, 11d hold, WR:100%, EV:126.4% ✓ TOP 50
+    IOBT: RSI<30, 11d hold, WR:100%, EV:79.6% ✓ TOP 50
+    SPRO: RSI<34, 10d hold, WR:71%, EV:27.4% ✓ TOP 50
+
+  macro_sensitive:
+    FDA calendar: Not in dataset
+    Clinical trial dates: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 EV_CLEAN_ENERGY
+────────────────────────────────────────────────────────────
+WHY: Policy-driven + secular trend
+MACRO SENSITIVE: IRA credits, Interest rates affect adoption
+
+  EV_MAKERS:
+    TSLA: RSI<20, 11d hold, WR:80%, EV:8.3% 
+    RIVN: Not in dataset
+    LCID: RSI<14, 5d hold, WR:100%, EV:12.4% 
+
+  CHARGING:
+    CHPT: RSI<24, 11d hold, WR:62%, EV:9.6% ✓ TOP 50
+    EVGO: Not in dataset
+
+  BATTERIES:
+    QS: RSI<34, 10d hold, WR:100%, EV:7.6% 
+
+  SOLAR:
+    ENPH: RSI<30, 3d hold, WR:87%, EV:5.9% 
+    RUN: RSI<34, 4d hold, WR:50%, EV:0.9% 
+    SHLS: RSI<32, 9d hold, WR:86%, EV:20.0% ✓ TOP 50
+    ARRY: RSI<32, 11d hold, WR:90%, EV:25.6% ✓ TOP 50
+
+  HYDROGEN:
+    PLUG: RSI<34, 7d hold, WR:60%, EV:1.3% 
+    FCEL: RSI<34, 11d hold, WR:62%, EV:6.9% 
+    BLDP: RSI<34, 9d hold, WR:88%, EV:6.8% ✓ TOP 50
+    BE: RSI<34, 11d hold, WR:70%, EV:8.2% 
+
+  STORAGE:
+    STEM: RSI<34, 10d hold, WR:100%, EV:33.4% ✓ TOP 50
+    FLNC: RSI<22, 2d hold, WR:86%, EV:4.4% 
+
+  macro_sensitive:
+    IRA credits: Not in dataset
+    Interest rates affect adoption: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 FINTECH
+────────────────────────────────────────────────────────────
+WHY: Disrupting traditional finance
+MACRO SENSITIVE: Fed rates DIRECTLY impact these, Credit quality
+
+  NEOBANKS:
+    SOFI: RSI<34, 10d hold, WR:100%, EV:17.0% ✓ TOP 50
+    NU: RSI<34, 11d hold, WR:79%, EV:8.2% ✓ TOP 50
+
+  LENDING:
+    UPST: RSI<30, 11d hold, WR:70%, EV:11.2% ✓ TOP 50
+    AFRM: RSI<34, 9d hold, WR:71%, EV:6.6% 
+
+  TRADING:
+    HOOD: RSI<34, 9d hold, WR:100%, EV:19.0% ✓ TOP 50
+    COIN: RSI<24, 7d hold, WR:100%, EV:7.5% 
+
+  PAYMENTS:
+    MQ: RSI<34, 1d hold, WR:56%, EV:0.8% 
+
+  macro_sensitive:
+    Fed rates DIRECTLY impact these: Not in dataset
+    Credit quality: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 ROBOTICS_AUTOMATION
+────────────────────────────────────────────────────────────
+WHY: Labor shortage thesis + automation trend
+MACRO SENSITIVE: Manufacturing PMI, Auto production
+
+  INDUSTRIAL:
+    SYM: RSI<34, 4d hold, WR:86%, EV:25.9% ✓ TOP 50
+    SERV: RSI<32, 11d hold, WR:80%, EV:22.8% ✓ TOP 50
+
+  LIDAR:
+    LAZR: RSI<22, 11d hold, WR:75%, EV:3.2% 
+    INVZ: RSI<16, 11d hold, WR:80%, EV:20.5% ✓ TOP 50
+    OUST: RSI<32, 11d hold, WR:88%, EV:18.3% ✓ TOP 50
+    AEVA: RSI<26, 11d hold, WR:84%, EV:45.3% ✓ TOP 50
+
+  AUTONOMOUS:
+    CRNC: RSI<34, 11d hold, WR:100%, EV:22.2% ✓ TOP 50
+
+  macro_sensitive:
+    Manufacturing PMI: Not in dataset
+    Auto production: Not in dataset
+
+────────────────────────────────────────────────────────────
+📊 CRYPTO_MINING
+────────────────────────────────────────────────────────────
+WHY: Bitcoin proxy plays
+MACRO SENSITIVE: BTC price, Halving cycle, Energy costs
+
+  MINERS:
+    MARA: RSI<18, 6d hold, WR:60%, EV:6.9% 
+    RIOT: RSI<24, 1d hold, WR:50%, EV:-0.8% 
+    CLSK: RSI<34, 10d hold, WR:59%, EV:6.1% 
+    HUT: RSI<12, 1d hold, WR:14%, EV:-3.9% 
+    BTBT: RSI<30, 11d hold, WR:56%, EV:8.1% ✓ TOP 50
+    CIFR: RSI<32, 2d hold, WR:67%, EV:7.3% 
+
+  EXCHANGE:
+    COIN: RSI<24, 7d hold, WR:100%, EV:7.5% 
+
+  macro_sensitive:
+    BTC price: Not in dataset
+    Halving cycle: Not in dataset
+    Energy costs: Not in dataset
+
+================================================================================
+SECTION 5: SPECIFIC TICKER ANALYSIS - MU (Micron)
+================================================================================
+
+MU (MICRON TECHNOLOGY) - Q1 Earnings & Fed Sensitive
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Optimal RSI Entry: < 32
+Optimal Hold Period: 11 days
+Historical Win Rate: 80.0%
+Expected Value: 9.3%
+Number of Trades in Backtest: 10
+Score Rank: #56 out of 189
+
+⚠️ MACRO NOTES FOR MU:
+• Fed announcements affect growth stock valuations
+• Q1 earnings (typically late Dec/early Jan) = high volatility event
+• Memory chip cycle matters - check inventory levels
+• China exposure risk (Huawei, etc.)
+• Data center demand tied to AI capex
+
+RECOMMENDATION: MU is a QUALITY semiconductor play but:
+1. Avoid entering 2-3 days before earnings
+2. Fed days = higher volatility, wider stops needed
+3. Best entries after oversold RSI + post-earnings clarity
+
+
+================================================================================
+SECTION 6: MACRO-AWARE TRADING CALENDAR
+================================================================================
+
+IMPORTANT DATES TO TRACK:
+
+FED MEETINGS (2024-2025):
+• FOMC decisions = volatility spikes
+• Rate cuts = growth stocks rally
+• Rate holds = depends on guidance
+
+EARNINGS SEASONS:
+• Q4 Earnings: Mid-Jan to Mid-Feb
+• Q1 Earnings: Mid-Apr to Mid-May  
+• Q2 Earnings: Mid-Jul to Mid-Aug
+• Q3 Earnings: Mid-Oct to Mid-Nov
+
+RECOMMENDATION:
+• Reduce position sizes 3 days before FOMC
+• Avoid new entries 2 days before ticker's earnings
+• Post-earnings dips can be BEST entries if RSI oversold
+
+
+================================================================================
+SECTION 7: QUALITY FRAMEWORK - WHAT MAKES A GOOD TICKER
+================================================================================
+
+We should RANK tickers not just by price patterns but by QUALITY:
+
+TIER 1 - SECTOR LEADERS (Weight: 30 points)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Market cap leader in their space
+• Proven revenue/execution
+• Examples: NVDA (AI chips), TSLA (EV), COIN (crypto)
+
+TIER 2 - STRONG INNOVATORS (Weight: 25 points)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Clear competitive moat
+• Growing fast, path to profitability visible
+• Examples: RKLB (space), CRSP (gene editing), PLTR (defense AI)
+
+TIER 3 - PROMISING PLAYERS (Weight: 20 points)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Good tech/product, needs execution
+• Higher risk but higher reward
+• Examples: ASTS (satellite), IONQ (quantum), SOFI (fintech)
+
+TIER 4 - SPECULATIVE (Weight: 15 points)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Unproven but in hot sector
+• Small positions only
+• Examples: MNTS, BKSY, smaller biotechs
+
+COMBINED SCORE = (Edge Score × 0.6) + (Quality Score × 0.4)
+This ensures we trade QUALITY companies with GOOD patterns, not garbage.
+
+
+================================================================================
+SECTION 8: WHAT WE STILL NEED TO TEST
+================================================================================
+
+NEXT STEPS FOR MORE CONFIDENCE:
+
+1. DRAWDOWN ANALYSIS
+   - What's the max loss per trade?
+   - Can we add stop-losses without killing win rate?
+
+2. RECENCY BIAS CHECK
+   - Do these patterns hold in last 3 months?
+   - Or are we fitting to old data?
+
+3. EARNINGS IMPACT
+   - How do results change around earnings?
+   - Should we have earnings-specific rules?
+
+4. FED DAY ANALYSIS
+   - Performance on FOMC days vs. normal days
+   - Volatility adjustment needed?
+
+5. SECTOR ROTATION
+   - Which sectors work in risk-on vs risk-off?
+   - Can we rotate based on VIX or yield curve?
+
+6. VOLUME CONFIRMATION
+   - Does high volume improve entries?
+   - Or is it already priced in?
+
+
+================================================================================
+SECTION 9: RECOMMENDED WATCHLIST FOR IMMEDIATE USE
+================================================================================
+
+TIER 1 - QUALITY LEADERS (Larger positions OK):
+  • NVDA: RSI<30, 5d, WR:100%
+  • AMD: RSI<30, 11d, WR:89%
+  • AVGO: RSI<32, 11d, WR:69%
+  • TSLA: RSI<20, 11d, WR:80%
+  • PLTR: RSI<30, 9d, WR:80%
+  • COIN: RSI<24, 7d, WR:100%
+  • CRWD: RSI<34, 10d, WR:53%
+  • SNOW: RSI<34, 5d, WR:87%
+  • MU: RSI<32, 11d, WR:80%
+
+TIER 2 - STRONG INNOVATORS (Medium positions):
+  • RKLB: RSI<28, 11d, WR:60%
+  • IONQ: RSI<24, 8d, WR:78%
+  • CRSP: RSI<34, 11d, WR:73%
+  • NTLA: RSI<26, 11d, WR:71%
+  • SOFI: RSI<34, 10d, WR:100%
+  • UPST: RSI<30, 11d, WR:70%
+  • MARA: RSI<18, 6d, WR:60%
+  • RIOT: RSI<24, 1d, WR:50%
+  • ASTS: RSI<34, 11d, WR:94%
+  • SMCI: RSI<34, 11d, WR:40%
+
+TIER 3 - PROMISING PLAYS (Smaller positions):
+  • SOUN: RSI<34, 11d, WR:56%
+  • BBAI: RSI<32, 7d, WR:50%
+  • LUNR: RSI<26, 11d, WR:78%
+  • LCID: RSI<14, 5d, WR:100%
+  • QS: RSI<34, 10d, WR:100%
+  • BEAM: RSI<26, 11d, WR:77%
+  • EDIT: RSI<30, 11d, WR:83%
+  • HUT: RSI<12, 1d, WR:14%
+  • APP: RSI<24, 8d, WR:100%
+  • SYM: RSI<34, 4d, WR:86%
+
+================================================================================
+SECTION 10: DISCUSSION POINTS FOR PARTNER REVIEW
+================================================================================
+
+QUESTIONS TO DISCUSS:
+
+1. RSI THRESHOLD
+   Data says RSI < 32 works best. But is that too conservative?
+   Should we have different thresholds for different tiers?
+
+2. HOLDING PERIOD
+   11 days seems optimal. But for volatile biotechs, is that too long?
+   Should tier 4 stocks have shorter holds?
+
+3. EARNINGS PLAYS
+   Should we have a separate "earnings bounce" strategy?
+   Or avoid 5 days before/after entirely?
+
+4. POSITION SIZING
+   Tier 1: Up to 10% per position?
+   Tier 2: Up to 5%?
+   Tier 3: Up to 2%?
+   Tier 4: Up to 1%?
+
+5. STOP LOSSES
+   The data doesn't include stops. Should we add:
+   - Hard stop at -10%?
+   - Trailing stop at -5% from high?
+   - Time-based exit if not profitable by day 5?
+
+6. MACRO OVERLAY
+   Should we reduce all positions before FOMC?
+   How much cash reserve when VIX > 25?
+
+LET'S DISCUSS AND DECIDE TOGETHER.
+
+
+================================================================================
+END OF FINDINGS DOCUMENT
+================================================================================

@@ -1,0 +1,27 @@
+SMALL CAP PAPER TRADES - December 17, 2024
+============================================================
+
+HOOD: 41 shares @ $119.40
+  Reason: HOOD -10% crash → 69% bounce, +6.7%
+  Order ID: 56986986-7657-47d5-a929-d7a962c459a0
+
+ARM: 41 shares @ $121.10
+  Reason: ARM -14% crash setup (82% edge at -15%)
+  Order ID: 787d4886-6078-4bcd-9313-432da61a96a0
+
+LEU: 21 shares @ $235.82
+  Reason: LEU -10.9% crash, nuclear play
+  Order ID: db9926e3-6922-46ce-80e0-3ac7083d9a0e
+
+SMR: 292 shares @ $17.12
+  Reason: SMR -15.7% crash, nuclear play
+  Order ID: bfa93d65-7104-446e-9c74-1e979ac886cd
+
+OKLO: 59 shares @ $83.51
+  Reason: OKLO -17% crash, nuclear play
+  Order ID: e672a4c8-4432-43fa-8935-734d25f31716
+
+RGTI: 208 shares @ $23.96
+  Reason: RGTI quantum + crash setup
+  Order ID: d458995e-9ae9-4716-aa79-b2f2cdd089fb
+

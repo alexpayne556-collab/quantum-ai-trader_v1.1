@@ -1,0 +1,66 @@
+============================================================
+DATA-DRIVEN TRADING PLAYBOOK
+Generated: 2025-12-17 01:27
+Based on: 189 tickers × 770 parameter combos = 145,530 backtests
+============================================================
+
+OPTIMAL STRATEGY (Median of Top 50):
+   Entry: Buy when RSI < 32
+   Exit: Hold 11 days, sell at close
+   Avg Win Rate: 83.1%
+   Avg Expected Return: 19.54%
+
+============================================================
+TOP 50 TICKERS WITH PERSONALIZED PARAMETERS:
+============================================================
+
+ 1. URGN   | RSI<28 | Hold 11d | WR:100% | EV:126.4%
+ 2. AEVA   | RSI<26 | Hold 11d | WR:84% | EV:45.3%
+ 3. IOBT   | RSI<30 | Hold 11d | WR:100% | EV:79.6%
+ 4. ASTS   | RSI<34 | Hold 11d | WR:94% | EV:33.2%
+ 5. ARRY   | RSI<32 | Hold 11d | WR:90% | EV:25.6%
+ 6. SPRO   | RSI<34 | Hold 10d | WR:71% | EV:27.4%
+ 7. STEM   | RSI<34 | Hold 10d | WR:100% | EV:33.4%
+ 8. AKRO   | RSI<34 | Hold 11d | WR:71% | EV:18.4%
+ 9. SHLS   | RSI<32 | Hold  9d | WR:86% | EV:20.0%
+10. HOOD   | RSI<34 | Hold  9d | WR:100% | EV:19.0%
+11. INTC   | RSI<32 | Hold 11d | WR:100% | EV:14.3%
+12. BEAM   | RSI<26 | Hold 11d | WR:77% | EV:18.9%
+13. EDIT   | RSI<30 | Hold 11d | WR:83% | EV:37.2%
+14. APP    | RSI<24 | Hold  8d | WR:100% | EV:24.9%
+15. RXRX   | RSI<32 | Hold 11d | WR:71% | EV:16.3%
+16. BKSY   | RSI<32 | Hold 11d | WR:79% | EV:16.0%
+17. SANA   | RSI<32 | Hold 10d | WR:100% | EV:17.0%
+18. NVTS   | RSI<28 | Hold 11d | WR:100% | EV:19.5%
+19. BA     | RSI<32 | Hold 10d | WR:100% | EV:11.8%
+20. SYM    | RSI<34 | Hold  4d | WR:86% | EV:25.9%
+21. LLY    | RSI<32 | Hold 11d | WR:93% | EV:12.3%
+22. LUNR   | RSI<26 | Hold 11d | WR:78% | EV:19.0%
+23. CRNC   | RSI<34 | Hold 11d | WR:100% | EV:22.2%
+24. KOD    | RSI<32 | Hold 11d | WR:36% | EV:14.1%
+25. ESTC   | RSI<26 | Hold 11d | WR:100% | EV:11.1%
+26. CELH   | RSI<30 | Hold 11d | WR:62% | EV:8.6%
+27. OUST   | RSI<32 | Hold 11d | WR:88% | EV:18.3%
+28. NXT    | RSI<34 | Hold 11d | WR:100% | EV:13.2%
+29. WFC    | RSI<34 | Hold 11d | WR:88% | EV:7.5%
+30. SOFI   | RSI<34 | Hold 10d | WR:100% | EV:17.0%
+31. NFLX   | RSI<34 | Hold 11d | WR:82% | EV:7.9%
+32. C      | RSI<34 | Hold 11d | WR:93% | EV:7.9%
+33. LQDA   | RSI<30 | Hold 11d | WR:100% | EV:6.9%
+34. BLDP   | RSI<34 | Hold  9d | WR:88% | EV:6.8%
+35. VRDN   | RSI<30 | Hold  9d | WR:73% | EV:8.1%
+36. ORCL   | RSI<28 | Hold  9d | WR:60% | EV:6.6%
+37. CRSP   | RSI<34 | Hold 11d | WR:73% | EV:6.3%
+38. BTBT   | RSI<30 | Hold 11d | WR:56% | EV:8.1%
+39. CHPT   | RSI<24 | Hold 11d | WR:62% | EV:9.6%
+40. NU     | RSI<34 | Hold 11d | WR:79% | EV:8.2%
+41. SERV   | RSI<32 | Hold 11d | WR:80% | EV:22.8%
+42. PANW   | RSI<30 | Hold 11d | WR:81% | EV:6.6%
+43. HL     | RSI<34 | Hold 11d | WR:100% | EV:11.3%
+44. BAC    | RSI<34 | Hold 11d | WR:89% | EV:6.0%
+45. CRDO   | RSI<30 | Hold  6d | WR:83% | EV:18.4%
+46. UPST   | RSI<30 | Hold 11d | WR:70% | EV:11.2%
+47. RKLB   | RSI<28 | Hold 11d | WR:60% | EV:11.3%
+48. AVGO   | RSI<32 | Hold 11d | WR:69% | EV:7.9%
+49. INVZ   | RSI<16 | Hold 11d | WR:80% | EV:20.5%
+50. SMCI   | RSI<34 | Hold 11d | WR:40% | EV:11.4%

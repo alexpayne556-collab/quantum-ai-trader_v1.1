@@ -1,0 +1,69 @@
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════╗
+║                    🏆🏆🏆 TIER S: NEAR-PERFECT EDGES (90%+ WR) 🏆🏆🏆                     ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════╣
+║ 1. QQQ RSI<30 + VIX>30          = 100% WR, +4.4% avg (n=16)  ← THE HOLY GRAIL            ║
+║ 2. QQQ -7% week drop            = 93% WR, +4.4% avg (n=15)                                ║
+║ 3. NVDA RSI<30 + VIX>30         = 93% WR, +8.2% avg (n=14)                                ║
+║ 4. NVDA RSI<30 + Vol>1.5x       = 91% WR, +7.8% avg (n=11)                                ║
+║ 5. AAPL RSI<30 + VIX>30         = 93% WR, +5.9% avg (n=15)                                ║
+║ 6. AVGO RSI<30 + Vol>1.5x       = 93% WR, +9.7% avg (n=14)  ← HIGHEST AVG RETURN         ║
+║ 7. GOOGL RSI<30 + VIX>30        = 91% WR, +4.6% avg (n=11)                                ║
+║ 8. SPY RSI<30 + VIX>30          = 89% WR, +3.6% avg (n=19)                                ║
+║ 9. SPY -7% week drop            = 88% WR, +3.6% avg (n=8)                                 ║
+║ 10.AVGO RSI<30 + VIX>30         = 86% WR, +7.7% avg (n=14)                                ║
+║ 11.SPY RSI<25                   = 86% WR, +1.9% avg (n=36)                                ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════╣
+║                    🥇 TIER A: EXCELLENT EDGES (80-89% WR)                                 ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════╣
+║ 12.SPY RSI<30 + VIX>25          = 83% WR, +2.5% avg (n=35)                                ║
+║ 13.QQQ RSI<30 + VIX>25          = 82% WR, +2.5% avg (n=40)                                ║
+║ 14.GOOGL RSI<30 + Vol>1.5x      = 81% WR, +3.2% avg (n=16)                                ║
+║ 15.META RSI<30 + VIX>30         = 80% WR, +4.2% avg (n=15)                                ║
+║ 16.NVDA Feb/May/Aug/Nov (cal)   = 80% WR, +9.4% avg (n=40)  ← CALENDAR EDGE              ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════╣
+║                    🥈 TIER B: HIGH CONFIDENCE EDGES (70-79% WR)                          ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════╣
+║ 17.SPY -5% week drop            = 77% WR, +1.9% avg (n=26)                                ║
+║ 18.NVDA High-vol up day         = 77% WR, +4.0% avg (n=13)                                ║
+║ 19.AVGO RSI<30 + VIX>25         = 76% WR, +5.2% avg (n=25)                                ║
+║ 20.AMD RSI<30 + Vol>1.5x        = 75% WR, +6.8% avg (n=12)                                ║
+║ 21.SPY Feb/May/Aug/Nov          = 75% WR, +1.6% avg (n=40)                                ║
+║ 22.AAPL RSI<30 + VIX>25         = 74% WR, +3.4% avg (n=35)                                ║
+║ 23.SPY RSI<30 + Vol>1.5x        = 74% WR, +2.1% avg (n=19)                                ║
+║ 24.QQQ RSI<30 + Vol>1.5x        = 74% WR, +1.7% avg (n=31)                                ║
+║ 25.AMZN High-vol up day         = 73% WR, +1.8% avg (n=11)                                ║
+║ 26.XLK after XLE -5%            = 71% WR, +2.2% avg (n=78)  ← SECTOR ROTATION            ║
+║ 27.AVGO -10% week drop          = 71% WR, +4.4% avg (n=31)                                ║
+║ 28.SPY Jan/Apr/Jul/Oct          = 70% WR, +1.8% avg (n=40)                                ║
+║ 29.QQQ Jan/Apr/Jul/Oct          = 70% WR, +2.2% avg (n=40)                                ║
+║ 30.MSFT Jan/Apr/Jul/Oct         = 70% WR, +3.0% avg (n=40)                                ║
+║ 31.SPY RSI<30                   = 70% WR, +1.2% avg (n=70)                                ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════╣
+║                    🥉 TIER C: SOLID EDGES (65-69% WR)                                    ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════╣
+║ 32.AVGO High-vol down day       = 69% WR, +6.8% avg (n=13)                                ║
+║ 33.NVDA RSI<30 + VIX>25         = 69% WR, +3.6% avg (n=35)                                ║
+║ 34.AVGO RSI<25                  = 69% WR, +3.4% avg (n=36)                                ║
+║ 35.QQQ RSI<25                   = 69% WR, +0.9% avg (n=35)                                ║
+║ 36.SPY RSI<35 + Below MA50      = 69% WR, +1.0% avg (n=125)                               ║
+║ 37.QQQ RSI<35 + Below MA50      = 68% WR, +0.9% avg (n=142)                               ║
+║ 38.AVGO RSI<30                  = 68% WR, +3.4% avg (n=56)                                ║
+║ 39.GOOGL RSI<30 + VIX>25        = 68% WR, +1.7% avg (n=28)                                ║
+║ 40.AMZN Jan/Apr/Jul/Oct         = 68% WR, +4.0% avg (n=40)                                ║
+║ 41.META RSI<30 + VIX>25         = 67% WR, +3.0% avg (n=43)                                ║
+║ 42.AMD RSI<30 + VIX>30          = 67% WR, +4.1% avg (n=21)                                ║
+║ 43.AAPL MACD bullish cross      = 67% WR (n=49)                                           ║
+║ 44.AAPL -7% week drop           = 66% WR, +2.6% avg (n=32)                                ║
+║ 45.GOOGL MACD bullish cross     = 65% WR (n=57)                                           ║
+║ 46.AVGO MA50 touch              = 65% WR, +1.9% avg                                       ║
+║ 47.XLF after XLE -5%            = 65% WR, +1.3% avg (n=78)                                ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════╝
+
+🎯 CURRENT CONDITIONS CHECK (VIX = 16.5):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Generated: 2025-12-17 03:06:30
+VIX at generation: 16.48
+Experiments completed: 30
+Data period: 5-10 years

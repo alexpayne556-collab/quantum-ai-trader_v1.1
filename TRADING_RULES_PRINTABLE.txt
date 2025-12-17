@@ -1,0 +1,26 @@
+
+================================================================================
+ACTIONABLE TRADING RULES - PRINT THIS OUT
+================================================================================
+
+BEFORE EVERY TRADE, CHECK:
+
+□ VIX Level: _______ (Must be > 20, ideally > 25)
+□ RSI Level: _______ (Must be < 32)
+□ MFI Level: _______ (Should be < 30)
+
+IF ALL THREE ARE MET:
+→ Enter at next day's open
+→ Set calendar reminder for 11 days
+→ Exit at market close on day 11
+
+POSITION SIZING:
+- High VIX (>25): Up to 5% of portfolio per trade
+- Medium VIX (20-25): Up to 3% per trade
+- Low VIX (<20): DO NOT TRADE
+
+STOP LOSS (Optional but recommended):
+- Hard stop at -15%
+- Or exit if VIX drops below 15 during hold
+
+================================================================================

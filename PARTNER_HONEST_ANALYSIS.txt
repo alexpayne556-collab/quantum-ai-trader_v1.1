@@ -1,0 +1,149 @@
+
+================================================================================
+🔥 WHAT JUST HAPPENED - CANNABIS EXPLOSION
+================================================================================
+
+TLRY +72%, SNDL +26%, ACB +20% THIS WEEK
+
+WHY? Look at the news: "Trump expected to sign EO to reclassify marijuana"
+
+This is a CATALYST-DRIVEN move. Our RSI strategy would NOT have caught this.
+Why? Because:
+- These stocks weren't oversold before the move (RSI was normal)
+- This was NEWS-DRIVEN, not mean-reversion
+- You can't backtest for political events
+
+LESSON: Our RSI strategy catches TECHNICAL oversold bounces, not NEWS catalysts.
+For news plays, you need to be AHEAD of the news (impossible) or FAST (difficult).
+
+Could we have caught TLRY? Only if we:
+1. Had it on a watchlist (check ✓)
+2. Were monitoring Trump/cannabis news (we could add this)
+3. Bought on the RUMOR before CNBC confirmed
+
+================================================================================
+🔥 WHAT WE CAN CATCH - NUCLEAR PULLBACK
+================================================================================
+
+Look at these nuclear stocks:
+- SMR:  RSI 34, -19.7% this week
+- OKLO: RSI 38, -19.6% this week  
+- LEU:  RSI 38, -10.9% this week
+
+These are getting HAMMERED while the underlying thesis (AI = power demand) 
+is UNCHANGED. This looks like profit-taking after a huge run-up.
+
+IF VIX were > 20, these would be textbook mean-reversion setups.
+
+But here's the thing - our strategy was built on large-cap tech.
+We haven't validated it on small-cap speculative nuclear.
+The volatility is MUCH higher on these names.
+
+MY OPINION: These are INTERESTING but need separate validation.
+
+================================================================================
+🔥 QUANTUM - THE SECTOR YOU LOVE
+================================================================================
+
+IONQ +7.8% today
+QBTS +7.5% today
+RGTI +1.8% today
+
+But RGTI is down -15% on the week!
+
+News shows: "Jefferies initiates IONQ with Buy" and "QBTS with Buy"
+Wall Street is waking up to quantum.
+
+IONQ: RSI 47 - not oversold, not overbought. Middle of the road.
+RGTI: RSI 40 - getting close to interesting territory
+
+Could we have caught IONQ +7.8% today? 
+- It wasn't oversold yesterday (RSI wasn't < 32)
+- This was analyst-driven (Jefferies initiation)
+- Our strategy would have MISSED this
+
+================================================================================
+🔥 SMCI - OUR BEST SIGNAL
+================================================================================
+
+SMCI: RSI 33.2, -9.6% this week, 16.9% short interest
+
+This is STILL our best setup:
+- RSI approaching our threshold
+- High short interest = squeeze potential  
+- News is mixed (concerns + insider buying stories)
+
+WAITING FOR: VIX > 20
+
+================================================================================
+🔥 THE BIGGER PICTURE - YOUR THESIS
+================================================================================
+
+You asked: "Can we catch moves like IONQ +7.8%?"
+
+HONEST ANSWER: Our current strategy (RSI < 32) is designed for DIFFERENT plays.
+It catches OVERSOLD BOUNCES, not MOMENTUM or NEWS plays.
+
+To catch YOUR plays, we need ADDITIONAL strategies:
+
+1. NEWS CATALYST STRATEGY
+   - Monitor cannabis news for rescheduling
+   - Monitor nuclear news for policy changes
+   - Monitor quantum news for contract announcements
+   - Problem: Requires real-time news parsing + fast execution
+
+2. MOMENTUM STRATEGY
+   - When stock breaks above X-day high with volume
+   - Buy the breakout, ride the trend
+   - Different from mean-reversion (opposite!)
+
+3. EARNINGS CATALYST STRATEGY
+   - Buy before earnings on high-conviction names
+   - Problem: Binary outcome, high risk
+
+4. SUBSECTOR ROTATION
+   - When capital flows into a sector (like cannabis today)
+   - Buy the whole basket
+   - Need to detect flows early
+
+================================================================================
+🔥 MY RECOMMENDATIONS
+================================================================================
+
+1. KEEP OUR RSI STRATEGY for its purpose (mean-reversion on quality names)
+   - Wait for VIX > 20
+   - Watch SMCI, SMR, OKLO, LEU
+
+2. ADD A MOMENTUM SCANNER for your speculative plays
+   - Detect when quantum/nuclear/cannabis is moving
+   - Get in early on sector rotations
+
+3. ADD NEWS MONITORING
+   - Cannabis: DEA, FDA, Trump statements
+   - Nuclear: NRC, DOE, AI company announcements
+   - Quantum: Google, IBM, AWS contract news
+
+4. VALIDATE OUR STRATEGY ON YOUR UNIVERSE
+   - We tested on large-cap tech
+   - Need to test on small-cap speculative
+   - Different volatility profile
+
+================================================================================
+🔥 WHAT I THINK YOU SHOULD DO
+================================================================================
+
+RIGHT NOW:
+- Watch SMR, OKLO, LEU - nuclear pullback is interesting
+- Watch RGTI - quantum pulling back  
+- DO NOT trade until VIX > 20
+
+THIS WEEK:
+- Set news alerts for cannabis rescheduling
+- Set price alerts for RSI < 32 on your watchlist
+
+LONGER TERM:
+- Build a sector momentum scanner
+- Build a news catalyst detector
+- Paper trade both strategies before real money
+
+================================================================================

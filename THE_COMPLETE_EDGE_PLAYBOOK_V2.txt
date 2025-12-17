@@ -1,0 +1,111 @@
+================================================================================
+🎯 COMPLETE EDGE PLAYBOOK V2 - 50 EXPERIMENTS COMPILED
+================================================================================
+
+================================================================================
+💎 TIER S+ - HIGHEST CONVICTION (90%+ WR)
+================================================================================
+• RGTI -30% week → 100% bounce, +40.2% avg (n=6)
+• HOOD Vol>2x + Down Day → 100% bounce, +8.9% avg (n=7)
+• QQQ RSI<30 + VIX>30 → 100% WR, +4.4% avg (n=16)
+• AVGO RSI<30 + Vol>1.5x → 93% WR, +9.7% avg (n=14)
+• NVDA RSI<30 + VIX>30 → 93% WR, +8.2% avg (n=14)
+• PLTR +30% week → 91% continue, +4.9% avg (n=11)
+• MSTR -20% week → 90% bounce, +10.5% avg (n=10)
+
+================================================================================
+💎 TIER S - CRASH BOUNCES (80-89% WR)
+================================================================================
+• PLTR Vol>2x + Down Day → 88% bounce, +5.4% avg (n=8)
+• SPY RSI<30 + VIX>30 → 89% WR, +3.6% avg (n=19)
+• ARM -20% week → 86% bounce, +6.5% avg (n=7)
+• PLTR +20% week → 86% continue, +5.5% avg (n=21)
+• CEG +20% week → 85% continue, +2.8% avg (n=13)
+• MDB +20% week → 85% continue, +3.0% avg (n=13)
+• DELL -20% week → 83% bounce, +8.0% avg (n=6)
+• HUT -30% week → 83% bounce, +13.9% avg (n=6)
+• SPY RSI<30 + VIX>25 → 83% WR (n=18)
+• CHPT -20% week → 82% bounce, +8.4% avg (n=17)
+• ARM -15% week → 82% bounce, +7.8% avg (n=17)
+• QQQ RSI<30 + VIX>25 → 82% WR (n=17)
+• RGTI -25% week → 80% bounce, +23.8% avg (n=10)
+• HOOD -20% week → 80% bounce, +7.1% avg (n=5)
+• QBTS -30% week → 80% bounce, +23.5% avg (n=5)
+• MSTR Vol>2x + Up Day → 80% continue, +12.6% avg (n=5)
+• NVDA Feb/May/Aug/Nov → 80% WR, +9.4% avg (n=40)
+• RGTI Vol>2x + Down Day → 80% bounce, +17.0% avg (n=10)
+
+================================================================================
+💎 TIER A - CRASH BOUNCES (65-79% WR)
+================================================================================
+• HOOD -15% week → 79% bounce, +9.6% avg (n=14)
+• VST +15% week → 79% continue, +6.1% avg (n=28)
+• VST +20% week → 78% continue, +5.6% avg (n=9)
+• IONQ +40% week → 77% continue, +8.5% avg (n=13)
+• CEG +15% week → 77% continue, +2.5% avg (n=22)
+• LEU -20% week → 75% bounce, +12.4% avg (n=8)
+• HOOD Vol>2x + Up Day → 75% continue, +3.8% avg (n=16)
+• RGTI +40% week → 74% continue, +22.5% avg (n=35)
+• IONQ Vol>2x + Up Day → 73% continue, +9.3% avg (n=11)
+• AVGO -10% week → 73% bounce, +7.0% avg
+• BKSY +30% week → 72% continue, +5.7% avg (n=18)
+• ASTS +30% week → 71% continue, +10.5% avg (n=41)
+• SNOW +20% week → 71% continue, +1.5% avg (n=7)
+• S (SentinelOne) -15% week → 70% bounce, +1.2% avg (n=10)
+• RGTI -20% week → 69% bounce, +14.9% avg (n=26)
+• RGTI Vol>3x + Up Day → 69% continue, +16.3% avg (n=13)
+• DELL -15% week → 69% bounce, +6.4% avg (n=13)
+• CHPT -15% week → 68% bounce, +5.0% avg (n=41)
+• S (SentinelOne) -10% week → 67% bounce, +1.8% avg (n=36)
+• IONQ Vol>2x + Down Day → 67% bounce, +2.6% avg (n=9)
+• IONQ -25% week → 67% bounce, +18.1% avg (n=6)
+• SPY Monday → 65% WR, +0.16% avg (n=94)
+• RGTI Vol>2x + Up Day → 65% continue, +16.0% avg (n=31)
+
+================================================================================
+📅 CALENDAR EDGES
+================================================================================
+• SPY Monday → 65% WR, +0.16% avg
+• QQQ Monday → 64% WR, +0.24% avg
+• SPY Wednesday → 63% WR, +0.20% avg
+• NVDA Thursday → 62% WR, +0.25% avg
+• AAPL End of Month (day 26+) → 61% WR
+• SPY End of Month → 60% WR
+• NVDA Day 1 of Month → 59% WR, +0.52% avg
+• AMD Day 1 of Month → 59% WR, +0.42% avg
+
+================================================================================
+📊 GAP FADE EDGES
+================================================================================
+• AMD Gap Up ≥3% → 61% close lower, -1.60% avg (FADE IT)
+• TSLA Gap Up ≥3% → 55% close lower (FADE IT)
+• HOOD Gap Up ≥3% → 54% close lower, -0.76% avg
+• ARM Gap Up ≥3% → 54% close lower
+
+================================================================================
+☠️ DEATH TRAPS - NEVER TRADE THESE
+================================================================================
+CRASH BOUNCES THAT FAIL:
+• AMC crash → 29% bounce (DEATH TRAP)
+• SMR crash → 32% bounce (DEATH TRAP)
+• MDB -20% crash → 8% bounce (DEATH TRAP)
+• RIOT crash → 25-28% bounce (DEATH TRAP)
+• SPCE crash → 32% bounce (DEATH TRAP)
+• LUNR crash → 32-37% bounce (DEATH TRAP)
+• CLSK -30% → 20% bounce (DEATH TRAP)
+
+MOMENTUM THAT FAILS:
+• LCID momentum → 0% continue (DEATH)
+• PATH +20% momentum → 0% continue (DEATH)
+• DDOG +20% momentum → 0% continue (DEATH)
+• MARA momentum → 0-7% continue (DEATH)
+• RIOT momentum → 7% continue (DEATH)
+• SPCE +30% momentum → 0% continue (DEATH)
+• GME momentum → 37-42% continue (FADE)
+• AMC momentum → 12-25% continue (DEATH)
+
+CALENDAR TRAPS:
+• TSLA Thursday → 40% WR (AVOID)
+• MSTR Thursday → 40% WR (AVOID)
+• TSLA Day 1 of Month → 36% WR (AVOID)
+• MSTR Day 1 of Month → 36% WR (AVOID)

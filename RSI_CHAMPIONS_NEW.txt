@@ -1,0 +1,25 @@
+# RSI Champions - Best dip-buying tickers
+# Generated: 2025-12-17 01:08
+# Criteria: 70%+ WR at RSI<10 OR 65%+ at RSI<15 OR 70%+ Combo
+AI
+ALKT
+AMBA
+APLS
+APP
+BBAI
+BLDP
+FLNC
+FTNT
+INTC
+IOBT
+LCID
+LUNR
+MARA
+MNTS
+NIO
+QMCO
+RXRX
+SOUN
+SPRO
+TSLA
+UPST

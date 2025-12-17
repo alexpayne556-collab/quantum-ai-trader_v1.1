@@ -1,0 +1,34 @@
+
+================================================================================
+🎯 PRIORITY WATCHLIST - SORTED BY CONVICTION
+================================================================================
+
+TIER 1 - BUY WHEN VIX > 20:
+---------------------------
+ZS    | Cybersecurity | RSI 11 | EXTREME oversold
+AVGO  | Semiconductors | RSI 35 | 95% bullish
+QBTS  | Quantum | News 3x | 88% bullish
+MSTR  | Bitcoin proxy | News 2.5x | 86% bullish
+
+TIER 2 - WATCH FOR ENTRY:
+---------------------------
+CRWD  | Cybersecurity | RSI 38 | Leader
+TSM   | Semiconductors | News 4.5x | 95% bullish
+VST   | Nuclear/Power | News 2.3x | 88% bullish
+MBLY  | Autonomous | RSI 39 | Intel spinoff
+
+TIER 3 - SPECULATIVE:
+---------------------------
+LAZR  | LIDAR | RSI 32 | -97% from high
+LCID  | EV | RSI 38 | Saudi backed
+RGTI  | Quantum | RSI 40 | Pullback play
+SMR   | Nuclear | RSI 34 | Beaten down
+OKLO  | Nuclear | RSI 38 | Sam Altman backed
+
+SECTOR PLAYS - MOMENTUM:
+---------------------------
+Cannabis: TLRY, CGC, ACB, SNDL (wait for pullback)
+Crypto: COIN, MARA, RIOT (follow BTC)
+Quantum: IONQ, QBTS, RGTI (Wall Street coverage)
+
+================================================================================
