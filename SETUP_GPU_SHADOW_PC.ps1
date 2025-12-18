@@ -76,5 +76,6 @@ Write-Host "`nNote: cuDF/cuML don't work on Windows (Linux-only)" -ForegroundCol
 Write-Host "      But CuPy gives you GPU-accelerated NumPy which is what we need!" -ForegroundColor Cyan
 Write-Host "`nTest GPU:" -ForegroundColor Yellow
 Write-Host "  python -c 'import cupy as cp; print(cp.cuda.Device())'" -ForegroundColor Cyan
-Write-Host "`n" -ForegroundColor Yellow
-exit
+Write-Host "`n⚠️  IMPORTANT: venv is still activated - terminal stays open" -ForegroundColor Yellow
+Write-Host "   You can now use this terminal for Python work!" -ForegroundColor Cyan
+Write-Host "`n"
