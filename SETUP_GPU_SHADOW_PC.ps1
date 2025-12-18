@@ -15,7 +15,8 @@ if (Test-Path ".\venv") {
 }
 
 Write-Host "`n📦 Creating fresh venv with Python 3.11..." -ForegroundColor Cyan
-python -m venv venv
+Write-Host "   (Python 3.11 required for GPU compatibility)`n" -ForegroundColor Yellow
+py -3.11 -m venv venv
 
 Write-Host "✅ Activating venv..." -ForegroundColor Green
 & ".\venv\Scripts\Activate.ps1"
@@ -26,8 +27,9 @@ Write-Host "   This will take 5-10 minutes`n" -ForegroundColor Yellow
 # Upgrade pip first
 pip install --upgrade pip setuptools wheel
 
-Write-Host "`n1️⃣  GPU Acceleration (CuPy, cuDF, cuML)..." -ForegroundColor Yellow
-pip install cupy-cuda12x cudf-cu12 cuml-cu12
+Write-Host "`n1️⃣  GPU Acceleration (CuPy - Windows compatible)..." -ForegroundColor Yellow
+Write-Host "   Note: cuDF/cuML are Linux-only, using CuPy instead" -ForegroundColor Cyan
+pip install cupy-cuda12x
 
 Write-Host "`n2️⃣  Core Data Science..." -ForegroundColor Yellow
 pip install numpy pandas scipy matplotlib seaborn plotly
