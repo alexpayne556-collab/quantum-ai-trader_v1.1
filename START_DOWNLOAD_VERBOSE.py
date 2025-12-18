@@ -132,7 +132,8 @@ for i, ticker in enumerate(tickers, 1):
             ticker,
             start=start_date,
             end=end_date,
-            progress=False
+            progress=False,
+            auto_adjust=False  # Keep Adj Close as separate column
         )
         
         if df.empty or len(df) < 100:
@@ -140,9 +141,13 @@ for i, ticker in enumerate(tickers, 1):
             failed += 1
             continue
         
-        # Prepare data
+        # Prepare data - reset index to get Date as column
         df = df.reset_index()
         df['ticker'] = ticker
+        
+        # Rename columns to match our database schema
+        # After reset_index: Date, Open, High, Low, Close, Adj Close, Volume
+        # After adding ticker: Date, Open, High, Low, Close, Adj Close, Volume, ticker
         df.columns = ['date', 'open', 'high', 'low', 'close', 'adj_close', 'volume', 'ticker']
         
         # Insert
