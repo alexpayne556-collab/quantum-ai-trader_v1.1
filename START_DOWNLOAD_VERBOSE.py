@@ -14,9 +14,9 @@ import os
 sys.stdout.reconfigure(line_buffering=True)
 sys.stderr.reconfigure(line_buffering=True)
 
-def print_flush(msg):
-    """Print and flush immediately"""
-    print(msg, flush=True)
+def print_flush(msg, **kwargs):
+    """Print and flush immediately - accepts all print() kwargs"""
+    print(msg, flush=True, **kwargs)
 
 print_flush("=" * 70)
 print_flush("VERBOSE DATA DOWNLOAD - Real-time progress")
