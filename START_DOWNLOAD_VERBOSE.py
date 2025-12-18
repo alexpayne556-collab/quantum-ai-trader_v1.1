@@ -143,11 +143,17 @@ for i, ticker in enumerate(tickers, 1):
         
         # Prepare data - reset index to get Date as column
         df = df.reset_index()
+        
+        # Flatten multi-index columns (yfinance returns tuples like ('Close', 'AAPL'))
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
+        
+        # Now columns are: Date, Adj Close, Close, High, Low, Open, Volume
+        # Select and reorder to match database schema
+        df = df[['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']].copy()
         df['ticker'] = ticker
         
-        # Rename columns to match our database schema
-        # After reset_index: Date, Open, High, Low, Close, Adj Close, Volume
-        # After adding ticker: Date, Open, High, Low, Close, Adj Close, Volume, ticker
+        # Rename to lowercase
         df.columns = ['date', 'open', 'high', 'low', 'close', 'adj_close', 'volume', 'ticker']
         
         # Insert
