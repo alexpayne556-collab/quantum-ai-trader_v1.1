@@ -1,0 +1,3 @@
+ticker,edge,shares,entry_price,position_size,expected_return,hit_rate,order_id,status
+HUT,Vol2x+GapUp,3.735059775147532,40.15999984741211,150,12.79,85.4,a67a887a-f2be-43cf-a0f0-ed5db8c369b9,submitted
+RXRX,Vol2x+GapUp,32.05128322691611,4.679999828338623,150,12.79,85.4,2d44b095-84b3-4c79-bb58-66510c42e17e,submitted
