@@ -6,6 +6,38 @@
 
 ---
 
+## ⚠️ CRITICAL: READ THIS FIRST
+
+**We are NOT looking for surface-level advice or generic recommendations.**
+
+**What We Want:**
+- Deep, heavyweight quantitative concepts from institutional research
+- Brutally honest critique of our methodology (tell us if we're wrong)
+- Specific, actionable guidance backed by academic research or real-world quant fund practices
+- Technical depth - we can handle the math and statistics
+
+**What We DON'T Want:**
+- Generic "diversify your portfolio" type advice
+- Disclaimers about risk (we know)
+- Simplified explanations for beginners
+- Surface-level pattern observations without statistical rigor
+
+**Our Commitment:**
+- **Timeframe:** NOT SET - we will work as long as it takes to do this right
+- We've already spent MONTHS on lightweight approaches that failed
+- We're willing to spend 6-12 months on rigorous research if that's what it takes
+- Real science takes time - that's our competitive advantage (the moat)
+
+**Our Work Ethic:**
+- We are NOT slouches looking for get-rich-quick schemes
+- We will implement whatever methodology is proven to work
+- We can code, we can do math, we can read papers
+- We want the REAL DEAL, not dumbed-down versions
+
+**If your answer would be different for a PhD quant researcher at Renaissance Technologies vs a retail trader, give us the Renaissance answer.**
+
+---
+
 ## OUR CURRENT SITUATION
 
 ### What We're Doing (The Big Picture)
