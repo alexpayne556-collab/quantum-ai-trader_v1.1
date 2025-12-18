@@ -5,6 +5,39 @@
 Write-Host "🚀 GPU Setup for Quantum AI Trader - Shadow PC" -ForegroundColor Cyan
 Write-Host "============================================`n" -ForegroundColor Cyan
 
+# Step 0: Check for existing venv and offer to use it
+Write-Host "Step 0: Checking for existing virtual environment..." -ForegroundColor Yellow
+$venvPath = ".\venv\Scripts\Activate.ps1"
+
+if (Test-Path $venvPath) {
+    Write-Host "✅ Found existing venv" -ForegroundColor Green
+    $useVenv = Read-Host "Do you want to use existing venv instead of conda? (y/n)"
+    
+    if ($useVenv -eq "y") {
+        Write-Host "Activating venv..." -ForegroundColor Cyan
+        & $venvPath
+        
+        Write-Host "`n⚠️  NOTE: GPU setup in venv requires manual pip installation" -ForegroundColor Yellow
+        Write-Host "   Installing CuPy and cuDF via pip..." -ForegroundColor Cyan
+        
+        # Install GPU packages via pip (simpler than conda for venv)
+        pip install --upgrade pip
+        pip install cupy-cuda12x  # CUDA 12.x version
+        pip install "cudf-cu12>=24.12"  # cuDF for CUDA 12
+        pip install "cuml-cu12>=24.12"  # cuML for CUDA 12
+        
+        Write-Host "`n✅ GPU packages installed in venv!" -ForegroundColor Green
+        Write-Host "   Your venv is now activated with GPU support" -ForegroundColor Cyan
+        Write-Host "`nTest with:" -ForegroundColor Yellow
+        Write-Host "   python -c 'import cupy; print(cupy.cuda.Device().name)'" -ForegroundColor Cyan
+        exit
+    } else {
+        Write-Host "Continuing with conda setup...`n" -ForegroundColor Cyan
+    }
+} else {
+    Write-Host "⚠️  No existing venv found - using conda`n" -ForegroundColor Yellow
+}
+
 # Step 1: Check if conda is installed
 Write-Host "Step 1: Checking for Miniconda/Anaconda..." -ForegroundColor Yellow
 $condaPath = Get-Command conda -ErrorAction SilentlyContinue
