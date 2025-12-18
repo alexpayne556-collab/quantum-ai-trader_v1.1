@@ -1,0 +1,19 @@
+# Minimal requirements for data download only
+# Install with: pip install -r requirements_download.txt
+
+# Core data download
+yfinance>=0.2.32
+pandas>=2.1.0
+requests>=2.31.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Progress display
+tqdm>=4.66.0
+
+# Data export (for backups)
+pyarrow>=14.0.0
+
+# Logging
+colorlog>=6.7.0
