@@ -10,19 +10,16 @@ Write-Host "QUANTUM AI TRADER - DATA DOWNLOAD SETUP" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Step 1: Navigate to repo (adjust if different location)
-$RepoPath = "C:\Users\YourUsername\quantum-ai-trader_v1.1"
+# Step 1: Verify we're in the right directory
+Write-Host "[1/5] Checking current directory..." -ForegroundColor Cyan
 
-if (Test-Path $RepoPath) {
-    Set-Location $RepoPath
-    Write-Host "[1/5] Found repo at: $RepoPath" -ForegroundColor Green
+if (Test-Path "research_lab\industrial_data_pipeline.py") {
+    Write-Host "  Found repo at: $PWD" -ForegroundColor Green
 } else {
-    Write-Host "[1/5] ERROR: Repo not found. Creating instructions..." -ForegroundColor Red
+    Write-Host "[1/5] ERROR: Not in quantum-ai-trader_v1.1 directory" -ForegroundColor Red
     Write-Host ""
     Write-Host "Run these commands first:" -ForegroundColor Yellow
-    Write-Host "  cd C:\Users\YourUsername" -ForegroundColor White
-    Write-Host "  git clone https://github.com/alexpayne556-collab/quantum-ai-trader_v1.1.git" -ForegroundColor White
-    Write-Host "  cd quantum-ai-trader_v1.1" -ForegroundColor White
+    Write-Host "  cd C:\Users\Shadow\quantum-ai-trader_v1.1" -ForegroundColor White
     Write-Host "  .\SHADOW_PC_SETUP.ps1" -ForegroundColor White
     Write-Host ""
     Read-Host "Press Enter to exit"
