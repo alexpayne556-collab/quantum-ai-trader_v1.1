@@ -455,4 +455,309 @@ For each AI system, please provide:
 
 ---
 
-*This document will be provided to Perplexity Pro, Claude.ai, and DeepSeek for consultation on our heavyweight quantitative research approach.*
+## READY-TO-COPY PROMPTS FOR EACH AI SYSTEM
+
+### 📋 PROMPT FOR PERPLEXITY PRO (Copy This)
+
+```
+I'm building a heavyweight quantitative trading research infrastructure to discover market edges through rigorous scientific method. I need your web search capabilities to find the latest academic research and real-world practices.
+
+CONTEXT:
+- Spent months on lightweight pattern matching - all failed
+- Now building institutional-grade research: complete US equity universe (10,986 tickers, 2 years data)
+- Built infrastructure: statistical testing (600 lines), regime detection (500 lines), survivorship correction, factor analysis, cross-validation
+- Philosophy: "We don't premake laws, we discover them" - test everything rigorously
+- Timeframe: NOT SET - willing to work 6-12 months if needed for rigorous research
+
+YOUR EXPERTISE NEEDED:
+
+1. **Latest Academic Research (2023-2025):**
+   - Regime-dependent trading strategies papers
+   - Cross-sectional factor models in modern markets
+   - Pattern detection with statistical rigor (not curve-fitting)
+   - Earnings momentum persistence research
+   - Post-earnings-announcement drift (PEAD) latest findings
+
+2. **How Elite Quant Funds Operate:**
+   - How do Renaissance Technologies / Two Sigma / Citadel approach hypothesis testing?
+   - What methods do they use for regime detection?
+   - How do they handle multiple testing problem?
+   - What's their typical research-to-deployment timeline?
+
+3. **Known Pitfalls in Backtesting:**
+   - What do even professional quants miss?
+   - Latest research on lookahead bias, survivorship bias, data snooping
+   - Are there open-source implementations of purged k-fold CV we should review?
+
+4. **Specific Technical Questions:**
+   - HMM vs GMM vs K-means for regime detection - which papers show best results?
+   - Volume-price relationship in gap-up scenarios - any 2024-2025 research?
+   - Best practices for multiple testing corrections in finance (Bonferroni too conservative?)
+   - GPU acceleration for financial data analysis - best libraries/approaches?
+
+5. **Validation of Our Specific Edge:**
+   - We see earnings surprise momentum (MU +15% after beat, KDK +10%)
+   - Latest research on post-earnings drift?
+   - How to statistically validate stock selection skill vs luck?
+   - Should we build earnings surprise factor? Papers on this?
+
+WHAT I DON'T WANT:
+- Generic investment advice
+- Risk disclaimers
+- Beginner explanations
+- Anything you'd tell a retail trader
+
+WHAT I WANT:
+- Deep academic papers with citations
+- Real quant fund methodologies (if publicly known)
+- Specific library/tool recommendations
+- Benchmark our approach against institutional best practices
+
+Give me the Renaissance Technologies answer, not the retail trader answer.
+```
+
+---
+
+### 📋 PROMPT FOR CLAUDE OPUS (Copy This)
+
+```
+I need a deep, brutal critique of my quantitative trading research methodology. Don't hold back - I want to know where I'm fooling myself.
+
+CONTEXT:
+After months of failed lightweight approaches, I'm building heavyweight institutional-grade research infrastructure based on scientific method.
+
+Core Philosophy: "We don't premake laws, we discover them"
+
+INFRASTRUCTURE BUILT (~2,350 lines):
+
+1. **Statistical Testing Framework (600 lines):**
+   - Tests 28 hypotheses: momentum (16 variations), mean reversion (12), volatility clustering, cross-sectional correlation
+   - Multiple testing corrections: Bonferroni, Benjamini-Hochberg FDR, Holm-Bonferroni
+   - Output: p-values, effect sizes, significance flags
+
+2. **Regime Detection (500 lines):**
+   - HMM-based: volatility regimes (low/normal/high), trend regimes (bull/bear/sideways)
+   - Manual breakpoints for known events (2023 banking crisis, AI boom)
+   - Test if patterns are universal or regime-dependent
+
+3. **Survivorship Bias Correction (450 lines):**
+   - Detects delistings/IPOs, reconstructs point-in-time universes
+   - Typical backtests inflate returns 3-5% by excluding bankruptcies
+
+4. **Factor Analysis (400 lines):**
+   - PCA on return matrix, don't assume Fama-French factors exist
+   - Discover what ACTUALLY drives returns in 2023-2025 data
+
+5. **Cross-Validation (400 lines):**
+   - Walk-forward split, purged k-fold (López de Prado method)
+   - Overfit detection, Monte Carlo permutation tests
+
+DATA:
+- Complete US equity universe: 10,986 tickers (NASDAQ, NYSE, AMEX, NYSE Arca)
+- 2 years (504 trading days), 2023-12-18 to 2025-12-17
+- Expected: ~1,300 tickers passing quality checks, ~650k bars, 5.5M observations
+
+WHAT I'VE LEARNED:
+- Manual trades work: MU +15% after earnings beat, KDK +10%
+- Paper trades mixed: HUT -11%, RXRX -7% (claimed 85% hit rate edge failing)
+- Cross-sectional power > time series length (10,986 tickers × 2 years > 100 tickers × 10 years)
+
+YOUR DEEP REASONING EXPERTISE NEEDED:
+
+1. **Methodology Critique:**
+   - What hypothesis tests am I MISSING?
+   - Are there interaction effects between factors I should test?
+   - Am I handling multiple testing correctly (28+ hypotheses)?
+   - Should I use Bayesian methods instead/in addition to frequentist?
+   - What assumptions am I making that might be wrong?
+   - Where could I be fooling myself?
+
+2. **Factor Discovery:**
+   - Is PCA the right approach or should I use ICA, NMF, autoencoders?
+   - How do I interpret discovered factors without narrative fallacy?
+   - Sparse PCA for interpretability?
+   - How do I avoid "discovering" spurious factors that are just noise?
+
+3. **Regime Detection Philosophy:**
+   - Is HMM-based regime detection the right approach?
+   - Or should I use simple rules (VIX > 20 = high vol)?
+   - How do I avoid overfitting regimes to historical data?
+   - How do I handle regime transitions (gradual vs sudden)?
+
+4. **Statistical Rigor:**
+   - Multiple testing corrections: Bonferroni too conservative? BH too lenient?
+   - Alpha level: 0.05 vs 0.01 vs 0.001?
+   - Should I use permutation-based corrections?
+   - How do I validate the ENTIRE research framework (not just individual edges)?
+
+5. **Philosophy Questions:**
+   - Research vs trading tradeoff: when is research "done enough"?
+   - At what point do diminishing returns kick in?
+   - Human edge (MU/KDK picks) vs systematic: should I:
+     A) Fully automate?
+     B) Build system to AUGMENT my picks (AI suggests, I decide)?
+     C) Hybrid (system trades most, I trade special situations)?
+   - Live trading feedback loop: start paper trading NOW or finish research first?
+
+6. **Earnings Edge Validation:**
+   - I see: earnings surprise → momentum (MU +15%, KDK +10%)
+   - How do I test if this is skill vs luck statistically?
+   - Should I build this hypothesis test:
+     ```
+     H1: Stocks beating estimates by >10% outperform in next 5/10/21 days
+     Variables: earnings surprise %, post-earnings drift
+     Controls: market cap, sector, volume, pre-earnings momentum
+     Test: Cross-sectional regression across all earnings 2023-2025
+     Check: Does effect vary by regime?
+     ```
+
+SPECIFIC CONCERNS:
+1. Am I testing the right things? (28 hypotheses seems arbitrary)
+2. Am I being TOO conservative (missing real edges) or not conservative enough (finding false positives)?
+3. Is HMM practical or over-engineered?
+4. How do I know when to stop researching and start trading?
+5. What if the framework itself has systemic bias?
+
+COMMITMENT:
+- Timeframe NOT SET - willing to work 6-12 months for rigor
+- NOT looking for get-rich-quick
+- Can handle technical depth, math, statistics
+- Want institutional-level methodology
+
+Be brutally honest. If I'm wrong, tell me. If I'm missing something obvious, tell me. What would YOU do if you were me?
+
+Give me the Renaissance Technologies answer, not the retail answer.
+```
+
+---
+
+### 📋 PROMPT FOR DEEPSEEK (Copy This)
+
+```
+I need technical code review and GPU optimization guidance for my quantitative trading research infrastructure. Looking for implementation-level expertise.
+
+CONTEXT:
+Building heavyweight quant research (not lightweight pattern matching). Have ~2,350 lines of statistical frameworks ready to run on GPU.
+
+INFRASTRUCTURE:
+
+1. **Statistical Testing Framework (600 lines):**
+   - Tests 28 hypotheses across 1,300 tickers × 504 days
+   - Currently CPU-bound: 2-4 hours estimated
+   - Target: 5-10 min on GPU
+
+2. **Regime Detection (500 lines):**
+   - HMM-based volatility/trend/correlation regimes
+   - CPU: ~1 hour | Target: 1-2 min GPU
+
+3. **Factor Analysis (400 lines):**
+   - PCA on return matrix (1,300 × 504)
+   - CPU: ~30 min | Target: 30 sec GPU
+
+DATA:
+- SQLite database: ~500 MB, 1,300 tickers, 650k bars
+- In-memory operations on Pandas DataFrames
+- Shadow PC with GPU available (not yet optimized)
+
+YOUR CODING EXPERTISE NEEDED:
+
+1. **GPU Optimization Strategy:**
+   - How to parallelize hypothesis testing framework for GPU?
+   - Best libraries: CuPy vs Rapids (cuDF) vs PyTorch vs JAX?
+   - Can I batch-process 1,300 tickers in parallel for 100x speedup?
+   - Expected realistic speedup for our workload?
+   - Code examples for converting Pandas/NumPy to GPU operations?
+
+2. **Data Pipeline Optimization:**
+   - Currently using Pandas on 500 MB dataset - fast enough?
+   - Should I switch to: Dask? Polars? Vaex?
+   - How to efficiently compute rolling correlations across 1,300 tickers?
+   - Am I handling missing data correctly in quality checks?
+   - Best practices for memory management with large cross-sectional data?
+
+3. **Statistical Implementation Review:**
+   - Are we implementing multiple testing corrections correctly?
+   - Should we use statsmodels, scipy, or custom implementations?
+   - How to handle edge cases (tickers with <504 days after filtering)?
+   - Purged k-fold cross-validation: review our implementation approach?
+   - HMM fitting: use hmmlearn, statsmodels, or custom?
+
+4. **Database/Storage Architecture:**
+   - Currently SQLite (500 MB) - is this optimal?
+   - Should we switch to:
+     * Parquet files (faster columnar reads)?
+     * PostgreSQL (better complex queries)?
+     * HDF5 (better time series)?
+     * DuckDB (faster analytics on Parquet)?
+   - How to architect for future scaling:
+     * Global equities (50k+ tickers)?
+     * Intraday data (1-min bars = 100x data)?
+     * Options data (millions of contracts)?
+
+5. **Code Quality & Edge Cases:**
+   - Review our quality checks logic:
+     * Missing days threshold: <30% acceptable?
+     * Price gap detection: >50% threshold?
+     * Zero volume handling?
+   - Potential bugs in our frameworks?
+   - Race conditions or data leakage in walk-forward CV?
+   - Numerical stability issues in PCA/HMM?
+
+6. **Specific Implementation Questions:**
+
+   **Multiple Testing Corrections:**
+   ```python
+   # We're using:
+   from statsmodels.stats.multitest import multipletests
+   reject, pvals_corrected, _, _ = multipletests(
+       pvals, alpha=0.05, method='fdr_bh'
+   )
+   # Correct implementation? Better alternatives?
+   ```
+
+   **Walk-Forward Validation:**
+   ```python
+   # Our approach:
+   for i in range(n_splits):
+       train_end = start_date + timedelta(days=252*i)
+       test_start = train_end + timedelta(days=21)  # embargo
+       test_end = test_start + timedelta(days=63)   # test window
+       # Is 21-day embargo sufficient? 63-day test window optimal?
+   ```
+
+   **Rolling Correlations:**
+   ```python
+   # Current approach:
+   returns = prices.pct_change()
+   rolling_corr = returns.rolling(window=21).corr()
+   # How to optimize for 1,300 tickers × 1,300 correlation matrix?
+   ```
+
+7. **Deployment/Production Considerations:**
+   - How to structure code for:
+     * Research (flexibility, experimentation)
+     * Production (speed, reliability)
+   - Testing strategy for statistical code?
+   - CI/CD for quant research?
+   - Version control for data + code?
+
+RESOURCES:
+- Shadow PC with GPU (specific model unknown)
+- Python environment: NumPy, Pandas, scikit-learn, statsmodels, scipy
+- Can install: CuPy, Rapids, PyTorch, JAX, etc.
+- Budget: free/open-source preferred
+
+COMMITMENT:
+- Willing to rewrite code for 100x speedup
+- Can handle technical implementation details
+- Want production-grade code quality
+- Timeframe: NOT SET - will do it right
+
+What specific code optimizations should I implement in next 48 hours while data downloads?
+
+Give me specific code examples, library recommendations, and catch any bugs/issues you see.
+```
+
+---
+
+*Copy the specific prompt above for each AI system: Perplexity Pro for research, Claude Opus for methodology critique, DeepSeek for code optimization.*
