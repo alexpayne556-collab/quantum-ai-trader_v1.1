@@ -63,14 +63,18 @@ Write-Host "`n✅ All packages installed!`n" -ForegroundColor Green
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host "🎯 SETUP COMPLETE!" -ForegroundColor Green
 Write-Host "============================================" -ForegroundColor Cyan
-Write-Host "`nYour venv is activated and ready for:" -ForegroundColor Yellow
-Write-Host "  ✅ GPU acceleration (CuPy, cuDF)" -ForegroundColor Green
-Write-Host "  ✅ Machine learning (sklearn, XGBoost, PyTorch)" -ForegroundColor Green
-Write-Host "  ✅ Trading APIs (Alpaca, yfinance, Polygon)" -ForegroundColor Green
+Write-Host "`nYour Windows venv is activated and ready for:" -ForegroundColor Yellow
+Write-Host "  ✅ GPU acceleration (CuPy - 10-100x faster than NumPy)" -ForegroundColor Green
+Write-Host "  ✅ Deep Learning (PyTorch, TensorFlow with CUDA)" -ForegroundColor Green
+Write-Host "  ✅ Machine learning (sklearn, XGBoost, LightGBM)" -ForegroundColor Green
+Write-Host "  ✅ Trading APIs (Alpaca, yfinance, Polygon, Finnhub)" -ForegroundColor Green
 Write-Host "  ✅ Backtesting (vectorbt, backtrader)" -ForegroundColor Green
 Write-Host "  ✅ Technical analysis (TA-Lib)" -ForegroundColor Green
-Write-Host "  ✅ Statistical modeling (statsmodels, HMM)" -ForegroundColor Green
+Write-Host "  ✅ Statistical modeling (statsmodels, HMM, PyMC3)" -ForegroundColor Green
+Write-Host "  ✅ Database (SQL, Postgres, Mongo, Redis)" -ForegroundColor Green
+Write-Host "`nNote: cuDF/cuML don't work on Windows (Linux-only)" -ForegroundColor Yellow
+Write-Host "      But CuPy gives you GPU-accelerated NumPy which is what we need!" -ForegroundColor Cyan
 Write-Host "`nTest GPU:" -ForegroundColor Yellow
-Write-Host "  python -c 'import cupy as cp; print(cp.cuda.Device().name)'" -ForegroundColor Cyan
+Write-Host "  python -c 'import cupy as cp; print(cp.cuda.Device())'" -ForegroundColor Cyan
 Write-Host "`n" -ForegroundColor Yellow
 exit
