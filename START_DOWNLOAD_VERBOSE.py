@@ -132,8 +132,7 @@ for i, ticker in enumerate(tickers, 1):
             ticker,
             start=start_date,
             end=end_date,
-            progress=False,
-            show_errors=False
+            progress=False
         )
         
         if df.empty or len(df) < 100:
