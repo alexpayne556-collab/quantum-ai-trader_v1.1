@@ -57,9 +57,8 @@ if ($envExists) {
     if ($recreate -eq "y") {
         conda env remove -n quant-gpu -y
     } else {
-        Write-Host "Using existing environment..." -ForegroundColor Cyan
-        conda activate quant-gpu
-        Write-Host "✅ Environment activated`n" -ForegroundColor Green
+        Write-Host "✅ Using existing environment 'quant-gpu'" -ForegroundColor Green
+        Write-Host "   Run tests with: conda run -n quant-gpu python <script.py>`n" -ForegroundColor Cyan
         exit
     }
 }
@@ -67,25 +66,26 @@ if ($envExists) {
 # Create environment (Python 3.10 for compatibility with RAPIDS)
 conda create -n quant-gpu python=3.10 -y
 
-# Activate environment
-conda activate quant-gpu
+Write-Host "`n⚠️  NOTE: Conda activation in scripts requires special setup." -ForegroundColor Yellow
+Write-Host "   Installing packages directly into environment using -n flag`n" -ForegroundColor Cyan
 
 # Step 4: Install RAPIDS (CuPy, cuDF, cuML)
 Write-Host "`nStep 4: Installing RAPIDS libraries..." -ForegroundColor Yellow
 Write-Host "   This is the BIG install - may take 10-15 minutes" -ForegroundColor Cyan
 
-# Install RAPIDS using conda (CUDA 12 version)
-conda install -c rapidsai -c conda-forge -c nvidia `
+# Install RAPIDS using conda (CUDA 12 version) - directly into environment
+conda install -n quant-gpu -c rapidsai -c conda-forge -c nvidia `
     cudf=24.12 cuml=24.12 cugraph=24.12 cuspatial=24.12 `
     cupy cudatoolkit=12.0 -y
 
 # Step 5: Install additional Python packages
 Write-Host "`nStep 5: Installing additional packages..." -ForegroundColor Yellow
-conda install -c conda-forge pandas numpy scipy matplotlib seaborn yfinance scikit-learn -y
+conda install -n quant-gpu -c conda-forge pandas numpy scipy matplotlib seaborn yfinance scikit-learn -y
 
-# Pip packages
-pip install --upgrade pip
-pip install ta-lib alpaca-trade-api hmmlearn
+# Pip packages (install into conda environment)
+Write-Host "`nInstalling pip packages..." -ForegroundColor Yellow
+conda run -n quant-gpu pip install --upgrade pip
+conda run -n quant-gpu pip install ta-lib alpaca-trade-api hmmlearn
 
 Write-Host "`n✅ GPU environment setup complete!`n" -ForegroundColor Green
 
@@ -149,7 +149,7 @@ print(f'   GPU Memory: {cp.cuda.Device().mem_info[1] / 1e9:.1f} GB total')
 print(f'   GPU Free: {cp.cuda.Device().mem_info[0] / 1e9:.1f} GB')
 "@
 
-$testScript | python
+$testScript | conda run -n quant-gpu python
 
 Write-Host "`n============================================" -ForegroundColor Cyan
 Write-Host "🎯 SETUP COMPLETE!" -ForegroundColor Green
