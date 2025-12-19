@@ -42,6 +42,15 @@ df = pd.read_sql("SELECT * FROM ohlcv", conn)
 conn.close()
 print(f"Loaded {len(df):,} rows, {df['ticker'].nunique():,} tickers")
 
+# Pre-compute all forward returns
+print("Pre-computing forward returns...")
+df['date'] = pd.to_datetime(df['date'])
+df = df.sort_values(['ticker', 'date'])
+df['returns'] = df.groupby('ticker')['close'].pct_change()
+for h in [1, 2, 3, 5, 10, 15, 20]:
+    df[f'fwd_{h}'] = df.groupby('ticker')['close'].transform(lambda x: x.shift(-h) / x - 1)
+print("Forward returns ready.")
+
 # Try GPU
 try:
     import cupy as cp
@@ -182,10 +191,6 @@ for lookback in tqdm([5, 10, 20, 60, 120, 252], desc="Momentum Lookbacks"):
     )
     
     for hold in [1, 5, 10, 20]:
-        df[f'fwd_{hold}'] = df.groupby('ticker')['close'].transform(
-            lambda x: x.shift(-hold) / x - 1
-        )
-        
         for pct in [0.1, 0.2, 0.3]:
             thresh = df[f'mom_{lookback}'].quantile(1 - pct)
             winners = df[df[f'mom_{lookback}'] >= thresh][f'fwd_{hold}'].dropna()
@@ -225,9 +230,6 @@ for lookback in tqdm([5, 10, 20], desc="Volume Lookbacks"):
         high_vol = df[df[f'vol_ratio_{lookback}'] >= thresh]
         
         for hold in [1, 3, 5]:
-            df[f'fwd_{hold}'] = df.groupby('ticker')['close'].transform(
-                lambda x: x.shift(-hold) / x - 1
-            )
             rets = high_vol[f'fwd_{hold}'].dropna()
             mean, n, t = calculate_t_stat(rets)
             results.append({
@@ -250,10 +252,6 @@ df['gap'] = df.groupby('ticker').apply(
 
 for gap_thresh in tqdm([0.02, 0.03, 0.05], desc="Gap Thresholds"):
     for hold in [1, 3, 5]:
-        df[f'fwd_{hold}'] = df.groupby('ticker')['close'].transform(
-            lambda x: x.shift(-hold) / x - 1
-        )
-        
         # Gap up
         gap_up = df[df['gap'] >= gap_thresh][f'fwd_{hold}'].dropna()
         mean, n, t = calculate_t_stat(gap_up)
