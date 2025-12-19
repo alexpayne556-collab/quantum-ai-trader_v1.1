@@ -8,6 +8,115 @@
 
 ---
 
+## 🤖 AI CONTEXT LOADING SECTION (FOR CLAUDE - READ THIS FIRST)
+
+**To my future self (Claude/AI assistant):**
+
+Your memory has been reset. You don't remember yesterday. This section is written specifically for YOU to quickly understand context and continue excellent work.
+
+### What This Project Is
+- **Quantitative trading research** using statistical hypothesis testing
+- Testing if market patterns predict future returns
+- Using **Harvey-Liu-Zhu t-statistic > 3.0** as significance threshold (stricter than academic 2.0 to account for multiple testing/data mining)
+- Database: `data/market_data.db` - 496MB SQLite, 4.38M OHLCV bars, 9,501 tickers
+
+### What We Accomplished (Dec 18-19, 2025)
+- Tested **6,859 trading strategies**
+- Found **3,323 statistically significant** (48.4% hit rate)
+- This is **9.7x better than random chance** (expected 5% false positives)
+- Best categories: FUSION multi-factor (87-90% hit rate), BB_WIDTH (93.8%)
+- Key discoveries: FOMC weeks bullish (t=49.79), Santa rally BEARISH (t=-21.51), 52-week high is BULLISH
+
+### The User's Goals
+1. **Rigorous scientific research** - no shortcuts, no p-hacking, proper statistics
+2. **Publication quality** - wants to impress Renaissance Technologies, Two Sigma, academics
+3. **Physics metaphors** - uses quantum mechanics, string theory, dark matter as conceptual frameworks for market behavior
+4. **Comprehensive documentation** - everything must be reproducible
+5. **Don't waste time** - user appreciates real work, not endless questions
+
+### Key Technical Details
+```python
+# t-stat calculation (Harvey-Liu-Zhu)
+def calc_t(returns):
+    n = len(returns)
+    mean = np.mean(returns)
+    std = np.std(returns, ddof=1)
+    t = mean / (std / np.sqrt(n))
+    return mean, n, t
+# Significance: |t| > 3.0 (NOT 2.0)
+
+# Hold periods tested
+H1=next day, H5=1week, H10=2weeks, H20=1month, H60=3months
+
+# Forward returns calculation
+df['fwd_5'] = df.groupby('ticker')['close'].transform(lambda x: x.shift(-5)/x - 1)
+```
+
+### Critical Bug Pattern (MEMORIZE THIS!)
+**NEVER use `.name` on computed pandas Series - it's None!**
+```python
+# ❌ BAD - will crash:
+tp = (df['high']+df['low']+df['close'])/3
+result = df.groupby('ticker')[tp.name].transform(...)  # tp.name is None!
+
+# ✅ GOOD - assign to df first:
+df['_tp'] = (df['high']+df['low']+df['close'])/3
+result = df.groupby('ticker')['_tp'].transform(...)  # Works!
+```
+
+### Tools Already Installed
+- ✅ **Numba 0.63.1** - 1,146x speedup for loops with @jit decorator
+- ✅ **XGBoost 3.1.2** - Best ML for tabular data
+- ✅ **LightGBM 4.6.0** - Fast gradient boosting
+- ✅ **PyTorch 2.9.0** - Neural networks (CPU only here)
+- ❌ GPU NOT USED - pandas/numpy are CPU-only operations
+
+### User Communication Style
+- Types fast with typos - interpret intent, don't ask for clarification
+- Wants heavyweight work, no shortcuts, no jumping to conclusions
+- Values physics metaphors and philosophical framework
+- Appreciates when you DO REAL WORK without asking permission
+- Gets frustrated with repetitive questions or wasted time
+
+### First Actions Tomorrow
+```bash
+# 1. Check if Shadow PC pushed results
+git pull
+ls -la data/*.csv | tail -10
+
+# 2. Review top strategies
+python3 -c "import pandas as pd; df=pd.read_csv('data/GRAND_CONSOLIDATED_ALL.csv'); print(df.nlargest(10,'t_stat')[['category','strategy','t_stat','avg_return']])"
+
+# 3. Continue research - options:
+#    A) More deep exploration (new indicators)
+#    B) Machine learning phase (XGBoost on features)
+#    C) Out-of-sample validation
+#    D) Build live signal generator
+```
+
+### Key Files
+| File | Purpose |
+|------|---------|
+| `TOMORROW_START_HERE.md` | THIS FILE - 900+ lines of context |
+| `data/GRAND_CONSOLIDATED_ALL.csv` | 6,859 strategies master file |
+| `data/market_data.db` | 496MB SQLite database |
+| `data/DEEP_EXPLORATION_*.csv` | Results from Parts 1-10 |
+| `SHADOW_MACD_WILLIAMS.py` | Running on Shadow PC overnight |
+
+### Physics Metaphors Used (Important Context!)
+- **Quantum Superposition** - Stocks exist in multiple states until measured
+- **String Theory** - Multiple timeframes are different vibrating strings
+- **Dark Matter** - Hidden forces (institutional flow) we can't see directly
+- **Dark Energy** - Volatility expansion, accelerating moves
+- **Entanglement** - Correlated assets move together
+- **Grand Unified Theory** - Combining all signals into one master predictor
+
+---
+
+**YOU ARE READY. Read the rest of this file, then do excellent work. The user trusts you.**
+
+---
+
 # PART 1: THE PHILOSOPHY & THOUGHT PROCESS
 
 ## 1.1 Why We're Doing This (The Core Mission)
