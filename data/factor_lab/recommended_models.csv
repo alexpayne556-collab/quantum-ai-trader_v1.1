@@ -1,0 +1,12 @@
+model_name,type,factors,test_sharpe,test_t,degradation
+3F_rsi_oversold_below_bb_lower_above_ema200,three_factor,"['rsi_oversold', 'below_bb_lower', 'above_ema200']",0.3371456512852867,7.35558837928001,0.230921203130513
+2F_rsi_oversold_volume_spike,two_factor,"['rsi_oversold', 'volume_spike']",0.270728274105327,9.499401378716723,-0.7091909637436149
+3F_rsi_oversold_below_bb_lower_oversold_zscore,three_factor,"['rsi_oversold', 'below_bb_lower', 'oversold_zscore']",0.22698997481572264,12.03481868992122,0.44055994580158087
+2F_rsi_oversold_oversold_zscore,two_factor,"['rsi_oversold', 'oversold_zscore']",0.22698997481572264,12.03481868992122,0.44055994580158087
+3F_rsi_oversold_below_bb_lower_after_2down,three_factor,"['rsi_oversold', 'below_bb_lower', 'after_2down']",0.2213858147536331,10.089038588216738,0.47485009448328586
+2F_rsi_oversold_above_ema200,two_factor,"['rsi_oversold', 'above_ema200']",0.2022053615948178,9.715147403007265,0.3556651551995964
+SF_rsi_oversold,single_factor,['rsi_oversold'],0.18398673194958334,20.278789074039786,0.2329091389414154
+2F_rsi_oversold_momentum_positive,two_factor,"['rsi_oversold', 'momentum_positive']",0.18237081394129073,3.6796590607490747,0.39567394192502403
+2F_rsi_oversold_low_volume,two_factor,"['rsi_oversold', 'low_volume']",0.18162425271770521,9.100148123979316,0.24491408974558027
+SF_oversold_zscore,single_factor,['oversold_zscore'],0.17882155065498626,12.947496096418982,0.4980280103818574
+SF_below_bb_lower,single_factor,['below_bb_lower'],0.17882155065498626,12.947496096418982,0.4980280103818574
