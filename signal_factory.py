@@ -579,6 +579,29 @@ class DiscretionaryAnalyzer:
         if factors['VolRatio'] > 2.0:
             signals.append("📊 Volume spike detected")
         
+        # ====== REAL-TIME EXTREMES (can't be seen in historical backtest) ======
+        # RSI Overbought/Oversold extremes
+        if factors['RSI'] >= 80:
+            bearish += 2
+            signals.append(f"🔴 RSI EXTREME OVERBOUGHT ({factors['RSI']:.0f}) - TAKE PROFITS")
+        elif factors['RSI'] >= 70:
+            bearish += 1
+            signals.append(f"⚠️ RSI OVERBOUGHT ({factors['RSI']:.0f}) - Consider trimming")
+        elif factors['RSI'] <= 20:
+            bullish += 2
+            signals.append(f"🟢 RSI EXTREME OVERSOLD ({factors['RSI']:.0f}) - Bounce candidate")
+        
+        # Bollinger Band extremes (Z-score > 2 or < -2)
+        if factors['ZScore'] > 2.5:
+            bearish += 1
+            signals.append(f"⚠️ EXTENDED ABOVE BANDS (Z={factors['ZScore']:.1f}) - Mean reversion risk")
+        elif factors['ZScore'] < -2.5:
+            bullish += 1
+            signals.append(f"🟢 EXTENDED BELOW BANDS (Z={factors['ZScore']:.1f}) - Bounce setup")
+        
+        # Single-day move warning (if we have daily return data)
+        # This is approximated from momentum - future enhancement could use real intraday
+        
         # Determine confidence
         total = bullish + bearish
         if total > 0:
