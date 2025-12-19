@@ -57,7 +57,7 @@ df = pd.read_sql("""
     WHERE date >= '2023-01-01'
     ORDER BY ticker, date
 """, conn)
-df['date'] = pd.to_datetime(df['date'])
+df['date'] = pd.to_datetime(df['date'], format='mixed')
 print(f"      Loaded {len(df):,} rows, {df['ticker'].nunique():,} tickers")
 
 # ============================================================================
