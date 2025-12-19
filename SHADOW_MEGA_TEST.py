@@ -502,10 +502,10 @@ print("="*70)
 
 for atr_period in tqdm([5, 10, 14, 20], desc="ATR"):
     prev_close = df.groupby('ticker')['close'].shift(1)
-    tr = np.maximum(df['high'] - df['low'],
+    df['_tr'] = np.maximum(df['high'] - df['low'],
                    np.maximum(abs(df['high'] - prev_close),
                              abs(df['low'] - prev_close)))
-    df[f'atr_{atr_period}'] = df.groupby('ticker')[tr.name].transform(lambda x: tr.loc[x.index].rolling(atr_period).mean())
+    df[f'atr_{atr_period}'] = df.groupby('ticker')['_tr'].transform(lambda x: x.rolling(atr_period).mean())
     df[f'atr_pct_{atr_period}'] = df[f'atr_{atr_period}'] / df['close']
     
     for pct in [0.1, 0.25]:
