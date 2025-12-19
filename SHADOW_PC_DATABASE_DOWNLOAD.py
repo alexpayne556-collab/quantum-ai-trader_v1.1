@@ -68,7 +68,7 @@ for i, ticker in enumerate(tickers, 1):
         print(f"[{i}/{len(tickers)}] Fetching {ticker}...", end=' ')
         
         # Download data
-        df = yf.download(ticker, start=start_date, progress=False)
+        df = yf.download(ticker, start=start_date, progress=False, auto_adjust=True)
         
         if len(df) == 0:
             print("❌ No data")
@@ -77,11 +77,20 @@ for i, ticker in enumerate(tickers, 1):
         
         # Prepare for database
         df = df.reset_index()
-        df['ticker'] = ticker
+        
+        # Handle MultiIndex columns (yfinance now returns tuples)
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
         
         # Rename columns to match database schema
-        df.columns = [col.lower() for col in df.columns]
+        df.columns = [str(col).lower() for col in df.columns]
+        
+        # Add ticker column
+        df['ticker'] = ticker
         df['date'] = df['date'].astype(str)
+        
+        # Select only the columns we need
+        df = df[['ticker', 'date', 'open', 'high', 'low', 'close', 'volume']]
         
         # Insert into database
         df.to_sql('ohlcv', conn, if_exists='append', index=False)
