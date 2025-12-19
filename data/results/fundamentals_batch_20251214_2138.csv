@@ -1,0 +1,27 @@
+# Generated: 2025-12-15T02:38:26.412735
+# Total tickers: 20
+# Successfully processed: 20
+# Failed: 0
+# Processing time: 0.0 seconds (0.0 minutes)
+# Success rate: 100.0%
+ticker,market_cap_value,market_cap_source,trailing_pe_value,trailing_pe_source,forward_pe_value,forward_pe_source,peg_ratio_value,peg_ratio_source,short_pct_value,short_pct_source,insider_pct_value,insider_pct_source,institution_pct_value,institution_pct_source,beta_value,beta_source,price_to_book_value,price_to_book_source,price_to_sales_value,price_to_sales_source
+NVDA,4261212061696,yfinance,43.321785,yfinance,23.538843,yfinance,0.673,alpha_vantage,0.01,yfinance,0.0433,yfinance,0.69365,yfinance,2.284,yfinance,35.77678,yfinance,22.76994,yfinance
+AAPL,4129783545856,yfinance,37.302948,yfinance,30.534452,yfinance,,,0.0088,yfinance,0.016970001,yfinance,0.64406997,yfinance,1.107,yfinance,55.75636,yfinance,9.923524,yfinance
+MSFT,3556993138688,yfinance,34.010662,yfinance,25.553968,yfinance,,,0.0083,yfinance,0.00067000004,yfinance,0.7573,yfinance,1.07,yfinance,9.797912,yfinance,12.106358,yfinance
+AVGO,1699720724480,yfinance,75.14196,yfinance,26.154604,yfinance,0.542,alpha_vantage,0.0135,yfinance,0.02016,yfinance,0.79576,yfinance,1.204,yfinance,6.0777426,yfinance,26.605112,yfinance
+AMD,343158620160,yfinance,109.78125,yfinance,32.74232,yfinance,,,0.0229,yfinance,0.00449,yfinance,0.69719005,yfinance,1.927,yfinance,5.6448846,yfinance,10.714666,yfinance
+MSTR,50703564800,yfinance,7.2404594,yfinance,2.2773776,yfinance,,,0.114300005,yfinance,0.0019200001,yfinance,0.58886003,yfinance,3.41,yfinance,0.9680799,yfinance,106.75738,yfinance
+IONQ,17837975552,yfinance,,,-39.601078,yfinance,,,0.1889,yfinance,0.026300002,yfinance,0.49648997,yfinance,2.617,yfinance,7.205209,yfinance,223.43272,yfinance
+META,1623799496704,yfinance,28.493143,yfinance,21.388508,yfinance,,,0.0149,yfinance,0.00062,yfinance,0.79382,yfinance,1.273,yfinance,8.368796,yfinance,8.570762,yfinance
+GOOGL,3746158346240,yfinance,30.501972,yfinance,27.665644,yfinance,,,0.0136,yfinance,0.00569,yfinance,0.81338996,yfinance,1.07,yfinance,9.655355,yfinance,9.7182665,yfinance
+PLTR,437527412736,yfinance,417.20456,yfinance,185.39803,yfinance,2.882,alpha_vantage,0.0217,yfinance,0.03591,yfinance,0.60145,yfinance,1.495,yfinance,66.390594,yfinance,112.297,yfinance
+TSLA,1526417981440,yfinance,312.21768,yfinance,203.25502,yfinance,,,0.0269,yfinance,0.12562001,yfinance,0.49715,yfinance,1.878,yfinance,19.077229,yfinance,15.9612055,yfinance
+SNOW,74575642624,yfinance,,,133.183,yfinance,,,0.0368,yfinance,0.03162,yfinance,0.73794,yfinance,1.092,yfinance,34.952686,yfinance,17.000313,yfinance
+CRWD,127254249472,yfinance,,,104.412476,yfinance,4.189,alpha_vantage,0.026500002,yfinance,0.03049,yfinance,0.74281,yfinance,1.094,yfinance,31.679428,yfinance,27.875042,yfinance
+DDOG,51197931520,yfinance,470.96774,yfinance,62.28403,yfinance,,,0.0306,yfinance,0.00763,yfinance,0.93376,yfinance,1.234,yfinance,14.881256,yfinance,15.941113,yfinance
+NET,70910918656,yfinance,,,172.05945,yfinance,,,0.0326,yfinance,0.00681,yfinance,0.90336,yfinance,1.949,yfinance,52.636505,yfinance,35.21991,yfinance
+PANW,131112648704,yfinance,122.095535,yfinance,44.143486,yfinance,1.679,alpha_vantage,0.0646,yfinance,0.00892,yfinance,0.84476,yfinance,0.786,yfinance,15.308257,yfinance,13.719734,yfinance
+ZS,37679853568,yfinance,,,52.688618,yfinance,,,0.0571,yfinance,0.35479,yfinance,0.55616003,yfinance,1.066,yfinance,19.00732,yfinance,13.29906,yfinance
+S,5125224448,yfinance,,,50.068066,yfinance,,,0.0584,yfinance,0.00929,yfinance,0.74807,yfinance,0.766,yfinance,3.305568,yfinance,5.363099,yfinance
+MDB,34103146496,yfinance,,,75.5087,yfinance,1.672,alpha_vantage,0.044299997,yfinance,0.03019,yfinance,0.93928003,yfinance,1.454,yfinance,11.80182,yfinance,14.717883,yfinance
+ESTC,8109649408,yfinance,,,27.368223,yfinance,,,0.0403,yfinance,0.12179,yfinance,0.89435,yfinance,0.97,yfinance,9.06187,yfinance,5.0392904,yfinance
