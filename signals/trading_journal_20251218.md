@@ -1,6 +1,6 @@
 # Signal Factory Output for 2025-12-18
 
-**Generated:** 2025-12-19 20:29:27
+**Generated:** 2025-12-19 20:45:58
 
 ---
 
@@ -60,6 +60,20 @@
 
 ## 👤 Discretionary Analysis (30% Allocation)
 
+- **KDK:** KDK not in database
+
+### 🟡 **LUNR** - MEDIUM
+
+- **Price:** $10.85
+- **Regime Alignment:** ALIGNED
+- **Factor Summary:** RSI(60), LowVol(14), Mom(95)
+
+**Signals:**
+  - ⚠️ High volatility - expect large swings
+  - ✅ Strong momentum
+  - ✅ Above 200 EMA - uptrend
+  - ⚠️ Far from 52-week high
+
 ### 🟢 **ASTS** - HIGH
 
 - **Price:** $65.93
@@ -84,69 +98,12 @@
   - ✅ Near 52-week high - momentum
   - 📊 Volume spike detected
 
-### 🟡 **PALI** - MEDIUM
-
-- **Price:** $1.67
-- **Regime Alignment:** CONTRARIAN
-- **Factor Summary:** RSI(35), LowVol(7), Mom(4)
-
-**Signals:**
-  - ⚠️ High volatility - expect large swings
-  - ⚠️ Weak momentum
-  - ✅ Above 200 EMA - uptrend
-  - ✅ After 2 down days - bounce candidate
-
-### 🟠 **SAVA** - BEARISH
-
-- **Price:** $2.85
-- **Regime Alignment:** CONTRARIAN
-- **Factor Summary:** RSI(38), LowVol(18), Mom(62)
-
-**Signals:**
-  - ⚠️ High volatility - expect large swings
-  - ⚠️ Below 200 EMA - downtrend
-  - ⚠️ Far from 52-week high
-
-### 🟡 **LUNR** - MEDIUM
-
-- **Price:** $10.85
-- **Regime Alignment:** ALIGNED
-- **Factor Summary:** RSI(60), LowVol(14), Mom(95)
-
-**Signals:**
-  - ⚠️ High volatility - expect large swings
-  - ✅ Strong momentum
-  - ✅ Above 200 EMA - uptrend
-  - ⚠️ Far from 52-week high
-
-### 🟢 **HUT** - HIGH
-
-- **Price:** $38.59
-- **Regime Alignment:** ALIGNED
-- **Factor Summary:** RSI(41), LowVol(6), Mom(57)
-
-**Signals:**
-  - ⚠️ High volatility - expect large swings
-  - ✅ Above 200 EMA - uptrend
-
-### 🟢 **ANNX** - HIGH
-
-- **Price:** $4.82
-- **Regime Alignment:** ALIGNED
-- **Factor Summary:** RSI(59), LowVol(21), Mom(92)
-
-**Signals:**
-  - ⚠️ High volatility - expect large swings
-  - ✅ Strong momentum
-  - ✅ Above 200 EMA - uptrend
-
 ---
 
 ## 🎯 Today's Action Plan
 
 1. **SYSTEMATIC:** Consider opening positions in: DFIP, DFGP, EXAS
-2. **DISCRETIONARY:** High confidence on: ASTS, MU, HUT, ANNX
-3. **CAUTION:** Review these positions: SAVA
+2. **DISCRETIONARY:** High confidence on: ASTS, MU
 
 ---
 
