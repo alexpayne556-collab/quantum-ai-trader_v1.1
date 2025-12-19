@@ -25,7 +25,7 @@ def test_calendar_effects():
     print("📅 CALENDAR EFFECTS TESTING (GPU Optimized)")
     print("="*80)
     
-    conn = sqlite3.connect('market_data.db')
+    conn = sqlite3.connect('data/market_data.db')
     
     # Load all data with dates
     query = """
@@ -105,7 +105,7 @@ def test_volatility_regimes():
     print("📊 VOLATILITY REGIME TESTING (GPU Optimized)")
     print("="*80)
     
-    conn = sqlite3.connect('market_data.db')
+    conn = sqlite3.connect('data/market_data.db')
     
     # Get price data
     df = pd.read_sql_query("""
@@ -180,7 +180,7 @@ def test_microstructure():
     print("🔬 MICROSTRUCTURE TESTING (GPU Optimized)")
     print("="*80)
     
-    conn = sqlite3.connect('market_data.db')
+    conn = sqlite3.connect('data/market_data.db')
     
     df = pd.read_sql_query("""
         SELECT symbol, date, open, high, low, close, volume
