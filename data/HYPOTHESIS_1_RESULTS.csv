@@ -1,0 +1,5 @@
+,Strategy,Total Return,CAGR,Volatility,Sharpe,Max Drawdown,Win Rate
+0,Term Structure,153.4%,12.5%,63.0%,0.20,-64.1%,46.9%
+1,Always Short VXX,-24.8%,-3.5%,74.5%,-0.05,-90.4%,58.7%
+2,Buy & Hold VXX,-98.4%,-41.0%,74.5%,-0.55,-99.4%,40.4%
+3,Random Signal,-48.8%,-8.1%,74.5%,-0.11,-95.8%,50.1%
