@@ -190,7 +190,8 @@ for period in tqdm([7, 14, 21], desc="ADX"):
     minus_di = 100 * df.groupby('ticker')['_minus_dm'].transform(lambda x: x.rolling(period).mean()) / atr
     
     dx = 100 * abs(plus_di - minus_di) / (plus_di + minus_di)
-    df[f'adx_{period}'] = df.groupby('ticker')[dx.name].transform(lambda x: dx.loc[x.index].rolling(period).mean())
+    df['_dx'] = dx  # Store in dataframe to avoid Series.name bug
+    df[f'adx_{period}'] = df.groupby('ticker')['_dx'].transform(lambda x: x.rolling(period).mean())
     df[f'plus_di_{period}'] = plus_di
     df[f'minus_di_{period}'] = minus_di
     
@@ -338,4 +339,5 @@ print(f"\n{'='*70}")
 print("DONE! Results saved to:", output_file)
 print(f"{'='*70}")
 
-input("\nPress Enter to exit...")
+# Removed input() for automated running
+
