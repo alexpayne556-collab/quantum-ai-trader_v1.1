@@ -141,10 +141,10 @@ print("SECTION 3: CCI")
 print("="*70)
 
 for period in tqdm([10, 14, 20, 30], desc="CCI"):
-    tp = (df['high'] + df['low'] + df['close']) / 3
-    sma = df.groupby('ticker')[tp.name].transform(lambda x: tp.loc[x.index].rolling(period).mean())
-    mad = df.groupby('ticker')[tp.name].transform(lambda x: tp.loc[x.index].rolling(period).apply(lambda y: np.abs(y - y.mean()).mean()))
-    df[f'cci_{period}'] = (tp - sma) / (0.015 * mad)
+    df['_tp'] = (df['high'] + df['low'] + df['close']) / 3
+    sma = df.groupby('ticker')['_tp'].transform(lambda x: x.rolling(period).mean())
+    mad = df.groupby('ticker')['_tp'].transform(lambda x: x.rolling(period).apply(lambda y: np.abs(y - y.mean()).mean()))
+    df[f'cci_{period}'] = (df['_tp'] - sma) / (0.015 * mad)
     
     for thresh in [100, 150, 200]:
         for hold in [1, 3, 5, 10, 15]:
