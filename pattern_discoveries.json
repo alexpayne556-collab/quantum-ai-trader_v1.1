@@ -1,0 +1,114 @@
+{
+  "VIX Capitulation": {
+    "hypothesis": {
+      "name": "VIX Capitulation",
+      "description": "VIX peaked >30 and now dropping + RSI oversold",
+      "direction": "long",
+      "holding_period": 7
+    },
+    "discovered": {
+      "win_rate": 0.7058823529411765,
+      "avg_return": 0.008952974584221007,
+      "median_return": 0.020705457828759384,
+      "std_return": 0.07043149802704363,
+      "max_return": 0.12652993679057845,
+      "min_return": -0.1736279244969182,
+      "max_drawdown": 0.683131162890977,
+      "sharpe_ratio": 0.7626963646960905,
+      "profit_factor": 1.391402719505865,
+      "sample_size": 34,
+      "discovery_date": "2025-12-20",
+      "signal_dates": [
+        "2022-05-12",
+        "2022-06-17",
+        "2022-06-21",
+        "2022-06-22",
+        "2022-06-23",
+        "2022-06-28",
+        "2022-09-28",
+        "2022-10-03",
+        "2024-08-06",
+        "2024-08-07"
+      ]
+    }
+  },
+  "Golden Cross Setup": {
+    "hypothesis": {
+      "name": "Golden Cross Setup",
+      "description": "MA50 crosses above MA200 with elevated VIX",
+      "direction": "long",
+      "holding_period": 10
+    },
+    "discovered": {
+      "win_rate": 1.0,
+      "avg_return": 0.022930365612050013,
+      "median_return": 0.022930365612050013,
+      "std_return": 0.0,
+      "max_return": 0.022930365612050013,
+      "min_return": 0.022930365612050013,
+      "max_drawdown": 0.0,
+      "sharpe_ratio": 0.0,
+      "profit_factor": Infinity,
+      "sample_size": 1,
+      "discovery_date": "2025-12-20",
+      "signal_dates": [
+        "2020-07-06"
+      ]
+    }
+  },
+  "Death Cross Setup": {
+    "hypothesis": {
+      "name": "Death Cross Setup",
+      "description": "MA50 crosses below MA200 with rising VIX",
+      "direction": "short",
+      "holding_period": 10
+    },
+    "discovered": {
+      "win_rate": 0,
+      "avg_return": 0,
+      "median_return": 0,
+      "std_return": 0,
+      "max_return": 0,
+      "min_return": 0,
+      "max_drawdown": 0,
+      "sharpe_ratio": 0,
+      "profit_factor": 0,
+      "sample_size": 0,
+      "discovery_date": "2025-12-20",
+      "signal_dates": []
+    }
+  },
+  "Oversold Bounce": {
+    "hypothesis": {
+      "name": "Oversold Bounce",
+      "description": "RSI < 25 with volume spike after down day",
+      "direction": "long",
+      "holding_period": 5
+    },
+    "discovered": {
+      "win_rate": 0.782608695652174,
+      "avg_return": 0.01237939005642639,
+      "median_return": 0.015541513838425447,
+      "std_return": 0.04170272375768001,
+      "max_return": 0.08284308628327475,
+      "min_return": -0.125369229828503,
+      "max_drawdown": 0.19536973182165218,
+      "sharpe_ratio": 2.1074151318888212,
+      "profit_factor": 2.2012866753810103,
+      "sample_size": 23,
+      "discovery_date": "2025-12-20",
+      "signal_dates": [
+        "2021-09-20",
+        "2022-01-20",
+        "2022-01-21",
+        "2022-01-25",
+        "2022-09-02",
+        "2022-09-30",
+        "2024-08-05",
+        "2025-03-10",
+        "2025-04-04",
+        "2025-04-08"
+      ]
+    }
+  }
+}
