@@ -5,7 +5,7 @@ SHADOW PC BATCH RUNNER - Batches 5-9
 Optimized for parallel execution on Shadow PC.
 
 Run from conda prompt:
-    cd C:\Users\alexf\quantum-ai-trader_v1.1
+    cd C:/Users/Shadow/quantum-ai-trader_v1.1
     python SHADOW_RUN_BATCHES_5_9.py
 
 Accelerators enabled:
