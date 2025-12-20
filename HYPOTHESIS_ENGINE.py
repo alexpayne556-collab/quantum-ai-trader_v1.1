@@ -409,6 +409,325 @@ def signal_new_low_buy(data: pd.DataFrame, lookback: int = 252, **kwargs) -> pd.
 
 
 # ============================================================================
+# ADDITIONAL SIGNAL FUNCTIONS - BATCH 2
+# ============================================================================
+
+def signal_macd_crossover(data: pd.DataFrame, fast: int = 12, slow: int = 26, signal: int = 9, **kwargs) -> pd.Series:
+    """MACD crossover signal."""
+    ema_fast = data['close'].ewm(span=fast, adjust=False).mean()
+    ema_slow = data['close'].ewm(span=slow, adjust=False).mean()
+    macd = ema_fast - ema_slow
+    macd_signal = macd.ewm(span=signal, adjust=False).mean()
+    return (macd > macd_signal).astype(int)
+
+
+def signal_macd_histogram_reversal(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """MACD histogram reversal (momentum shift)."""
+    ema_fast = data['close'].ewm(span=12, adjust=False).mean()
+    ema_slow = data['close'].ewm(span=26, adjust=False).mean()
+    macd = ema_fast - ema_slow
+    macd_signal = macd.ewm(span=9, adjust=False).mean()
+    histogram = macd - macd_signal
+    # Buy when histogram turns positive from negative
+    return ((histogram > 0) & (histogram.shift(1) < 0)).astype(int)
+
+
+def signal_stochastic_oversold(data: pd.DataFrame, k_period: int = 14, d_period: int = 3, oversold: int = 20, **kwargs) -> pd.Series:
+    """Stochastic oscillator oversold."""
+    low_n = data['low'].rolling(k_period).min() if 'low' in data.columns else data['close'].rolling(k_period).min()
+    high_n = data['high'].rolling(k_period).max() if 'high' in data.columns else data['close'].rolling(k_period).max()
+    k = 100 * (data['close'] - low_n) / (high_n - low_n + 1e-10)
+    d = k.rolling(d_period).mean()
+    return ((k < oversold) & (d < oversold)).astype(int)
+
+
+def signal_stochastic_overbought(data: pd.DataFrame, k_period: int = 14, d_period: int = 3, overbought: int = 80, **kwargs) -> pd.Series:
+    """Stochastic oscillator overbought (short signal)."""
+    low_n = data['low'].rolling(k_period).min() if 'low' in data.columns else data['close'].rolling(k_period).min()
+    high_n = data['high'].rolling(k_period).max() if 'high' in data.columns else data['close'].rolling(k_period).max()
+    k = 100 * (data['close'] - low_n) / (high_n - low_n + 1e-10)
+    d = k.rolling(d_period).mean()
+    return ((k > overbought) & (d > overbought)).astype(int) * -1
+
+
+def signal_atr_breakout(data: pd.DataFrame, lookback: int = 20, multiplier: float = 2.0, **kwargs) -> pd.Series:
+    """ATR breakout: price moves beyond ATR band."""
+    high = data['high'] if 'high' in data.columns else data['close']
+    low = data['low'] if 'low' in data.columns else data['close']
+    close = data['close']
+    
+    tr = pd.concat([
+        high - low,
+        (high - close.shift(1)).abs(),
+        (low - close.shift(1)).abs()
+    ], axis=1).max(axis=1)
+    atr = tr.rolling(lookback).mean()
+    
+    upper_band = close.rolling(lookback).mean() + multiplier * atr
+    return (close > upper_band).astype(int)
+
+
+def signal_consecutive_up_days(data: pd.DataFrame, n_days: int = 3, **kwargs) -> pd.Series:
+    """N consecutive up days (momentum continuation)."""
+    up = (data['close'] > data['close'].shift(1)).astype(int)
+    consecutive = up.rolling(n_days).sum()
+    return (consecutive >= n_days).astype(int)
+
+
+def signal_consecutive_down_days(data: pd.DataFrame, n_days: int = 3, **kwargs) -> pd.Series:
+    """N consecutive down days (reversal opportunity)."""
+    down = (data['close'] < data['close'].shift(1)).astype(int)
+    consecutive = down.rolling(n_days).sum()
+    return (consecutive >= n_days).astype(int)
+
+
+def signal_inside_day_breakout(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Inside day followed by breakout."""
+    if 'high' not in data.columns or 'low' not in data.columns:
+        return pd.Series(0, index=data.index)
+    
+    inside = (data['high'] < data['high'].shift(1)) & (data['low'] > data['low'].shift(1))
+    breakout_up = data['close'] > data['high'].shift(1)
+    return (inside.shift(1) & breakout_up).astype(int)
+
+
+def signal_outside_day(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Outside day (engulfing pattern)."""
+    if 'high' not in data.columns or 'low' not in data.columns:
+        return pd.Series(0, index=data.index)
+    
+    outside = (data['high'] > data['high'].shift(1)) & (data['low'] < data['low'].shift(1))
+    bullish = data['close'] > data['open'] if 'open' in data.columns else data['close'] > data['close'].shift(1)
+    return (outside & bullish).astype(int)
+
+
+def signal_doji(data: pd.DataFrame, threshold: float = 0.001, **kwargs) -> pd.Series:
+    """Doji pattern (indecision → reversal)."""
+    if 'open' not in data.columns:
+        return pd.Series(0, index=data.index)
+    
+    body = (data['close'] - data['open']).abs() / data['open']
+    doji = body < threshold
+    # Look for doji after downtrend
+    downtrend = data['close'].pct_change(5) < -0.02
+    return (doji & downtrend).astype(int)
+
+
+def signal_hammer(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Hammer pattern (bullish reversal)."""
+    if 'open' not in data.columns or 'high' not in data.columns or 'low' not in data.columns:
+        return pd.Series(0, index=data.index)
+    
+    body = (data['close'] - data['open']).abs()
+    lower_wick = pd.concat([data['open'], data['close']], axis=1).min(axis=1) - data['low']
+    upper_wick = data['high'] - pd.concat([data['open'], data['close']], axis=1).max(axis=1)
+    
+    # Hammer: lower wick > 2x body, small upper wick
+    hammer = (lower_wick > 2 * body) & (upper_wick < body * 0.5)
+    downtrend = data['close'].pct_change(5) < -0.02
+    return (hammer & downtrend).astype(int)
+
+
+def signal_price_channel_breakout(data: pd.DataFrame, lookback: int = 20, **kwargs) -> pd.Series:
+    """Donchian channel breakout (turtle trading)."""
+    high_n = data['close'].rolling(lookback).max()
+    return (data['close'] >= high_n).astype(int)
+
+
+def signal_price_channel_breakdown(data: pd.DataFrame, lookback: int = 20, **kwargs) -> pd.Series:
+    """Donchian channel breakdown (short signal)."""
+    low_n = data['close'].rolling(lookback).min()
+    return (data['close'] <= low_n).astype(int) * -1
+
+
+def signal_williams_r(data: pd.DataFrame, period: int = 14, oversold: float = -80, **kwargs) -> pd.Series:
+    """Williams %R oversold."""
+    high_n = data['close'].rolling(period).max()
+    low_n = data['close'].rolling(period).min()
+    wr = -100 * (high_n - data['close']) / (high_n - low_n + 1e-10)
+    return (wr < oversold).astype(int)
+
+
+def signal_cci_oversold(data: pd.DataFrame, period: int = 20, oversold: float = -100, **kwargs) -> pd.Series:
+    """Commodity Channel Index oversold."""
+    typical_price = data['close']  # Simplified
+    sma = typical_price.rolling(period).mean()
+    mad = typical_price.rolling(period).apply(lambda x: np.abs(x - x.mean()).mean())
+    cci = (typical_price - sma) / (0.015 * mad + 1e-10)
+    return (cci < oversold).astype(int)
+
+
+def signal_cci_overbought(data: pd.DataFrame, period: int = 20, overbought: float = 100, **kwargs) -> pd.Series:
+    """Commodity Channel Index overbought (short)."""
+    typical_price = data['close']
+    sma = typical_price.rolling(period).mean()
+    mad = typical_price.rolling(period).apply(lambda x: np.abs(x - x.mean()).mean())
+    cci = (typical_price - sma) / (0.015 * mad + 1e-10)
+    return (cci > overbought).astype(int) * -1
+
+
+def signal_adx_strong_trend(data: pd.DataFrame, period: int = 14, threshold: float = 25, **kwargs) -> pd.Series:
+    """ADX strong trend filter."""
+    # Simplified ADX using price momentum as proxy
+    momentum = data['close'].pct_change(period).abs()
+    avg_momentum = momentum.rolling(period).mean()
+    strong = avg_momentum > avg_momentum.rolling(100).quantile(0.75)
+    return (strong & (data['close'] > data['close'].shift(period))).astype(int)
+
+
+def signal_parabolic_sar_bullish(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Simplified Parabolic SAR - price above trailing stop."""
+    # Use ATR-based trailing stop as proxy
+    atr = data['close'].pct_change().abs().rolling(14).mean()
+    stop = data['close'].rolling(20).min() + 2 * atr * data['close']
+    return (data['close'] > stop).astype(int)
+
+
+def signal_fibonacci_retracement(data: pd.DataFrame, lookback: int = 50, level: float = 0.618, **kwargs) -> pd.Series:
+    """Buy at 61.8% Fibonacci retracement."""
+    high = data['close'].rolling(lookback).max()
+    low = data['close'].rolling(lookback).min()
+    fib_level = high - (high - low) * level
+    
+    # Near fib level and bouncing
+    near_fib = (data['close'] - fib_level).abs() / data['close'] < 0.02
+    bouncing = data['close'] > data['close'].shift(1)
+    return (near_fib & bouncing).astype(int)
+
+
+def signal_pivot_point_support(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Price near pivot point support."""
+    pivot = data['close'].rolling(20).mean()
+    support = pivot - (data['close'].rolling(20).max() - data['close'].rolling(20).min()) * 0.382
+    
+    near_support = (data['close'] - support).abs() / data['close'] < 0.01
+    return near_support.astype(int)
+
+
+def signal_overnight_gap(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Overnight gap up continuation."""
+    if 'open' not in data.columns:
+        return pd.Series(0, index=data.index)
+    
+    gap = (data['open'] - data['close'].shift(1)) / data['close'].shift(1)
+    gap_up = gap > 0.005  # 0.5% gap
+    return gap_up.astype(int)
+
+
+def signal_end_of_week(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """End of week effect (Friday positive)."""
+    dow = pd.Series(data.index.dayofweek, index=data.index)
+    return (dow == 4).astype(int)
+
+
+def signal_first_of_month(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """First trading day of month."""
+    dom = pd.Series(data.index.day, index=data.index)
+    return (dom <= 3).astype(int)
+
+
+def signal_quarter_end(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Quarter end effect (last week of quarter)."""
+    month = pd.Series(data.index.month, index=data.index)
+    day = pd.Series(data.index.day, index=data.index)
+    quarter_end_month = month.isin([3, 6, 9, 12])
+    late_month = day >= 25
+    return (quarter_end_month & late_month).astype(int)
+
+
+def signal_year_end_rally(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Santa Claus rally (last 5 days + first 2 of January)."""
+    month = pd.Series(data.index.month, index=data.index)
+    day = pd.Series(data.index.day, index=data.index)
+    dec_late = (month == 12) & (day >= 25)
+    jan_early = (month == 1) & (day <= 3)
+    return (dec_late | jan_early).astype(int)
+
+
+def signal_vix_spike(data: pd.DataFrame, vix_data: pd.Series = None, spike_pct: float = 20, **kwargs) -> pd.Series:
+    """VIX spike (>20% 1-day increase) → contrarian buy."""
+    if vix_data is None:
+        return pd.Series(0, index=data.index)
+    
+    vix_aligned = vix_data.reindex(data.index).ffill()
+    vix_change = vix_aligned.pct_change()
+    return (vix_change > spike_pct / 100).astype(int)
+
+
+def signal_vix_mean_reversion(data: pd.DataFrame, vix_data: pd.Series = None, lookback: int = 20, **kwargs) -> pd.Series:
+    """VIX mean reversion: high VIX relative to SMA."""
+    if vix_data is None:
+        return pd.Series(0, index=data.index)
+    
+    vix_aligned = vix_data.reindex(data.index).ffill()
+    vix_sma = vix_aligned.rolling(lookback).mean()
+    high_vix = vix_aligned > vix_sma * 1.2
+    return high_vix.astype(int)
+
+
+def signal_spy_tlt_rotation(data: pd.DataFrame, tlt_data: pd.DataFrame = None, lookback: int = 21, **kwargs) -> pd.Series:
+    """SPY/TLT rotation based on momentum."""
+    if tlt_data is None:
+        return pd.Series(1, index=data.index)  # Default to SPY
+    
+    spy_mom = data['close'].pct_change(lookback)
+    tlt_mom = tlt_data['close'].pct_change(lookback).reindex(data.index).ffill()
+    
+    # Long SPY when SPY momentum > TLT momentum
+    return (spy_mom > tlt_mom).astype(int)
+
+
+def signal_gold_momentum(data: pd.DataFrame, gld_data: pd.DataFrame = None, lookback: int = 21, **kwargs) -> pd.Series:
+    """Gold momentum as risk indicator."""
+    if gld_data is None:
+        return pd.Series(0, index=data.index)
+    
+    gld_mom = gld_data['close'].pct_change(lookback).reindex(data.index).ffill()
+    # Weak gold = risk-on
+    return (gld_mom < 0).astype(int)
+
+
+def signal_breadth_thrust(data: pd.DataFrame, **kwargs) -> pd.Series:
+    """Market breadth thrust (simplified using momentum)."""
+    # Use strong momentum as proxy for breadth thrust
+    mom = data['close'].pct_change(10)
+    thrust = mom > mom.rolling(252).quantile(0.95)
+    return thrust.astype(int)
+
+
+def signal_new_high_new_low(data: pd.DataFrame, lookback: int = 252, **kwargs) -> pd.Series:
+    """Price making new highs vs new lows."""
+    high_52w = data['close'].rolling(lookback).max()
+    at_high = data['close'] >= high_52w * 0.98
+    return at_high.astype(int)
+
+
+def signal_relative_strength(data: pd.DataFrame, spy_data: pd.DataFrame = None, lookback: int = 63, **kwargs) -> pd.Series:
+    """Relative strength vs SPY."""
+    if spy_data is None:
+        return pd.Series(0, index=data.index)
+    
+    asset_ret = data['close'].pct_change(lookback)
+    spy_ret = spy_data['close'].pct_change(lookback).reindex(data.index).ffill()
+    
+    return (asset_ret > spy_ret).astype(int)
+
+
+def signal_regime_high_vol(data: pd.DataFrame, lookback: int = 20, **kwargs) -> pd.Series:
+    """High volatility regime (defensive)."""
+    vol = data['close'].pct_change().rolling(lookback).std() * np.sqrt(252)
+    high_vol = vol > vol.rolling(252).quantile(0.8)
+    return (high_vol).astype(int) * -1  # Defensive in high vol
+
+
+def signal_regime_low_vol(data: pd.DataFrame, lookback: int = 20, **kwargs) -> pd.Series:
+    """Low volatility regime (aggressive)."""
+    vol = data['close'].pct_change().rolling(lookback).std() * np.sqrt(252)
+    low_vol = vol < vol.rolling(252).quantile(0.2)
+    return (low_vol).astype(int)
+
+
+# ============================================================================
 # HYPOTHESIS LIBRARY
 # ============================================================================
 
@@ -808,6 +1127,342 @@ def build_hypothesis_library() -> List[Hypothesis]:
             lookback=21,
             hold_period=21,
             priority=1,
+        ),
+        
+        # ========== BATCH 2: TECHNICAL INDICATORS ==========
+        Hypothesis(
+            id="TI001",
+            name="MACD Crossover",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="MACD line crosses above signal line",
+            signal_func=signal_macd_crossover,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=10,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI002",
+            name="MACD Histogram Reversal",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="MACD histogram turns positive",
+            signal_func=signal_macd_histogram_reversal,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI003",
+            name="Stochastic Oversold",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Stochastic K&D below 20",
+            signal_func=signal_stochastic_oversold,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI004",
+            name="Stochastic Overbought",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Stochastic K&D above 80 (short)",
+            signal_func=signal_stochastic_overbought,
+            signal_type=SignalType.LONG_SHORT,
+            tickers=etf_universe,
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI005",
+            name="ATR Breakout",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="Price breaks above 2x ATR band",
+            signal_func=signal_atr_breakout,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=10,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI006",
+            name="Williams %R Oversold",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Williams %R below -80",
+            signal_func=signal_williams_r,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI007",
+            name="CCI Oversold",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="CCI below -100",
+            signal_func=signal_cci_oversold,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI008",
+            name="CCI Overbought",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="CCI above 100 (short)",
+            signal_func=signal_cci_overbought,
+            signal_type=SignalType.LONG_SHORT,
+            tickers=etf_universe,
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI009",
+            name="ADX Strong Trend",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="Strong trend with positive direction",
+            signal_func=signal_adx_strong_trend,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=10,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI010",
+            name="Donchian Channel Breakout",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="20-day high breakout (turtle trading)",
+            signal_func=signal_price_channel_breakout,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            parameters={'lookback': 20},
+            hold_period=10,
+            priority=3,
+        ),
+        Hypothesis(
+            id="TI011",
+            name="Fibonacci 61.8% Retracement",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Buy at 61.8% Fibonacci level",
+            signal_func=signal_fibonacci_retracement,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=10,
+            priority=4,
+        ),
+        Hypothesis(
+            id="TI012",
+            name="Pivot Point Support",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Price near pivot point support",
+            signal_func=signal_pivot_point_support,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=5,
+            priority=4,
+        ),
+        
+        # ========== BATCH 2: PRICE PATTERNS ==========
+        Hypothesis(
+            id="PP001",
+            name="3 Consecutive Up Days",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="Momentum after 3 up days",
+            signal_func=signal_consecutive_up_days,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            parameters={'n_days': 3},
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="PP002",
+            name="3 Consecutive Down Days",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Reversal after 3 down days",
+            signal_func=signal_consecutive_down_days,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            parameters={'n_days': 3},
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="PP003",
+            name="Inside Day Breakout",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="Breakout after inside day",
+            signal_func=signal_inside_day_breakout,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY', 'QQQ', 'IWM'],
+            hold_period=3,
+            priority=4,
+        ),
+        Hypothesis(
+            id="PP004",
+            name="Outside Day (Engulfing)",
+            category=HypothesisCategory.TREND_FOLLOWING,
+            description="Bullish outside day pattern",
+            signal_func=signal_outside_day,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY', 'QQQ', 'IWM'],
+            hold_period=3,
+            priority=4,
+        ),
+        Hypothesis(
+            id="PP005",
+            name="Doji Reversal",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Doji after downtrend",
+            signal_func=signal_doji,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY', 'QQQ', 'IWM'],
+            hold_period=5,
+            priority=4,
+        ),
+        Hypothesis(
+            id="PP006",
+            name="Hammer Pattern",
+            category=HypothesisCategory.MEAN_REVERSION,
+            description="Hammer candlestick after downtrend",
+            signal_func=signal_hammer,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY', 'QQQ', 'IWM'],
+            hold_period=5,
+            priority=4,
+        ),
+        
+        # ========== BATCH 2: SEASONALITY ==========
+        Hypothesis(
+            id="SS006",
+            name="End of Week Effect",
+            category=HypothesisCategory.SEASONALITY,
+            description="Friday positive bias",
+            signal_func=signal_end_of_week,
+            signal_type=SignalType.BINARY,
+            tickers=['SPY', 'QQQ'],
+            hold_period=1,
+            priority=3,
+        ),
+        Hypothesis(
+            id="SS007",
+            name="First of Month",
+            category=HypothesisCategory.SEASONALITY,
+            description="First 3 days of month positive",
+            signal_func=signal_first_of_month,
+            signal_type=SignalType.BINARY,
+            tickers=['SPY', 'QQQ'],
+            hold_period=1,
+            priority=3,
+        ),
+        Hypothesis(
+            id="SS008",
+            name="Quarter End Effect",
+            category=HypothesisCategory.SEASONALITY,
+            description="Last week of quarter",
+            signal_func=signal_quarter_end,
+            signal_type=SignalType.BINARY,
+            tickers=['SPY', 'QQQ'],
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="SS009",
+            name="Santa Claus Rally",
+            category=HypothesisCategory.SEASONALITY,
+            description="Year-end rally Dec 25 - Jan 3",
+            signal_func=signal_year_end_rally,
+            signal_type=SignalType.BINARY,
+            tickers=['SPY', 'QQQ', 'IWM'],
+            hold_period=5,
+            priority=3,
+        ),
+        
+        # ========== BATCH 2: VOLATILITY ==========
+        Hypothesis(
+            id="VL005",
+            name="VIX Spike Contrarian",
+            category=HypothesisCategory.VOLATILITY,
+            description="Buy after 20%+ VIX spike",
+            signal_func=signal_vix_spike,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY'],
+            requires_macro=True,
+            macro_series=['VIX'],
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="VL006",
+            name="VIX Mean Reversion",
+            category=HypothesisCategory.VOLATILITY,
+            description="VIX > 1.2x SMA",
+            signal_func=signal_vix_mean_reversion,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY'],
+            requires_macro=True,
+            macro_series=['VIX'],
+            hold_period=10,
+            priority=3,
+        ),
+        Hypothesis(
+            id="VL007",
+            name="High Vol Regime Defensive",
+            category=HypothesisCategory.VOLATILITY,
+            description="Reduce exposure in high vol",
+            signal_func=signal_regime_high_vol,
+            signal_type=SignalType.LONG_SHORT,
+            tickers=['SPY', 'QQQ'],
+            hold_period=5,
+            priority=3,
+        ),
+        Hypothesis(
+            id="VL008",
+            name="Low Vol Regime Aggressive",
+            category=HypothesisCategory.VOLATILITY,
+            description="Full exposure in low vol",
+            signal_func=signal_regime_low_vol,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY', 'QQQ'],
+            hold_period=10,
+            priority=3,
+        ),
+        
+        # ========== BATCH 2: INTERMARKET ==========
+        Hypothesis(
+            id="IM002",
+            name="Breadth Thrust",
+            category=HypothesisCategory.BREADTH,
+            description="Extreme positive momentum thrust",
+            signal_func=signal_breadth_thrust,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['SPY'],
+            hold_period=21,
+            priority=3,
+        ),
+        Hypothesis(
+            id="IM003",
+            name="Relative Strength vs SPY",
+            category=HypothesisCategory.INTERMARKET,
+            description="Asset outperforming SPY",
+            signal_func=signal_relative_strength,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=['QQQ', 'IWM', 'EEM', 'XLK', 'XLF'],
+            hold_period=21,
+            priority=3,
+        ),
+        Hypothesis(
+            id="IM004",
+            name="New Highs Filter",
+            category=HypothesisCategory.BREADTH,
+            description="At 52-week high",
+            signal_func=signal_new_high_new_low,
+            signal_type=SignalType.LONG_ONLY,
+            tickers=etf_universe,
+            hold_period=10,
+            priority=3,
         ),
     ]
     
