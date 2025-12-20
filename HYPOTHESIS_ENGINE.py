@@ -1539,39 +1539,60 @@ class HypothesisEngine:
             print(f"Error loading macro {series_id}: {e}")
             return None
     
-    def calculate_returns(self, data: pd.DataFrame, signal: pd.Series, hold_period: int) -> pd.Series:
-        """Calculate strategy returns from signal."""
+    def calculate_returns(self, data: pd.DataFrame, signal: pd.Series, hold_period: int) -> Tuple[pd.Series, pd.Series]:
+        """Calculate strategy returns from signal. Returns (strategy_returns, raw_forward_returns)."""
         # Forward returns
         fwd_ret = data['close'].pct_change(hold_period).shift(-hold_period)
         
         # Apply signal (shifted to avoid look-ahead)
         strategy_ret = signal.shift(1) * fwd_ret
         
-        return strategy_ret.dropna()
+        return strategy_ret.dropna(), fwd_ret.dropna()
     
-    def run_monte_carlo(self, returns: pd.Series, signal: pd.Series, n_sims: int = N_MONTE_CARLO) -> Tuple[float, float]:
-        """Run Monte Carlo simulation to test significance."""
-        if len(returns) < MIN_TRADES:
-            return 0.0, 1.0
+    def run_monte_carlo(self, strategy_returns: pd.Series, signal: pd.Series, raw_returns: pd.Series, n_sims: int = N_MONTE_CARLO) -> Tuple[float, float]:
+        """Run Monte Carlo simulation to test significance.
         
-        real_sharpe = returns.mean() / returns.std() * np.sqrt(252) if returns.std() > 0 else 0
+        Compares actual strategy Sharpe to Sharpe from randomly timed signals.
+        """
+        if len(strategy_returns) < MIN_TRADES:
+            return 50.0, 0.5  # Not enough data, return neutral
         
-        # Generate random signals with same frequency
-        signal_values = signal.dropna().values
-        if len(np.unique(signal_values)) < 2:
-            return 0.0, 1.0
+        real_sharpe = strategy_returns.mean() / strategy_returns.std() * np.sqrt(252) if strategy_returns.std() > 0 else 0
+        
+        # Use values directly to avoid index issues
+        raw_ret_values = raw_returns.values
+        signal_values = signal.shift(1).values
+        
+        # Align lengths
+        min_len = min(len(raw_ret_values), len(signal_values))
+        raw_ret_values = raw_ret_values[:min_len]
+        signal_values = signal_values[:min_len]
+        
+        # Remove NaN
+        mask = ~(np.isnan(raw_ret_values) | np.isnan(signal_values))
+        raw_ret_values = raw_ret_values[mask]
+        signal_values = signal_values[mask]
+        
+        # Need at least some non-zero signals
+        n_signals = (signal_values != 0).sum()
+        if n_signals < 10 or len(raw_ret_values) < 50:
+            return 50.0, 0.5
         
         random_sharpes = []
         for _ in range(n_sims):
+            # Shuffle signal timing (keep same number of signals)
             random_signal = np.random.permutation(signal_values)
-            random_ret = random_signal[:-1] * returns.values[:len(random_signal)-1] if len(returns) >= len(random_signal) else returns.values
+            random_ret = random_signal * raw_ret_values
+            random_ret = random_ret[~np.isnan(random_ret)]
             
-            if len(random_ret) > 0 and np.std(random_ret) > 0:
-                random_sharpes.append(np.mean(random_ret) / np.std(random_ret) * np.sqrt(252))
+            if len(random_ret) > 10 and np.std(random_ret) > 0:
+                random_sharpe = np.mean(random_ret) / np.std(random_ret) * np.sqrt(252)
+                random_sharpes.append(random_sharpe)
         
-        if len(random_sharpes) == 0:
-            return 0.0, 1.0
+        if len(random_sharpes) < 100:
+            return 50.0, 0.5
         
+        # Percentile: what % of random strategies did WORSE than ours?
         percentile = (np.array(random_sharpes) < real_sharpe).mean() * 100
         p_value = 1 - percentile / 100
         
@@ -1621,6 +1642,7 @@ class HypothesisEngine:
         
         try:
             all_returns = []
+            all_raw_returns = []
             all_signals = []
             
             # Load macro data if needed
@@ -1662,11 +1684,12 @@ class HypothesisEngine:
                 # Generate signal
                 signal = hypothesis.signal_func(data, **kwargs)
                 
-                # Calculate returns
-                returns = self.calculate_returns(data, signal, hypothesis.hold_period)
+                # Calculate returns (now returns tuple)
+                strat_returns, raw_returns = self.calculate_returns(data, signal, hypothesis.hold_period)
                 
-                if len(returns) > 50:
-                    all_returns.append(returns)
+                if len(strat_returns) > 50:
+                    all_returns.append(strat_returns)
+                    all_raw_returns.append(raw_returns)
                     all_signals.append(signal)
             
             if len(all_returns) == 0:
@@ -1675,6 +1698,7 @@ class HypothesisEngine:
             
             # Combine results
             combined_returns = pd.concat(all_returns)
+            combined_raw_returns = pd.concat(all_raw_returns)
             combined_signal = pd.concat(all_signals)
             
             # Calculate metrics
@@ -1700,8 +1724,8 @@ class HypothesisEngine:
                 result.baseline_sharpe = baseline_ret.mean() / baseline_ret.std() * np.sqrt(252 / hypothesis.hold_period) if baseline_ret.std() > 0 else 0
                 result.excess_sharpe = result.sharpe_ratio - result.baseline_sharpe
             
-            # Monte Carlo
-            result.monte_carlo_percentile, mc_p = self.run_monte_carlo(combined_returns, combined_signal)
+            # Monte Carlo - now with proper raw returns
+            result.monte_carlo_percentile, mc_p = self.run_monte_carlo(combined_returns, combined_signal, combined_raw_returns)
             result.passed_monte_carlo = result.monte_carlo_percentile > 95
             
             # Walk-forward
