@@ -1,0 +1,12 @@
+hypothesis_id,name,category,batch,spread,p_value,sharpe,win_rate,n_signals,pass,note,error
+H11,ROC Momentum,Momentum,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=0"
+H12,Momentum Breadth,Momentum,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=3996"
+H13,Sector Momentum (Top 3),Momentum,0,0.0,1.0,0.0,0.0,3996,False,,"Insufficient data: long=3996, other=0"
+H14,International Momentum,Momentum,0,0.0,1.0,0.0,0.0,3996,False,,"Insufficient data: long=3996, other=0"
+H15,Asset Class Momentum,Momentum,0,-0.15785485284088463,0.015370406336118506,0.9524795157230576,0.6877701500127129,3933,False,"Long: 14.10%, Other: 29.88%",
+H70,US vs International,Momentum,0,-0.08531254543552699,5.493981384592938e-06,0.7954514172816225,0.6712146422628952,3005,False,"Long: 12.23%, Other: 20.76%",
+H71,Developed vs Emerging,Momentum,0,0.0,1.0,0.0,0.0,3996,False,,"Insufficient data: long=3996, other=0"
+H77,Growth vs Value Rotation,Momentum,0,0.0,1.0,0.0,0.0,3996,False,,"Insufficient data: long=3996, other=0"
+H78,Growth vs Value Mean Reversion,Momentum,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=3996"
+H79,Large vs Small Cap,Momentum,0,-0.07799135759336072,1.746949818659908e-06,0.6378109584438659,0.6414754835807467,2223,False,"Long: 10.89%, Other: 18.68%",
+H05,Dual Momentum,Momentum,0,-0.1327368505869724,1.7850322864364373e-15,0.6870475284096303,0.6740264953833802,2491,False,"Long: 9.35%, Other: 22.62%",

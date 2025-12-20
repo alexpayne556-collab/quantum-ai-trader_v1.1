@@ -1,0 +1,21 @@
+id,name,category,original_spread,tests_passed,pass_rate,grade,wf_pass,mc_pass,tf_pass,regime_pass,cost_pass,holdout_pass,mc_pvalue,holdout_spread
+H27E,Multi-Indicator Oversold,Mean Reversion,0.395,6,1.0,A+ (Production Ready),True,True,True,True,True,True,0.0,0.11194683484163875
+H128,VIX Turbulence,Creative,0.211,6,1.0,A+ (Production Ready),True,True,True,True,True,True,0.0,0.45830706401508203
+H21,VIX Percentile,Volatility,0.182,6,1.0,A+ (Production Ready),True,True,True,True,True,True,0.0,0.1702650901367675
+H27C,MA Distance,Mean Reversion,0.365,6,1.0,A+ (Production Ready),True,True,True,True,True,True,0.0,0.44957788429721157
+H16,Weekly Reversal,Mean Reversion,0.165,6,1.0,A+ (Production Ready),True,True,True,True,True,True,0.0,0.21095834728430976
+H20,VIX Mean Reversion,Volatility,0.231,6,1.0,A+ (Production Ready),True,True,True,True,True,True,0.0,0.691245188739789
+H19,Bollinger Band MR,Mean Reversion,0.413,5,0.8333333333333334,A (Strong Edge),False,True,True,True,True,True,0.0,0.16483225123749562
+H27,Post-Large-Move Reversal,Mean Reversion,0.397,5,0.8333333333333334,A (Strong Edge),True,True,True,True,True,False,0.0124,0.0
+H62,Oil-Equity Relationship,Cross-Asset,0.121,5,0.8333333333333334,A (Strong Edge),True,True,True,True,True,False,0.0,0.011963531205832864
+H27B,Z-Score Mean Reversion,Mean Reversion,0.162,5,0.8333333333333334,A (Strong Edge),False,True,True,True,True,True,0.0,0.16483225123749562
+H142,Dollar Valuation,Creative,0.054,4,0.6666666666666666,B (Good Edge),False,True,False,True,True,True,0.0006,0.31096402794206857
+H27D,Consecutive Down Reversal,Mean Reversion,0.264,4,0.6666666666666666,B (Good Edge),False,True,True,True,False,True,0.0106,0.19877040572470048
+H49,September Effect,Seasonality,0.067,4,0.6666666666666666,B (Good Edge),True,True,False,True,True,False,0.0122,-0.13439948676247349
+H39,Cross-Asset Vol Signal,Volatility,0.116,4,0.6666666666666666,B (Good Edge),False,True,True,True,False,True,0.0,0.07090543039363191
+H53,Quarter-End Effect,Seasonality,0.133,4,0.6666666666666666,B (Good Edge),False,True,True,True,True,False,0.0,-0.08728487897264722
+H18,RSI Extreme (20/80),Mean Reversion,1.095,3,0.5,C (Marginal Edge),False,True,False,True,True,False,0.0422,0.0
+H17,RSI Mean Reversion,Mean Reversion,0.407,3,0.5,C (Marginal Edge),False,True,False,True,True,False,0.0066,-0.08880249581988961
+H73,Flight to Quality,Cross-Asset,0.296,3,0.5,C (Marginal Edge),False,True,False,False,True,True,0.03,0.13588014512748575
+H57,Bond Leading Indicator,Cross-Asset,0.14,3,0.5,C (Marginal Edge),False,True,True,True,False,False,0.0116,-0.07989623223424436
+H126,Small vs Large Cap,Sentiment,0.068,3,0.5,C (Marginal Edge),False,True,False,True,False,True,0.0,0.028605186468990962

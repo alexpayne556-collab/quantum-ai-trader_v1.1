@@ -1,0 +1,17 @@
+hypothesis_id,name,category,batch,spread,p_value,sharpe,win_rate,n_signals,pass,note,error
+H20,VIX Mean Reversion,Volatility,0,0.23100837777825012,2.1853029912662007e-05,1.242267722891536,0.5970425138632163,541,True,"Long: 34.13%, Other: 11.03%",
+H21,VIX Percentile,Volatility,0,0.18228609126861833,3.710114904845456e-06,1.2045754498477317,0.6754176610978521,419,True,"Long: 30.56%, Other: 12.34%",
+H22,VIX Spike Reversal,Volatility,0,-0.019467456239711287,0.8712107264995184,0.48322519436005634,0.6373626373626373,91,False,"Long: 12.39%, Other: 14.33%",
+H28,VIX Term Structure,Volatility,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=4012"
+H29,VIX/VIX3M Extreme,Volatility,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=4007"
+H31,SKEW Index Signal,Volatility,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=4007"
+H32,Volatility Targeting (10%),Volatility,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=0"
+H33,Volatility Targeting (15%),Volatility,0,0.0,1.0,0.0,0.0,0,False,,"Insufficient data: long=0, other=0"
+H34,Volatility Regime Filter,Volatility,0,-0.18743826984764667,1.7611227837298367e-06,0.7545004154838145,0.6089562764456982,2836,False,"Long: 8.80%, Other: 27.54%",
+H35,Low Volatility Anomaly,Volatility,0,-0.04446982277190073,0.0015293569591061562,0.7030924069446983,0.6603665521191294,1746,False,"Long: 8.02%, Other: 12.47%",
+H36,Volatility Breakout,Volatility,0,-0.10507838726476906,0.03227299390769581,0.405083669092602,0.6061776061776062,259,False,"Long: 4.41%, Other: 14.92%",
+H37,ATR Breakout,Volatility,0,0.0,1.0,0.0,0.0,10,False,,"Insufficient data: long=10, other=4002"
+H38,Implied vs Realized Vol (VRP),Volatility,0,0.02391483959518345,0.14995998926912546,1.1457190266593427,0.7012078830260648,1573,False,"Long: 15.80%, Other: 13.40%",
+H39,Cross-Asset Vol Signal,Volatility,0,0.11554886751378246,0.05383809982566493,1.0857740037500772,0.6515151515151515,396,True,"Long: 24.70%, Other: 13.15%",
+H40,Correlation Regime,Volatility,0,-0.11349325497040469,7.655356378929401e-11,0.80982631987344,0.681503101058008,2741,False,"Long: 10.78%, Other: 22.13%",
+H41,Vol of Vol (VVIX Proxy),Volatility,0,-0.05449092505941497,0.02458413856632378,0.9003224384700917,0.6332599118942731,1816,False,"Long: 11.26%, Other: 16.71%",
