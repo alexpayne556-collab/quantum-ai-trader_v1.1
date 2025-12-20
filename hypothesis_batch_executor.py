@@ -62,6 +62,40 @@ class HypothesisBatchExecutor:
             'vix': ['^VIX', '^VIX3M', '^VIX9D', '^SKEW'],
         }
     
+    def _standardize_columns(self, ticker_data: pd.DataFrame) -> pd.DataFrame:
+        """Standardize column names from various yfinance formats."""
+        cols = ticker_data.columns.tolist()
+        cols_lower = [str(c).lower() for c in cols]
+        
+        # Check for various formats
+        if 'adj close' in cols_lower:
+            idx = cols_lower.index('adj close')
+            close_col = cols[idx]
+        elif 'close' in cols_lower:
+            idx = cols_lower.index('close')
+            close_col = cols[idx]
+        else:
+            return None
+        
+        # Find other columns
+        def find_col(name):
+            if name in cols_lower:
+                return cols[cols_lower.index(name)]
+            return None
+        
+        open_col = find_col('open')
+        high_col = find_col('high')
+        low_col = find_col('low')
+        vol_col = find_col('volume')
+        
+        df = pd.DataFrame({'close': ticker_data[close_col]})
+        if open_col: df['open'] = ticker_data[open_col]
+        if high_col: df['high'] = ticker_data[high_col]
+        if low_col: df['low'] = ticker_data[low_col]
+        if vol_col: df['volume'] = ticker_data[vol_col]
+        
+        return df
+    
     def download_batch_data(self, batch_name: str, ticker_list: list) -> tuple:
         """
         Download data for a batch in one efficient call.
@@ -138,18 +172,11 @@ class HypothesisBatchExecutor:
             
             ticker_data = data[primary_ticker]
             
-            # Standardize column names
-            if 'Adj Close' in ticker_data.columns:
-                df = pd.DataFrame({
-                    'close': ticker_data['Adj Close'],
-                    'open': ticker_data['Open'],
-                    'high': ticker_data['High'],
-                    'low': ticker_data['Low'],
-                    'volume': ticker_data.get('Volume', 0),
-                })
-            else:
-                df = ticker_data.copy()
-                df.columns = df.columns.str.lower()
+            # Standardize column names - handle various yfinance formats
+            df = self._standardize_columns(ticker_data)
+            if df is None:
+                result['error'] = f"Could not parse columns for {primary_ticker}"
+                return result
             
             # Generate signal
             signal_func = hypothesis['signal_func']
@@ -161,20 +188,17 @@ class HypothesisBatchExecutor:
             for ticker in hypothesis['tickers'][1:]:
                 if ticker in data:
                     secondary_data = data[ticker]
-                    if 'Adj Close' in secondary_data.columns:
-                        kwargs[f'{ticker.lower()}_data'] = pd.DataFrame({
-                            'close': secondary_data['Adj Close'],
-                            'open': secondary_data['Open'],
-                            'high': secondary_data['High'],
-                            'low': secondary_data['Low'],
-                            'volume': secondary_data.get('Volume', 0),
-                        })
-                    else:
-                        kwargs[f'{ticker.lower()}_data'] = secondary_data
+                    std_data = self._standardize_columns(secondary_data)
+                    if std_data is not None:
+                        # Create key name (handle special chars like ^VIX)
+                        key_name = ticker.replace('^', '').lower() + '_data'
+                        kwargs[key_name] = std_data
             
             # Add VIX if needed
             if '^VIX' in data:
-                kwargs['vix_data'] = data['^VIX']['Adj Close'] if 'Adj Close' in data['^VIX'].columns else data['^VIX']['close']
+                vix_std = self._standardize_columns(data['^VIX'])
+                if vix_std is not None:
+                    kwargs['vix_data'] = vix_std['close']
             
             # Generate signal
             signal = signal_func(df, **kwargs)
