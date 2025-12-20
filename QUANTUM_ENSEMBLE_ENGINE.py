@@ -83,9 +83,10 @@ class RegimeDetector:
     def detect_trend_regime(self, returns_20d: float, returns_50d: float, 
                            ma_slope: float) -> TrendRegime:
         """Classify trend regime based on returns and MA slope."""
-        if returns_20d > 0.05 and returns_50d > 0.03 and ma_slope > 0.001:
+        # More lenient thresholds - 2% in 20 days is a trend
+        if returns_20d > 0.02 or (returns_50d > 0.03 and ma_slope > 0.0005):
             return TrendRegime.UPTREND
-        elif returns_20d < -0.05 and returns_50d < -0.03 and ma_slope < -0.001:
+        elif returns_20d < -0.02 or (returns_50d < -0.03 and ma_slope < -0.0005):
             return TrendRegime.DOWNTREND
         else:
             return TrendRegime.SIDEWAYS
