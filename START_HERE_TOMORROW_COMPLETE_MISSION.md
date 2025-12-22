@@ -5,6 +5,222 @@
 
 ---
 
+## 🚨 CRITICAL: FILES YOU MUST READ TOMORROW 🚨
+
+**BEFORE YOU DO ANYTHING ELSE, READ THESE FILES IN THIS EXACT ORDER:**
+
+### Step 1: Context Loading (Read First - 10 minutes)
+```
+1. AI_SESSION_MEMORY_BANK.md
+   - Machine-readable context for AI sessions
+   - User profile, mission, principles, research inventory
+   - Unresolved questions, execution plan, success criteria
+   - READ THIS FIRST to load full context into memory
+
+2. START_HERE_TOMORROW_COMPLETE_MISSION.md (THIS FILE)
+   - Mission statement and philosophy
+   - All research documents summarized
+   - Tomorrow's agenda and priorities
+   - READ SECOND to understand the mission
+```
+
+### Step 2: Core Framework Documents (Read Next - 30 minutes)
+**PRIORITY 1 - Must Read:**
+```
+3. PERPLEXITY_FORWARD_LOOKING_PREDICTION_ENGINE.md
+   - THE MOST CRITICAL DOCUMENT
+   - Addresses "Know what's going to pop not what did pop"
+   - Catalyst calendar, leading indicators, monitoring system
+   - Real examples: copper shortage, AI spending
+   - THIS IS YOUR PRIMARY FRAMEWORK FOR SECTOR ROTATION
+
+4. PERPLEXITY_MATHEMATICAL_VALIDATION_ROADMAP.md
+   - 6-phase validation framework
+   - Prove edge works BEFORE building
+   - Pass/fail criteria, realistic cost modeling
+   - Jupyter notebooks with working code
+```
+
+### Step 3: Validation & Reality Checks (Read Next - 20 minutes)
+**PRIORITY 2 - High Importance:**
+```
+5. PERPLEXITY_BRUTAL_TRUTH_OPERATIONAL_REALITIES.md
+   - Why most systems fail (psychology, operations, not algorithms)
+   - Redis mandatory, backtesting lies, real costs
+   - Reality check before building anything
+
+6. PERPLEXITY_TRADING_EDGE_VALIDATION_CHECKLIST.md
+   - 4-week validation framework with daily tasks
+   - Complete Claude prompts (copy-paste ready)
+   - Simple > complex, no fancy ML needed
+```
+
+### Step 4: Technical Architecture (Read When Planning - 30 minutes)
+**PRIORITY 3 - Reference Material:**
+```
+7. PERPLEXITY_COMPLETE_TECHNICAL_BUILD_GUIDE.md
+   - Production code examples
+   - 7-component architecture
+   - 30-day build timeline
+
+8. PERPLEXITY_COMPLETE_INVESTMENT_SYSTEM_8_MODULES.md
+   - Full 8-module system architecture
+   - Data intake through analytics
+   - Python code examples for each module
+```
+
+### Step 5: Research Methodologies (Read As Needed - 45 minutes)
+**PRIORITY 4 - Deep Dives:**
+```
+9. PERPLEXITY_COPPER_SHORTAGE_SUPPLY_CHAIN.md
+   - Supply chain research methodology
+   - SCCO example with USGS data verification
+   - Leverage calculation, competitor analysis
+   - Scenario valuation (base/bull/bear)
+
+10. PERPLEXITY_STOCK_SCREENING_QUICKSTART_MAP.md
+    - 6-part process for opportunity identification
+    - Trend spotting, company selection, signal detection
+
+11. PERPLEXITY_CATALYST_TRACKER_DETAILED_TIMELINE.md
+    - 12-month catalyst monitoring framework
+    - Earnings, analyst upgrades, contracts, partnerships
+
+12. PERPLEXITY_TRADING_RULES_POSITION_MANAGEMENT.md
+    - Entry/exit rules, stop losses, profit-taking
+    - Mechanical execution removes emotion
+```
+
+### Step 6: Academic Reference (Read If Needed - 1 hour)
+**PRIORITY 5 - Deep Academic Context:**
+```
+13. YALE_THESIS_COMPLETE_IMPLEMENTATION_GUIDE.md
+    - 65+ statistical arbitrage strategies
+    - 180+ academic papers analyzed
+    - 16-week implementation timeline
+    - Expected: 25% annual return, 1.58 Sharpe ratio
+```
+
+### Step 7: Strategy Examples (Reference Only)
+**PRIORITY 6 - Examples (NOT Trading Recommendations):**
+```
+14. PERPLEXITY_MICROCAP_GOVERNMENT_CONTRACTS_STRATEGY.md
+    - Example: C3.AI, SOUN, QCI, RKLB (government contracts theme)
+    - Complete catalyst calendar (Jan-Dec 2026)
+    - FOR REFERENCE ONLY - demonstrates catalyst-driven approach
+```
+
+### Step 8: Complete System Document (When Ready to Build)
+**PRIORITY 7 - Implementation Guide:**
+```
+15. THE_COMPLETE_PREDICTION_INVESTMENT_MASTERY_SYSTEM.md
+    - Complete end-to-end system
+    - Mental models, catalyst framework, leading indicators
+    - Company research, valuation, trading rules
+    - Monitoring system, real examples, 90-day launch plan
+    - Performance tracking dashboard
+```
+
+---
+
+## 📋 HOW TO READ THESE FILES WITHOUT HITTING RATE LIMITS
+
+**STRATEGY: Read in batches, take notes between batches**
+
+### Batch 1 (First 30 minutes):
+- Read files #1-2 (context files)
+- Create: RESEARCH_NOTES_DEC_23_2025.md
+- Document initial thoughts
+
+### Batch 2 (Next 30 minutes):
+- Read files #3-4 (core frameworks)
+- Add notes on sector rotation approach
+- Document key questions
+
+### Batch 3 (Next 30 minutes):
+- Read files #5-6 (validation frameworks)
+- Add notes on validation requirements
+- Document contradictions found
+
+### Batch 4 (Next 45 minutes):
+- Read files #7-8 (technical architecture)
+- Add notes on system design options
+- Document build vs no-build decision
+
+### Batch 5 (Next 45 minutes):
+- Skim files #9-12 (methodologies)
+- Deep read sections relevant to sector rotation
+- Add notes on applicable methods
+
+### Batch 6 (If time remains):
+- Skim file #13 (Yale thesis)
+- Extract relevant concepts only
+- Note what applies to 2026 market
+
+### Batch 7 (When ready to build):
+- Read file #15 (complete system)
+- Only after weeks of research complete
+
+**IMPORTANT:** Take 5-10 minute breaks between batches. Document findings continuously.
+
+---
+
+## ✅ READING CHECKLIST (Check off as you read)
+
+```
+□ AI_SESSION_MEMORY_BANK.md (context loaded)
+□ START_HERE_TOMORROW_COMPLETE_MISSION.md (mission understood)
+□ PERPLEXITY_FORWARD_LOOKING_PREDICTION_ENGINE.md (PRIMARY FRAMEWORK)
+□ PERPLEXITY_MATHEMATICAL_VALIDATION_ROADMAP.md (validation approach)
+□ PERPLEXITY_BRUTAL_TRUTH_OPERATIONAL_REALITIES.md (reality check)
+□ PERPLEXITY_TRADING_EDGE_VALIDATION_CHECKLIST.md (4-week framework)
+□ PERPLEXITY_COMPLETE_TECHNICAL_BUILD_GUIDE.md (technical reference)
+□ PERPLEXITY_COMPLETE_INVESTMENT_SYSTEM_8_MODULES.md (full architecture)
+□ PERPLEXITY_COPPER_SHORTAGE_SUPPLY_CHAIN.md (supply chain methodology)
+□ PERPLEXITY_STOCK_SCREENING_QUICKSTART_MAP.md (opportunity framework)
+□ PERPLEXITY_CATALYST_TRACKER_DETAILED_TIMELINE.md (catalyst tracking)
+□ PERPLEXITY_TRADING_RULES_POSITION_MANAGEMENT.md (position management)
+□ YALE_THESIS_COMPLETE_IMPLEMENTATION_GUIDE.md (academic reference)
+□ PERPLEXITY_MICROCAP_GOVERNMENT_CONTRACTS_STRATEGY.md (example only)
+□ THE_COMPLETE_PREDICTION_INVESTMENT_MASTERY_SYSTEM.md (complete guide)
+
+TOTAL FILES: 15
+ESTIMATED READING TIME: 3-4 hours (with breaks and note-taking)
+```
+
+---
+
+## 🎯 AFTER READING: WHAT TO DO NEXT
+
+Once you've read all files above:
+
+1. **Document Your Findings:**
+   - Create or update: RESEARCH_NOTES_DEC_23_2025.md
+   - What themes emerged?
+   - What contradictions need resolving?
+   - What applies to 2026 market?
+
+2. **Answer The Critical Questions:**
+   - Which sectors will rotate in 2026?
+   - How do we identify rotation 6-12 months early?
+   - What data sources do we need?
+   - Rule-based or ML-based or hybrid?
+
+3. **Design The 4-Week Research Plan:**
+   - Create: RESEARCH_PLAN_NEXT_4_WEEKS.md
+   - Week 1: Sector rotation indicators
+   - Week 2: Data source evaluation
+   - Week 3: Methodology selection
+   - Week 4: Prototype architecture
+
+4. **Update The Mission:**
+   - Update: AI_SESSION_MEMORY_BANK.md
+   - Add today's findings
+   - Note blockers/questions
+   - Set priorities for next session
+
+---
+
 ## THE MISSION (Read This First)
 
 ### Why We're Building This
