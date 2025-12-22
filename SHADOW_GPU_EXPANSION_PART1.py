@@ -483,8 +483,8 @@ volatility_signals = [
     ('Vol_Compression_ATR', df.groupby('ticker')['atr_pct_20'].transform(lambda x: x < x.quantile(0.10))),
     
     # Volatility expansion
-    ('Vol_Expansion_BB', df['bb_width_20'] > df.groupby('ticker')['bb_width_20'].shift(10).transform('mean') * 1.5),
-    ('Vol_Expansion_ATR', df['atr_pct_20'] > df.groupby('ticker')['atr_pct_20'].shift(10).transform('mean') * 1.5),
+    ('Vol_Expansion_BB', df['bb_width_20'] > df.groupby('ticker')['bb_width_20'].transform(lambda x: x.rolling(10).mean().shift(1)) * 1.5),
+    ('Vol_Expansion_ATR', df['atr_pct_20'] > df.groupby('ticker')['atr_pct_20'].transform(lambda x: x.rolling(10).mean().shift(1)) * 1.5),
     
     # Volatility spike
     ('Vol_Spike_ATR', df['atr_pct_10'] > df['atr_pct_20'] * 1.5),
