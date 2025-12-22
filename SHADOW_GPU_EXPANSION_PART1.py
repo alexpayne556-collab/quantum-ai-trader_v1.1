@@ -67,8 +67,8 @@ print(f"✅ Loaded {len(df):,} bars for {df['ticker'].nunique():,} tickers")
 print(f"   Date range: {df['date'].min()} to {df['date'].max()}")
 print()
 
-# Convert date and sort
-df['date'] = pd.to_datetime(df['date'])
+# Convert date and sort (handle mixed date formats)
+df['date'] = pd.to_datetime(df['date'], format='mixed')
 df = df.sort_values(['ticker', 'date'])
 
 # Calculate forward returns (all hold periods)
