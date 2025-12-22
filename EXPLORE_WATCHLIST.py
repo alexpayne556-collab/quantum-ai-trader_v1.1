@@ -1,5 +1,6 @@
 """
 EXPLORE WATCHLIST - Analyze the 20 tickers
+Based on research: Look for regime changes, volatility clusters, correlations
 """
 import pandas as pd
 import numpy as np
@@ -9,33 +10,40 @@ from WATCHLIST_2026 import WATCHLIST, SECTORS
 DATA_DIR = Path("data/watchlist_2026")
 
 def load_all_data():
-    """Load all ticker data into dict"""
+    """Load all ticker data into dict with PROPER parsing"""
     data = {}
     for ticker in WATCHLIST:
         path = DATA_DIR / f"{ticker}.csv"
         if path.exists():
             df = pd.read_csv(path, index_col=0, parse_dates=True)
+            
             # Handle multi-level columns from yfinance
-            if isinstance(df.columns[0], tuple):
-                df.columns = [c[0] for c in df.columns]
-            data[ticker] = df
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            
+            # Ensure numeric columns
+            for col in ['Open', 'High', 'Low', 'Close', 'Volume']:
+                if col in df.columns:
+                    df[col] = pd.to_numeric(df[col], errors='coerce')
+            
+            df = df.dropna()
+            
+            if len(df) > 0:
+                data[ticker] = df
     return data
 
 def analyze_ticker(ticker, df):
-    """Analyze single ticker"""
-    # Handle column names (could be 'Close' or 'close')
-    close_col = 'Close' if 'Close' in df.columns else 'close'
+    """Analyze single ticker - research says focus on volatility regimes"""
+    close = df['Close']
+    returns = close.pct_change(fill_method=None).dropna()
     
-    close = df[close_col]
-    returns = close.pct_change().dropna()
-    
+    # Basic stats
     stats = {
         'ticker': ticker,
         'days': len(df),
         'start': df.index[0].strftime('%Y-%m-%d'),
         'end': df.index[-1].strftime('%Y-%m-%d'),
         'price_now': close.iloc[-1],
-        'price_1y_ago': close.iloc[0] if len(close) > 252 else close.iloc[0],
         'return_total': (close.iloc[-1] / close.iloc[0] - 1) * 100,
         'volatility': returns.std() * np.sqrt(252) * 100,
         'max_drawdown': ((close / close.cummax()) - 1).min() * 100,
@@ -43,24 +51,74 @@ def analyze_ticker(ticker, df):
         'best_day': returns.max() * 100,
         'worst_day': returns.min() * 100,
     }
+    
+    # RESEARCH-BASED: Volatility regime detection
+    # Recent vs historical volatility ratio (from Perplexity research)
+    recent_vol = returns.tail(20).std() * np.sqrt(252) * 100
+    hist_vol = returns.std() * np.sqrt(252) * 100
+    stats['vol_ratio'] = recent_vol / hist_vol if hist_vol > 0 else 1
+    stats['vol_regime'] = 'HIGH' if stats['vol_ratio'] > 1.5 else ('LOW' if stats['vol_ratio'] < 0.7 else 'NORMAL')
+    
+    # RESEARCH-BASED: Momentum (research says 2-12 month momentum works)
+    if len(close) > 126:  # 6 months
+        stats['momentum_6m'] = (close.iloc[-1] / close.iloc[-126] - 1) * 100
+    else:
+        stats['momentum_6m'] = stats['return_total']
+    
+    # RESEARCH-BASED: Mean reversion signal (z-score from 20-day MA)
+    ma20 = close.rolling(20).mean()
+    std20 = close.rolling(20).std()
+    z_score = (close.iloc[-1] - ma20.iloc[-1]) / std20.iloc[-1] if std20.iloc[-1] > 0 else 0
+    stats['z_score'] = z_score
+    stats['mean_rev_signal'] = 'OVERSOLD' if z_score < -2 else ('OVERBOUGHT' if z_score > 2 else 'NEUTRAL')
+    
     return stats
 
 def correlation_matrix(data):
     """Calculate correlation between all tickers"""
     returns = pd.DataFrame()
     for ticker, df in data.items():
-        close_col = 'Close' if 'Close' in df.columns else 'close'
-        returns[ticker] = df[close_col].pct_change()
+        returns[ticker] = df['Close'].pct_change(fill_method=None)
     
     return returns.corr()
+
+def detect_regime_changes(df, ticker):
+    """
+    RESEARCH-BASED: Detect structural breaks using rolling statistics
+    From Perplexity: Use Bai-Perron test or simple rolling volatility changes
+    """
+    close = df['Close']
+    returns = close.pct_change(fill_method=None).dropna()
+    
+    # Rolling 20-day volatility
+    vol_20 = returns.rolling(20).std() * np.sqrt(252)
+    
+    # Detect volatility regime changes (simple threshold method)
+    vol_mean = vol_20.mean()
+    vol_std = vol_20.std()
+    
+    high_vol_days = (vol_20 > vol_mean + vol_std).sum()
+    low_vol_days = (vol_20 < vol_mean - vol_std).sum()
+    
+    return {
+        'ticker': ticker,
+        'high_vol_days': high_vol_days,
+        'low_vol_days': low_vol_days,
+        'regime_changes': high_vol_days + low_vol_days
+    }
 
 def main():
     print("="*70)
     print("WATCHLIST EXPLORER - 20 Tickers Analysis")
+    print("Research-Based: Volatility Regimes, Momentum, Mean Reversion")
     print("="*70)
     
     data = load_all_data()
     print(f"\nLoaded {len(data)} tickers")
+    
+    if len(data) == 0:
+        print("\nERROR: No data loaded. Run DOWNLOAD_WATCHLIST_DATA.py first!")
+        return
     
     # Analyze each ticker
     all_stats = []
@@ -84,29 +142,50 @@ def main():
             continue
             
         for _, row in sector_df.iterrows():
-            print(f"\n  {row['ticker']}:")
-            print(f"    Price: ${row['price_now']:.2f}")
-            print(f"    Total Return: {row['return_total']:+.1f}%")
-            print(f"    Volatility: {row['volatility']:.1f}%")
-            print(f"    Max Drawdown: {row['max_drawdown']:.1f}%")
-            print(f"    Sharpe: {row['sharpe']:.2f}")
-            print(f"    Best Day: {row['best_day']:+.1f}%")
-            print(f"    Worst Day: {row['worst_day']:.1f}%")
+            vol_emoji = "🔥" if row['vol_regime'] == 'HIGH' else ("❄️" if row['vol_regime'] == 'LOW' else "")
+            mr_emoji = "📉" if row['mean_rev_signal'] == 'OVERSOLD' else ("📈" if row['mean_rev_signal'] == 'OVERBOUGHT' else "")
+            
+            print(f"\n  {row['ticker']}: ${row['price_now']:.2f}")
+            print(f"    Return: {row['return_total']:+.1f}% | Vol: {row['volatility']:.1f}% {vol_emoji}")
+            print(f"    Max DD: {row['max_drawdown']:.1f}% | Sharpe: {row['sharpe']:.2f}")
+            print(f"    6M Mom: {row['momentum_6m']:+.1f}% | Z-Score: {row['z_score']:.2f} {mr_emoji}")
     
-    # Top movers
+    # RESEARCH SIGNALS
+    print("\n" + "="*70)
+    print("RESEARCH-BASED SIGNALS")
+    print("="*70)
+    
+    # Oversold (mean reversion candidates)
+    oversold = df_stats[df_stats['z_score'] < -1.5].nlargest(5, 'volatility')
+    print("\n🎯 OVERSOLD (Mean Reversion Candidates):")
+    if len(oversold) > 0:
+        for _, row in oversold.iterrows():
+            print(f"  {row['ticker']}: Z={row['z_score']:.2f}, Vol={row['volatility']:.0f}%")
+    else:
+        print("  None currently oversold")
+    
+    # High momentum
+    momentum = df_stats.nlargest(5, 'momentum_6m')
+    print("\n🚀 HIGHEST 6-MONTH MOMENTUM:")
+    for _, row in momentum.iterrows():
+        print(f"  {row['ticker']}: {row['momentum_6m']:+.1f}%")
+    
+    # High volatility regime (caution)
+    high_vol = df_stats[df_stats['vol_ratio'] > 1.3]
+    print("\n⚠️  HIGH VOLATILITY REGIME (Caution):")
+    if len(high_vol) > 0:
+        for _, row in high_vol.iterrows():
+            print(f"  {row['ticker']}: Vol ratio {row['vol_ratio']:.2f}x normal")
+    else:
+        print("  None in high vol regime")
+    
+    # Top performers
     print("\n" + "="*70)
     print("TOP PERFORMERS (Total Return)")
     print("="*70)
     top = df_stats.nlargest(5, 'return_total')
     for _, row in top.iterrows():
         print(f"  {row['ticker']}: {row['return_total']:+.1f}%")
-    
-    print("\n" + "="*70)
-    print("MOST VOLATILE (Annualized)")
-    print("="*70)
-    volatile = df_stats.nlargest(5, 'volatility')
-    for _, row in volatile.iterrows():
-        print(f"  {row['ticker']}: {row['volatility']:.1f}%")
     
     print("\n" + "="*70)
     print("WORST DRAWDOWNS")
@@ -130,18 +209,18 @@ def main():
     
     high_corr.sort(key=lambda x: abs(x[2]), reverse=True)
     
-    print("\nMost Correlated Pairs:")
+    print("\nMost Correlated (move together):")
     for t1, t2, c in high_corr[:5]:
         print(f"  {t1} <-> {t2}: {c:.2f}")
     
-    print("\nLeast Correlated Pairs (good for diversification):")
+    print("\nLeast Correlated (good for diversification):")
     for t1, t2, c in high_corr[-5:]:
         print(f"  {t1} <-> {t2}: {c:.2f}")
     
     # Save results
     df_stats.to_csv(DATA_DIR / "watchlist_analysis.csv", index=False)
     corr.to_csv(DATA_DIR / "correlation_matrix.csv")
-    print(f"\nSaved analysis to {DATA_DIR}")
+    print(f"\n✅ Saved analysis to {DATA_DIR}")
 
 if __name__ == "__main__":
     main()
